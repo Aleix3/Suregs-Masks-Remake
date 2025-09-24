@@ -24,6 +24,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected bool canAttack = true;
     protected bool isFacingLeft = true;
+    private bool isStunned = false;
 
     protected float attackCooldown;
 
@@ -34,9 +35,11 @@ public abstract class Enemy : MonoBehaviour
         desiredState = EnemyState.Idle;
     }
 
+    protected virtual void ExtraUpdate() { }
+
     protected virtual void Update()
     {
-        if (player == null) return;
+        if (player == null || isStunned) return;
 
         float distance = Vector2.Distance(transform.position, player.position);
 
@@ -58,6 +61,7 @@ public abstract class Enemy : MonoBehaviour
         }
 
         StateMachine();
+        ExtraUpdate();
     }
 
     protected virtual void StateMachine()
