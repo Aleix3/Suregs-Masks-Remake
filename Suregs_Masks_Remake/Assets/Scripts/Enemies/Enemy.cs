@@ -11,6 +11,7 @@ public abstract class Enemy : MonoBehaviour
     public float speed;
     public float attackDistance;
     public float viewDistance;
+    public Color viewColor = Color.yellow;
     public int attackDamage;
 
     [Header("References")]
@@ -115,5 +116,11 @@ public abstract class Enemy : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    protected virtual void OnDrawGizmosSelected()
+    {
+        Gizmos.color = viewColor;
+        Gizmos.DrawWireSphere(transform.position, viewDistance);
     }
 }

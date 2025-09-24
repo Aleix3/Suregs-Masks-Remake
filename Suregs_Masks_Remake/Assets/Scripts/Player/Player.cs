@@ -76,7 +76,6 @@ public class Player : MonoBehaviour
                 lastMovementDirection = Vector2.right; // si no hay dirección, dash hacia la derecha
 
             rb.AddForce(lastMovementDirection * dashForce, ForceMode2D.Impulse);
-
             isDashing = true;
             dashTimer = dashDuration;
             dashCooldownTimer = dashCooldown;
