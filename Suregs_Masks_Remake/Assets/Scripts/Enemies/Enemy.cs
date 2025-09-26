@@ -12,6 +12,7 @@ public abstract class Enemy : MonoBehaviour
     public float attackDistance;
     public float viewDistance;
     public Color viewColor = Color.yellow;
+    public Color attackColor = Color.red;
     public int attackDamage;
 
     [Header("References")]
@@ -26,7 +27,7 @@ public abstract class Enemy : MonoBehaviour
     protected bool isFacingLeft = true;
     private bool isStunned = false;
 
-    protected float attackCooldown;
+    public float attackCooldown;
 
     protected virtual void Start()
     {
@@ -51,7 +52,7 @@ public abstract class Enemy : MonoBehaviour
         {
             desiredState = EnemyState.Attacking;
         }
-        else if (distance <= viewDistance)
+        else if (distance <= viewDistance && canAttack)
         {
             desiredState = EnemyState.Running;
         }
@@ -84,6 +85,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Chase()
     {
+        
         Vector2 direction = (player.position - transform.position).normalized;
         rb.velocity = direction * speed;
 
@@ -126,5 +128,10 @@ public abstract class Enemy : MonoBehaviour
     {
         Gizmos.color = viewColor;
         Gizmos.DrawWireSphere(transform.position, viewDistance);
+
+        Gizmos.color = attackColor;
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
+
+        
     }
 }

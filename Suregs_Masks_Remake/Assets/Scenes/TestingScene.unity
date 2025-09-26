@@ -1439,6 +1439,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 061cb209221b6ea4b8ac0bbea08c9441, type: 3}
     - target: {fileID: 4382748051436559833, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: m_Size.x
+      value: 12.985285
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382748051436559833, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: m_Size.y
+      value: 20.68993
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382748051436559833, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.26852417
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382748051436559833, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.16782713
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382748051436559833, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 12.21
       objectReference: {fileID: 0}
@@ -1487,6 +1503,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 268079345}
+    - target: {fileID: 2620419404903528241, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
+      propertyPath: attackTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620419404903528241, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
+      propertyPath: attackDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620419404903528241, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
+      propertyPath: attackCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4716036912075643910, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -1527,8 +1555,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    - target: {fileID: 7167772627563389698, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3581378477449399867, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 3366795449953361616, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
@@ -1551,6 +1585,10 @@ PrefabInstance:
     - target: {fileID: 529430206180785390, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
       propertyPath: reviveTime
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 529430206180785390, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
+      propertyPath: attackCooldown
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2233585022467933213, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
       propertyPath: m_Name

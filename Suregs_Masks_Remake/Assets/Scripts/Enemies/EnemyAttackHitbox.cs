@@ -17,6 +17,7 @@ public class EnemyAttackHitbox : MonoBehaviour
             if (player != null)
             {
                 player.TakeDamage(enemy.attackDamage);
+                print(enemy.attackDamage);
             }
         }
     }

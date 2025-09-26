@@ -78,8 +78,6 @@ public class EnemyMuur : Enemy
     }
     void Dash()
     {
-
-        print("daash");
         Vector2 direction = (player.position - transform.position).normalized;
         rb.AddForce(direction * dashForce, ForceMode2D.Impulse);
         dashCooldownTimer = dashCooldown;
