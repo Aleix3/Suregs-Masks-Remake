@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float health = 100;
+    private float health = 100;
+    public float maxHealth = 100;
     public float speed = 5f;
     public float dashForce = 10f;
     public float dashCooldown = 1f;
@@ -36,10 +38,13 @@ public class Player : MonoBehaviour
     private float comboTimer = 0f;
     private bool isAttacking = false;
 
+    public Image healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -47,6 +52,8 @@ public class Player : MonoBehaviour
     {
         UpdatePlayerMovement();
         UpdateAttack();
+        healthBar.fillAmount = health / maxHealth;
+
     }
 
     void UpdatePlayerMovement()
