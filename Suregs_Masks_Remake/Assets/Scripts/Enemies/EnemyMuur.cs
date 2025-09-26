@@ -97,14 +97,6 @@ public class EnemyMuur : Enemy
         canAttack = true;
     }
 
-    protected override void Die()
-    {
-        rb.velocity = Vector2.zero;
-        //animator.Play("Die");
-        Destroy(gameObject, 1f);
-
-    }
-
     protected override void OnDrawGizmosSelected()
     {
         base.OnDrawGizmosSelected(); // dibuja radio base

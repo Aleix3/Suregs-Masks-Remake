@@ -1,11 +1,16 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using static Enemy;
+using static Item;
 
 public abstract class Enemy : MonoBehaviour
 {
     public enum EnemyState { Idle, Running, Attacking, Dead }
+    public enum EnemyType { Osiris, Muur }
 
     [Header("Stats")]
+    public EnemyType enemyType;
     public int maxHealth;
     public int health;
     public float speed;
@@ -29,6 +34,10 @@ public abstract class Enemy : MonoBehaviour
 
     public float attackCooldown;
 
+    private bool isDead = false;
+
+    [SerializeField] public GameObject itemPrefab;
+
     protected virtual void Start()
     {
         health = maxHealth;
@@ -40,7 +49,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (player == null || isStunned) return;
+        if (player == null || isStunned ||isDead) return;
 
         float distance = Vector2.Distance(transform.position, player.position);
 
@@ -100,13 +109,41 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Die()
     {
+        if(isDead) return;
+        isDead = true;
+
         rb.velocity = Vector2.zero;
         //animator.Play("Die");
         Destroy(gameObject, 1f);
     }
 
+    private void OnDestroy()
+    {
+        if (!isDead) return;
+
+        if (itemPrefab != null)
+        {
+            GameObject newItem = Instantiate(itemPrefab, transform.position, Quaternion.identity);
+
+            Item item = newItem.GetComponent<Item>();
+            if (item != null)
+            {
+                switch (enemyType)
+                {
+                    case EnemyType.Osiris:
+                        item.type = Item.ItemType.HUESO;
+                        break;
+                    case EnemyType.Muur:
+                        item.type = Item.ItemType.COLA;
+                        break;
+                }
+            }
+        }
+    }
+
     public virtual void TakeDamage(int damage)
     {
+        if (isDead) return;
         if (currentState == EnemyState.Dead) return;
 
         health -= damage;

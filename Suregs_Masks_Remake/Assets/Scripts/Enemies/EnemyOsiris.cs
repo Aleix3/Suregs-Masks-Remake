@@ -51,7 +51,7 @@ public class EnemyOsiris : Enemy
         }
         else
         {
-            Destroy(gameObject, 1f);
+            base.Die();
         }
     }
 
