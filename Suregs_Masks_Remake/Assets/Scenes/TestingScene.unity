@@ -1540,6 +1540,22 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 258499615}
+    - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: attackClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: attackClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: e2fc7dae83ffe874f976a6521b29b530, type: 2}
+    - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: attackClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: e754d78c7b95c0744b57dff5af25fc7c, type: 2}
+    - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: attackClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 7400000, guid: 538b4291e1e8cda4d868e7518e64d1a4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
