@@ -41,6 +41,8 @@ public class Player : MonoBehaviour
 
     public Image healthBar;
 
+    [SerializeField] private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,15 @@ public class Player : MonoBehaviour
         // Entrada del jugador
         Vector2 inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
+        if (inputDir != Vector2.zero)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
         // Movimiento normal
         if (!isDashing)
         {
@@ -78,7 +89,7 @@ public class Player : MonoBehaviour
         }
 
         // Dash
-        if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0f)
+        if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0f && inputDir != Vector2.zero)
         {
             if (lastMovementDirection == Vector2.zero)
                 lastMovementDirection = Vector2.right; // si no hay dirección, dash hacia la derecha
@@ -87,6 +98,7 @@ public class Player : MonoBehaviour
             isDashing = true;
             dashTimer = dashDuration;
             dashCooldownTimer = dashCooldown;
+            animator.SetBool("isDashing", true);
         }
 
         // Control de duración del dash
@@ -96,6 +108,7 @@ public class Player : MonoBehaviour
             if (dashTimer <= 0f)
             {
                 isDashing = false;
+                animator.SetBool("isDashing", false);
             }
         }
 
@@ -155,12 +168,18 @@ public class Player : MonoBehaviour
         // Empuje hacia la dirección del ataque
         rb.AddForce(lastMovementDirection.normalized * attackForce, ForceMode2D.Impulse);
 
+        animator.SetInteger("attackIndex", attackNum);
+
         Invoke(nameof(ResetAttack), attackDuration);
+
+        
+
     }
 
     void ResetAttack()
     {
         isAttacking = false;
+        animator.SetInteger("attackIndex", 0);
     }
 
     public void TakeDamage(int damage)
