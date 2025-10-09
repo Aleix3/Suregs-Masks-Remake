@@ -43,6 +43,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    public AnimationClip[] attackClips;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -125,13 +127,24 @@ public class Player : MonoBehaviour
             comboTimer -= Time.deltaTime;
             if (comboTimer <= 0f)
                 attackNum = 0;
+            animator.SetInteger("attackIndex", 0);
         }
 
         // Input ataque
         if (Input.GetKeyDown(KeyCode.J) && !isAttacking)
         {
             Attack();
+            animator.SetTrigger("attackTrigger");
+            StartCoroutine(ResetAttackIndex(attackClips[0]));
         }
+
+        
+    }
+
+    IEnumerator ResetAttackIndex(AnimationClip clip)
+    {
+        yield return new WaitForSeconds(clip.length);
+        animator.ResetTrigger("attackTrigger");
     }
 
     void Attack()
@@ -179,7 +192,7 @@ public class Player : MonoBehaviour
     void ResetAttack()
     {
         isAttacking = false;
-        animator.SetInteger("attackIndex", 0);
+        
     }
 
     public void TakeDamage(int damage)
