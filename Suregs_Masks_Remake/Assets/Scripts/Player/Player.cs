@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public float dashForce = 10f;
     public float dashCooldown = 1f;
-    public float dashDuration = 0.2f;
+    public float dashDuration = 1f;
     public int swordDamage = 100;
 
     private Rigidbody2D rb;
@@ -99,6 +99,7 @@ public class Player : MonoBehaviour
             rb.AddForce(lastMovementDirection * dashForce, ForceMode2D.Impulse);
             isDashing = true;
             dashTimer = dashDuration;
+            print(dashTimer);
             dashCooldownTimer = dashCooldown;
             animator.SetBool("isDashing", true);
         }
@@ -106,6 +107,7 @@ public class Player : MonoBehaviour
         // Control de duración del dash
         if (isDashing)
         {
+            print(dashTimer);
             dashTimer -= Time.deltaTime;
             if (dashTimer <= 0f)
             {
