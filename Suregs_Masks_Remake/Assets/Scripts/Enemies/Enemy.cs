@@ -38,11 +38,16 @@ public abstract class Enemy : MonoBehaviour
 
     [SerializeField] public GameObject itemPrefab;
 
+    private SpriteRenderer sr;
+
+    private Coroutine flashRoutine;
+
     protected virtual void Start()
     {
         health = maxHealth;
         currentState = EnemyState.Idle;
         desiredState = EnemyState.Idle;
+        sr = GetComponent<SpriteRenderer>();
     }
 
     protected virtual void ExtraUpdate() { }
@@ -147,10 +152,17 @@ public abstract class Enemy : MonoBehaviour
         if (currentState == EnemyState.Dead) return;
 
         health -= damage;
-        print("osiris health:" + health);
-        //animator.Play("Hurt");
+        print("health:" + health);
 
-        if (health <= 0) desiredState = EnemyState.Dead;
+        // FLASH BLANCO AUTOMÁTICO
+        if (flashRoutine != null)
+            StopCoroutine(flashRoutine);
+
+        flashRoutine = StartCoroutine(FlashWhite(0.15f));
+
+        if (health <= 0)
+            desiredState = EnemyState.Dead;
+
     }
 
     protected void Flip()
@@ -159,6 +171,23 @@ public abstract class Enemy : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    IEnumerator FlashWhite(float duration)
+    {
+        print("whiteee");
+        Color original = sr.color;
+        sr.color = Color.red;
+
+        float t = 0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            sr.color = Color.Lerp(Color.red, original, t / duration);
+            yield return null;
+        }
+
+        sr.color = original;
     }
 
     protected virtual void OnDrawGizmosSelected()

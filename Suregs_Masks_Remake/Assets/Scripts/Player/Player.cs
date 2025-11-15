@@ -99,7 +99,6 @@ public class Player : MonoBehaviour
             rb.AddForce(lastMovementDirection * dashForce, ForceMode2D.Impulse);
             isDashing = true;
             dashTimer = dashDuration;
-            print(dashTimer);
             dashCooldownTimer = dashCooldown;
             animator.SetBool("isDashing", true);
         }
@@ -107,7 +106,6 @@ public class Player : MonoBehaviour
         // Control de duración del dash
         if (isDashing)
         {
-            print(dashTimer);
             dashTimer -= Time.deltaTime;
             if (dashTimer <= 0f)
             {

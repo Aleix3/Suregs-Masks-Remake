@@ -100,15 +100,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938add63fc513684d9642581cf7d2514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 0
   maxHealth: 160
   health: 160
   speed: 3
   attackDistance: 1
   viewDistance: 10
+  viewColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  attackColor: {r: 1, g: 0, b: 0, a: 1}
   attackDamage: 20
   rb: {fileID: 6017077128991380820}
   player: {fileID: 0}
+  attackCooldown: 0
+  itemPrefab: {fileID: 0}
   attackHitbox: {fileID: 3145757345607632492}
+  reviveTime: 0
 --- !u!50 &6017077128991380820
 Rigidbody2D:
   serializedVersion: 4

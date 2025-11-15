@@ -46,6 +46,13 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            inventoryCanvas.gameObject.SetActive(!inventoryCanvas.gameObject.activeSelf);
+        }
+
+        if (inventoryCanvas.gameObject.activeSelf == false) return;
         if (inventorySlots.transform.childCount == 0) return;
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
