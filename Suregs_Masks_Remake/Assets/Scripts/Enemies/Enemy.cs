@@ -142,6 +142,7 @@ public abstract class Enemy : MonoBehaviour
                         item.type = Item.ItemType.COLA;
                         break;
                 }
+                newItem.AddComponent<ItemSpawnAnim>();
             }
         }
     }

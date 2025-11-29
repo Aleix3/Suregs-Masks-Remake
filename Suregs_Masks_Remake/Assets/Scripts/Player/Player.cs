@@ -45,6 +45,8 @@ public class Player : MonoBehaviour
 
     public AnimationClip[] attackClips;
 
+    private IInteractable currentInteractable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +59,10 @@ public class Player : MonoBehaviour
     {
         UpdatePlayerMovement();
         UpdateAttack();
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
+        {
+            currentInteractable.Interact();
+        }
         healthBar.fillAmount = health / maxHealth;
 
     }
@@ -210,12 +216,27 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //INTERACTUABLES
+        var interactable = collision.GetComponent<IInteractable>();
+        if (interactable != null)
+        {
+            currentInteractable = interactable;
+        }
+            
+        //ITEMS
         if (collision.CompareTag("Item"))
         {
             Item item = collision.GetComponent<Item>();
             InventoryManager.instance.createInventoryItem(item.type,item.itemType, item.itemName, item.description, item.sr.sprite);
             Destroy(collision.gameObject);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var interactable = collision.GetComponent<IInteractable>();
+        if (interactable != null && interactable == currentInteractable)
+            currentInteractable = null;
     }
 
 }
