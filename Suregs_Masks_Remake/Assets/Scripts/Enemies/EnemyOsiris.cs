@@ -18,7 +18,7 @@ public class EnemyOsiris : Enemy
 
     protected override void Attack()
     {
-        if (!canAttack) return;
+        if (!isNotAttacking) return;
 
         rb.velocity = Vector2.zero;
         //animator.Play("Attack");
@@ -28,7 +28,7 @@ public class EnemyOsiris : Enemy
 
     private IEnumerator DoAttack()
     {
-        canAttack = false;
+        isNotAttacking = false;
 
         yield return new WaitForSeconds(0.1f);
         attackHitbox.enabled = true;
@@ -37,7 +37,7 @@ public class EnemyOsiris : Enemy
         attackHitbox.enabled = false;
 
         yield return new WaitForSeconds(attackCooldown);
-        canAttack = true;
+        isNotAttacking = true;
     }
 
     protected override void Die()

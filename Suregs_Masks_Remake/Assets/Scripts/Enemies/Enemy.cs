@@ -28,13 +28,13 @@ public abstract class Enemy : MonoBehaviour
     protected EnemyState currentState;
     protected EnemyState desiredState;
 
-    protected bool canAttack = true;
+    protected bool isNotAttacking = true;
     protected bool isFacingLeft = true;
-    private bool isStunned = false;
+    [SerializeField] public bool isStunned = false;
 
     public float attackCooldown;
 
-    private bool isDead = false;
+    [SerializeField] public bool isDead = false;
 
     [SerializeField] public GameObject itemPrefab;
 
@@ -48,6 +48,7 @@ public abstract class Enemy : MonoBehaviour
         currentState = EnemyState.Idle;
         desiredState = EnemyState.Idle;
         sr = GetComponent<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     protected virtual void ExtraUpdate() { }
@@ -66,7 +67,7 @@ public abstract class Enemy : MonoBehaviour
         {
             desiredState = EnemyState.Attacking;
         }
-        else if (distance <= viewDistance && canAttack)
+        else if (distance <= viewDistance && isNotAttacking)
         {
             desiredState = EnemyState.Running;
         }
