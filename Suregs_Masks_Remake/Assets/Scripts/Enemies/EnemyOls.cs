@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class EnemyOls : Enemy
@@ -7,6 +8,8 @@ public class EnemyOls : Enemy
     // Start is called before the first frame update
     public float escapeDistance;
     private bool escaping = false;
+    public GameObject olsProjectile;
+    public float projectileSpeed;
     protected override void Start()
     {
         base.Start();
@@ -46,7 +49,11 @@ public class EnemyOls : Enemy
     private IEnumerator DoAttack()
     {
         isNotAttacking = false;
-
+        GameObject newProjectile = Instantiate(olsProjectile, transform.position, Quaternion.identity);
+        Ols_Projectile newOlsProjectile = newProjectile.GetComponent<Ols_Projectile>();
+        newOlsProjectile.damage = attackDamage;
+        Vector2 direction = (player.position - transform.position).normalized;
+        newProjectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
         yield return new WaitForSeconds(attackCooldown);
         isNotAttacking = true;
     }

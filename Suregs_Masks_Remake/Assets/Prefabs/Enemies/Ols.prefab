@@ -187,3 +187,5 @@ MonoBehaviour:
   isDead: 0
   itemPrefab: {fileID: 0}
   escapeDistance: 0.83
+  olsProjectile: {fileID: 4535473329264882499, guid: 22fc18a40b15a574f84d0795cc6b4575, type: 3}
+  projectileSpeed: 5
