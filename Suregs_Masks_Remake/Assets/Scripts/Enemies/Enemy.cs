@@ -28,6 +28,7 @@ public abstract class Enemy : MonoBehaviour
     protected EnemyState currentState;
     protected EnemyState desiredState;
 
+    [SerializeField] public bool canMove = true;
     protected bool isNotAttacking = true;
     protected bool isFacingLeft = true;
     [SerializeField] public bool isStunned = false;
@@ -67,7 +68,7 @@ public abstract class Enemy : MonoBehaviour
         {
             desiredState = EnemyState.Attacking;
         }
-        else if (distance <= viewDistance && isNotAttacking)
+        else if (distance <= viewDistance && canMove)
         {
             desiredState = EnemyState.Running;
         }

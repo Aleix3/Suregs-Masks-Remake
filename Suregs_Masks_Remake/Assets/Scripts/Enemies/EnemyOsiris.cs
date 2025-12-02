@@ -29,6 +29,7 @@ public class EnemyOsiris : Enemy
     private IEnumerator DoAttack()
     {
         isNotAttacking = false;
+        canMove = false;
 
         yield return new WaitForSeconds(0.1f);
         attackHitbox.enabled = true;
@@ -38,6 +39,7 @@ public class EnemyOsiris : Enemy
 
         yield return new WaitForSeconds(attackCooldown);
         isNotAttacking = true;
+        canMove = true;
     }
 
     protected override void Die()

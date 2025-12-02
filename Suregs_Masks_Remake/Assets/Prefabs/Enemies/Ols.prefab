@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.27, y: -7.46, z: 0}
-  m_LocalScale: {x: 1.88, y: 1.88, z: 1.88}
+  m_LocalScale: {x: 0.84, y: 0.84, z: 0.84}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -175,17 +175,18 @@ MonoBehaviour:
   maxHealth: 120
   health: 120
   speed: 3
-  attackDistance: 14.9
-  viewDistance: 14.9
+  attackDistance: 6.55
+  viewDistance: 9
   viewColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackColor: {r: 1, g: 0, b: 0, a: 1}
   attackDamage: 15
   rb: {fileID: 6017077128991380820}
   player: {fileID: 0}
+  canMove: 1
   isStunned: 0
-  attackCooldown: 2
+  attackCooldown: 4
   isDead: 0
   itemPrefab: {fileID: 0}
-  escapeDistance: 0.83
+  escapeDistance: 4.31
   olsProjectile: {fileID: 4535473329264882499, guid: 22fc18a40b15a574f84d0795cc6b4575, type: 3}
   projectileSpeed: 5

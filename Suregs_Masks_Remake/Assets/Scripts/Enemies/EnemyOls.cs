@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
@@ -38,9 +39,10 @@ public class EnemyOls : Enemy
     }
     protected override void Attack()
     {
+        rb.velocity = Vector2.zero;
         if (!isNotAttacking) return;
 
-        rb.velocity = Vector2.zero;
+        
         //animator.Play("Attack");
 
         StartCoroutine(DoAttack());
@@ -48,12 +50,15 @@ public class EnemyOls : Enemy
 
     private IEnumerator DoAttack()
     {
+        canMove = false;
         isNotAttacking = false;
         GameObject newProjectile = Instantiate(olsProjectile, transform.position, Quaternion.identity);
         Ols_Projectile newOlsProjectile = newProjectile.GetComponent<Ols_Projectile>();
         newOlsProjectile.damage = attackDamage;
         Vector2 direction = (player.position - transform.position).normalized;
         newProjectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+        yield return new WaitForSeconds(0.3f);
+        canMove = true;
         yield return new WaitForSeconds(attackCooldown);
         isNotAttacking = true;
     }
