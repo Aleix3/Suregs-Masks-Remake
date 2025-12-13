@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6017077128991380820}
   - component: {fileID: 1981522845709362186}
   - component: {fileID: 8589144347580291022}
+  - component: {fileID: 4293019591842975858}
   m_Layer: 0
   m_Name: Osiris
   m_TagString: Enemy
@@ -106,7 +107,7 @@ MonoBehaviour:
   health: 160
   speed: 3
   attackDistance: 1
-  viewDistance: 10
+  viewDistance: 6.25
   viewColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackColor: {r: 1, g: 0, b: 0, a: 1}
   attackDamage: 20
@@ -145,7 +146,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1981522845709362186
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -213,6 +214,41 @@ NavMeshAgent:
   m_BaseOffset: 0.555
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!58 &4293019591842975858
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233585022467933213}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.048645634, y: -0.34468883}
+  serializedVersion: 2
+  m_Radius: 0.20892125
 --- !u!1 &4618788347601749221
 GameObject:
   m_ObjectHideFlags: 0

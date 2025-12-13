@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6017077128991380820}
   - component: {fileID: 1981522845709362186}
   - component: {fileID: 89936779209799243}
+  - component: {fileID: 8390762161720460421}
+  - component: {fileID: 6988080930110912881}
   m_Layer: 0
   m_Name: Ols
   m_TagString: Enemy
@@ -113,7 +115,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1981522845709362186
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,3 +192,60 @@ MonoBehaviour:
   escapeDistance: 4.31
   olsProjectile: {fileID: 4535473329264882499, guid: 22fc18a40b15a574f84d0795cc6b4575, type: 3}
   projectileSpeed: 5
+--- !u!58 &8390762161720460421
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233585022467933213}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.054132085, y: -0.63943565}
+  serializedVersion: 2
+  m_Radius: 0.58233017
+--- !u!195 &6988080930110912881
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233585022467933213}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.2099999
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2.4299998
+  m_BaseOffset: 1.2149999
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
