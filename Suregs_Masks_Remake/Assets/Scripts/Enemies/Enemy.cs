@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using static Enemy;
 using static Item;
 
@@ -43,6 +44,10 @@ public abstract class Enemy : MonoBehaviour
 
     private Coroutine flashRoutine;
 
+    //PATHFINDING
+
+    NavMeshAgent agent;
+
     protected virtual void Start()
     {
         health = maxHealth;
@@ -50,6 +55,10 @@ public abstract class Enemy : MonoBehaviour
         desiredState = EnemyState.Idle;
         sr = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     protected virtual void ExtraUpdate() { }
@@ -103,7 +112,8 @@ public abstract class Enemy : MonoBehaviour
     {
         
         Vector2 direction = (player.position - transform.position).normalized;
-        rb.velocity = direction * speed;
+        //rb.velocity = direction * speed;
+        agent.SetDestination(player.position);
 
         if (direction.x > 0 && isFacingLeft) Flip();
         else if (direction.x < 0 && !isFacingLeft) Flip();
