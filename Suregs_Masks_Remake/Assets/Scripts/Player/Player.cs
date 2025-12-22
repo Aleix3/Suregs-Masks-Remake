@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
 
     private IInteractable currentInteractable;
 
+    public bool godMode = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,12 @@ public class Player : MonoBehaviour
         {
             currentInteractable.Interact();
         }
+
+        if (Input.GetKeyDown(KeyCode.F10))
+        {
+            ToggleGodMode();
+        }
+
         healthBar.fillAmount = health / maxHealth;
 
     }
@@ -237,6 +245,14 @@ public class Player : MonoBehaviour
         var interactable = collision.GetComponent<IInteractable>();
         if (interactable != null && interactable == currentInteractable)
             currentInteractable = null;
+    }
+
+    private void ToggleGodMode()
+    {
+        godMode = !godMode;
+        this.GetComponent<CircleCollider2D>().isTrigger = !this.GetComponent<CircleCollider2D>().isTrigger;
+
+
     }
 
 }

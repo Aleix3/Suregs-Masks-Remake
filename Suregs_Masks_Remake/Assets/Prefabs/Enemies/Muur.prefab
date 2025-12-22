@@ -116,7 +116,7 @@ MonoBehaviour:
   isStunned: 0
   attackCooldown: 1
   isDead: 0
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
   attackHitbox: {fileID: 6607231279209429024}
   dashDistance: 3.25
   dashForce: 10

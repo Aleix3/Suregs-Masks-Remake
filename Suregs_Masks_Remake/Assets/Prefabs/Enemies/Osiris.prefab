@@ -117,7 +117,7 @@ MonoBehaviour:
   isStunned: 0
   attackCooldown: 0
   isDead: 0
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
   attackHitbox: {fileID: 3145757345607632492}
   reviveTime: 0
 --- !u!50 &6017077128991380820
