@@ -235,7 +235,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Item"))
         {
             Item item = collision.GetComponent<Item>();
-            InventoryManager.instance.createInventoryItem(item.type,item.itemType, item.itemName, item.description, item.sr.sprite);
+            InventoryManager.instance.CreateInventoryItem(item.type,item.itemType, item.itemName, item.description, item.sr.sprite);
             Destroy(collision.gameObject);
         }
     }
@@ -253,6 +253,46 @@ public class Player : MonoBehaviour
         this.GetComponent<CircleCollider2D>().isTrigger = !this.GetComponent<CircleCollider2D>().isTrigger;
 
 
+    }
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public int GetSwordDamage()
+    {
+        return swordDamage;
+    }
+
+    public void UpgradeSword(int amount)
+    {
+        swordDamage += amount;
+        Debug.Log("Espada mejorada. Nuevo daño: " + swordDamage);
+    }
+
+    public void UpgradeArmor(float amount)
+    {
+        maxHealth += amount;
+        health += amount; // opcional: también cura la nueva vida añadida
+
+        if (health > maxHealth)
+            health = maxHealth;
+
+        Debug.Log("Armadura mejorada. Nueva vida máxima: " + maxHealth);
+    }
+
+    public void Heal(float amount)
+    {
+        health += amount;
+
+        if (health > maxHealth)
+            health = maxHealth;
     }
 
 }

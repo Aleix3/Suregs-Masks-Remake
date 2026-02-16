@@ -23,15 +23,18 @@ public class InventoryItem : MonoBehaviour
         itemImage = GetComponent<Image>();
         closeUpItem = GetComponent<Image>();
     }
-    // Start is called before the first frame update
-    void Start()
+    public void AddQuantity(uint q)
     {
-        
+        quantity += q;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SubtractQuantity(uint q)
     {
-        
+        if (q >= quantity) quantity = 0;
+        else quantity -= q;
+
     }
+
+
 }

@@ -110,69 +110,124 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void createInventoryItem(ItemType type, string itemType, string name, string description, Sprite itemImage)
+    public InventoryItem CreateInventoryItem(ItemType type, string itemType, string name, string description, Sprite itemSprite, uint quantity = 1)
     {
-
-        GameObject newItem = Instantiate(itemPrefab, transform.position, Quaternion.identity);
-        InventoryItem item = newItem.GetComponent<InventoryItem>();
-        item.type = type;
-        item.description = description;
-        item.name = name;
-        item.itemImage.sprite = itemImage;
-        item.closeUpItem.sprite = itemImage;
-        item.itemType = itemType;
-        newItem.transform.SetParent(inventoryCanvas.transform, worldPositionStays: false);
-        AddInventoryItem(item);
-
-    }
-
-    void AddInventoryItem(InventoryItem item)
-    {
-        bool alreadyHaveItem = false;
-        for (int i = 0; i < inventoryItems.Count; i++) {
-            if (inventoryItems[i].type == item.type)
-            {
-                inventoryItems[i].quantity += 1;
-                alreadyHaveItem = true;
-            }
-
-        }
-
-        if (!alreadyHaveItem)
+        // buscar si ya existe (comparando type + itemType)
+        InventoryItem found = inventoryItems.Find(i => i.type == type && i.itemType == itemType);
+        if (found != null)
         {
-            inventoryItems.Add(item);
-            for (int i = inventorySlots.transform.childCount - 1; i >= 0; i--)
-            {
-                Transform slot = inventorySlots.transform.GetChild(i);
-
-                if (slot.childCount == 0)
-                {
-                    item.transform.SetParent(slot.transform, worldPositionStays: false);
-                    item.transform.localPosition = Vector3.zero;
-                }
-
-            }
-
+            found.AddQuantity(quantity);
+            return found;
         }
 
+        // crear nuevo GameObject en el primer slot vacío
+        GameObject newItem = Instantiate(itemPrefab);
+        InventoryItem itemComp = newItem.GetComponent<InventoryItem>();
+        itemComp.type = type;
+        itemComp.itemType = itemType;
+        itemComp.name = name;
+        itemComp.description = description;
+        itemComp.quantity = quantity;
+
+        if (itemComp.itemImage != null) itemComp.itemImage.sprite = itemSprite;
+        if (itemComp.closeUpItem != null) itemComp.closeUpItem.sprite = itemSprite;
+
+        // buscar slot vacío
+        for (int s = 0; s < inventorySlots.transform.childCount; s++)
+        {
+            Transform slot = inventorySlots.transform.GetChild(s);
+            if (slot.childCount == 0)
+            {
+                newItem.transform.SetParent(slot, false);
+                newItem.transform.localPosition = Vector3.zero;
+                break;
+            }
+        }
+
+        inventoryItems.Add(itemComp);
+        return itemComp;
     }
 
-    private void DestroyInventoryItem(ItemType type, uint quantity)
+    public int GetQuantity(ItemType type)
+    {
+        int total = 0;
+        foreach (var it in inventoryItems)
+            if (it.type == type)
+                total += (int)it.quantity;
+        return total;
+    }
+
+    public bool RemoveQuantity(ItemType type, uint quantity)
     {
         for (int i = 0; i < inventoryItems.Count; i++)
         {
-            if (inventoryItems[i].type == type)
+            var it = inventoryItems[i];
+            if (it.type == type)
             {
-                if (inventoryItems[i].quantity > quantity)
+                if (it.quantity > quantity)
                 {
-                    inventoryItems[i].quantity -= quantity;
+                    it.SubtractQuantity(quantity);
+                    return true;
                 }
                 else
                 {
+                    // quitar por completo
+                    Destroy(it.gameObject);
                     inventoryItems.RemoveAt(i);
+                    return true;
                 }
             }
-
         }
+        return false;
     }
+
+    //void AddInventoryItem(InventoryItem item)
+    //{
+    //    bool alreadyHaveItem = false;
+    //    for (int i = 0; i < inventoryItems.Count; i++) {
+    //        if (inventoryItems[i].type == item.type)
+    //        {
+    //            inventoryItems[i].quantity += 1;
+    //            alreadyHaveItem = true;
+    //        }
+
+    //    }
+
+    //    if (!alreadyHaveItem)
+    //    {
+    //        inventoryItems.Add(item);
+    //        for (int i = inventorySlots.transform.childCount - 1; i >= 0; i--)
+    //        {
+    //            Transform slot = inventorySlots.transform.GetChild(i);
+
+    //            if (slot.childCount == 0)
+    //            {
+    //                item.transform.SetParent(slot.transform, worldPositionStays: false);
+    //                item.transform.localPosition = Vector3.zero;
+    //            }
+
+    //        }
+
+    //    }
+
+    //}
+
+    //public void DestroyInventoryItem(ItemType type, uint quantity)
+    //{
+    //    for (int i = 0; i < inventoryItems.Count; i++)
+    //    {
+    //        if (inventoryItems[i].type == type)
+    //        {
+    //            if (inventoryItems[i].quantity > quantity)
+    //            {
+    //                inventoryItems[i].quantity -= quantity;
+    //            }
+    //            else
+    //            {
+    //                inventoryItems.RemoveAt(i);
+    //            }
+    //        }
+
+    //    }
+    //}
 }
