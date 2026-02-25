@@ -20,46 +20,9 @@ public class Merchant : MonoBehaviour, IInteractable
 
     public void SelectTrade(int num)
     {
-        ItemType type = ItemType.RUBI;
-        int goldValue = 0;
+        if (!GetTradeData(num, out ItemType type, out int goldValue))
+            return;
 
-        switch (num)
-        {
-            case 1:
-                type = ItemType.RUBI;
-                goldValue = 10;
-                break;
-
-            case 2:
-                type = ItemType.SALIVA;
-                goldValue = 15;
-                break;
-
-            case 3:
-                type = ItemType.AMATISTA;
-                goldValue = 20;
-                break;
-
-            case 4:
-                type = ItemType.PEZ_PEQUENO;
-                goldValue = 50;
-                break;
-
-            case 5:
-                type = ItemType.POLVORA;
-                goldValue = 5;
-                break;
-
-            case 6:
-                type = ItemType.HUESO;
-                goldValue = 25;
-                break;
-
-            default:
-                return;
-        }
-
-        // verificar si el jugador tiene el item
         int currentQty = InventoryManager.instance.GetQuantity(type);
         int alreadyPending = pendingSell.ContainsKey(type) ? pendingSell[type] : 0;
 
@@ -69,14 +32,40 @@ public class Merchant : MonoBehaviour, IInteractable
             return;
         }
 
-        // acumular
         if (!pendingSell.ContainsKey(type))
             pendingSell[type] = 0;
 
         pendingSell[type]++;
         pendingGold += goldValue;
 
-        Debug.Log("Seleccionado " + type + " | Oro acumulado: " + pendingGold);
+        Debug.Log("Seleccionado 1 " + type + " | Oro acumulado: " + pendingGold);
+    }
+
+    public void BuyAll(int num)
+    {
+        if (!GetTradeData(num, out ItemType type, out int goldValue))
+            return;
+
+        int currentQty = InventoryManager.instance.GetQuantity(type);
+        int alreadyPending = pendingSell.ContainsKey(type) ? pendingSell[type] : 0;
+
+        int availableToSell = currentQty - alreadyPending;
+
+        if (availableToSell <= 0)
+        {
+            Debug.Log("No tienes más de este item para vender");
+            return;
+        }
+
+        if (!pendingSell.ContainsKey(type))
+            pendingSell[type] = 0;
+
+        pendingSell[type] += availableToSell;
+        pendingGold += goldValue * availableToSell;
+
+        Debug.Log("Seleccionado TODO " + type +
+                  " x" + availableToSell +
+                  " | Oro acumulado: " + pendingGold);
     }
 
     public void ConfirmBuy()
@@ -104,5 +93,24 @@ public class Merchant : MonoBehaviour, IInteractable
     {
         pendingSell.Clear();
         pendingGold = 0;
+    }
+
+    private bool GetTradeData(int num, out ItemType type, out int goldValue)
+    {
+        type = ItemType.RUBI;
+        goldValue = 0;
+
+        switch (num)
+        {
+            case 1: type = ItemType.RUBI; goldValue = 10; break;
+            case 2: type = ItemType.SALIVA; goldValue = 15; break;
+            case 3: type = ItemType.AMATISTA; goldValue = 20; break;
+            case 4: type = ItemType.PEZ_PEQUENO; goldValue = 50; break;
+            case 5: type = ItemType.POLVORA; goldValue = 5; break;
+            case 6: type = ItemType.HUESO; goldValue = 25; break;
+            default: return false;
+        }
+
+        return true;
     }
 }

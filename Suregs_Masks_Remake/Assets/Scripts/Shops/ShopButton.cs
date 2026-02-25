@@ -1,15 +1,20 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ShopButton : MonoBehaviour
 {
-    public UnityEvent onSelect;
     public GameObject hoverVisual;
+    Button button;
+
+    private void Start()
+    {
+        button = GetComponent<Button>();
+    }
 
     public void Select()
     {
-        if (onSelect != null)
-            onSelect.Invoke();
+        button.onClick.Invoke();
     }
 
     public void SetHover(bool value)
