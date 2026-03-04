@@ -1,4 +1,5 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,12 +8,16 @@ public class ShopUI : MonoBehaviour
     public List<ShopButton> buttons = new List<ShopButton>();
 
     public int currentIndex = 0;
-
+    public int columns = 2;
     public bool isOpen = false;
 
     [Header("Scroll")]
-    public ScrollRect scrollRect;               // Arrastra aqu� tu ScrollRect desde el Inspector
-    public float scrollMargin = 10f;            // margen en p�xeles para que no quede pegado al borde
+    public ScrollRect scrollRect;
+    public float scrollMargin = 10f;
+
+    public RectTransform knobRect;
+    public float topY = 245f;
+    public float bottomY = -245f;
 
     void Start()
     {
@@ -46,6 +51,25 @@ public class ShopUI : MonoBehaviour
             UpdateHover();
         }
 
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if ((currentIndex % columns) < columns - 1 &&
+                currentIndex + 1 < buttons.Count)
+            {
+                currentIndex++;
+                UpdateHover();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            if ((currentIndex % columns) > 0)
+            {
+                currentIndex--;
+                UpdateHover();
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return))
         {
             buttons[currentIndex].Select();
@@ -59,11 +83,16 @@ public class ShopUI : MonoBehaviour
             buttons[i].SetHover(i == currentIndex);
         }
 
-        // Aseguramos que el bot�n seleccionado quede visible en la ScrollRect
         if (scrollRect != null && buttons.Count > 0)
         {
             RectTransform selectedRect = buttons[currentIndex].GetComponent<RectTransform>();
-            EnsureVisible(selectedRect);
+
+            // Solo hacer scroll si el botón está dentro del content
+            if (selectedRect.IsChildOf(scrollRect.content))
+            {
+                EnsureVisible(selectedRect);
+                UpdateKnobManual(selectedRect);
+            }
         }
     }
 
@@ -72,31 +101,61 @@ public class ShopUI : MonoBehaviour
     {
         if (item == null || scrollRect == null || scrollRect.content == null) return;
 
-        // forzamos actualizaci�n de layout (necesario si usas LayoutGroups)
         Canvas.ForceUpdateCanvases();
 
         RectTransform viewport = scrollRect.viewport != null ? scrollRect.viewport : scrollRect.GetComponent<RectTransform>();
 
-        // bounds en espacio local del viewport
         Bounds viewportBounds = new Bounds(viewport.rect.center, viewport.rect.size);
         Bounds itemBounds = RectTransformUtility.CalculateRelativeRectTransformBounds(viewport, item);
 
         Vector2 contentAnchored = scrollRect.content.anchoredPosition;
 
-        // Si la parte inferior del item est� por debajo del viewport (no visible)
         if (itemBounds.min.y < viewportBounds.min.y + scrollMargin)
         {
             float diff = (viewportBounds.min.y + scrollMargin) - itemBounds.min.y;
             contentAnchored.y += diff;
             scrollRect.content.anchoredPosition = contentAnchored;
         }
-        // Si la parte superior del item est� por encima del viewport (no visible)
         else if (itemBounds.max.y > viewportBounds.max.y - scrollMargin)
         {
             float diff = itemBounds.max.y - (viewportBounds.max.y - scrollMargin);
             contentAnchored.y -= diff;
             scrollRect.content.anchoredPosition = contentAnchored;
         }
+    }
+
+    // Calcula manualmente la posición del knob basada en el botón seleccionado
+    void UpdateKnobManual(RectTransform selectedButton)
+    {
+        if (scrollRect == null || knobRect == null) return;
+
+        // Solo si está dentro del scroll
+        if (!selectedButton.IsChildOf(scrollRect.content)) return;
+
+        // Contar cuántos botones hay dentro del ScrollRect
+        List<ShopButton> scrollButtons = new List<ShopButton>();
+
+        foreach (var b in buttons)
+        {
+            if (b.GetComponent<RectTransform>().IsChildOf(scrollRect.content))
+                scrollButtons.Add(b);
+        }
+
+        if (scrollButtons.Count <= 1)
+        {
+            knobRect.anchoredPosition = new Vector2(knobRect.anchoredPosition.x, topY);
+            return;
+        }
+
+        // Índice del botón actual dentro del scroll
+        int scrollIndex = scrollButtons.IndexOf(buttons[currentIndex]);
+
+        // 0 → arriba | último → abajo
+        float normalized = (float)scrollIndex / (scrollButtons.Count - 1);
+
+        float y = Mathf.Lerp(topY, bottomY, normalized);
+
+        knobRect.anchoredPosition = new Vector2(knobRect.anchoredPosition.x, y);
     }
 
     public void Open()

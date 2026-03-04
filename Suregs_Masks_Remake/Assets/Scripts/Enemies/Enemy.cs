@@ -59,6 +59,25 @@ public abstract class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+
+        for (int i = 0; i < 6; i++)
+        {
+            GameObject newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
+
+            Item item = newItem.GetComponent<Item>();
+            if (item != null)
+            {
+                if (i < 3)
+                {
+                    item.type = Item.ItemType.RUBI;
+                }
+                else
+                {
+                    item.type = Item.ItemType.SALIVA;
+                }
+            }
+        }
     }
 
     protected virtual void ExtraUpdate() { }

@@ -5,6 +5,7 @@ using static Item;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
 using TMPro;
+using static Enemy;
 public class InventoryManager : MonoBehaviour
 {
 
@@ -41,7 +42,10 @@ public class InventoryManager : MonoBehaviour
     {
         if (inventorySlots.transform.childCount > 0)
             MoveHoverTo(currentIndex);
-            hover.transform.localScale = new Vector3(0.662f, 0.662f, 0.662f);
+        hover.transform.localScale = new Vector3(0.662f, 0.662f, 0.662f);
+
+        
+        
     }
 
     private void Update()
