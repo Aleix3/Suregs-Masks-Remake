@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class ShopUI : MonoBehaviour
     public float topY = 245f;
     public float bottomY = -245f;
 
+    public TextMeshProUGUI shopGold;
+
     void Start()
     {
         UpdateHover();
@@ -29,6 +32,7 @@ public class ShopUI : MonoBehaviour
         if (!isOpen) return;
 
         HandleInput();
+        shopGold.text = PlayerEconomy.instance.GetGold().ToString();
     }
 
     void HandleInput()

@@ -33,4 +33,6 @@ public class PlayerEconomy : MonoBehaviour
     {
         gold += amount;
     }
+
+    public int GetGold() { return gold; }
 }
