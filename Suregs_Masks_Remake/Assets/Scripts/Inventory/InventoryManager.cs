@@ -26,6 +26,9 @@ public class InventoryManager : MonoBehaviour
     private int rows = 4;
     private int cols = 3;
 
+
+    public GameObject merchantCanvas;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -50,6 +53,12 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.C) && merchantCanvas != null)
+        {
+            
+            merchantCanvas.SetActive(true);
+        }
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -90,6 +99,16 @@ public class InventoryManager : MonoBehaviour
                 currentIndex += rows * cols; // baja a la última fila misma columna
             MoveHoverTo(currentIndex);
         }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            currentIndex -= cols;
+            if (currentIndex < 0)           // pasa del borde superior
+                currentIndex += rows * cols; // baja a la última fila misma columna
+            MoveHoverTo(currentIndex);
+        }
+
+        
     }
 
     private void MoveHoverTo(int index)
@@ -185,53 +204,17 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
-    //void AddInventoryItem(InventoryItem item)
-    //{
-    //    bool alreadyHaveItem = false;
-    //    for (int i = 0; i < inventoryItems.Count; i++) {
-    //        if (inventoryItems[i].type == item.type)
-    //        {
-    //            inventoryItems[i].quantity += 1;
-    //            alreadyHaveItem = true;
-    //        }
+    public InventoryItem AddItem(Item.ItemType type, uint quantity = 1)
+    {
+        Item.GetItemData(type, out string name, out string description, out string itemType, out Sprite sprite);
 
-    //    }
-
-    //    if (!alreadyHaveItem)
-    //    {
-    //        inventoryItems.Add(item);
-    //        for (int i = inventorySlots.transform.childCount - 1; i >= 0; i--)
-    //        {
-    //            Transform slot = inventorySlots.transform.GetChild(i);
-
-    //            if (slot.childCount == 0)
-    //            {
-    //                item.transform.SetParent(slot.transform, worldPositionStays: false);
-    //                item.transform.localPosition = Vector3.zero;
-    //            }
-
-    //        }
-
-    //    }
-
-    //}
-
-    //public void DestroyInventoryItem(ItemType type, uint quantity)
-    //{
-    //    for (int i = 0; i < inventoryItems.Count; i++)
-    //    {
-    //        if (inventoryItems[i].type == type)
-    //        {
-    //            if (inventoryItems[i].quantity > quantity)
-    //            {
-    //                inventoryItems[i].quantity -= quantity;
-    //            }
-    //            else
-    //            {
-    //                inventoryItems.RemoveAt(i);
-    //            }
-    //        }
-
-    //    }
-    //}
+        return CreateInventoryItem(
+            type,
+            itemType,
+            name,
+            description,
+            sprite,
+            quantity
+        );
+    }
 }

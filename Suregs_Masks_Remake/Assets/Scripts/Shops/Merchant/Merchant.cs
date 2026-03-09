@@ -8,10 +8,19 @@ public class Merchant : MonoBehaviour, IInteractable
     private int pendingGold = 0;
     Dictionary<ItemType, int> pendingSell = new Dictionary<ItemType, int>();
     public System.Action OnTradeUpdated;
+    public GameObject merchantCanvas;
 
     void Start()
     {
 
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            merchantCanvas.SetActive(false);
+        }
     }
 
     public void Interact()

@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e74c42b5ac21a45b39bd6a20be9675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  merchantCanvas: {fileID: 859022202}
 --- !u!1 &132935116
 GameObject:
   m_ObjectHideFlags: 0
@@ -3703,6 +3704,7 @@ MonoBehaviour:
   inventorySlots: {fileID: 1027855335}
   hover: {fileID: 1735467158}
   currentIndex: 0
+  merchantCanvas: {fileID: 859022202}
 --- !u!4 &1200359250
 Transform:
   m_ObjectHideFlags: 0

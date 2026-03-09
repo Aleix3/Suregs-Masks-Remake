@@ -73,160 +73,173 @@ public class Item : MonoBehaviour
     }
     void Start()
     {
+        GetItemData(type, out itemName, out description, out itemType, out Sprite sprite);
+
+        if (sr != null)
+            sr.sprite = sprite;
+    }
+
+    public static void GetItemData(ItemType type, out string name, out string description, out string itemType, out Sprite sprite)
+    {
+        name = "";
+        description = "";
+        itemType = "";
+        sprite = null;
+
         switch (type)
         {
             case ItemType.RUBI:
-                itemName = "Rubí";
+                name = "Rubí";
                 description = "Mineral robusto extremadamente resistente.";
                 itemType = "Material";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_rubi");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_rubi");
                 break;
 
             case ItemType.DIAMANTE:
-                itemName = "Diamante";
+                name = "Diamante";
                 description = "Mineral con increíbles propiedades para el combate.";
                 itemType = "Material";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/texture_diamond");
+                sprite = Resources.Load<Sprite>("Textures/Items/texture_diamond");
                 break;
 
             case ItemType.POLVORA:
-                itemName = "Pólvora";
+                name = "Pólvora";
                 description = "Mezcla explosiva muy versátil.";
                 itemType = "Material";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_polvora");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_polvora");
                 break;
 
             case ItemType.AMATISTA:
-                itemName = "Amatista";
+                name = "Amatista";
                 description = "Piedra preciosa con gran valor.";
                 itemType = "Material";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_amatista");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_amatista");
                 break;
 
             case ItemType.CARBON:
-                itemName = "Carbón";
+                name = "Carbón";
                 description = "Mineral con valor medio en el mercado.";
                 itemType = "Material";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_carbon");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_carbon");
                 break;
 
             case ItemType.SALIVA:
-                itemName = "Saliva";
+                name = "Saliva";
                 description = "Líquido biológico usado en las pócimas.";
                 itemType = "Apéndice";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_saliva");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_saliva");
                 break;
 
             case ItemType.DIENTE:
-                itemName = "Colmillo";
+                name = "Colmillo";
                 description = "Colmillo con una resistencia sorprendente.";
                 itemType = "Apéndice";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_diente");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_diente");
                 break;
 
             case ItemType.GARRA:
-                itemName = "Garra";
+                name = "Garra";
                 description = "Afilada garra capacitada para rajar piedras.";
                 itemType = "Apéndice";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/item_Garra");
+                sprite = Resources.Load<Sprite>("Textures/Items/item_Garra");
                 break;
 
             case ItemType.OJO:
-                itemName = "Ojo";
+                name = "Ojo";
                 description = "Globo ocular bastante asqueroso.";
                 itemType = "Apéndice";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/texture_eye");
+                sprite = Resources.Load<Sprite>("Textures/Items/texture_eye");
                 break;
 
             case ItemType.HUESO:
-                itemName = "Hueso";
+                name = "Hueso";
                 description = "Hueso de osiris, bastante resistente.";
                 itemType = "Apéndice";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_hueso");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_hueso");
                 break;
 
             case ItemType.VISCERA:
-                itemName = "Vísceras";
+                name = "Vísceras";
                 description = "Vísceras con propiedades en la alquimia.";
                 itemType = "Apéndice";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_visceras");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_visceras");
                 break;
 
             case ItemType.COLA:
-                itemName = "Cola";
+                name = "Cola";
                 description = "Cola sin propiedades especiales, puede valer dinero.";
                 itemType = "Apéndice";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_cola");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_cola");
                 break;
 
             case ItemType.POCION_VIDA_1:
-                itemName = "Pócima";
+                name = "Pócima";
                 description = "Curiosa pócima que revitaliza la salud levemente.";
                 itemType = "Consumible";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_vida_1");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_vida_1");
                 break;
 
             case ItemType.POCION_VIDA_2:
-                itemName = "Pócima";
+                name = "Pócima";
                 description = "Curiosa pócima que revitaliza buena parte de la salud.";
                 itemType = "Consumible";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_vida_2");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_vida_2");
                 break;
 
             case ItemType.POCION_VIDA_3:
-                itemName = "Pócima";
+                name = "Pócima";
                 description = "Curiosa pócima que revitaliza gran parte de la salud.";
                 itemType = "Consumible";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_vida_3");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_vida_3");
                 break;
 
             case ItemType.POCION_VIDA_MAX:
-                itemName = "Pócima";
+                name = "Pócima";
                 description = "Curiosa pócima que revitaliza la salud por completo.";
                 itemType = "Consumible";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_vida_max");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_vida_max");
                 break;
 
             case ItemType.POCION_REGENERACION:
-                itemName = "Pócima";
+                name = "Pócima";
                 description = "Curiosa pócima que aumenta tu regeneración de manera momentánea.";
                 itemType = "Consumible";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_regeneracion");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_regeneracion");
                 break;
 
             case ItemType.POCION_DANO:
-                itemName = "Pócima";
+                name = "Pócima";
                 description = "Curiosa pócima que aumenta tu fuerza de manera momentánea.";
                 itemType = "Consumible";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_dano");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_dano");
                 break;
 
             case ItemType.POCION_VELOCIDAD:
-                itemName = "Pócima";
+                name = "Pócima";
                 description = "Curiosa pócima que aumenta tu velocidad de manera momentánea.";
                 itemType = "Consumible";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_velocidad");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_pocion_velocidad");
                 break;
 
             case ItemType.ORBE_MAGICO:
-                itemName = "Orbe Mágico";
+                name = "Orbe Mágico";
                 description = "Objeto mágico con propiedades sorprendentes.";
                 itemType = "Consumible";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_orbe_magico");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_orbe_magico");
                 break;
 
             case ItemType.ZAFIRO:
-                itemName = "Zafiro";
+                name = "Zafiro";
                 description = "Mineral afilado con propiedades para el combate.";
                 itemType = "Material";
-                sr.sprite = Resources.Load<Sprite>("Textures/Items/textura_zafiro");
+                sprite = Resources.Load<Sprite>("Textures/Items/textura_zafiro");
                 break;
 
             case ItemType.BASURA:
-                itemName = "Basura";
+                name = "Basura";
                 description = "No parece que sirva para nada.";
                 itemType = "Pez";
-                sr.sprite = null; // en XML ponía "---"
+                sprite = null; // en XML ponía "---"
                 break;
         }
     }
