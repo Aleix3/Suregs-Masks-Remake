@@ -1,6 +1,6 @@
 public interface IShop
 {
-    System.Action OnTradeUpdated { get; }
+    event System.Action OnTradeUpdated;
 
     int GetPending(Item.ItemType type);
 

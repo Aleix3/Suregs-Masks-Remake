@@ -6,6 +6,8 @@ public class PlayerEconomy : MonoBehaviour
 
     public static PlayerEconomy instance { get; private set; }
 
+    public event System.Action OnGoldChanged;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -23,6 +25,7 @@ public class PlayerEconomy : MonoBehaviour
         if (gold >= amount)
         {
             gold -= amount;
+            OnGoldChanged?.Invoke();
             return true;
         }
 
@@ -31,6 +34,7 @@ public class PlayerEconomy : MonoBehaviour
 
     public void AddGold(int amount)
     {
+        OnGoldChanged?.Invoke();
         gold += amount;
     }
 

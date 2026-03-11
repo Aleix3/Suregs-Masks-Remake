@@ -1,19 +1,16 @@
 using System.Collections.Generic;
-using System.Data;
 using UnityEngine;
 using static Item;
 
-public class Merchant : MonoBehaviour, IInteractable
+public class Merchant : MonoBehaviour, IInteractable, IShop
 {
     private int pendingGold = 0;
+
     Dictionary<ItemType, int> pendingSell = new Dictionary<ItemType, int>();
-    public System.Action OnTradeUpdated;
+
+    public event System.Action OnTradeUpdated;
+
     public GameObject merchantCanvas;
-
-    void Start()
-    {
-
-    }
 
     private void Update()
     {
@@ -49,6 +46,7 @@ public class Merchant : MonoBehaviour, IInteractable
         pendingGold += goldValue;
 
         Debug.Log("Seleccionado 1 " + type + " | Oro acumulado: " + pendingGold);
+
         OnTradeUpdated?.Invoke();
     }
 
@@ -77,12 +75,12 @@ public class Merchant : MonoBehaviour, IInteractable
         Debug.Log("Seleccionado TODO " + type +
                   " x" + availableToSell +
                   " | Oro acumulado: " + pendingGold);
+
         OnTradeUpdated?.Invoke();
     }
 
     public void ConfirmBuy()
     {
-        // quitar items
         foreach (var entry in pendingSell)
         {
             ItemType type = entry.Key;
@@ -91,14 +89,13 @@ public class Merchant : MonoBehaviour, IInteractable
             InventoryManager.instance.RemoveQuantity(type, (uint)qty);
         }
 
-        // añadir oro
         PlayerEconomy.instance.AddGold(pendingGold);
 
         Debug.Log("Venta confirmada. Oro ganado: " + pendingGold);
 
-        // limpiar acumuladores
         pendingSell.Clear();
         pendingGold = 0;
+
         OnTradeUpdated?.Invoke();
     }
 
@@ -106,6 +103,7 @@ public class Merchant : MonoBehaviour, IInteractable
     {
         pendingSell.Clear();
         pendingGold = 0;
+
         OnTradeUpdated?.Invoke();
     }
 
@@ -134,12 +132,12 @@ public class Merchant : MonoBehaviour, IInteractable
 
         switch (type)
         {
-            case ItemType.RUBI: value = 10; return true;
-            case ItemType.SALIVA: value = 15; return true;
-            case ItemType.AMATISTA: value = 20; return true;
-            case ItemType.PEZ_PEQUENO: value = 50; return true;
-            case ItemType.POLVORA: value = 5; return true;
-            case ItemType.HUESO: value = 25; return true;
+            case ItemType.COLA: value = 10; return true;
+            case ItemType.HUESO: value = 15; return true;
+            case ItemType.SALIVA: value = 20; return true;
+            case ItemType.GARRA: value = 50; return true;
+            case ItemType.OJO: value = 5; return true;
+            case ItemType.DIENTE: value = 25; return true;
         }
 
         return false;

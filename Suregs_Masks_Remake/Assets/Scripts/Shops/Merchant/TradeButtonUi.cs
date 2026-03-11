@@ -4,7 +4,9 @@ using static Item;
 
 public class TradeButtonUI : MonoBehaviour
 {
-    public Merchant merchant;
+    public MonoBehaviour shopBehaviour;
+    private IShop shop;
+
     public ItemType itemType;
 
     public TextMeshProUGUI quantityText;
@@ -13,26 +15,69 @@ public class TradeButtonUI : MonoBehaviour
 
     private void Start()
     {
-        merchant.OnTradeUpdated += Refresh;
+        shop = shopBehaviour as IShop;
+
+        if (shop == null)
+        {
+            Debug.LogError("El objeto asignado no implementa IShop");
+            return;
+        }
+
+        shop.OnTradeUpdated += Refresh;
+
+        if (InventoryManager.instance != null)
+            InventoryManager.instance.OnInventoryChanged -= Refresh;
+
+        if (PlayerEconomy.instance != null)
+            PlayerEconomy.instance.OnGoldChanged -= Refresh;
+
+        Refresh();
+    }
+
+    private void OnEnable()
+    {
+        shop = shopBehaviour as IShop;
+
+        if (shop == null)
+        {
+            Debug.LogError("El objeto no implementa IShop");
+            return;
+        }
+
+        shop.OnTradeUpdated += Refresh;
+
         Refresh();
     }
 
     private void OnDisable()
     {
-        merchant.OnTradeUpdated -= Refresh;
+        if (shop != null)
+            shop.OnTradeUpdated -= Refresh;
+
+        if (InventoryManager.instance != null)
+            InventoryManager.instance.OnInventoryChanged -= Refresh;
+
+        if (PlayerEconomy.instance != null)
+            PlayerEconomy.instance.OnGoldChanged -= Refresh;
     }
 
     void Refresh()
     {
+        if (InventoryManager.instance == null)
+            return;
+
         int currentQty = InventoryManager.instance.GetQuantity(itemType);
-        int pendingQty = merchant.GetPending(itemType);
+        int pendingQty = shop.GetPending(itemType);
 
-        quantityText.text = "(" + currentQty.ToString() + ")";
-        pendingText.text = pendingQty.ToString();
 
-        if (merchant.TryGetGoldValue(itemType, out int goldValue))
-        {
+
+        if (quantityText != null)
+            quantityText.text = "(" + (currentQty + pendingQty).ToString() + ")";
+
+        if (pendingText != null)
+            pendingText.text = pendingQty.ToString();
+
+        if (goldValueText != null && shop.TryGetGoldValue(itemType, out int goldValue))
             goldValueText.text = goldValue.ToString();
-        }
     }
 }

@@ -26,6 +26,8 @@ public class InventoryManager : MonoBehaviour
     private int rows = 4;
     private int cols = 3;
 
+    public event System.Action OnInventoryChanged;
+
 
     public GameObject merchantCanvas;
 
@@ -168,6 +170,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         inventoryItems.Add(itemComp);
+        OnInventoryChanged?.Invoke();
         return itemComp;
     }
 
@@ -190,24 +193,28 @@ public class InventoryManager : MonoBehaviour
                 if (it.quantity > quantity)
                 {
                     it.SubtractQuantity(quantity);
-                    return true;
+                    
                 }
                 else
                 {
                     // quitar por completo
                     Destroy(it.gameObject);
                     inventoryItems.RemoveAt(i);
-                    return true;
+
                 }
+                OnInventoryChanged?.Invoke();
+                return true;
             }
         }
+        
         return false;
     }
 
     public InventoryItem AddItem(Item.ItemType type, uint quantity = 1)
     {
+        
         Item.GetItemData(type, out string name, out string description, out string itemType, out Sprite sprite);
-
+        OnInventoryChanged?.Invoke();
         return CreateInventoryItem(
             type,
             itemType,
@@ -216,5 +223,6 @@ public class InventoryManager : MonoBehaviour
             sprite,
             quantity
         );
+
     }
 }
