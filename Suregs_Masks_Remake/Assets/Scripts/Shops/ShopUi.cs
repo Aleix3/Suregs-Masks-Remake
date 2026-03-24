@@ -23,6 +23,8 @@ public class ShopUI : MonoBehaviour
     public TextMeshProUGUI shopGold;
     public TextMeshProUGUI descriptionText;
 
+    public BlacksmithShop blacksmith;
+
     void Start()
     {
         UpdateHover();

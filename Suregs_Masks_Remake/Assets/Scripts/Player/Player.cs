@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
+
     private float health = 100;
     public float maxHealth = 100;
     public float speed = 5f;
@@ -49,9 +52,27 @@ public class Player : MonoBehaviour
 
     public bool godMode = false;
 
+    [Header("Mejoras")]
+    public int weaponLevel = 1;
+    public int armorLevel = 1;
+
     // Start is called before the first frame update
+    void Awake()
+    {
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
+        health = Mathf.Clamp(health, 0, maxHealth);
         rb = GetComponent<Rigidbody2D>();
         health = maxHealth;
     }
@@ -270,21 +291,26 @@ public class Player : MonoBehaviour
         return swordDamage;
     }
 
-    public void UpgradeSword(int amount)
+    public void UpgradeSword(int level)
     {
-        swordDamage += amount;
-        Debug.Log("Espada mejorada. Nuevo daño: " + swordDamage);
+        weaponLevel = level;
+
+        swordDamage = PlayerStatsTable.GetWeaponDamage(level);
+
+        Debug.Log($"Weapon level: {level} | Damage: {swordDamage}");
     }
 
-    public void UpgradeArmor(float amount)
+    public void UpgradeArmor(int level)
     {
-        maxHealth += amount;
-        health += amount; // opcional: también cura la nueva vida añadida
+        armorLevel = level;
 
-        if (health > maxHealth)
-            health = maxHealth;
+        float previousMax = maxHealth;
 
-        Debug.Log("Armadura mejorada. Nueva vida máxima: " + maxHealth);
+        maxHealth = PlayerStatsTable.GetArmorHealth(level);
+
+        health = (health / previousMax) * maxHealth;
+
+        Debug.Log($"Armor level: {level} | MaxHealth: {maxHealth}");
     }
 
     public void Heal(float amount)
