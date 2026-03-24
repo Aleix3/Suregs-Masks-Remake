@@ -150,4 +150,19 @@ public class Merchant : MonoBehaviour, IInteractable, IShop
 
         return 0;
     }
+
+    public int GetRequiredItemQty(ItemType type)
+    {
+        return 1;
+    }
+
+    public int GetRequiredItemPending(ItemType type)
+    {
+        if (pendingSell.ContainsKey(type))
+            return pendingSell[type];
+
+        return 0;
+    }
+
+    public bool IsSelling() => true;
 }

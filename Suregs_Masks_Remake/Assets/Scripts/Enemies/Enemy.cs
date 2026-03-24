@@ -61,7 +61,7 @@ public abstract class Enemy : MonoBehaviour
         agent.updateUpAxis = false;
 
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 12; i++)
         {
             GameObject newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
 
@@ -72,9 +72,29 @@ public abstract class Enemy : MonoBehaviour
                 {
                     item.type = Item.ItemType.RUBI;
                 }
-                else
+                else if (3 < i && i < 5) 
                 {
                     item.type = Item.ItemType.SALIVA;
+                }
+                else if (5 < i && i < 7)
+                {
+                    item.type = Item.ItemType.OJO;
+                }
+                else if (7 <= i && i < 8)
+                {
+                    item.type = Item.ItemType.DIENTE;
+                }
+                else if (8 < i && i < 10)
+                {
+                    item.type = Item.ItemType.COLA;
+                }
+                else if (10 <= i && i < 11)
+                {
+                    item.type = Item.ItemType.POLVORA;
+                }
+                else
+                {
+                    item.type = Item.ItemType.VISCERA;
                 }
             }
         }

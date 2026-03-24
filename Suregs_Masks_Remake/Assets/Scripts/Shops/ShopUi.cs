@@ -21,6 +21,7 @@ public class ShopUI : MonoBehaviour
     public float bottomY = -245f;
 
     public TextMeshProUGUI shopGold;
+    public TextMeshProUGUI descriptionText;
 
     void Start()
     {
@@ -98,6 +99,16 @@ public class ShopUI : MonoBehaviour
                 UpdateKnobManual(selectedRect);
             }
         }
+
+        if (descriptionText != null && buttons.Count > 0)
+        {
+            Item.ItemType type = buttons[currentIndex].itemType;
+
+            Item.GetItemData(type, out string name, out string description, out string itemType, out Sprite sprite);
+
+            descriptionText.text = description;
+        }
+
     }
 
     // Hace visible el elemento dentro del viewport moviendo el content si hace falta

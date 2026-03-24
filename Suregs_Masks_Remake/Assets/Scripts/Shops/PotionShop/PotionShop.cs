@@ -163,6 +163,19 @@ public class PotionShop : MonoBehaviour, IInteractable, IShop
         return 0;
     }
 
+    public int GetRequiredItemQty(ItemType type)
+    {
+        int tradeIndex = trades.FindIndex(t => t.potionResult == type);
+        Debug.Log($"GetPending llamado para {type}, tradeIndex encontrado: {tradeIndex}");
+
+        if (tradeIndex == -1)
+            return 0;
+
+            return trades[tradeIndex].requiredItemQty;
+
+
+    }
+
     public bool TryGetGoldValue(ItemType type, out int value)
     {
         for (int i = 0; i < trades.Count; i++)
@@ -177,4 +190,25 @@ public class PotionShop : MonoBehaviour, IInteractable, IShop
         value = 0;
         return false;
     }
+
+    public int GetRequiredItemPending(ItemType type)
+    {
+        int total = 0;
+
+        for (int i = 0; i < trades.Count; i++)
+        {
+            PotionTrade trade = trades[i];
+
+            if (trade.requiredItem != type)
+                continue;
+
+            int pending = pendingBuy.ContainsKey(i) ? pendingBuy[i] : 0;
+
+            total += pending * trade.requiredItemQty;
+        }
+
+        return total;
+    }
+
+    public bool IsSelling() => false;
 }

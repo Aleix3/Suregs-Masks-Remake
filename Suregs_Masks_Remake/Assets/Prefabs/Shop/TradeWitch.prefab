@@ -280,9 +280,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopBehaviour: {fileID: 0}
   itemType: 10
+  requiredItemType: 0
   quantityText: {fileID: 6114192229832899347}
-  pendingText: {fileID: 3563961328480030554}
+  pendingText: {fileID: 6114192229832899347}
   goldValueText: {fileID: 8598865986091874713}
+  requiredItemQtyText: {fileID: 3563961328480030554}
+  itemQtyText: {fileID: 7191738672536545372}
 --- !u!1 &4764029470649816389
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using static Item;
 
@@ -8,10 +8,13 @@ public class TradeButtonUI : MonoBehaviour
     private IShop shop;
 
     public ItemType itemType;
+    public ItemType requiredItemType;
 
     public TextMeshProUGUI quantityText;
     public TextMeshProUGUI pendingText;
     public TextMeshProUGUI goldValueText;
+    public TextMeshProUGUI requiredItemQtyText;
+    public TextMeshProUGUI itemQtyText;
 
     private void Start()
     {
@@ -69,15 +72,37 @@ public class TradeButtonUI : MonoBehaviour
         int currentQty = InventoryManager.instance.GetQuantity(itemType);
         int pendingQty = shop.GetPending(itemType);
 
-
+        int currentRequiredItems = InventoryManager.instance.GetQuantity(requiredItemType);
+        int requiredPendingQty = shop.GetRequiredItemPending(requiredItemType);
+        int costPerTrade = shop.GetRequiredItemQty(itemType);
 
         if (quantityText != null)
-            quantityText.text = "(" + (currentQty + pendingQty).ToString() + ")";
+        {
+            int finalQty = shop.IsSelling()
+            ? currentQty - pendingQty
+            : currentQty + pendingQty;
+
+                    quantityText.text = "(" + finalQty.ToString() + ")";
+        }
+ 
 
         if (pendingText != null)
-            pendingText.text = pendingQty.ToString();
+            pendingText.text = "(" + pendingQty.ToString() + ")";
 
         if (goldValueText != null && shop.TryGetGoldValue(itemType, out int goldValue))
             goldValueText.text = goldValue.ToString();
+
+        if (requiredItemQtyText != null)
+        {
+            if (costPerTrade > 0)
+                requiredItemQtyText.text = costPerTrade.ToString();
+            else
+                requiredItemQtyText.text = "";
+        }
+        if (itemQtyText != null)
+        {
+            int remaining = currentRequiredItems - requiredPendingQty;
+            itemQtyText.text = "(" + remaining.ToString() + ")";
+        }
     }
 }

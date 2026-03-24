@@ -277,6 +277,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41031187}
   m_CullTransparentMesh: 1
+--- !u!114 &78991416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7191738672536545372, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+  m_PrefabInstance: {fileID: 1784386732}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &103449695
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +696,7 @@ MonoBehaviour:
   topY: 245
   bottomY: -245
   shopGold: {fileID: 597694699}
+  descriptionText: {fileID: 41031189}
 --- !u!1 &258499613
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107d157cc0179f7469a80a956efbb4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 100
+  gold: 2116
 --- !u!114 &270337115 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8019115904022926093, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
@@ -1062,6 +1074,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3129342671145781423, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 41da7a924bcc2004493c3cd9952204a2, type: 3}
     - target: {fileID: 4649623002732972195, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: isDown
       value: 1
@@ -1441,16 +1457,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: itemType
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: merchant
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: itemQtyText
+      value: 
+      objectReference: {fileID: 1354536492}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: pendingText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1629888883}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: quantityText
       value: 
@@ -1459,6 +1479,14 @@ PrefabInstance:
       propertyPath: shopBehaviour
       value: 
       objectReference: {fileID: 1508016959}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemType
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemQtyText
+      value: 
+      objectReference: {fileID: 1854455144}
     - target: {fileID: 210960313290925769, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_Name
       value: Trade (4)
@@ -1563,6 +1591,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6270619718656298441, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0064d021ac744d44e8e96d1c3a3b19d7, type: 3}
     - target: {fileID: 6272815478706616922, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1749,9 +1781,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopBehaviour: {fileID: 103449699}
   itemType: 10
+  requiredItemType: 0
   quantityText: {fileID: 32366472}
   pendingText: {fileID: 1081230847}
   goldValueText: {fileID: 740609742}
+  requiredItemQtyText: {fileID: 1081230847}
+  itemQtyText: {fileID: 0}
+--- !u!114 &518983945 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7191738672536545372, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+  m_PrefabInstance: {fileID: 1770043470}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &527904833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1905,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3129342671145781423, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 680b1026f3ce5984090aaa9cfe1f9ba8, type: 3}
     - target: {fileID: 4649623002732972195, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: isDown
       value: 1
@@ -2134,6 +2184,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3129342671145781423, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 12f3e17f0e181504c8d406b5cdac8aff, type: 3}
     - target: {fileID: 4649623002732972195, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: isDown
       value: 1
@@ -2400,9 +2454,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopBehaviour: {fileID: 103449699}
   itemType: 1
+  requiredItemType: 0
   quantityText: {fileID: 995607752}
   pendingText: {fileID: 314750517}
   goldValueText: {fileID: 1989095124}
+  requiredItemQtyText: {fileID: 314750517}
+  itemQtyText: {fileID: 0}
 --- !u!1 &639998247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,6 +2766,7 @@ MonoBehaviour:
   topY: 245
   bottomY: -245
   shopGold: {fileID: 1818785415}
+  descriptionText: {fileID: 1112714791}
 --- !u!224 &730064247 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5394417469208538014, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
@@ -2971,7 +3029,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: itemType
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: merchant
@@ -2980,7 +3038,7 @@ PrefabInstance:
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: pendingText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 164484724}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: quantityText
       value: 
@@ -2989,6 +3047,10 @@ PrefabInstance:
       propertyPath: shopBehaviour
       value: 
       objectReference: {fileID: 1508016959}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemType
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 210960313290925769, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_Name
       value: Trade (5)
@@ -3093,6 +3155,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6270619718656298441, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 70047932a8d5eec4081508d601d152cf, type: 3}
     - target: {fileID: 6272815478706616922, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3343,6 +3409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverVisual: {fileID: 1147226774}
+  itemType: 0
 --- !u!114 &862787675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4528,9 +4595,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopBehaviour: {fileID: 103449699}
   itemType: 2
+  requiredItemType: 0
   quantityText: {fileID: 2017618053}
   pendingText: {fileID: 1945246407}
   goldValueText: {fileID: 568941038}
+  requiredItemQtyText: {fileID: 1945246407}
+  itemQtyText: {fileID: 0}
 --- !u!114 &1118070853 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4103945761002588837, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
@@ -4688,9 +4758,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopBehaviour: {fileID: 103449699}
   itemType: 9
+  requiredItemType: 0
   quantityText: {fileID: 291143280}
   pendingText: {fileID: 1527376735}
   goldValueText: {fileID: 1816468754}
+  requiredItemQtyText: {fileID: 1527376735}
+  itemQtyText: {fileID: 0}
 --- !u!1 &1147226774
 GameObject:
   m_ObjectHideFlags: 0
@@ -4775,6 +4848,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 865aa69ab46c8074c92b9c40d1bc54ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1164513076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7191738672536545372, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+  m_PrefabInstance: {fileID: 1977452755}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1200359248
@@ -4864,6 +4948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverVisual: {fileID: 299340493}
+  itemType: 0
 --- !u!114 &1231564107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5065,6 +5150,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243170215}
   m_CullTransparentMesh: 1
+--- !u!114 &1257695704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3563961328480030554, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+  m_PrefabInstance: {fileID: 1784386732}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1260942966 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6114192229832899347, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
@@ -5183,9 +5279,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopBehaviour: {fileID: 103449699}
   itemType: 8
+  requiredItemType: 0
   quantityText: {fileID: 1861053827}
   pendingText: {fileID: 650169846}
   goldValueText: {fileID: 837992812}
+  requiredItemQtyText: {fileID: 650169846}
+  itemQtyText: {fileID: 0}
 --- !u!1 &1288098687
 GameObject:
   m_ObjectHideFlags: 0
@@ -5269,6 +5368,17 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 54.8}
   m_Constraint: 1
   m_ConstraintCount: 1
+--- !u!114 &1301983823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3820096601818773690, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+  m_PrefabInstance: {fileID: 1770043470}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1331790770 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4649623002732972195, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
@@ -5334,6 +5444,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3129342671145781423, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d8a5da64046cc844994eb87101be0a31, type: 3}
     - target: {fileID: 4649623002732972195, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: isDown
       value: 1
@@ -5442,6 +5556,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1282462946}
   m_SourcePrefab: {fileID: 100100000, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+--- !u!114 &1354536492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7191738672536545372, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+  m_PrefabInstance: {fileID: 452404248}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1379895796 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6114192229832899347, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
@@ -5568,9 +5693,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopBehaviour: {fileID: 103449699}
   itemType: 18
+  requiredItemType: 0
   quantityText: {fileID: 2096689537}
   pendingText: {fileID: 822886697}
   goldValueText: {fileID: 1572687277}
+  requiredItemQtyText: {fileID: 822886697}
+  itemQtyText: {fileID: 0}
 --- !u!114 &1436516631 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5966941184900090741, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
@@ -5607,6 +5735,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3129342671145781423, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0064d021ac744d44e8e96d1c3a3b19d7, type: 3}
     - target: {fileID: 4649623002732972195, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: isDown
       value: 1
@@ -6079,11 +6211,11 @@ MonoBehaviour:
     requiredItemQty: 0
   - potionResult: 20
     goldCost: 40
-    requiredItem: 16
+    requiredItem: 9
     requiredItemQty: 3
   - potionResult: 21
     goldCost: 90
-    requiredItem: 16
+    requiredItem: 10
     requiredItemQty: 4
   - potionResult: 22
     goldCost: 150
@@ -6099,7 +6231,7 @@ MonoBehaviour:
     requiredItemQty: 2
   - potionResult: 25
     goldCost: 60
-    requiredItem: 17
+    requiredItem: 8
     requiredItemQty: 3
   - potionResult: 26
     goldCost: 150
@@ -6538,6 +6670,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1573428350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3563961328480030554, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+  m_PrefabInstance: {fileID: 1977452755}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1600652669 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5966941184900090741, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
@@ -6602,14 +6745,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: itemType
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: merchant
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
-      propertyPath: pendingText
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
@@ -6620,6 +6759,10 @@ PrefabInstance:
       propertyPath: shopBehaviour
       value: 
       objectReference: {fileID: 1508016959}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemType
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 210960313290925769, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_Name
       value: Trade (6)
@@ -6724,6 +6867,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6270619718656298441, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d8a5da64046cc844994eb87101be0a31, type: 3}
     - target: {fileID: 6272815478706616922, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6963,6 +7110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverVisual: {fileID: 1108785580}
+  itemType: 0
 --- !u!114 &1735629863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7029,24 +7177,36 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: itemType
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: merchant
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: itemQtyText
+      value: 
+      objectReference: {fileID: 518983945}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: pendingText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 238246183}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: quantityText
       value: 
-      objectReference: {fileID: 238246183}
+      objectReference: {fileID: 1301983823}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: shopBehaviour
       value: 
       objectReference: {fileID: 1508016959}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemType
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemQtyText
+      value: 
+      objectReference: {fileID: 1873643548}
     - target: {fileID: 210960313290925769, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_Name
       value: Trade (2)
@@ -7151,6 +7311,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6270619718656298441, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f59e7a170d85b94eb92bdbb6e38b6c1, type: 3}
     - target: {fileID: 6272815478706616922, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -7166,6 +7330,10 @@ PrefabInstance:
     - target: {fileID: 6272815478706616922, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113366881820254895, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: m_Name
+      value: CostText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7226,9 +7394,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: itemQtyText
+      value: 
+      objectReference: {fileID: 78991416}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: pendingText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1707403099}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: quantityText
       value: 
@@ -7237,6 +7409,14 @@ PrefabInstance:
       propertyPath: shopBehaviour
       value: 
       objectReference: {fileID: 1508016959}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemQtyText
+      value: 
+      objectReference: {fileID: 1257695704}
     - target: {fileID: 210960313290925769, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_Name
       value: Trade (1)
@@ -7341,6 +7521,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6270619718656298441, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 41da7a924bcc2004493c3cd9952204a2, type: 3}
     - target: {fileID: 6272815478706616922, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -7395,6 +7579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverVisual: {fileID: 1530192435}
+  itemType: 0
 --- !u!114 &1802566137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7791,10 +7976,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831934637}
   m_CullTransparentMesh: 1
+--- !u!114 &1854455144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3563961328480030554, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+  m_PrefabInstance: {fileID: 452404248}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1861053827 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5178613230271663137, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
   m_PrefabInstance: {fileID: 1342267274}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1873643548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3563961328480030554, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+  m_PrefabInstance: {fileID: 1770043470}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -8096,24 +8303,36 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: itemType
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: merchant
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: itemQtyText
+      value: 
+      objectReference: {fileID: 1164513076}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: pendingText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1260942966}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: quantityText
       value: 
-      objectReference: {fileID: 1260942966}
+      objectReference: {fileID: 1164513076}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: shopBehaviour
       value: 
       objectReference: {fileID: 1508016959}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemQtyText
+      value: 
+      objectReference: {fileID: 1573428350}
     - target: {fileID: 210960313290925769, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_Name
       value: Trade (3)
@@ -8218,6 +8437,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6270619718656298441, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 31cc65562c758a84c91d0a58a3686213, type: 3}
     - target: {fileID: 6272815478706616922, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8624,14 +8847,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: itemType
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: merchant
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
-      propertyPath: pendingText
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
@@ -8642,6 +8861,10 @@ PrefabInstance:
       propertyPath: shopBehaviour
       value: 
       objectReference: {fileID: 1508016959}
+    - target: {fileID: 147350206405191626, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: requiredItemType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 210960313290925769, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_Name
       value: Trade (7)
@@ -8746,6 +8969,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6270619718656298441, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 680b1026f3ce5984090aaa9cfe1f9ba8, type: 3}
     - target: {fileID: 6272815478706616922, guid: a82b9960dc7bb3f40a4d9a52f024ba45, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
