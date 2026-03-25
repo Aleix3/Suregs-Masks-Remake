@@ -3014,20 +3014,60 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2046778319}
     - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2046778319}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectTrade
+      value: SelectWeaponMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SelectCurrentTrade
       objectReference: {fileID: 0}
     - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BlacksmithShop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BlacksmithShop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7179176662291563654, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_Name
@@ -6083,24 +6123,60 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2046778319}
     - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2046778319}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectTrade
+      value: SelectArmorMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SelectCurrentTrade
       objectReference: {fileID: 0}
     - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BlacksmithShop, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BlacksmithShop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731795092624693936, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7179176662291563654, guid: 1f4e6c9601cc41e4ca143e27f69c5aaf, type: 3}
       propertyPath: m_Name
@@ -11630,11 +11706,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trades:
   - potionResult: 27
-    goldCost: 0
+    goldCost: 100
     requiredItem: 0
     requiredItemQty: 0
-  - potionResult: 0
-    goldCost: 0
+  - potionResult: 28
+    goldCost: 160
+    requiredItem: 0
+    requiredItemQty: 0
+  - potionResult: 29
+    goldCost: 210
+    requiredItem: 45
+    requiredItemQty: 1
+  - potionResult: 30
+    goldCost: 270
+    requiredItem: 0
+    requiredItemQty: 0
+  - potionResult: 31
+    goldCost: 350
+    requiredItem: 0
+    requiredItemQty: 0
+  - potionResult: 32
+    goldCost: 400
+    requiredItem: 1
+    requiredItemQty: 7
+  - potionResult: 33
+    goldCost: 520
+    requiredItem: 0
+    requiredItemQty: 0
+  - potionResult: 34
+    goldCost: 600
+    requiredItem: 3
+    requiredItemQty: 1
+  - potionResult: 35
+    goldCost: 1000
+    requiredItem: 0
+    requiredItemQty: 0
+  - potionResult: 36
+    goldCost: 70
+    requiredItem: 0
+    requiredItemQty: 0
+  - potionResult: 37
+    goldCost: 100
+    requiredItem: 0
+    requiredItemQty: 0
+  - potionResult: 38
+    goldCost: 150
+    requiredItem: 8
+    requiredItemQty: 6
+  - potionResult: 39
+    goldCost: 210
+    requiredItem: 0
+    requiredItemQty: 0
+  - potionResult: 40
+    goldCost: 280
+    requiredItem: 5
+    requiredItemQty: 1
+  - potionResult: 41
+    goldCost: 320
+    requiredItem: 0
+    requiredItemQty: 0
+  - potionResult: 42
+    goldCost: 400
+    requiredItem: 0
+    requiredItemQty: 0
+  - potionResult: 43
+    goldCost: 470
+    requiredItem: 9
+    requiredItemQty: 4
+  - potionResult: 44
+    goldCost: 800
     requiredItem: 0
     requiredItemQty: 0
   canvas: {fileID: 1717199123}

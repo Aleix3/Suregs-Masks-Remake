@@ -244,4 +244,46 @@ public class Item : MonoBehaviour
         }
     }
 
+    private static string GetSpriteName(ItemType type)
+    {
+        switch (type)
+        {
+            case ItemType.RUBI: return "textura_rubi";
+            case ItemType.DIAMANTE: return "texture_diamond";
+            case ItemType.POLVORA: return "textura_polvora";
+            case ItemType.AMATISTA: return "textura_amatista";
+            case ItemType.CARBON: return "textura_carbon";
+            case ItemType.SALIVA: return "textura_saliva";
+            case ItemType.DIENTE: return "textura_diente";
+            case ItemType.GARRA: return "item_Garra";
+            case ItemType.OJO: return "texture_eye";
+            case ItemType.HUESO: return "textura_hueso";
+            case ItemType.VISCERA: return "textura_visceras";
+            case ItemType.COLA: return "textura_cola";
+
+            case ItemType.POCION_VIDA_1: return "textura_pocion_vida_1";
+            case ItemType.POCION_VIDA_2: return "textura_pocion_vida_2";
+            case ItemType.POCION_VIDA_3: return "textura_pocion_vida_3";
+            case ItemType.POCION_VIDA_MAX: return "textura_pocion_vida_max";
+            case ItemType.POCION_REGENERACION: return "textura_pocion_regeneracion";
+            case ItemType.POCION_DANO: return "textura_pocion_dano";
+            case ItemType.POCION_VELOCIDAD: return "textura_pocion_velocidad";
+
+            case ItemType.ORBE_MAGICO: return "textura_orbe_magico";
+
+            case ItemType.ZAFIRO: return "textura_zafiro";
+
+            case ItemType.BASURA: return null;
+
+            default:
+                if (type.ToString().StartsWith("ESPADA"))
+                    return type.ToString().ToLower();
+
+                if (type.ToString().StartsWith("ARMADURA"))
+                    return type.ToString().ToLower();
+
+                return null;
+        }
+    }
+
 }
