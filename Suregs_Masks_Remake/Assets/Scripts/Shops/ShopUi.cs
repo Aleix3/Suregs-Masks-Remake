@@ -119,6 +119,7 @@ public class ShopUI : MonoBehaviour
                 {
                     descriptionText.text = "MAX LEVEL";
                 }
+                blacksmith.RefreshUI();
             }
             else
             {

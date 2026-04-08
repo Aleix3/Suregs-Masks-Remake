@@ -242,6 +242,16 @@ public class Item : MonoBehaviour
                 sprite = null; // en XML ponía "---"
                 break;
         }
+
+        if (sprite == null)
+        {
+            string spriteName = GetSpriteName(type);
+
+            if (!string.IsNullOrEmpty(spriteName))
+            {
+                sprite = Resources.Load<Sprite>("Textures/Items/" + spriteName);
+            }
+        }
     }
 
     private static string GetSpriteName(ItemType type)

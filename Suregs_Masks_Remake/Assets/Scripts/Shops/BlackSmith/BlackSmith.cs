@@ -13,6 +13,7 @@ public class BlacksmithShop : MonoBehaviour, IInteractable
 
     // Controla cuántos trades están pendientes de confirmar
     private Dictionary<int, int> pendingBuy = new Dictionary<int, int>();
+    public List<BlackSmithTradeUI> tradeUIs;
 
     public Image swordImage;
     public Image armorImage;
@@ -28,6 +29,7 @@ public class BlacksmithShop : MonoBehaviour, IInteractable
     public void Interact()
     {
         canvas.SetActive(true);
+        RefreshUI();
     }
 
     private void Update()
@@ -124,7 +126,7 @@ public class BlacksmithShop : MonoBehaviour, IInteractable
             ApplyUpgrade(trade.potionResult, qty);
             Debug.Log($"trade mejorado {trade.potionResult}");
         }
-
+        RefreshUI();
         pendingBuy.Clear();
     }
 
@@ -210,19 +212,9 @@ public class BlacksmithShop : MonoBehaviour, IInteractable
     {
         currentMode = mode;
 
-        int nextSwordLevel = Player.Instance.weaponLevel + 1;
-        int nextArmorLevel = Player.Instance.armorLevel + 1;
+        
 
-        //obtener tipos
-        ItemType swordType = GetWeaponTypeByLevel(nextSwordLevel);
-        ItemType armorType = GetArmorTypeByLevel(nextArmorLevel);
-
-        //obtener sprites desde el sistema
-        Item.GetItemData(swordType, out _, out _, out _, out Sprite swordSprite);
-        Item.GetItemData(armorType, out _, out _, out _, out Sprite armorSprite);
-
-        swordImage.sprite = swordSprite;
-        armorImage.sprite = armorSprite;
+        
     }
 
     ItemType GetWeaponTypeByLevel(int level)
@@ -233,5 +225,44 @@ public class BlacksmithShop : MonoBehaviour, IInteractable
     ItemType GetArmorTypeByLevel(int level)
     {
         return (ItemType)System.Enum.Parse(typeof(ItemType), $"ARMADURA_NV{level}");
+    }
+
+    public void RefreshUI()
+    {
+        int nextSwordLevel = Player.Instance.weaponLevel + 1;
+        int nextArmorLevel = Player.Instance.armorLevel + 1;
+        //obtener tipos
+        ItemType swordType = GetWeaponTypeByLevel(nextSwordLevel);
+        ItemType armorType = GetArmorTypeByLevel(nextArmorLevel);
+
+        //obtener sprites desde el sistema
+        Item.GetItemData(swordType, out _, out _, out _, out Sprite swordSprite);
+        Item.GetItemData(armorType, out _, out _, out _, out Sprite armorSprite);
+
+        swordImage.sprite = swordSprite;
+        armorImage.sprite = armorSprite;
+
+        for (int i = 0; i < tradeUIs.Count; i++)
+        {
+            tradeUIs[i].Refresh();
+        }
+
+
+    }
+
+    public BlackSmithTrade GetTradeByMode(BlacksmithMode mode)
+    {
+        int targetLevel = mode == BlacksmithMode.Weapon
+            ? Player.Instance.weaponLevel + 1
+            : Player.Instance.armorLevel + 1;
+
+        return trades.Find(t =>
+        {
+            bool correctType = mode == BlacksmithMode.Weapon
+                ? IsWeapon(t.potionResult)
+                : IsArmor(t.potionResult);
+
+            return correctType && GetLevel(t.potionResult) == targetLevel;
+        });
     }
 }
