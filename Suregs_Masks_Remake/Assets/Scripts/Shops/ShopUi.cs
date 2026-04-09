@@ -87,7 +87,10 @@ public class ShopUI : MonoBehaviour
     {
         for (int i = 0; i < buttons.Count; i++)
         {
-            buttons[i].SetHover(i == currentIndex);
+            if (buttons[i].isSelectedPermanent == false)
+            {
+                buttons[i].SetHover(i == currentIndex);
+            }
         }
 
         if (scrollRect != null && buttons.Count > 0)
@@ -105,20 +108,11 @@ public class ShopUI : MonoBehaviour
         {
             if (blacksmith != null)
             {
-                var trade = blacksmith.GetCurrentTrade();
+                Item.ItemType type = buttons[currentIndex].itemType;
 
-                if (trade != null)
-                {
-                    Item.ItemType type = trade.potionResult;
 
-                    Item.GetItemData(type, out string name, out string description, out string itemType, out Sprite sprite);
-
-                    descriptionText.text = description;
-                }
-                else
-                {
-                    descriptionText.text = "MAX LEVEL";
-                }
+                descriptionText.text = blacksmith.GetUpgradeDescription(type);
+                
                 blacksmith.RefreshUI();
             }
             else

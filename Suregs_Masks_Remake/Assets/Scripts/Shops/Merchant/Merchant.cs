@@ -11,6 +11,7 @@ public class Merchant : MonoBehaviour, IInteractable, IShop
     public event System.Action OnTradeUpdated;
 
     public GameObject merchantCanvas;
+    public ShopUI shopUI;
 
     private void Update()
     {
@@ -35,6 +36,14 @@ public class Merchant : MonoBehaviour, IInteractable, IShop
 
         if (currentQty - alreadyPending <= 0)
         {
+            for (int i = 0; i < shopUI.buttons.Count; i++)
+            {
+                if(shopUI.buttons[i].isSelected)
+                {
+                    shopUI.buttons[i].DeSelect(true);
+                }
+                
+            }
             Debug.Log("No tienes más de este item");
             return;
         }
@@ -44,6 +53,15 @@ public class Merchant : MonoBehaviour, IInteractable, IShop
 
         pendingSell[type]++;
         pendingGold += goldValue;
+
+        for (int i = 0; i < shopUI.buttons.Count; i++)
+        {
+            if (shopUI.buttons[i].isSelected)
+            {
+                shopUI.buttons[i].SelectPermanent();
+            }
+
+        }
 
         Debug.Log("Seleccionado 1 " + type + " | Oro acumulado: " + pendingGold);
 
@@ -62,8 +80,25 @@ public class Merchant : MonoBehaviour, IInteractable, IShop
 
         if (availableToSell <= 0)
         {
+            for (int i = 0; i < shopUI.buttons.Count; i++)
+            {
+                if (shopUI.buttons[i].isSelected)
+                {
+                    shopUI.buttons[i].DeSelect(true);
+                }
+
+            }
             Debug.Log("No tienes más de este item para vender");
             return;
+        }
+
+        for (int i = 0; i < shopUI.buttons.Count; i++)
+        {
+            if (shopUI.buttons[i].isSelected)
+            {
+                shopUI.buttons[i].SelectPermanent();
+            }
+
         }
 
         if (!pendingSell.ContainsKey(type))
@@ -96,6 +131,11 @@ public class Merchant : MonoBehaviour, IInteractable, IShop
         pendingSell.Clear();
         pendingGold = 0;
 
+        for (int i = 0; i < shopUI.buttons.Count; i++)
+        {
+            shopUI.buttons[i].DeSelect();
+        }
+
         OnTradeUpdated?.Invoke();
     }
 
@@ -104,7 +144,13 @@ public class Merchant : MonoBehaviour, IInteractable, IShop
         pendingSell.Clear();
         pendingGold = 0;
 
+        for (int i = 0; i < shopUI.buttons.Count; i++)
+        {
+            shopUI.buttons[i].DeSelect();
+        }
+
         OnTradeUpdated?.Invoke();
+
     }
 
     private bool GetTradeData(int num, out ItemType type, out int goldValue)

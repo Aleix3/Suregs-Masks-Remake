@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [System.Serializable]
@@ -12,7 +13,9 @@ public class BlackSmithTradeUI : MonoBehaviour
     public TextMeshProUGUI goldValueText;
     public TextMeshProUGUI requiredItemPendingText;
     public TextMeshProUGUI requiredItemQtyText;
+    public TextMeshProUGUI levelText;
 
+    public Image itemRequiredImage;
     private void Start()
     {
         //shop = shopBehaviour as IShop;
@@ -87,9 +90,27 @@ public class BlackSmithTradeUI : MonoBehaviour
         if (requiredItemQtyText != null)
         {
             if (trade.requiredItemQty > 0)
+            {
+                itemRequiredImage.gameObject.SetActive(true);
+                Item.GetItemData(trade.requiredItem, out _, out _, out _, out Sprite requiredItemSprite);
+                itemRequiredImage.sprite = requiredItemSprite;
                 requiredItemQtyText.text = trade.requiredItemQty.ToString();
+            }
             else
+            {
+                itemRequiredImage.gameObject.SetActive(false);
                 requiredItemQtyText.text = "";
+            }
+                
+        }
+
+        if (mode == BlacksmithShop.BlacksmithMode.Weapon) 
+        {
+            levelText.text = "Nivel " + (Player.Instance.weaponLevel + 1);
+        }
+        else
+        {
+            levelText.text = "Nivel " + (Player.Instance.armorLevel + 1);
         }
     }
 }

@@ -13,6 +13,8 @@ public class PotionShop : MonoBehaviour, IInteractable, IShop
 
     public event Action OnTradeUpdated;
 
+    public ShopUI shopUI;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -39,6 +41,14 @@ public class PotionShop : MonoBehaviour, IInteractable, IShop
         int goldAvailable = PlayerEconomy.instance.GetGold() - (trade.goldCost * alreadyPending);
         if (goldAvailable < trade.goldCost)
         {
+            for (int i = 0; i < shopUI.buttons.Count; i++)
+            {
+                if (shopUI.buttons[i].isSelected)
+                {
+                    shopUI.buttons[i].DeSelect(true);
+                }
+
+            }
             Debug.Log("No tienes suficiente oro para añadir otra de esta poción.");
             return;
         }
@@ -49,11 +59,26 @@ public class PotionShop : MonoBehaviour, IInteractable, IShop
             int qtyAvailable = InventoryManager.instance.GetQuantity(trade.requiredItem) - (trade.requiredItemQty * alreadyPending);
             if (qtyAvailable < trade.requiredItemQty)
             {
+                for (int i = 0; i < shopUI.buttons.Count; i++)
+                {
+                    if (shopUI.buttons[i].isSelected)
+                    {
+                        shopUI.buttons[i].DeSelect(true);
+                    }
+
+                }
                 Debug.Log("No tienes suficientes items para añadir otra de esta poción.");
                 return;
             }
         }
+        for (int i = 0; i < shopUI.buttons.Count; i++)
+        {
+            if (shopUI.buttons[i].isSelected)
+            {
+                shopUI.buttons[i].SelectPermanent();
+            }
 
+        }
         // Si pasa los checks, suma 1 al pending
         if (!pendingBuy.ContainsKey(tradeIndex))
             pendingBuy[tradeIndex] = 0;
@@ -95,8 +120,25 @@ public class PotionShop : MonoBehaviour, IInteractable, IShop
 
         if (canBuy <= 0)
         {
+            for (int i = 0; i < shopUI.buttons.Count; i++)
+            {
+                if (shopUI.buttons[i].isSelected)
+                {
+                    shopUI.buttons[i].DeSelect(true);
+                }
+
+            }
             Debug.Log("No tienes suficiente oro o items para comprar más pociones.");
             return;
+        }
+
+        for (int i = 0; i < shopUI.buttons.Count; i++)
+        {
+            if (shopUI.buttons[i].isSelected)
+            {
+                shopUI.buttons[i].SelectPermanent();
+            }
+
         }
 
         if (!pendingBuy.ContainsKey(tradeIndex))
@@ -133,7 +175,14 @@ public class PotionShop : MonoBehaviour, IInteractable, IShop
 
             InventoryManager.instance.AddItem(trade.potionResult, (uint)qty);
         }
+        for (int i = 0; i < shopUI.buttons.Count; i++)
+        {
+            if (shopUI.buttons[i].isSelected)
+            {
+                shopUI.buttons[i].DeSelect();
+            }
 
+        }
         pendingBuy.Clear();
 
         OnTradeUpdated?.Invoke();
@@ -141,6 +190,14 @@ public class PotionShop : MonoBehaviour, IInteractable, IShop
 
     public void CancelTrade()
     {
+        for (int i = 0; i < shopUI.buttons.Count; i++)
+        {
+            if (shopUI.buttons[i].isSelected)
+            {
+                shopUI.buttons[i].DeSelect();
+            }
+
+        }
         pendingBuy.Clear();
         OnTradeUpdated?.Invoke();
     }

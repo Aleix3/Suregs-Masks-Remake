@@ -80,6 +80,13 @@ public class BlacksmithShop : MonoBehaviour, IInteractable
         int goldAvailable = PlayerEconomy.instance.GetGold() - (trade.goldCost * alreadyPending);
         if (goldAvailable < trade.goldCost)
         {
+            for (int i = 0; i < tradeUIs.Count; i++)
+            {
+                if (tradeUIs[i].GetComponent<ShopButton>().isSelected)
+                {
+                    tradeUIs[i].GetComponent<ShopButton>().DeSelect(true);
+                }
+            }
             Debug.Log("No tienes suficiente oro");
             return;
         }
@@ -91,8 +98,23 @@ public class BlacksmithShop : MonoBehaviour, IInteractable
 
             if (qtyAvailable < trade.requiredItemQty)
             {
+                for (int i = 0; i < tradeUIs.Count; i++)
+                {
+                    if (tradeUIs[i].GetComponent<ShopButton>().isSelected)
+                    {
+                        tradeUIs[i].GetComponent<ShopButton>().DeSelect(true);
+                    }
+                }
                 Debug.Log("No tienes suficientes materiales");
                 return;
+            }
+        }
+
+        for (int i = 0; i < tradeUIs.Count; i++)
+        {
+            if (tradeUIs[i].GetComponent<ShopButton>().isSelected)
+            {
+                tradeUIs[i].GetComponent<ShopButton>().SelectPermanent();
             }
         }
 
@@ -125,6 +147,13 @@ public class BlacksmithShop : MonoBehaviour, IInteractable
             // Aplicar la mejora
             ApplyUpgrade(trade.potionResult, qty);
             Debug.Log($"trade mejorado {trade.potionResult}");
+        }
+        for (int i = 0; i < tradeUIs.Count; i++)
+        {
+            if (tradeUIs[i].GetComponent<ShopButton>().isSelected)
+            {
+                tradeUIs[i].GetComponent<ShopButton>().DeSelect();
+            }
         }
         RefreshUI();
         pendingBuy.Clear();
@@ -264,5 +293,36 @@ public class BlacksmithShop : MonoBehaviour, IInteractable
 
             return correctType && GetLevel(t.potionResult) == targetLevel;
         });
+    }
+
+    public string GetUpgradeDescription(ItemType type)
+    {
+        int level = GetLevel(type);
+
+        if (IsWeapon(type))
+        {
+            int damage = GetWeaponDamage(level);
+            return $"Mejora la espada al nivel {level}, otorgando {damage} puntos de daño.";
+        }
+
+        if (IsArmor(type))
+        {
+            int hp = GetArmorHP(level);
+            return $"Mejora la armadura al nivel {level}, otorgando {hp} puntos de vida.";
+        }
+
+        return "";
+    }
+
+    int GetWeaponDamage(int level)
+    {
+        int[] values = { 0, 100, 120, 140, 170, 200, 240, 280, 350, 420, 500 };
+        return level >= 0 && level < values.Length ? values[level] : 0;
+    }
+
+    int GetArmorHP(int level)
+    {
+        int[] values = { 0, 100, 120, 150, 190, 250, 280, 350, 400, 480, 600 };
+        return level >= 0 && level < values.Length ? values[level] : 0;
     }
 }
