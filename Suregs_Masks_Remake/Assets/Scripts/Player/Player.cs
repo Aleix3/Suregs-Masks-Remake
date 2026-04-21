@@ -259,6 +259,14 @@ public class Player : MonoBehaviour
             InventoryManager.instance.CreateInventoryItem(item.type,item.itemType, item.itemName, item.description, item.sr.sprite);
             Destroy(collision.gameObject);
         }
+
+        //NOTES
+        if (collision.CompareTag("Note"))
+        {
+            Note note = collision.GetComponent<Note>();
+            NotesManager.instance.CreateNoteItem(note.id, note.itemName, note.description);
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

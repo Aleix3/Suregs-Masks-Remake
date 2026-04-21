@@ -62,10 +62,10 @@ public class InventoryManager : MonoBehaviour
             merchantCanvas.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            inventoryCanvas.gameObject.SetActive(!inventoryCanvas.gameObject.activeSelf);
-        }
+        //if (Input.GetKeyDown(KeyCode.Tab))
+        //{
+        //    inventoryCanvas.gameObject.SetActive(!inventoryCanvas.gameObject.activeSelf);
+        //}
 
         if (inventoryCanvas.gameObject.activeSelf == false) return;
         if (inventorySlots.transform.childCount == 0) return;

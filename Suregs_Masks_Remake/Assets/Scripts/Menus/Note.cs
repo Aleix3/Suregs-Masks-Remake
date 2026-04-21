@@ -6,84 +6,78 @@ using static Item;
 
 public class Note : MonoBehaviour
 {
-
     public int id;
-    int ObjectId = -1;
     public string itemName;
-
-    
     public string description;
-    // Start is called before the first frame update
+
     void Start()
     {
-        GetItemData(id,out itemName, out description);
-
+        (itemName, description) = GetItemData(id);
     }
 
-    public static void GetItemData(int id, out string name, out string description)
+    public static (string itemName, string description) GetItemData(int id)
     {
-        name = "";
-        description = "";
+        string name = "";
+        string desc = "";
 
         switch (id)
         {
             case 1:
                 name = "Día 2";
-                description = "Nos han vuelto a atacar los süregs, se han llevado a Alma… No me creo que algo así te haya pasado… Debe haber alguna manera de traerte de vuelta… Prometo que encontraré…";
+                desc = "Nos han vuelto a atacar los süregs, se han llevado a Alma… No me creo que algo así te haya pasado… Debe haber alguna manera de traerte de vuelta… Prometo que encontraré…";
                 break;
 
             case 2:
                 name = "Día 5";
-                description = "Hemos descubierto que estos seres vienen de las antiguas ruinas cerca del pueblo, aunque estaban abandonadas, ahora están llenas de… vida? Parece que los süreg se están multiplicando, no paran de salir.";
+                desc = "Hemos descubierto que estos seres vienen de las antiguas ruinas cerca del pueblo...";
                 break;
 
             case 3:
                 name = "Día 7";
-                description = "Los guerreros más fuertes preparamos una expedición para adentrarnos en las ruinas. Antes de partir necesitaremos mejorar el equipo en la herrería y comprar las pociones en el alquimista";
+                desc = "Los guerreros más fuertes preparamos una expedición...";
                 break;
 
             case 4:
                 name = "Día 11";
-                description = "Casi una semana más tarde conseguimos volver a casa, después de un arduo camino encontramos un artefacto que guarda una magia poderosa, es posible que nos ayude contra los süreg.";
+                desc = "Casi una semana más tarde conseguimos volver a casa...";
                 break;
 
             case 5:
                 name = "Día 16";
-                description = "Después de descansar unos días en el pueblo, y aprovechando el poder de nuestra nueva máscara, decidimos volver a las ruinas pero nos ha sorprendido un obstáculo inesperado, no sabemos qué es pero es demasiado fuerte.";
+                desc = "Después de descansar unos días en el pueblo...";
                 break;
 
             case 6:
                 name = "Día 20";
-                description = "Seguimos adentrándonos en las ruinas, notamos una presencia que nos sigue de cerca, aunque ninguno de nosotros ha sido capaz de verla, todo este sitio parece que vigila nuestros pasos";
+                desc = "Seguimos adentrándonos en las ruinas...";
                 break;
 
             case 7:
                 name = "Día 23";
-                description = "Huhan: Esta noche he notado que alguien me tiraba del pie, al despertarme solo estaba Igorv con la espada desenvainada gritando hacia la oscuridad, cuando le pregunté me dijo que no podía describir lo que acababa de ver, parecía muy alterado";
+                desc = "Huhan: Esta noche he notado que alguien me tiraba del pie...";
                 break;
 
             case 8:
                 name = "Día 27";
-                description = "Hemos descubierto el poder detrás de los süreg, estas máscaras, llevamos días usándolas contra ellos y son eficaces, aunque Hemyl jura escuchar susurros al usarla.";
+                desc = "Hemos descubierto el poder detrás de los süreg...";
                 break;
 
             case 9:
                 name = "Día 28";
-                description = "Fukho: Cada día que pasa nos llevamos peor, hemos perdido el camino de vuelta… Igorv sigue empeñado en llegar al final de todo esto… está fuera de sí, nunca debimos entrar en estas malditas ruinas, daría lo que fuera por volver a ver la luz del sol.";
+                desc = "Fukho: Cada día que pasa nos llevamos peor...";
                 break;
 
             case 10:
                 name = "Día ???";
-                description = "Igorv: No sé cuántos días llevo aquí abajo, estoy perdiendo la cabeza, a veces no recuerdo lo que hago y no soy capaz de controlarme, he encontrado el cadáver de Fukho y de Hemyl, esa cosa los ha matado, es mi turno.";
+                desc = "Igorv: No sé cuántos días llevo aquí abajo...";
                 break;
 
             default:
                 name = "Desconocido";
-                description = "No hay datos para este ID.";
+                desc = "No hay datos para este ID.";
                 break;
         }
+
+        return (name, desc);
     }
-
-   
-
 }

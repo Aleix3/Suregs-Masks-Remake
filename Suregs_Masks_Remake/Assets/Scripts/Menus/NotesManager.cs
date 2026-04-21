@@ -17,7 +17,7 @@ public class NotesManager : MonoBehaviour
 
     public Canvas notesCanvas;
 
-    public GameObject notesSlots;
+    public Transform notesParent;
     public GameObject hover;
     public int currentIndex = 0;
     private int rows = 4;
@@ -42,7 +42,7 @@ public class NotesManager : MonoBehaviour
 
     private void Start()
     {
-        if (notesSlots.transform.childCount > 0)
+        if (notes.Count > 0)
             MoveHoverTo(currentIndex);
         hover.transform.localScale = new Vector3(0.662f, 0.662f, 0.662f);
 
@@ -52,55 +52,24 @@ public class NotesManager : MonoBehaviour
 
     private void Update()
     {
-        if (notesCanvas.gameObject.activeSelf == false) return;
-        if (notesSlots.transform.childCount == 0) return;
+        if (!notesCanvas.gameObject.activeSelf) return;
+        if (notes.Count == 0) return;
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            currentIndex++;
-            if (currentIndex % cols == 0) // pasa del borde derecho
-                currentIndex -= cols;     // vuelve al principio de la fila
-            MoveHoverTo(currentIndex);
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            currentIndex--;
-            if (currentIndex < 0 || currentIndex % cols == cols - 1) // pasa del borde izq
-                currentIndex += cols;  // salta al final de la fila
-            MoveHoverTo(currentIndex);
-        }
+        int previousIndex = currentIndex;
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            currentIndex += cols;
-            if (currentIndex >= rows * cols) // pasa del borde inferior
-                currentIndex %= cols;       // vuelve a la fila superior misma columna
-            MoveHoverTo(currentIndex);
-        }
+            currentIndex = (currentIndex + 1) % notes.Count;
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            currentIndex -= cols;
-            if (currentIndex < 0)           // pasa del borde superior
-                currentIndex += rows * cols; // baja a la última fila misma columna
-            MoveHoverTo(currentIndex);
-        }
+            currentIndex = (currentIndex - 1 + notes.Count) % notes.Count;
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            currentIndex -= cols;
-            if (currentIndex < 0)           // pasa del borde superior
-                currentIndex += rows * cols; // baja a la última fila misma columna
+        if (previousIndex != currentIndex)
             MoveHoverTo(currentIndex);
-        }
-
-        
     }
 
     private void MoveHoverTo(int index)
     {
-        Transform slot = notesSlots.transform.GetChild(index);
+        Transform slot = notes[index].transform;
         hover.transform.SetParent(slot, false);
         hover.transform.localPosition = Vector3.zero;
 
@@ -120,12 +89,12 @@ public class NotesManager : MonoBehaviour
         itemComp.description = description;
 
         // buscar slot vacío
-        for (int s = 0; s < notesSlots.transform.childCount; s++)
+        for (int s = 0; s < notes.Count; s++)
         {
-            Transform slot = notesSlots.transform.GetChild(s);
+            Transform slot = notes[s].transform;
             if (slot.childCount == 0)
             {
-                newItem.transform.SetParent(slot, false);
+                newItem.transform.SetParent(notesParent, false);
                 newItem.transform.localPosition = Vector3.zero;
                 break;
             }
