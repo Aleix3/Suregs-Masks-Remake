@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Item;
@@ -27,6 +27,7 @@ public class NotesManager : MonoBehaviour
 
     public Image closeUpNote;
     public TextMeshProUGUI noteDesc;
+    public ScrollRect scrollRect;
 
     private void Awake()
     {
@@ -73,22 +74,20 @@ public class NotesManager : MonoBehaviour
         hover.transform.SetParent(slot, false);
         hover.transform.localPosition = Vector3.zero;
 
-        // Buscar si hay un hermano del hover item en este slot
-        NoteItem item = slot.GetComponentInChildren<NoteItem>();
-
+        ScrollToItem(index);
     }
 
     public NoteItem CreateNoteItem(int id, string name, string description)
     {
 
-        // crear nuevo GameObject en el primer slot vac�o
+        // crear nuevo GameObject en el primer slot vacío
         GameObject newItem = Instantiate(notePrefab);
         NoteItem itemComp = newItem.GetComponent<NoteItem>();
         itemComp.id = id;
         itemComp.name = name;
         itemComp.description = description;
 
-        // buscar slot vac�o
+        // buscar slot vacío
         for (int s = 0; s < notes.Count; s++)
         {
             Transform slot = notes[s].transform;
@@ -110,6 +109,40 @@ public class NotesManager : MonoBehaviour
         closeUpNote.gameObject.SetActive(true);
         noteDesc.text = notes[id].description;
 
+    }
+
+    private void ScrollToItem(int index)
+    {
+        RectTransform content = scrollRect.content;
+        RectTransform viewport = scrollRect.viewport;
+        RectTransform item = notes[index].GetComponent<RectTransform>();
+
+        float contentHeight = content.rect.height;
+        float viewportHeight = viewport.rect.height;
+
+        // Posición Y del item dentro del content (pivot arriba)
+        float itemTop = Mathf.Abs(item.anchoredPosition.y);
+        float itemBottom = itemTop + item.rect.height;
+
+        float viewTop = content.anchoredPosition.y;
+        float viewBottom = viewTop + viewportHeight;
+
+        // Si el item está por debajo de la vista → bajamos
+        if (itemBottom > viewBottom)
+        {
+            content.anchoredPosition = new Vector2(
+                content.anchoredPosition.x,
+                itemBottom - viewportHeight
+            );
+        }
+        // Si está por encima → subimos
+        else if (itemTop < viewTop)
+        {
+            content.anchoredPosition = new Vector2(
+                content.anchoredPosition.x,
+                itemTop
+            );
+        }
     }
 
 }
