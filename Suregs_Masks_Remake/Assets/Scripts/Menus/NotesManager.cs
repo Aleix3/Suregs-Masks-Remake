@@ -29,6 +29,8 @@ public class NotesManager : MonoBehaviour
     public TextMeshProUGUI noteDesc;
     public ScrollRect scrollRect;
 
+    bool firstTime = false;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -43,18 +45,28 @@ public class NotesManager : MonoBehaviour
 
     private void Start()
     {
+        Canvas.ForceUpdateCanvases();
+        scrollRect.verticalNormalizedPosition = 1f;
+
         if (notes.Count > 0)
             MoveHoverTo(currentIndex);
-        hover.transform.localScale = new Vector3(0.662f, 0.662f, 0.662f);
 
-        
-        
+        hover.transform.localScale = new Vector3(0.662f, 0.662f, 0.662f);
     }
+
 
     private void Update()
     {
         if (!notesCanvas.gameObject.activeSelf) return;
         if (notes.Count == 0) return;
+
+        if (!firstTime)
+        {
+            if (notes.Count > 0)
+                MoveHoverTo(currentIndex);
+            hover.GetComponent<RectTransform>().anchoredPosition = new Vector2(750, -750);
+            firstTime = true;
+        }
 
         int previousIndex = currentIndex;
 
@@ -66,6 +78,24 @@ public class NotesManager : MonoBehaviour
 
         if (previousIndex != currentIndex)
             MoveHoverTo(currentIndex);
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if(closeUpNote.gameObject.activeSelf)
+            {
+                CloseNote();
+            }
+            else
+            {
+                OpenNote(currentIndex);
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape) && closeUpNote.gameObject.activeSelf)
+        {
+            CloseNote();
+        }
+            
     }
 
     private void MoveHoverTo(int index)
@@ -79,27 +109,16 @@ public class NotesManager : MonoBehaviour
 
     public NoteItem CreateNoteItem(int id, string name, string description)
     {
+        GameObject newItem = Instantiate(notePrefab, notesParent);
 
-        // crear nuevo GameObject en el primer slot vacío
-        GameObject newItem = Instantiate(notePrefab);
         NoteItem itemComp = newItem.GetComponent<NoteItem>();
         itemComp.id = id;
         itemComp.name = name;
         itemComp.description = description;
 
-        // buscar slot vacío
-        for (int s = 0; s < notes.Count; s++)
-        {
-            Transform slot = notes[s].transform;
-            if (slot.childCount == 0)
-            {
-                newItem.transform.SetParent(notesParent, false);
-                newItem.transform.localPosition = Vector3.zero;
-                break;
-            }
-        }
-
         notes.Add(itemComp);
+        notesParent.GetComponent<GridResizer>().UpdateSize();
+
         OnNotesChanged?.Invoke();
         return itemComp;
     }
@@ -111,38 +130,22 @@ public class NotesManager : MonoBehaviour
 
     }
 
+    public void CloseNote()
+    {
+        closeUpNote.gameObject.SetActive(false);
+
+    }
+
     private void ScrollToItem(int index)
     {
-        RectTransform content = scrollRect.content;
-        RectTransform viewport = scrollRect.viewport;
-        RectTransform item = notes[index].GetComponent<RectTransform>();
+        if (notes.Count <= 1) return;
 
-        float contentHeight = content.rect.height;
-        float viewportHeight = viewport.rect.height;
+        Canvas.ForceUpdateCanvases();
 
-        // Posición Y del item dentro del content (pivot arriba)
-        float itemTop = Mathf.Abs(item.anchoredPosition.y);
-        float itemBottom = itemTop + item.rect.height;
+        float normalized = 1f - (float)index / (notes.Count - 1);
 
-        float viewTop = content.anchoredPosition.y;
-        float viewBottom = viewTop + viewportHeight;
-
-        // Si el item está por debajo de la vista → bajamos
-        if (itemBottom > viewBottom)
-        {
-            content.anchoredPosition = new Vector2(
-                content.anchoredPosition.x,
-                itemBottom - viewportHeight
-            );
-        }
-        // Si está por encima → subimos
-        else if (itemTop < viewTop)
-        {
-            content.anchoredPosition = new Vector2(
-                content.anchoredPosition.x,
-                itemTop
-            );
-        }
+        scrollRect.verticalNormalizedPosition = normalized;
     }
+
 
 }

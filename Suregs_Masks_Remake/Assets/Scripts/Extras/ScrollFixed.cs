@@ -9,7 +9,7 @@ public class ScrollWithFixedBars : MonoBehaviour
 
     public float HorizontalBarSize = 0;
     public float VerticalBarSize = 0;
-
+     
     void OnEnable()
     {
         EnforceScrollbarSize();
@@ -41,4 +41,6 @@ public class ScrollWithFixedBars : MonoBehaviour
             ScrollRect.verticalScrollbar.size = VerticalBarSize;
         }
     }
+
+
 }
