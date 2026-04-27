@@ -26,6 +26,7 @@ public abstract class Enemy : MonoBehaviour
     //public Animator animator;
     public Transform player;
 
+
     protected EnemyState currentState;
     protected EnemyState desiredState;
 
@@ -46,7 +47,7 @@ public abstract class Enemy : MonoBehaviour
 
     //PATHFINDING
 
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     protected virtual void Start()
     {

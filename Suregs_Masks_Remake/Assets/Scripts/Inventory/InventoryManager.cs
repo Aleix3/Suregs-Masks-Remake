@@ -73,44 +73,38 @@ public class InventoryManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             currentIndex++;
-            if (currentIndex % cols == 0) // pasa del borde derecho
-                currentIndex -= cols;     // vuelve al principio de la fila
+            if (currentIndex >= inventorySlots.transform.childCount)
+                currentIndex = 0;
             MoveHoverTo(currentIndex);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             currentIndex--;
-            if (currentIndex < 0 || currentIndex % cols == cols - 1) // pasa del borde izq
-                currentIndex += cols;  // salta al final de la fila
+            if (currentIndex < 0)
+                currentIndex = inventorySlots.transform.childCount - 1;
             MoveHoverTo(currentIndex);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             currentIndex += cols;
-            if (currentIndex >= rows * cols) // pasa del borde inferior
-                currentIndex %= cols;       // vuelve a la fila superior misma columna
+            if (currentIndex >= inventorySlots.transform.childCount)
+                currentIndex %= cols;
             MoveHoverTo(currentIndex);
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             currentIndex -= cols;
-            if (currentIndex < 0)           // pasa del borde superior
-                currentIndex += rows * cols; // baja a la última fila misma columna
+            if (currentIndex < 0)
+                currentIndex += inventorySlots.transform.childCount;
             MoveHoverTo(currentIndex);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            currentIndex -= cols;
-            if (currentIndex < 0)           // pasa del borde superior
-                currentIndex += rows * cols; // baja a la última fila misma columna
-            MoveHoverTo(currentIndex);
-        }
 
-        
+
+
     }
 
     private void MoveHoverTo(int index)
@@ -123,6 +117,7 @@ public class InventoryManager : MonoBehaviour
         InventoryItem item = slot.GetComponentInChildren<InventoryItem>();
         if (item != null)
         {
+            inventoryCloseUpImage.enabled = true;
             inventoryName.text = item.name;
             inventoryDescription.text = item.description;
             inventoryCloseUpImage.sprite = item.closeUpItem.sprite;
@@ -131,7 +126,7 @@ public class InventoryManager : MonoBehaviour
         {
             inventoryName.text = "";
             inventoryDescription.text = "";
-            inventoryCloseUpImage.sprite = null;
+            inventoryCloseUpImage.enabled = false;
         }
     }
 
@@ -161,15 +156,17 @@ public class InventoryManager : MonoBehaviour
         for (int s = 0; s < inventorySlots.transform.childCount; s++)
         {
             Transform slot = inventorySlots.transform.GetChild(s);
-            if (slot.childCount == 0)
+
+            if (slot.GetComponentInChildren<InventoryItem>() == null)
             {
                 newItem.transform.SetParent(slot, false);
                 newItem.transform.localPosition = Vector3.zero;
                 break;
             }
         }
-
+        
         inventoryItems.Add(itemComp);
+        MoveHoverTo(currentIndex);
         OnInventoryChanged?.Invoke();
         return itemComp;
     }
