@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using static Enemy;
 using static Item;
+using static UnityEngine.UI.Image;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -209,10 +210,13 @@ public abstract class Enemy : MonoBehaviour
         print("health:" + health);
 
         // FLASH BLANCO AUTOMÁTICO
-        if (flashRoutine != null)
+        if (flashRoutine == null)
+            flashRoutine = StartCoroutine(FlashWhite(0.15f));
+        else
+        {
             StopCoroutine(flashRoutine);
-
-        flashRoutine = StartCoroutine(FlashWhite(0.15f));
+            flashRoutine = StartCoroutine(FlashWhite(0.15f));
+        }
 
         if (health <= 0)
             desiredState = EnemyState.Dead;
@@ -229,8 +233,8 @@ public abstract class Enemy : MonoBehaviour
 
     IEnumerator FlashWhite(float duration)
     {
-        print("whiteee");
-        Color original = sr.color;
+
+        Color original = Color.white;
         sr.color = Color.red;
 
         float t = 0f;
@@ -242,6 +246,7 @@ public abstract class Enemy : MonoBehaviour
         }
 
         sr.color = original;
+        flashRoutine = null;
     }
 
     protected virtual void OnDrawGizmosSelected()
@@ -254,4 +259,13 @@ public abstract class Enemy : MonoBehaviour
 
         
     }
+
+    public void StopCorroutinesGeneral()
+    {
+        sr.color = Color.white;
+        StopAllCoroutines();
+    }
+        
+
+
 }
