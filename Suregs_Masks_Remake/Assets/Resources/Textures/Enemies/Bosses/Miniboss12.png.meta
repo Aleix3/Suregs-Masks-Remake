@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,10 +100,10 @@ TextureImporter:
       name: Miniboss12_0
       rect:
         serializedVersion: 2
-        x: 315
-        y: 4276
-        width: 233
-        height: 448
+        x: 0
+        y: 4200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: Miniboss12_1
       rect:
         serializedVersion: 2
-        x: 1188
-        y: 4300
-        width: 294
-        height: 431
+        x: 863
+        y: 4200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: Miniboss12_2
       rect:
         serializedVersion: 2
-        x: 2041
-        y: 4296
-        width: 266
-        height: 469
+        x: 1726
+        y: 4200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: Miniboss12_3
       rect:
         serializedVersion: 2
-        x: 2904
-        y: 4296
-        width: 304
-        height: 462
+        x: 2589
+        y: 4200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: Miniboss12_4
       rect:
         serializedVersion: 2
-        x: 3629
-        y: 4289
-        width: 364
-        height: 425
+        x: 3452
+        y: 4200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: Miniboss12_5
       rect:
         serializedVersion: 2
-        x: 4455
-        y: 4286
-        width: 391
-        height: 425
+        x: 4315
+        y: 4200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: Miniboss12_6
       rect:
         serializedVersion: 2
-        x: 5355
-        y: 4242
-        width: 364
-        height: 482
+        x: 5178
+        y: 4200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: Miniboss12_7
       rect:
         serializedVersion: 2
-        x: 6296
-        y: 4293
-        width: 283
-        height: 438
+        x: 6041
+        y: 4200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: Miniboss12_8
       rect:
         serializedVersion: 2
-        x: 309
-        y: 3696
-        width: 232
-        height: 442
+        x: 0
+        y: 3600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +289,10 @@ TextureImporter:
       name: Miniboss12_9
       rect:
         serializedVersion: 2
-        x: 990
-        y: 3696
-        width: 421
-        height: 479
+        x: 863
+        y: 3600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +310,10 @@ TextureImporter:
       name: Miniboss12_10
       rect:
         serializedVersion: 2
-        x: 1869
-        y: 3693
-        width: 412
-        height: 428
+        x: 1726
+        y: 3600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: Miniboss12_11
       rect:
         serializedVersion: 2
-        x: 2672
-        y: 3693
-        width: 475
-        height: 434
+        x: 2589
+        y: 3600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +352,10 @@ TextureImporter:
       name: Miniboss12_12
       rect:
         serializedVersion: 2
-        x: 3730
-        y: 3686
-        width: 293
-        height: 425
+        x: 3452
+        y: 3600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,10 +373,10 @@ TextureImporter:
       name: Miniboss12_13
       rect:
         serializedVersion: 2
-        x: 4647
-        y: 3632
-        width: 435
-        height: 475
+        x: 4315
+        y: 3600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,10 +394,10 @@ TextureImporter:
       name: Miniboss12_14
       rect:
         serializedVersion: 2
-        x: 5500
-        y: 3646
-        width: 425
-        height: 471
+        x: 5178
+        y: 3600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,10 +415,10 @@ TextureImporter:
       name: Miniboss12_15
       rect:
         serializedVersion: 2
-        x: 6356
-        y: 3659
-        width: 233
-        height: 465
+        x: 6041
+        y: 3600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,10 +436,10 @@ TextureImporter:
       name: Miniboss12_16
       rect:
         serializedVersion: 2
-        x: 315
-        y: 3076
-        width: 233
-        height: 448
+        x: 0
+        y: 3000
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,10 +457,10 @@ TextureImporter:
       name: Miniboss12_17
       rect:
         serializedVersion: 2
-        x: 1178
-        y: 3076
-        width: 233
-        height: 448
+        x: 863
+        y: 3000
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,10 +478,10 @@ TextureImporter:
       name: Miniboss12_18
       rect:
         serializedVersion: 2
-        x: 2041
-        y: 3076
-        width: 233
-        height: 448
+        x: 1726
+        y: 3000
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,10 +499,10 @@ TextureImporter:
       name: Miniboss12_19
       rect:
         serializedVersion: 2
-        x: 2904
-        y: 3076
-        width: 233
-        height: 448
+        x: 2589
+        y: 3000
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,10 +520,10 @@ TextureImporter:
       name: Miniboss12_20
       rect:
         serializedVersion: 2
-        x: 3767
-        y: 3076
-        width: 236
-        height: 448
+        x: 3452
+        y: 3000
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,10 +541,10 @@ TextureImporter:
       name: Miniboss12_21
       rect:
         serializedVersion: 2
-        x: 4573
-        y: 3076
-        width: 323
-        height: 448
+        x: 4315
+        y: 3000
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,10 +562,10 @@ TextureImporter:
       name: Miniboss12_22
       rect:
         serializedVersion: 2
-        x: 5331
-        y: 3076
-        width: 529
-        height: 448
+        x: 5178
+        y: 3000
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,10 +583,10 @@ TextureImporter:
       name: Miniboss12_24
       rect:
         serializedVersion: 2
-        x: 6191
-        y: 3076
-        width: 538
-        height: 448
+        x: 0
+        y: 2400
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,10 +604,10 @@ TextureImporter:
       name: Miniboss12_29
       rect:
         serializedVersion: 2
-        x: 140
-        y: 2476
-        width: 549
-        height: 448
+        x: 1726
+        y: 1800
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,10 +625,10 @@ TextureImporter:
       name: Miniboss12_32
       rect:
         serializedVersion: 2
-        x: 1023
-        y: 2476
-        width: 554
-        height: 448
+        x: 4315
+        y: 1800
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -646,10 +646,10 @@ TextureImporter:
       name: Miniboss12_35
       rect:
         serializedVersion: 2
-        x: 1930
-        y: 2476
-        width: 453
-        height: 448
+        x: 0
+        y: 1200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,13 +664,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_56
+      name: Miniboss12_23
       rect:
         serializedVersion: 2
-        x: 315
-        y: 1876
-        width: 233
-        height: 448
+        x: 6041
+        y: 3000
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -678,20 +678,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f794024dd4a4b4f45b693c5176f38310
-      internalID: -1156975856
+      spriteID: 89575d185964fc245b8b4e685d19eb3c
+      internalID: 826508126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_57
+      name: Miniboss12_25
       rect:
         serializedVersion: 2
-        x: 1175
-        y: 1889
-        width: 239
-        height: 445
+        x: 863
+        y: 2400
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -699,20 +699,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 297a66e287b0adb48b69b9aba73420f6
-      internalID: 668721488
+      spriteID: f6c9e493b45de07419698f290d9beeb4
+      internalID: -521088834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_58
+      name: Miniboss12_26
       rect:
         serializedVersion: 2
-        x: 2031
-        y: 1893
-        width: 250
-        height: 448
+        x: 1726
+        y: 2400
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -720,20 +720,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75f933a2bab4bec4b9344d3eec85736b
-      internalID: -1592553135
+      spriteID: 67ebcd757175b26499f2d0294cf5a24f
+      internalID: 1431756475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_59
+      name: Miniboss12_27
       rect:
         serializedVersion: 2
-        x: 2898
-        y: 1900
-        width: 249
-        height: 448
+        x: 0
+        y: 1800
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -741,20 +741,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cb34f8c5eaeb3e4faf075e92dd4887b
-      internalID: 798395619
+      spriteID: 2fcfe565d34a8e946bd52100c416c1b8
+      internalID: 1450621385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_60
+      name: Miniboss12_28
       rect:
         serializedVersion: 2
-        x: 3767
-        y: 1906
-        width: 243
-        height: 448
+        x: 863
+        y: 1800
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -762,20 +762,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 555a06d043b509244aa24a563f7b318e
-      internalID: -952406606
+      spriteID: a295bf84f4410e548934799ef09d7f64
+      internalID: 196633749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_61
+      name: Miniboss12_30
       rect:
         serializedVersion: 2
-        x: 4630
-        y: 1900
-        width: 246
-        height: 448
+        x: 2589
+        y: 1800
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -783,20 +783,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 475eaf094b113a34a8d0134011f3df37
-      internalID: -540663357
+      spriteID: e2c20f70e120e2f4d8c504c6aa34ec31
+      internalID: 1935545107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_62
+      name: Miniboss12_31
       rect:
         serializedVersion: 2
-        x: 5507
-        y: 1893
-        width: 225
-        height: 445
+        x: 3452
+        y: 1800
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -804,20 +804,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e76c6d4bed2164d42a4f3948b60c0433
-      internalID: -1771768871
+      spriteID: 41e710f2cf854114c96b6160d7c3029f
+      internalID: 2102444571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_63
+      name: Miniboss12_33
       rect:
         serializedVersion: 2
-        x: 6366
-        y: 1886
-        width: 223
-        height: 445
+        x: 5178
+        y: 1800
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -825,20 +825,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2561e82db3c71e40b30e5023f877b2c
-      internalID: -1913475404
+      spriteID: e105e7a0ab4780d4ebed28cf318651b3
+      internalID: -1895364670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_64
+      name: Miniboss12_34
       rect:
         serializedVersion: 2
-        x: 253
-        y: 1411
-        width: 214
-        height: 205
+        x: 6041
+        y: 1800
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -846,20 +846,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 005eecc5360a27f4da7a237d455e9594
-      internalID: 1171991414
+      spriteID: 467a3e4c8f859e146ab3081b029016b8
+      internalID: -275277513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_65
+      name: Miniboss12_36
       rect:
         serializedVersion: 2
-        x: 1111
-        y: 1417
-        width: 344
-        height: 166
+        x: 863
+        y: 1200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -867,20 +867,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9951504ed2c0a547b8c1267d170e44b
-      internalID: -1516922978
+      spriteID: bf3c2d8fddb26ab4abd9fdb8682ca759
+      internalID: 1410991749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_66
+      name: Miniboss12_37
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1411
-        width: 438
-        height: 151
+        x: 1726
+        y: 1200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -888,20 +888,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2295cc8f10c213f44bc2aa55696dd573
-      internalID: 1472113881
+      spriteID: 7a7fe9a406a9f9c4caefde8331b12830
+      internalID: -1712276926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_67
+      name: Miniboss12_38
       rect:
         serializedVersion: 2
-        x: 2911
-        y: 1434
-        width: 327
-        height: 186
+        x: 2589
+        y: 1200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -909,20 +909,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0802a30c52b9f6a43849ac705922c28a
-      internalID: 520802671
+      spriteID: 9179050e0592a7e4a9d814a304e9dd19
+      internalID: 1009094352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_68
+      name: Miniboss12_39
       rect:
         serializedVersion: 2
-        x: 3720
-        y: 1428
-        width: 371
-        height: 198
+        x: 3452
+        y: 1200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -930,20 +930,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6f96c55f1692f4428c71c8bf6674d56
-      internalID: 1535044270
+      spriteID: 47a8907798a187740afe3ce8084249e2
+      internalID: -952621887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_69
+      name: Miniboss12_40
       rect:
         serializedVersion: 2
-        x: 4499
-        y: 1485
-        width: 448
-        height: 141
+        x: 4315
+        y: 1200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -951,20 +951,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8c25a3edf68720428777af2aa5e8e9b
-      internalID: 2076256195
+      spriteID: ec6b1c417e2d449428f4c3cbd93480ed
+      internalID: -1801690673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_70
+      name: Miniboss12_41
       rect:
         serializedVersion: 2
-        x: 5385
-        y: 1434
-        width: 344
-        height: 165
+        x: 5178
+        y: 1200
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -972,20 +972,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb1d284d6093c274d9dae503ac864ff5
-      internalID: -504280714
+      spriteID: 30bfd71ddb6c3214bba6b98682aa9d8b
+      internalID: 546186467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_71
+      name: Miniboss12_42
       rect:
         serializedVersion: 2
-        x: 315
-        y: 676
-        width: 233
-        height: 441
+        x: 0
+        y: 600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -993,20 +993,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3d2cc92b63ad974fadbf241b5cc61a7
-      internalID: -56276551
+      spriteID: f3d9f81df54939549835cf58a380fa2f
+      internalID: 1768873020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_72
+      name: Miniboss12_43
       rect:
         serializedVersion: 2
-        x: 1178
-        y: 676
-        width: 233
-        height: 441
+        x: 863
+        y: 600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1014,20 +1014,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f88d67edd5b94494dbe586e01169a224
-      internalID: 927810798
+      spriteID: f485a605e3233f041b1be87884a87683
+      internalID: -1809571112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_73
+      name: Miniboss12_44
       rect:
         serializedVersion: 2
-        x: 2041
-        y: 676
-        width: 233
-        height: 441
+        x: 1726
+        y: 600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1035,20 +1035,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bdcc05cb3c8fd2458687ca66f2ae6c7
-      internalID: -2129491864
+      spriteID: 1cc951dbba4a3064fba27e1f0c8ac849
+      internalID: -1908227405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_74
+      name: Miniboss12_45
       rect:
         serializedVersion: 2
-        x: 2911
-        y: 676
-        width: 236
-        height: 441
+        x: 2589
+        y: 600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1056,20 +1056,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3582c380fd5b3e4f9737cb875c9833e
-      internalID: 406486806
+      spriteID: 8e4af4ae6df33454a9eb7041e9b9981d
+      internalID: -15681839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_75
+      name: Miniboss12_46
       rect:
         serializedVersion: 2
-        x: 3774
-        y: 676
-        width: 236
-        height: 441
+        x: 3452
+        y: 600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1077,20 +1077,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d14c549e8915d6049b072cce8383c5ff
-      internalID: 1629435900
+      spriteID: 52e9e3cad6dc3be43b860aacf40299cd
+      internalID: -929341014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_76
+      name: Miniboss12_47
       rect:
         serializedVersion: 2
-        x: 4637
-        y: 676
-        width: 236
-        height: 441
+        x: 4315
+        y: 600
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1098,20 +1098,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a63381fcaa1598d4eb720a680025e1ee
-      internalID: 31639966
+      spriteID: 57cf09c2e6f64ee4f8984be72f27ff81
+      internalID: -978473900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_77
+      name: Miniboss12_48
       rect:
         serializedVersion: 2
-        x: 309
-        y: 76
-        width: 242
-        height: 448
+        x: 0
+        y: 0
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1119,20 +1119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae0d484a2975cea4db028d2c1e010a63
-      internalID: -641539384
+      spriteID: d28740822b8a66244858c8bd9e8f034b
+      internalID: 1004705398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_78
+      name: Miniboss12_49
       rect:
         serializedVersion: 2
-        x: 1175
-        y: 86
-        width: 243
-        height: 445
+        x: 863
+        y: 0
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1140,20 +1140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48fd442b2ae8039429b6b6d99a4b03e3
-      internalID: 1916692917
+      spriteID: 72b5c9ab38eee1046a509feab4bd7c21
+      internalID: -1497030731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_79
+      name: Miniboss12_50
       rect:
         serializedVersion: 2
-        x: 2038
-        y: 89
-        width: 263
-        height: 445
+        x: 1726
+        y: 0
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1161,20 +1161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67b1138181de48a408ab78a9f5e0bb19
-      internalID: -867214583
+      spriteID: 3d9ed75b9f99e0344a7e40c5f4fbed74
+      internalID: 1882618026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Miniboss12_80
+      name: Miniboss12_51
       rect:
         serializedVersion: 2
-        x: 2901
-        y: 86
-        width: 242
-        height: 445
+        x: 2589
+        y: 0
+        width: 863
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1182,8 +1182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53aa212bf8135184cbede2cb1c6740aa
-      internalID: 1988606867
+      spriteID: f7ecb4c9cabaf62499555e8c3e8c95c4
+      internalID: 1214742381
       vertices: []
       indices: 
       edges: []
@@ -1247,38 +1247,9 @@ TextureImporter:
       Miniboss12_5: -38276672
       Miniboss12_50: 1882618026
       Miniboss12_51: 1214742381
-      Miniboss12_52: -398032882
-      Miniboss12_53: 1888427794
-      Miniboss12_54: 2137803146
-      Miniboss12_55: 1587326761
-      Miniboss12_56: -1156975856
-      Miniboss12_57: 668721488
-      Miniboss12_58: -1592553135
-      Miniboss12_59: 798395619
       Miniboss12_6: -1028243753
-      Miniboss12_60: -952406606
-      Miniboss12_61: -540663357
-      Miniboss12_62: -1771768871
-      Miniboss12_63: -1913475404
-      Miniboss12_64: 1171991414
-      Miniboss12_65: -1516922978
-      Miniboss12_66: 1472113881
-      Miniboss12_67: 520802671
-      Miniboss12_68: 1535044270
-      Miniboss12_69: 2076256195
       Miniboss12_7: 598688740
-      Miniboss12_70: -504280714
-      Miniboss12_71: -56276551
-      Miniboss12_72: 927810798
-      Miniboss12_73: -2129491864
-      Miniboss12_74: 406486806
-      Miniboss12_75: 1629435900
-      Miniboss12_76: 31639966
-      Miniboss12_77: -641539384
-      Miniboss12_78: 1916692917
-      Miniboss12_79: -867214583
       Miniboss12_8: -1033917118
-      Miniboss12_80: 1988606867
       Miniboss12_9: -1698267738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

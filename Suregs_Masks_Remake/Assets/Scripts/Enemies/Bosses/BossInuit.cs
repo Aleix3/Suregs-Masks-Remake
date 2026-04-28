@@ -38,7 +38,7 @@ public class BossInuit : Enemy
     public float comboInterval = 1f;
     public float waveInterval = 10f;
 
-
+    private bool alternateAttack = false;
 
     protected override void Start()
     {
@@ -114,13 +114,17 @@ public class BossInuit : Enemy
 
     void BossStateMachine()
     {
+        if (bossState == desiredBossState)
+            return;
         switch (desiredBossState)
         {
             case BossState.Idle:
+                animator.SetBool("IsMoving", false);
                 DoNothing();
                 break;
 
             case BossState.Chase:
+                animator.SetBool("IsMoving", true);
                 Chase();
                 break;
 
@@ -150,6 +154,9 @@ public class BossInuit : Enemy
             case BossState.Dead:
                 Die();
                 break;
+            default:
+                animator.SetBool("IsMoving", false);
+                break;
         }
 
         bossState = desiredBossState;
@@ -168,7 +175,14 @@ public class BossInuit : Enemy
 
     IEnumerator MeleeRoutine()
     {
-        // animación aquí
+        rb.velocity = Vector2.zero;
+
+        if (alternateAttack)
+            animator.SetTrigger("Attack1");
+        else
+            animator.SetTrigger("Attack2");
+
+        alternateAttack = !alternateAttack;
 
         yield return new WaitForSeconds(0.5f);
 
@@ -178,6 +192,7 @@ public class BossInuit : Enemy
         }
 
         yield return new WaitForSeconds(attackCooldown);
+
         isNotAttacking = true;
 
         // Cada 3 combos boomerang
@@ -186,7 +201,6 @@ public class BossInuit : Enemy
             comboCounter = 0;
             desiredBossState = BossState.RangedAttack;
             BossStateMachine();
-            
         }
     }
 
@@ -197,8 +211,8 @@ public class BossInuit : Enemy
         if (isNotAttacking)
         {
             isNotAttacking = false;
+
             StartCoroutine(BoomerangRoutine());
-            print("boomerang");
         }
     }
 
@@ -206,6 +220,7 @@ public class BossInuit : Enemy
     {
         GameObject b = Instantiate(boomerangPrefab, transform.position, Quaternion.identity);
 
+        b.GetComponent<Boomerang>().animator.SetTrigger("Boomerang");
         Vector2 dir = (player.position - transform.position).normalized;
 
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
@@ -238,6 +253,9 @@ public class BossInuit : Enemy
         if (isNotAttacking)
         {
             isNotAttacking = false;
+
+            animator.SetTrigger("Wave");
+
             StartCoroutine(WaveRoutine());
         }
     }
@@ -253,9 +271,9 @@ public class BossInuit : Enemy
 
     void ChangePhase()
     {
-        agent.SetDestination(transform.position);
+        rb.velocity = Vector2.zero;
 
-        // animación cambio fase
+        animator.SetTrigger("PhaseChange");
 
         StartCoroutine(ChangePhaseRoutine());
     }
@@ -265,7 +283,7 @@ public class BossInuit : Enemy
         yield return new WaitForSeconds(2f);
 
         currentPhase = Phase.Phase2;
-        print("faseee2");
+        animator.SetBool("Phase2", true);
 
         speed *= 1.5f;
         attackDamage *= 1;

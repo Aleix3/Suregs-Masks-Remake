@@ -13,6 +13,8 @@ public class Boomerang : MonoBehaviour
 
     public int damage = 10;
 
+    public Animator animator;
+
     public void Init(Transform boss, Vector2 direction)
     {
         target = boss;

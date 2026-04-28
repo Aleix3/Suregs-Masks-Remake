@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6017077128991380820}
   - component: {fileID: 1981522845709362186}
   - component: {fileID: 8589144347580291022}
-  - component: {fileID: 4293019591842975858}
   - component: {fileID: 6255237340032214821}
+  - component: {fileID: 3055101950449712070}
   m_Layer: 0
   m_Name: BossInuit
   m_TagString: Enemy
@@ -146,10 +146,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.053389475, y: -0.024641305}
+  m_Offset: {x: 0.028101832, y: 0.021719813}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -160,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45395318, y: 1.1592824}
+  m_Size: {x: 1.7773523, y: 3.4099042}
   m_EdgeRadius: 0
 --- !u!195 &8589144347580291022
 NavMeshAgent:
@@ -184,41 +184,6 @@ NavMeshAgent:
   m_BaseOffset: 0.555
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!58 &4293019591842975858
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2233585022467933213}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.048645634, y: -0.34468883}
-  serializedVersion: 2
-  m_Radius: 0.20892125
 --- !u!114 &6255237340032214821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +206,7 @@ MonoBehaviour:
   attackColor: {r: 1, g: 0, b: 0, a: 1}
   attackDamage: 4
   rb: {fileID: 6017077128991380820}
+  animator: {fileID: 0}
   player: {fileID: 0}
   canMove: 1
   isStunned: 0
@@ -251,7 +217,30 @@ MonoBehaviour:
   bossState: 0
   currentPhase: 0
   wavePrefab: {fileID: 4531685987252974836, guid: 6097aa96424fb0e40a46cecf7ff971e1, type: 3}
+  comboInterval: 1
+  waveInterval: 10
   boomerangPrefab: {fileID: 8792182233149398288, guid: c5b5d04b5e124c04ea838788aaadfb2b, type: 3}
+--- !u!95 &3055101950449712070
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233585022467933213}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 802c783f427df894397a64afc16536d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4618788347601749221
 GameObject:
   m_ObjectHideFlags: 0

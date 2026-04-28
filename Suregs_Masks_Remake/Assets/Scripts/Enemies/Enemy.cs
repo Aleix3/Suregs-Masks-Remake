@@ -23,7 +23,7 @@ public abstract class Enemy : MonoBehaviour
 
     [Header("References")]
     public Rigidbody2D rb;
-    //public Animator animator;
+    public Animator animator;
     public Transform player;
 
 
@@ -60,6 +60,7 @@ public abstract class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        animator = GetComponent<Animator>();
 
 
         for (int i = 0; i < 12; i++)
