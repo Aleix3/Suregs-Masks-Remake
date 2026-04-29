@@ -97,7 +97,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2233585022467933213}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 0
-  maxHealth: 1000
+  maxHealth: 3000
   health: 0
   speed: 2
   attackDistance: 4
@@ -160,13 +160,13 @@ MonoBehaviour:
   attackColor: {r: 1, g: 0, b: 0, a: 1}
   attackDamage: 4
   rb: {fileID: 6017077128991380820}
-  animator: {fileID: 0}
+  animator: {fileID: 3055101950449712070}
   player: {fileID: 0}
   canMove: 1
   isStunned: 0
-  attackCooldown: 2
+  attackCooldown: 0
   isDead: 0
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
   agent: {fileID: 8589144347580291022}
   bossState: 0
   currentPhase: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   boomerangPrefab: {fileID: 8792182233149398288, guid: c5b5d04b5e124c04ea838788aaadfb2b, type: 3}
   comboInterval: 1
   waveInterval: 10
-  boomerangOffset: {x: 0.5, y: 0}
+  boomerangOffset: {x: 1, y: 0}
 --- !u!95 &3055101950449712070
 Animator:
   serializedVersion: 5

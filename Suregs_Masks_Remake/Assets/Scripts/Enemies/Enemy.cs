@@ -152,15 +152,16 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Chase()
     {
-        
-        Vector2 direction = (player.position - transform.position).normalized;
-        //rb.velocity = direction * speed;
+        if (!canMove) return;
+        if (!isNotAttacking) return;
+        if (isDead) return;
+
         agent.SetDestination(player.position);
+
+        Vector2 direction = (player.position - transform.position).normalized;
 
         if (direction.x > 0 && isFacingLeft) Flip();
         else if (direction.x < 0 && !isFacingLeft) Flip();
-
-        //animator.Play("Run");
     }
 
     //Cada enemigo define su propio ataque
