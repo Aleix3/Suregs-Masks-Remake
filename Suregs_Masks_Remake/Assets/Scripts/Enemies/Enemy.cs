@@ -40,6 +40,8 @@ public abstract class Enemy : MonoBehaviour
 
     [SerializeField] public bool isDead = false;
 
+
+
     [SerializeField] public GameObject itemPrefab;
 
     private SpriteRenderer sr;
@@ -107,15 +109,27 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (player == null || isStunned ||isDead) return;
+        if (player == null || isStunned || isDead) return;
+
+        // BLOQUEAR IA mientras ataca
+        if (!isNotAttacking || !canMove)
+        {
+            desiredState = EnemyState.Idle;
+
+            agent.isStopped = true;
+            agent.ResetPath();
+
+            StateMachine();
+            return;
+        }
 
         float distance = Vector2.Distance(transform.position, player.position);
 
-        if (health <= 0)
-        {
-            desiredState = EnemyState.Dead;
-        }
-        else if (distance <= attackDistance)
+        //if (health <= 0)
+        //{
+        //    desiredState = EnemyState.Dead;
+        //}
+        if (distance <= attackDistance)
         {
             desiredState = EnemyState.Attacking;
         }
@@ -147,7 +161,12 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void DoNothing()
     {
         rb.velocity = Vector2.zero;
-        //animator.Play("Idle");
+
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.ResetPath();
+        }
     }
 
     protected virtual void Chase()
@@ -155,6 +174,8 @@ public abstract class Enemy : MonoBehaviour
         if (!canMove) return;
         if (!isNotAttacking) return;
         if (isDead) return;
+
+        agent.isStopped = false;
 
         agent.SetDestination(player.position);
 
@@ -220,7 +241,7 @@ public abstract class Enemy : MonoBehaviour
         }
 
         if (health <= 0)
-            desiredState = EnemyState.Dead;
+            Die();
 
     }
 

@@ -11,6 +11,7 @@ public class EnemyOsiris : Enemy
     public float reviveTime;
     private bool firstDeathDone = false;
     private bool isAttackingAnimation = false;
+    private bool finalKill = true;
 
     protected override void Start()
     {
@@ -20,16 +21,22 @@ public class EnemyOsiris : Enemy
 
     protected override void Update()
     {
-        if (!isNotAttacking || isReviving)
+        if (isReviving)
         {
+            agent.isStopped = true;
+            agent.ResetPath();
+
             animator.SetBool("isRunning", false);
             return;
         }
-
         base.Update();
 
-        animator.SetBool("isRunning",
-            desiredState == EnemyState.Running);
+        bool isRunning =
+            agent.velocity.magnitude > 0.1f &&
+            !agent.isStopped &&
+            isNotAttacking && canMove;
+
+        animator.SetBool("isRunning", isRunning);
     }
 
     protected override void Attack()
@@ -62,16 +69,16 @@ public class EnemyOsiris : Enemy
         animator.SetBool("isRunning", false);
         animator.SetTrigger("Attack");
 
-        yield return new WaitForSeconds(0.1f);
+        //yield return new WaitForSeconds(0.1f);
 
         attackHitbox.enabled = true;
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.05f);
 
         attackHitbox.enabled = false;
 
-        // Esperar a que termine la animación
-        yield return new WaitForSeconds(0.5f);
+        //// Esperar a que termine la animación
+        //yield return new WaitForSeconds(0.2f);
 
         isAttackingAnimation = false;
 
@@ -86,14 +93,17 @@ public class EnemyOsiris : Enemy
 
     protected override void Die()
     {
-        if (isReviving) return;
+        //if (isReviving) return;
 
         rb.velocity = Vector2.zero;
 
         // Primera muerte
         if (!hasRevived && !firstDeathDone)
         {
+            canMove = false;
             firstDeathDone = true;
+            agent.isStopped = true;
+            health = 1;
 
             animator.SetTrigger("FirstDeath");
 
@@ -101,46 +111,51 @@ public class EnemyOsiris : Enemy
             return;
         }
 
-        // Muerte final
-        isDead = true;
+
         base.Die();
     }
 
     private IEnumerator ReviveCoroutine()
     {
-        isReviving = true;
-
+        
         agent.isStopped = true;
+        desiredState = EnemyState.Idle;
 
+        isReviving = true;
         yield return new WaitForSeconds(reviveTime);
-
+        
         animator.SetTrigger("Revive");
 
-        yield return new WaitForSeconds(1f);
+        //yield return new WaitForSeconds(1f);
 
         health = maxHealth;
         hasRevived = true;
         isReviving = false;
-
+        canMove = true;
         agent.isStopped = false;
 
         desiredState = EnemyState.Idle;
     }
 
-    public override void TakeDamage(int damage)
-    {
-        // Si está reviviendo en el suelo, muerte final
-        if (isReviving)
-        {
-            hasRevived = true;
-            isDead = true;
+    //public override void TakeDamage(int damage)
+    //{
+        
 
-            StopAllCoroutines();
+    //    //if (isReviving)
+    //    //{
+    //    //    finalKill = true;
 
-            base.Die();
-            return;
-        }
+    //    //    hasRevived = true;
+    //    //    isReviving = false;
 
-        base.TakeDamage(damage);
-    }
+    //    //    StopAllCoroutines();
+
+    //    //    Die();
+    //    //    return;
+    //    //}
+
+    //    base.TakeDamage(damage);
+
+
+    //}
 }

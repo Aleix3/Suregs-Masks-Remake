@@ -15829,9 +15829,29 @@ PrefabInstance:
       propertyPath: attackDamage
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 529430206180785390, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
+      propertyPath: attackDistance
+      value: 1.88
+      objectReference: {fileID: 0}
     - target: {fileID: 2233585022467933213, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
       propertyPath: m_Name
       value: Osiris
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145757345607632492, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
+      propertyPath: m_Size.x
+      value: 1.6523921
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145757345607632492, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6950719
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145757345607632492, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.3261962
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145757345607632492, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.102215916
       objectReference: {fileID: 0}
     - target: {fileID: 6017077128991380820, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
       propertyPath: m_BodyType
