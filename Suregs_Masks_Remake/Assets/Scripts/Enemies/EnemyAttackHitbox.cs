@@ -11,7 +11,7 @@ public class EnemyAttackHitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && collision.isTrigger)
         {
             Player player = collision.GetComponent<Player>();
             if (player != null)

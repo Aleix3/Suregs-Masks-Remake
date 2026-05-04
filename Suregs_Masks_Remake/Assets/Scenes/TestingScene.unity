@@ -3265,17 +3265,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 89936779209799243, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
-      propertyPath: attackCooldown
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2233585022467933213, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
       propertyPath: m_Name
       value: Ols
       objectReference: {fileID: 0}
     - target: {fileID: 2233585022467933213, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6525441108890427984, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3320,10 +3316,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2233585022467933213, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2063642042}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
 --- !u!114 &491160322 stripped
 MonoBehaviour:
@@ -14674,33 +14667,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046778317}
   m_CullTransparentMesh: 1
---- !u!1 &2063642036 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2233585022467933213, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
-  m_PrefabInstance: {fileID: 477616694}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &2063642042
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063642036}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 1.2099999
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2.4299998
-  m_BaseOffset: 1.2149999
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!223 &2075263723 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 8754048046074316738, guid: b365c1092cf82344b81052ce3a4aa215, type: 3}
@@ -15208,29 +15174,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muur
       objectReference: {fileID: 0}
-    - target: {fileID: 2575917181284405686, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2620419404903528241, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 268079345}
     - target: {fileID: 2620419404903528241, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
-      propertyPath: itemPrefab
-      value: 
-      objectReference: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
-    - target: {fileID: 4716036912075643910, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.08565
+      propertyPath: attackCooldown
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4716036912075643910, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -2.604
       objectReference: {fileID: 0}
     - target: {fileID: 4716036912075643910, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.6432757
+      value: -4.449
       objectReference: {fileID: 0}
     - target: {fileID: 4716036912075643910, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15264,34 +15222,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7167772627563389698, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167772627563389698, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167772627563389698, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
-      propertyPath: m_Color.a
+    - target: {fileID: 5024984355911440924, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7167772627563389698, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167772627563389698, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167772627563389698, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167772627563389698, guid: 5577945dbfcb3ad469e711174c80e393, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -36,31 +36,50 @@ public class EnemyMuur : Enemy
         if (dashCooldownTimer > 0f)
             dashCooldownTimer -= Time.deltaTime;
 
-        if (distance < viewDistance && distance > dashDistance && dashCooldownTimer <= 0f)
+
+        if (!isDashing && distance < dashDistance && distance > attackDistance && dashCooldownTimer <= 0f)
         {
-            isDashing = true;
-            Dash();
+            StartCoroutine(DashCoroutine());
+        }
+        else
+        {
+            bool isRunning =
+            agent.velocity.magnitude > 0.1f &&
+            !agent.isStopped &&
+            isNotAttacking && canMove;
+
+            animator.SetBool("IsRunning", isRunning);
         }
 
-        if (isDashing)
-        {
-            stunTimer -= Time.deltaTime;
-            if (stunTimer <= 0f)
-            {
-                isDashing = false;
-                stunTimer = stunTime;
-            }
-        }
+        
+
+        //if (isDashing)
+        //{
+        //    stunTimer -= Time.deltaTime;
+
+        //    if (stunTimer <= 0f)
+        //    {
+        //        isDashing = false;
+
+        //        animator.SetBool("isDashing", false);
+        //        animator.SetBool("isStunned", true);
+
+        //        StartCoroutine(StunCoroutine());
+        //    }
+        //}
+
+        //animator.SetFloat("Speed", rb.velocity.magnitude);
+
     }
     protected override void Attack()
     {
-        if (!isNotAttacking) return;
+        if (!isNotAttacking || isDashing) return;
 
 
-        if (distance < dashDistance)
+        if (distance < attackDistance)
         {
             rb.velocity = Vector2.zero;
-            //animator.Play("Attack");
+            animator.SetTrigger("Attack");
 
             StartCoroutine(DoAttack());
         }
@@ -68,19 +87,74 @@ public class EnemyMuur : Enemy
         {
             
         }
+
+
         
     }
 
     protected override void Chase()
     {
-        if (isDashing) return;
+        if (isDashing || !canMove) return;
+        
         base.Chase();          
     }
-    void Dash()
+
+    IEnumerator DashCoroutine()
     {
+        isDashing = true;
+
+        agent.isStopped = true;
+        agent.velocity = Vector3.zero;
+        agent.ResetPath();
+
+        canMove = false;
+
+        animator.SetTrigger("Dash");
+        attackHitbox.enabled = true;
         Vector2 direction = (player.position - transform.position).normalized;
-        rb.AddForce(direction * dashForce, ForceMode2D.Impulse);
+
+        float dashDuration = 1f;
+        float timer = 0f;
+
+        while (timer < dashDuration)
+        {
+            rb.velocity = direction * dashForce;
+
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
+
+        // desaceleración suave
+        float slowDownTime = 0.2f;
+        float currentSpeed = dashForce;
+
+        animator.SetTrigger("SlowDown");
+        
+
+        while (currentSpeed > 0f)
+        {
+            currentSpeed -= dashForce * Time.deltaTime / slowDownTime;
+
+            rb.velocity = direction * currentSpeed;
+
+            yield return null;
+        }
+
+        rb.velocity = Vector2.zero;
+        attackHitbox.enabled = false;
+        animator.SetBool("IsStunned", true);
+
+        yield return new WaitForSeconds(stunTime);
+
+        animator.SetBool("IsStunned", false);
+
         dashCooldownTimer = dashCooldown;
+
+        canMove = true;
+        isDashing = false;
+
+        agent.isStopped = false;
     }
 
     private IEnumerator DoAttack()
@@ -97,6 +171,37 @@ public class EnemyMuur : Enemy
         yield return new WaitForSeconds(attackCooldown);
         isNotAttacking = true;
         canMove = true;
+    }
+
+    IEnumerator StunCoroutine()
+    {
+        canMove = false;
+
+        yield return new WaitForSeconds(stunTime);
+
+        animator.SetBool("IsStunned", false);
+
+        canMove = true;
+    }
+
+    protected override void Die()
+    {
+        if (isDead) return;
+
+        //isDead = true;
+
+        animator.SetTrigger("Die");
+
+        rb.velocity = Vector2.zero;
+
+        StartCoroutine(DieCoroutine());
+    }
+
+    IEnumerator DieCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+
+        base.Die();
     }
 
     protected override void OnDrawGizmosSelected()

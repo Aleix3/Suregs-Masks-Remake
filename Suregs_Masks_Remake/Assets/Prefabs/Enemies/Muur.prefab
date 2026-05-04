@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 313942636189048208}
   - component: {fileID: 5024984355911440924}
   - component: {fileID: 3025464041298174710}
+  - component: {fileID: 2035808442731716477}
   m_Layer: 0
   m_Name: Muur
   m_TagString: Enemy
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: -7.6432757, z: 0}
-  m_LocalScale: {x: 2.0856502, y: 2.0856502, z: 2.0856502}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1110058058808252461}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 40ff6296b86b1924ca65670d99d76bdb, type: 3}
+  m_Sprite: {fileID: -2118542584, guid: c2320ef49332637428e982ef107250b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,21 +106,24 @@ MonoBehaviour:
   maxHealth: 90
   health: 0
   speed: 4
+  initialSpeed: 0
   attackDistance: 1
-  viewDistance: 4.4
+  viewDistance: 5.81
   viewColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackColor: {r: 1, g: 0, b: 0, a: 1}
   attackDamage: 20
   rb: {fileID: 313942636189048208}
+  animator: {fileID: 0}
   player: {fileID: 0}
   canMove: 1
   isStunned: 0
   attackCooldown: 1
   isDead: 0
   itemPrefab: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
+  agent: {fileID: 0}
   attackHitbox: {fileID: 6607231279209429024}
-  dashDistance: 3.25
-  dashForce: 10
+  dashDistance: 3.98
+  dashForce: 8
   dashCooldown: 10
   viewSecondColor: {r: 0.9184408, g: 0, b: 1, a: 1}
   stunTime: 2
@@ -182,18 +186,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.13617104, y: -0.02063191}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.49}
+    oldSize: {x: 2.11, y: 1.75}
     newSize: {x: 0.48, y: 0.49}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48, y: 0.49}
+  m_Size: {x: 2.4028974, y: 1.7856863}
   m_EdgeRadius: 0
 --- !u!195 &3025464041298174710
 NavMeshAgent:
@@ -217,6 +221,27 @@ NavMeshAgent:
   m_BaseOffset: 0.245
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &2035808442731716477
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575917181284405686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f0f93d0e9b6c1a45acb1077790c7cae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3866245383376042723
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +269,7 @@ Transform:
   m_GameObject: {fileID: 3866245383376042723}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.38, y: 0, z: 0}
+  m_LocalPosition: {x: -1.09, y: -0.27, z: 0}
   m_LocalScale: {x: 0.34054607, y: 0.6210102, z: 0.9013976}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -282,7 +307,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.26313263, y: 0.020133585}
+  m_Offset: {x: 0.45236534, y: -0.07066572}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -293,7 +318,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.47373477, y: 0.69463176}
+  m_Size: {x: 1.514515, y: 1.4123771}
   m_EdgeRadius: 0
 --- !u!114 &3479777692739502923
 MonoBehaviour:

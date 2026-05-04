@@ -16,6 +16,7 @@ public abstract class Enemy : MonoBehaviour
     public int maxHealth;
     public int health;
     public float speed;
+    [SerializeField] public float initialSpeed;
     public float attackDistance;
     public float viewDistance;
     public Color viewColor = Color.yellow;
@@ -54,6 +55,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Start()
     {
+        initialSpeed = speed;
         health = maxHealth;
         currentState = EnemyState.Idle;
         desiredState = EnemyState.Idle;
