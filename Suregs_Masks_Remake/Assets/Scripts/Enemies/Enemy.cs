@@ -245,7 +245,7 @@ public abstract class Enemy : MonoBehaviour
 
     }
 
-    protected void Flip()
+    public void Flip()
     {
         isFacingLeft = !isFacingLeft;
         Vector3 scale = transform.localScale;

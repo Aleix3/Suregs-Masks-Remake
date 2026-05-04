@@ -22,7 +22,7 @@ public class EnemyOls : Enemy
 
         float distance = Vector2.Distance(transform.position, player.position);
 
-        if (distance <= escapeDistance && isNotAttacking)
+        if (distance <= escapeDistance && canMove)
         {
             escaping = true;
             desiredState = EnemyState.Running;
@@ -31,19 +31,24 @@ public class EnemyOls : Enemy
         }
         else
         {
+            animator.SetBool("isRunning", false);
             escaping = false;
             base.Update();
         }
 
+        if(!canMove)
+        {
+            animator.SetBool("isRunning", false);
+        }
+
         
+
+
     }
     protected override void Attack()
     {
         rb.velocity = Vector2.zero;
         if (!isNotAttacking) return;
-
-        
-        //animator.Play("Attack");
 
         StartCoroutine(DoAttack());
     }
@@ -52,13 +57,18 @@ public class EnemyOls : Enemy
     {
         canMove = false;
         isNotAttacking = false;
+        Vector2 flipDirection = (player.position - transform.position).normalized;
+        if (flipDirection.x > 0 && isFacingLeft) Flip();
+        else if (flipDirection.x < 0 && !isFacingLeft) Flip();
+        animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.8f);
         GameObject newProjectile = Instantiate(olsProjectile, transform.position, Quaternion.identity);
         Ols_Projectile newOlsProjectile = newProjectile.GetComponent<Ols_Projectile>();
         newOlsProjectile.damage = attackDamage;
         Vector2 direction = (player.position - transform.position).normalized;
         newProjectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
-        yield return new WaitForSeconds(0.3f);
         canMove = true;
+        
         yield return new WaitForSeconds(attackCooldown);
         isNotAttacking = true;
     }
@@ -66,14 +76,14 @@ public class EnemyOls : Enemy
     protected override void Die()
     {
         rb.velocity = Vector2.zero;
-        //animator.Play("Die");
+        animator.Play("GetDamage");
         base.Die();
 
     }
 
     protected override void Chase()
     {
-        
+        animator.SetBool("isRunning", true);
         Vector2 direction;
         if (escaping)
         {

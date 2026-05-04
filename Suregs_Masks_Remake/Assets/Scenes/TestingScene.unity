@@ -3265,21 +3265,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 89936779209799243, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
+      propertyPath: attackCooldown
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2233585022467933213, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
       propertyPath: m_Name
       value: Ols
       objectReference: {fileID: 0}
     - target: {fileID: 2233585022467933213, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6525441108890427984, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: -3.82
       objectReference: {fileID: 0}
     - target: {fileID: 6525441108890427984, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.65
+      value: -8.65
       objectReference: {fileID: 0}
     - target: {fileID: 6525441108890427984, guid: fe4f0f163e9335a4baa95e92454100eb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15836,6 +15840,10 @@ PrefabInstance:
     - target: {fileID: 2233585022467933213, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
       propertyPath: m_Name
       value: Osiris
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233585022467933213, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3145757345607632492, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
       propertyPath: m_Size.x

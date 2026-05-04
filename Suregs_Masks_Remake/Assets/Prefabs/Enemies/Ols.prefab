@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 89936779209799243}
   - component: {fileID: 8390762161720460421}
   - component: {fileID: 6988080930110912881}
+  - component: {fileID: 8258586703573084345}
   m_Layer: 0
   m_Name: Ols
   m_TagString: Enemy
@@ -152,7 +153,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.42, y: 2.43}
+    oldSize: {x: 2.52625, y: 2.4}
     newSize: {x: 0.84, y: 1.11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -183,12 +184,14 @@ MonoBehaviour:
   attackColor: {r: 1, g: 0, b: 0, a: 1}
   attackDamage: 15
   rb: {fileID: 6017077128991380820}
+  animator: {fileID: 0}
   player: {fileID: 0}
   canMove: 1
   isStunned: 0
   attackCooldown: 4
   isDead: 0
   itemPrefab: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
+  agent: {fileID: 0}
   escapeDistance: 4.31
   olsProjectile: {fileID: 4535473329264882499, guid: 22fc18a40b15a574f84d0795cc6b4575, type: 3}
   projectileSpeed: 5
@@ -249,3 +252,24 @@ NavMeshAgent:
   m_BaseOffset: 1.2149999
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &8258586703573084345
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233585022467933213}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01e56df2625028447a10817c73994de2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
