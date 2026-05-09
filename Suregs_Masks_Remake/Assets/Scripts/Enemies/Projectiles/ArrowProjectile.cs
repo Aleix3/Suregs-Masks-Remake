@@ -41,9 +41,9 @@ public class ArrowProjectile : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.CompareTag("Wall"))
-        {
-            Destroy(gameObject);
-        }
+        //if (collision.CompareTag("Wall"))
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 }

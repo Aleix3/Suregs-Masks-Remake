@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6608946747124835374}
   - component: {fileID: 8655985282636835607}
   - component: {fileID: 2280898561249829616}
+  - component: {fileID: 662714063491137443}
   m_Layer: 0
   m_Name: ChargedArrow
   m_TagString: Untagged
@@ -171,6 +172,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027ab27a70a8be948bbcb4e8cbe39ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 250
   speed: 10
   poisonAreaPrefab: {fileID: 4535473329264882499, guid: e44262685af05894699e9a63473dad6d, type: 3}
+--- !u!95 &662714063491137443
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535473329264882499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6d636a6d0876c9e4e83fc96d801fc411, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

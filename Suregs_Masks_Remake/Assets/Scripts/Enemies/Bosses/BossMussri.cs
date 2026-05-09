@@ -20,7 +20,6 @@ public class BossMussri : Enemy
 {
     [Header("Distances")]
     [SerializeField] private float rangedDistance = 8f;
-    [SerializeField] private float meleeDistance = 2.5f;
     [SerializeField] private float keepDistance = 6f;
 
     [Header("Movement")]
@@ -112,7 +111,7 @@ public class BossMussri : Enemy
 
     private void CheckPhaseTransition()
     {
-        if (phase2)
+        if (phase2 || transitioningPhase)
             return;
 
         if (health <= maxHealth * phase2HealthPercent)
@@ -124,7 +123,7 @@ public class BossMussri : Enemy
     private void HandleCombatLogic(float distance)
     {
         // MUY CERCA -> melee + dash
-        if (distance <= meleeDistance)
+        if (distance <= attackDistance)
         {
             if (meleeTimer <= 0)
             {
@@ -183,6 +182,7 @@ public class BossMussri : Enemy
             return;
         animator.SetBool("isRunning", true);
         agent.isStopped = false;
+        canMove = true;
         agent.SetDestination(player.position);
     }
 
@@ -220,6 +220,8 @@ public class BossMussri : Enemy
         rb.velocity = Vector2.zero;
         agent.isStopped = true;
 
+        
+
         animator.SetTrigger("Attack");
 
         rangedTimer = rangedCooldown;
@@ -254,6 +256,7 @@ public class BossMussri : Enemy
         rb.velocity = Vector2.zero;
         agent.isStopped = true;
 
+
         animator.SetTrigger("ChargedAttack");
 
         chargedArrowTimer = chargedArrowCooldown;
@@ -263,9 +266,7 @@ public class BossMussri : Enemy
 
     private IEnumerator PhaseTransition()
     {
-        animator.SetBool("isPhaseChanging", true);
-
-        phase2 = true;
+        animator.SetTrigger("PhaseChange");
 
         transitioningPhase = true;
         isBusy = true;
@@ -324,13 +325,13 @@ public class BossMussri : Enemy
 
         currentBossState = MussriBossState.Dash;
 
-        animator.SetBool("isDashing", true);
+        animator.SetTrigger("Dash");
 
         currentDashInvisible = true;
 
         isInvisible = true;
 
-        sr.color = new Color(1, 1, 1, 0.2f);
+        StartCoroutine(FadeSprite(1f, 0f, 0.15f));
 
         Vector2 dir =
             (transform.position - player.position).normalized;
@@ -346,7 +347,7 @@ public class BossMussri : Enemy
     {
         currentBossState = MussriBossState.Dash;
 
-        animator.SetBool("isDashing", true);
+        animator.SetTrigger("Dash");
 
         currentDashInvisible = phase2;
 
@@ -364,6 +365,10 @@ public class BossMussri : Enemy
 
     public void FireChargedArrow()
     {
+        Vector2 flipDirection = (player.position - transform.position).normalized;
+        if (flipDirection.x > 0 && isFacingLeft) Flip();
+        else if (flipDirection.x < 0 && !isFacingLeft) Flip();
+
         GameObject arrow =
             Instantiate(
                 chargedArrowPrefab,
@@ -379,6 +384,10 @@ public class BossMussri : Enemy
 
     public void FireNormalArrow()
     {
+        Vector2 flipDirection = (player.position - transform.position).normalized;
+        if (flipDirection.x > 0 && isFacingLeft) Flip();
+        else if (flipDirection.x < 0 && !isFacingLeft) Flip();
+
         GameObject arrow =
             Instantiate(
                 arrowPrefab,
@@ -389,7 +398,7 @@ public class BossMussri : Enemy
             (player.position - shootPoint.position).normalized;
 
         arrow.GetComponent<ArrowProjectile>()
-            .SetDirection(dir, 14f);
+            .SetDirection(dir, 10f);
     }
 
     public void EndAttack()
@@ -398,33 +407,32 @@ public class BossMussri : Enemy
 
         canMove = true;
 
-        animator.SetBool("isDashing", false);
+        agent.isStopped = false;
 
         rb.velocity = Vector2.zero;
     }
 
     public void FinishPhaseTransition()
     {
+        phase2 = true;
+
         speed += 1.5f;
         attackDamage += 10;
 
         canMove = true;
-
+        agent.isStopped = false;
         transitioningPhase = false;
         isBusy = false;
 
-        animator.SetBool("isPhaseChanging", false);
     }
 
     public void EndDash()
     {
         rb.velocity = Vector2.zero;
 
-        animator.SetBool("isDashing", false);
-
         if (currentDashInvisible)
         {
-            sr.color = Color.white;
+            StartCoroutine(FadeSprite(0f, 1f, 0.2f));
 
             isInvisible = false;
         }
@@ -441,5 +449,50 @@ public class BossMussri : Enemy
         sr.color = Color.white;
 
         isInvisible = false;
+    }
+
+    private IEnumerator FadeSprite(
+    float startAlpha,
+    float endAlpha,
+    float duration)
+    {
+        float elapsed = 0f;
+
+        Color color = sr.color;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            float alpha = Mathf.Lerp(
+                startAlpha,
+                endAlpha,
+                elapsed / duration);
+
+            sr.color = new Color(
+                color.r,
+                color.g,
+                color.b,
+                alpha);
+
+            yield return null;
+        }
+
+        sr.color = new Color(
+            color.r,
+            color.g,
+            color.b,
+            endAlpha);
+    }
+
+    protected override void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(transform.position, rangedDistance);
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(transform.position, keepDistance);
+        base.OnDrawGizmosSelected();
+
+
     }
 }

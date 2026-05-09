@@ -6606,7 +6606,7 @@ Transform:
   m_GameObject: {fileID: 926731016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.81, y: -2.39, z: -10}
+  m_LocalPosition: {x: -11.34, y: -2.39, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8088,7 +8088,7 @@ Transform:
   m_GameObject: {fileID: 1133265375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.81, y: -2.39, z: -10}
+  m_LocalPosition: {x: -11.34, y: -2.39, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14840,6 +14840,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 268079345}
+    - target: {fileID: 816105898226232880, guid: a8ac786bc86ed6348a4b026700197ab0, type: 3}
+      propertyPath: keepDistance
+      value: 4.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 816105898226232880, guid: a8ac786bc86ed6348a4b026700197ab0, type: 3}
+      propertyPath: attackDistance
+      value: 4.11
+      objectReference: {fileID: 0}
     - target: {fileID: 2233585022467933213, guid: a8ac786bc86ed6348a4b026700197ab0, type: 3}
       propertyPath: m_Name
       value: BossMussri
@@ -15149,7 +15157,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 169067372024181408, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.81
+      value: -11.34
       objectReference: {fileID: 0}
     - target: {fileID: 169067372024181408, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: m_LocalPosition.y

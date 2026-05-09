@@ -40,12 +40,12 @@ public class ChargedArrowProjectile : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.CompareTag("Wall"))
-        {
-            SpawnPoisonArea();
+        //if (collision.CompareTag("Wall"))
+        //{
+        //    SpawnPoisonArea();
 
-            Destroy(gameObject);
-        }
+        //    Destroy(gameObject);
+        //}
     }
 
     private void SpawnPoisonArea()
