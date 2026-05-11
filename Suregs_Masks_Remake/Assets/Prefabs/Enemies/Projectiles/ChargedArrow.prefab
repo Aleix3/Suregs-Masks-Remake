@@ -174,7 +174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 250
   speed: 10
+  lifeTime: 4
   poisonAreaPrefab: {fileID: 4535473329264882499, guid: e44262685af05894699e9a63473dad6d, type: 3}
+  poisonSpawnRate: 0.3
 --- !u!95 &662714063491137443
 Animator:
   serializedVersion: 5

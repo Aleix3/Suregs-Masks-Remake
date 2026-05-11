@@ -56,6 +56,9 @@ public class Player : MonoBehaviour
     public int weaponLevel = 1;
     public int armorLevel = 1;
 
+    private bool isKnockedBack = false;
+    private float knockbackTimer = 0f;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -80,6 +83,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateKnockback();
         UpdatePlayerMovement();
         UpdateAttack();
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
@@ -98,6 +102,8 @@ public class Player : MonoBehaviour
 
     void UpdatePlayerMovement()
     {
+        if (isKnockedBack)
+            return;
         // Entrada del jugador
         Vector2 inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
@@ -329,4 +335,26 @@ public class Player : MonoBehaviour
             health = maxHealth;
     }
 
+    public void ApplyKnockback(Vector2 direction,float force,float duration)
+    {
+        isKnockedBack = true;
+
+        knockbackTimer = duration;
+
+        rb.velocity = direction.normalized * force;
+    }
+    void UpdateKnockback()
+    {
+        if (!isKnockedBack)
+            return;
+
+        knockbackTimer -= Time.deltaTime;
+
+        if (knockbackTimer <= 0f)
+        {
+            isKnockedBack = false;
+
+            rb.velocity = Vector2.zero;
+        }
+    }
 }

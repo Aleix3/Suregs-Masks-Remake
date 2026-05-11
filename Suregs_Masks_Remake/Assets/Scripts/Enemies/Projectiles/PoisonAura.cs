@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class PoisonAura : MonoBehaviour
 {
-    [SerializeField] private int damagePerTick = 5;
-    [SerializeField] private float tickRate = 1f;
-    [SerializeField] private float duration = 5f;
+    [SerializeField] private int damage = 10;
+    [SerializeField] private float duration = 4f;
+    [SerializeField] private float tickRate = 2f;
 
     private float timer;
 
     private void Start()
     {
         Destroy(gameObject, duration);
+
+        timer = tickRate;
+    }
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -18,17 +25,17 @@ public class PoisonAura : MonoBehaviour
         if (!collision.CompareTag("Player"))
             return;
 
-        timer += Time.deltaTime;
+        if (timer > 0)
+            return;
 
-        if (timer >= tickRate)
+        Player ph =
+            collision.GetComponent<Player>();
+
+        if (ph != null)
         {
-            Player ph =
-                collision.GetComponent<Player>();
-
-            if (ph != null)
-                ph.TakeDamage(damagePerTick);
-
-            timer = 0f;
+            ph.TakeDamage(damage);
         }
+
+        timer = tickRate;
     }
 }

@@ -122,7 +122,7 @@ public class BossMussri : Enemy
 
     private void HandleCombatLogic(float distance)
     {
-        // MUY CERCA -> melee + dash
+        // MUY CERCA, melee + dash
         if (distance <= attackDistance)
         {
             if (meleeTimer <= 0)
@@ -141,7 +141,7 @@ public class BossMussri : Enemy
         }
 
         // MUY CERCA PERO EN CD -> escapar
-        if (distance < keepDistance * 0.7f)
+        if (distance <= keepDistance)
         {
             currentBossState = MussriBossState.KeepDistance;
             KeepDistance();
@@ -165,7 +165,7 @@ public class BossMussri : Enemy
         }
 
         // ataque normal
-        if (rangedTimer <= 0)
+        if (rangedTimer <= 0 && distance > keepDistance)
         {
             StartCoroutine(RangedAttack());
             return;
@@ -188,11 +188,15 @@ public class BossMussri : Enemy
 
     private void KeepDistance()
     {
-        agent.isStopped = true;
+        animator.SetBool("isRunning", true);
 
-        Vector2 dir = (transform.position - player.position).normalized;
+        Vector2 dir =
+            (transform.position - player.position).normalized;
 
-        rb.velocity = dir * speed;
+        Vector2 targetPosition =
+            (Vector2)transform.position + dir * keepDistance;
+
+        agent.SetDestination(targetPosition);
     }
 
     private void HandleFlip()
@@ -298,8 +302,17 @@ public class BossMussri : Enemy
         Vector2 dir =
             (player.position - transform.position).normalized;
 
+        float distance =
+        Vector2.Distance(
+            transform.position,
+            player.position);
+
+        if (distance > attackDistance + 0.5f)
+            return;
+
         Player ph =
             player.GetComponent<Player>();
+
 
         if (ph != null)
         {
@@ -310,9 +323,12 @@ public class BossMussri : Enemy
 
             if (prb != null)
             {
-                prb.AddForce(
-                    dir * 10f,
-                    ForceMode2D.Impulse);
+                prb.velocity = Vector2.zero;
+
+                ph.ApplyKnockback(
+                dir,
+                20f,
+                0.4f);
             }
         }
 
