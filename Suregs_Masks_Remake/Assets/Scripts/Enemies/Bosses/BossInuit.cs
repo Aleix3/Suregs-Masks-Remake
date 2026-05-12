@@ -51,6 +51,7 @@ public class BossInuit : Enemy
 
         currentPhase = Phase.Phase1;
         life40 = maxHealth * 0.4f;
+
     }
 
     protected override void Update()
