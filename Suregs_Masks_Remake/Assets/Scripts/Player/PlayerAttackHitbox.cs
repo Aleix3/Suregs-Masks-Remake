@@ -8,7 +8,7 @@ public class PlayerAttackHitbox : MonoBehaviour
 
     private void Awake()
     {
-        player = FindObjectOfType<Player>();
+        player = Player.Instance;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

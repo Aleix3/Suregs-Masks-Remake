@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Town.unity
+    guid: c50d6698e27a9174faa615ed8c086e40
+  - enabled: 1
+    path: Assets/Scenes/Dungeons/Dungeon 0.unity
+    guid: d29a228377ae60c48b8e13bc9bf45c75
+  - enabled: 1
+    path: Assets/Scenes/Dungeons/Dungeon 1.unity
+    guid: fe15a93afc7997f46a46825b488c0929
+  - enabled: 1
+    path: Assets/Scenes/Dungeons/Dungeon 2.unity
+    guid: fd3113151362f3f4e8c4ff761abd4033
+  - enabled: 1
+    path: Assets/Scenes/Dungeons/Dungeon 3.unity
+    guid: 142b566b3fd4d0f4f85a231f4b3d1fcc
+  - enabled: 1
+    path: Assets/Scenes/Dungeons/Dungeon 4.unity
+    guid: d76de8a8432535c4fb586fdd5de4fedf
   m_configObjects: {}

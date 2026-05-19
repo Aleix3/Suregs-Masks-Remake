@@ -29,7 +29,7 @@ public class InventoryManager : MonoBehaviour
     public event System.Action OnInventoryChanged;
 
 
-    public GameObject merchantCanvas;
+    //public GameObject merchantCanvas;
 
     private void Awake()
     {
@@ -56,11 +56,11 @@ public class InventoryManager : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.C) && merchantCanvas != null)
-        {
+        //if (Input.GetKeyDown(KeyCode.C) && merchantCanvas != null)
+        //{
             
-            merchantCanvas.SetActive(true);
-        }
+        //    merchantCanvas.SetActive(true);
+        //}
 
         //if (Input.GetKeyDown(KeyCode.Tab))
         //{

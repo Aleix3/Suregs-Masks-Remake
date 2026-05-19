@@ -52,6 +52,8 @@ public class BossInuit : Enemy
         currentPhase = Phase.Phase1;
         life40 = maxHealth * 0.4f;
 
+        player = Player.Instance.transform;
+
     }
 
     protected override void Update()

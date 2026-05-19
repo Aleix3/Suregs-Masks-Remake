@@ -30,6 +30,11 @@ public class CameraManager : MonoBehaviour
         confiner = virtualCamera.GetComponent<CinemachineConfiner2D>();
     }
 
+    void Start()
+    {
+        player = Player.Instance.transform;
+    }
+
     public void TransitionToRoom(RoomCameraData room, Vector3 teleportPosition)
     {
         StartCoroutine(RoomRoutine(room, teleportPosition));

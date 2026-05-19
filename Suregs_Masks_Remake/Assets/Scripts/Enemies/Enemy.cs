@@ -60,7 +60,7 @@ public abstract class Enemy : MonoBehaviour
         currentState = EnemyState.Idle;
         desiredState = EnemyState.Idle;
         sr = GetComponent<SpriteRenderer>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = Player.Instance.transform;
 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
