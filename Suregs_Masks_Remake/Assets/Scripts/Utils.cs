@@ -4,5 +4,8 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    void Interact();
+    void Interact(Player player);
+    void StopInteract(Player player);
+
+    bool LockPlayerMovement { get; }
 }

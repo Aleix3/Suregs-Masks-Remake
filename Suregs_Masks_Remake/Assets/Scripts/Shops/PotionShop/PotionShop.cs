@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Item;
 
-public class PotionShop : MonoBehaviour, IInteractable, IShop
+public class PotionShop : MonoBehaviour, IShop
 {
     public List<PotionTrade> trades = new List<PotionTrade>();
 

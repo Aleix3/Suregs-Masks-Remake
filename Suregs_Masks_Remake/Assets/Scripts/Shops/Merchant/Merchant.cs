@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Item;
 
-public class Merchant : MonoBehaviour, IInteractable, IShop
+public class Merchant : MonoBehaviour, IShop
 {
     private int pendingGold = 0;
 

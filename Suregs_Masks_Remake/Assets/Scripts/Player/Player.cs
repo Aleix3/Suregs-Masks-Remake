@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
+    public bool canMove = true;
 
     [Header("Attack")]
     public GameObject attackHitboxPrefab;
@@ -105,7 +106,7 @@ public class Player : MonoBehaviour
         UpdateAttack();
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
-            currentInteractable.Interact();
+            currentInteractable.Interact(this);
         }
 
         if (Input.GetKeyDown(KeyCode.F10))
@@ -119,7 +120,7 @@ public class Player : MonoBehaviour
 
     void UpdatePlayerMovement()
     {
-        if (isKnockedBack)
+        if (isKnockedBack || !canMove)
             return;
         // Entrada del jugador
         Vector2 inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;

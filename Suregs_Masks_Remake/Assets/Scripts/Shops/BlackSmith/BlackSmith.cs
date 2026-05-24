@@ -6,7 +6,7 @@ using static Item;
 
 
 
-public class BlacksmithShop : MonoBehaviour, IInteractable
+public class BlacksmithShop : MonoBehaviour
 {
     public List<BlackSmithTrade> trades = new List<BlackSmithTrade>();
     public GameObject canvas;

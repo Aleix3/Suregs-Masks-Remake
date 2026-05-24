@@ -18,6 +18,7 @@ public class InventoryManager : MonoBehaviour
     public Canvas inventoryCanvas;
     public TextMeshProUGUI inventoryName;
     public TextMeshProUGUI inventoryDescription;
+    public TextMeshProUGUI inventoryQuantity;
     public Image inventoryCloseUpImage;
 
     public GameObject inventorySlots;
@@ -27,6 +28,9 @@ public class InventoryManager : MonoBehaviour
     private int cols = 3;
 
     public event System.Action OnInventoryChanged;
+
+    [SerializeField] private CanvasGroup inventoryGroup;
+    private bool isInventoryOpen;
 
 
     //public GameObject merchantCanvas;
@@ -58,14 +62,15 @@ public class InventoryManager : MonoBehaviour
 
         //if (Input.GetKeyDown(KeyCode.C) && merchantCanvas != null)
         //{
-            
+
         //    merchantCanvas.SetActive(true);
         //}
 
-        //if (Input.GetKeyDown(KeyCode.Tab))
-        //{
-        //    inventoryCanvas.gameObject.SetActive(!inventoryCanvas.gameObject.activeSelf);
-        //}
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            isInventoryOpen = !isInventoryOpen;
+            SetInventoryVisible(isInventoryOpen);
+        }
 
         if (inventoryCanvas.gameObject.activeSelf == false) return;
         if (inventorySlots.transform.childCount == 0) return;
@@ -120,12 +125,14 @@ public class InventoryManager : MonoBehaviour
             inventoryCloseUpImage.enabled = true;
             inventoryName.text = item.name;
             inventoryDescription.text = item.description;
+            inventoryQuantity.text = "X" + item.quantity;
             inventoryCloseUpImage.sprite = item.closeUpItem.sprite;
         }
         else
         {
             inventoryName.text = "";
             inventoryDescription.text = "";
+            inventoryQuantity.text = "";
             inventoryCloseUpImage.enabled = false;
         }
     }
@@ -199,6 +206,7 @@ public class InventoryManager : MonoBehaviour
                     inventoryItems.RemoveAt(i);
 
                 }
+                ReorderInventory();
                 OnInventoryChanged?.Invoke();
                 return true;
             }
@@ -221,5 +229,51 @@ public class InventoryManager : MonoBehaviour
             quantity
         );
 
+    }
+
+    private void ReorderInventory()
+    {
+        // SOLO recolocar, NO destruir nada
+        for (int i = 0; i < inventoryItems.Count; i++)
+        {
+            InventoryItem item = inventoryItems[i];
+
+            if (item == null) continue;
+
+            Transform slot = inventorySlots.transform.GetChild(i);
+
+            item.transform.SetParent(slot, false);
+            item.transform.localPosition = Vector3.zero;
+        }
+
+        // limpiar slots sobrantes
+        for (int i = inventoryItems.Count; i < inventorySlots.transform.childCount; i++)
+        {
+            Transform slot = inventorySlots.transform.GetChild(i);
+
+            foreach (Transform child in slot)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        // ajustar hover
+        if (inventoryItems.Count == 0)
+        {
+            currentIndex = 0;
+            return;
+        }
+
+        if (currentIndex >= inventoryItems.Count)
+            currentIndex = inventoryItems.Count - 1;
+
+        MoveHoverTo(currentIndex);
+    }
+
+    private void SetInventoryVisible(bool visible)
+    {
+        inventoryGroup.alpha = visible ? 1 : 0;
+        inventoryGroup.interactable = visible;
+        inventoryGroup.blocksRaycasts = visible;
     }
 }

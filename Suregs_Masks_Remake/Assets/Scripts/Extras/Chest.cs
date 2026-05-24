@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -10,12 +12,23 @@ public class Chest : MonoBehaviour, IInteractable
     public BoxCollider2D trigger;
     public GameObject itemPrefab;
 
-    public void Interact()
+    public bool LockPlayerMovement => false;
+    private Player currentPlayer;
+
+
+    public void Interact(Player player)
     {
+        currentPlayer = player;
+
         chestOpened.SetActive(true);
         chestClosed.SetActive(false);
         trigger.enabled = false;
         DropItems();
+    }
+
+    public void StopInteract(Player player)
+    {
+        
     }
 
     public void DropItems()
