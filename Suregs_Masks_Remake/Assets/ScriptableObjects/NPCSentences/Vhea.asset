@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dbf4bb952f694409fe53dd8afb006f, type: 3}
+  m_Name: Vhea
+  m_EditorClassIdentifier: 
+  npcName: Vhea
+  portrait: {fileID: 21300000, guid: 7ca1df1348f4b7e4397493b00c3b4a9b, type: 3}
+  sentences:
+  - text: "Buenos d\xEDas cari\xF1o, \xBFotra vez la misma pesadilla?"
+    id: 
+    type: 1
+    minState: 0
+    options:
+    - optionText: Si lo mismo de siempre, prefiero no hablar de ello...
+      nextSentences:
+      - text: Vaya...
+        id: 
+        type: 0
+        minState: 0
+        options: []
+        commerceID: 0
+    commerceID: 0
+  - text: "Bueno... \xBFHoy tienes entrenamiento verdad?"
+    id: 
+    type: 1
+    minState: 0
+    options:
+    - optionText: "S\xED, debo ir al campamento"
+      nextSentences:
+      - text: "Perfecto, recuerda que est\xE1 al norte del pueblo."
+        id: 
+        type: 0
+        minState: 0
+        options: []
+        commerceID: 0
+    - optionText: "\xBFC\xF3mo qu\xE9 entrenamiento?"
+      nextSentences:
+      - text: "S\xED, tienes que ir al campamento que est\xE1 al norte del pueblo."
+        id: 
+        type: 0
+        minState: 0
+        options: []
+        commerceID: 0
+    commerceID: 0

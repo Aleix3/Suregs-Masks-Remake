@@ -25,6 +25,8 @@ public class ShopUI : MonoBehaviour
 
     public BlacksmithShop blacksmith;
 
+
+
     void Start()
     {
         UpdateHover();

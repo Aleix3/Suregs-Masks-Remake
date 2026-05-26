@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
         UpdateKnockback();
         UpdatePlayerMovement();
         UpdateAttack();
-        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null && !UIState.IsUIOpen)
         {
             currentInteractable.Interact(this);
         }
