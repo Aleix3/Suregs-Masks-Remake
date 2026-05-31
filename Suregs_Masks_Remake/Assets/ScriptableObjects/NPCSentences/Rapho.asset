@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dbf4bb952f694409fe53dd8afb006f, type: 3}
+  m_Name: Rapho
+  m_EditorClassIdentifier: 
+  npcName: Rapho
+  portrait: {fileID: 21300000, guid: ddf89e0e8bc5f4a428b3cdb30b335fc6, type: 3}
+  sentences:
+  - text: "\xA1Hola, hola! \xBFHas visto que jovenzuelo estoy hecho? Je, je, je..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+  - text: "\xBFComo estamos Jakov? \xBFHas hablado con mi nietecito? Espero que s\xED,
+      si te has olvidado, est\xE1 aqu\xED a mi lado. Je, je, je..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+  - text: "\xBFComo estamos Jakov? \xBFHas hablado con mi nietecito? Espero que s\xED,
+      si te has olvidado, est\xE1 aqu\xED a mi lado. Je, je, je..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+  - text: "Bueno, nos vamos viendo jovenzuelo. Recuerda visitar la tienda de mi nietecito,
+      que est\xE1 aqu\xED al lado. Je, je, je..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+  - text: "\xBFQue pas\xF3 jovenzuelo? Te veo muy desanimado, \xBFpas\xF3 algo en
+      el entrenamiento? Vaya, vaya..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+  - text: "No hagas caso de las cosas malas que te pasen jovenzuelo. Con los a\xF1os
+      entender\xE1s que es in\xFAtil..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+  - text: "Si te sientes mal, recuerda que siempre puedes comprar alguna cosa de
+      la tienda y ser un poco m\xE1s feliz..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+  - text: "Si te sientes mal, recuerda que siempre puedes comprar alguna cosa de
+      la tienda y ser un poco m\xE1s feliz..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+  - text: "\xA1Hombre! Pero si es mi jovenzuelo favorito del pueblo, \xBFc\xF3mo
+      estamos Jakov? Je, je, je..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+  - text: "Oye, te veo mucho m\xE1s hablador, \xBFte quieres empezar a parecer a
+      tu padre? Je, je, je..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+  - text: "A\xFAn recuerdo cuando yo mismo le compraba y vend\xEDa lo que consegu\xEDa
+      con los Sureg. Je, je, je... Mira el cat\xE1logo de mi nietecito antes de volver
+      a casa, seguro que tiene algo que te interesa. je, je, je..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+  - text: "\xA1Has vuelto! \xBFC\xF3mo estamos jovenzuelo? Te veo m\xE1s fuerte,
+      \xBFhas estado entrenando? Je, je, je..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+  - text: Mi nieto no para de trabajar, me recuerda mucho a su abuelo. Je, je, je...
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+  - text: "\xA1Espero verte m\xE1s a menudo por la tienda, jovenzuelo! Je, je, je..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+  - text: "Que mayor me hago. \xA1Ay, ay, ay...! \xBFT\xFA otra vez por la tienda?
+      Je, je, je..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+  - text: Tengo un dolor tan malo en la espalda desde hace unos minutos...
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+  - text: "Que dolor, creo que tendr\xEDa que descansar un poco..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+  - text: ...
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+  - text: ..........
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+  - text: ...................
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+  - text: Vaya... Lo siento jovenzuelo, desde ayer no estoy muy bien...
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+  - text: No quiero estar triste o desanimado, ya sabes que siempre estoy riendo.
+      Je... Je... Je...
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+  - text: Ayer no pude ni estar con mi nietecito como siempre... Cada vez estoy peor...
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+  - text: "Hola jonvenzuelo. Cof, cof cof... Me encuentro bien... S\xED..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+  - text: "Desde hace unos d\xEDas, desde las luces esas que hay en el \xE1rbol del
+      norte..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+  - text: "No estoy de lo m\xE1s fino... Pero sigo bien... No te preocupes..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+  - text: ......
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+  - text: ....................
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+  - text: ........................................
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0

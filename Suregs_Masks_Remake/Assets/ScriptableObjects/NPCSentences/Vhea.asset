@@ -51,3 +51,57 @@ MonoBehaviour:
         options: []
         commerceID: 0
     commerceID: 0
+  - text: "\xBFQue tal ha ido el entrenamiento?"
+    id: 
+    type: 1
+    minState: 1
+    options:
+    - optionText: "Hola Abuela, otro entrenamiento nefasto, tendr\xEDa que ser m\xE1s
+        fuerte, como padre..."
+      nextSentences:
+      - text: "Eso fue justo lo que le mat\xF3, Jakov, no sab\xEDa cuando parar."
+        id: 
+        type: 0
+        minState: 1
+        options: []
+        commerceID: 0
+    commerceID: 0
+  - text: "Y t\xFA no tienes que parecerte a \xE9l, seguro que se te dan bien otros
+      trabajos..."
+    id: 
+    type: 1
+    minState: 1
+    options:
+    - optionText: "Seguro que ten\xEDa alg\xFAn secreto para ser tan fuerte... Abuela,
+        \xBFd\xF3nde guardas su equipo? Seguro que hay algo que me sirve..."
+      nextSentences:
+      - text: "Ni se te ocurra, seguir sus pasos te va a llevar a un camino muy oscuro,
+          no lo pienses m\xE1s, come esto y descansa."
+        id: 
+        type: 0
+        minState: 1
+        options: []
+        commerceID: 0
+    commerceID: 0
+  - text: "Que mal te ves Jakov, \xBFquieres comer y reponer fuerzas?"
+    id: 
+    type: 1
+    minState: 2
+    options:
+    - optionText: Si, por favor.
+      nextSentences:
+      - text: "C\xF3melo tranquilo, est\xE1 reci\xE9n hecho."
+        id: 
+        type: 0
+        minState: 1
+        options: []
+        commerceID: 0
+    - optionText: No hace falta.
+      nextSentences:
+      - text: "Bueno... Estar\xE9 siempre aqu\xED si necesitas algo de comer."
+        id: 
+        type: 0
+        minState: 1
+        options: []
+        commerceID: 0
+    commerceID: 0

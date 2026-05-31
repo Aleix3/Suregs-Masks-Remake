@@ -47,6 +47,8 @@ public class DialogueManager : MonoBehaviour
     private bool dialogueEnded;
     private Stack<Queue<RuntimeSentence>> flowStack;
 
+    private bool blockAdvanceInput;
+
 
     private void Awake()
     {
@@ -95,7 +97,7 @@ public class DialogueManager : MonoBehaviour
 
         flowStack.Push(mainFlow);
         currentSentences = flowStack.Peek();
-
+        blockAdvanceInput = true;
         DisplayNextSentence();
         Player.Instance.canMove = false;
     }
@@ -311,6 +313,16 @@ public class DialogueManager : MonoBehaviour
         if (!dialogueActive)
             return;
 
+        if (blockAdvanceInput)
+        {
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                blockAdvanceInput = false;
+            }
+
+            return;
+        }
+
         if (optionsContainer.childCount > 0)
         {
             HandleOptionInput();
@@ -319,9 +331,6 @@ public class DialogueManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (optionsContainer.childCount > 0)
-                return;
-
             DisplayNextSentence();
         }
     }

@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dbf4bb952f694409fe53dd8afb006f, type: 3}
+  m_Name: Sukhy
+  m_EditorClassIdentifier: 
+  npcName: Sukhy
+  portrait: {fileID: 21300000, guid: 90de2bfd3fce4c5429643220dda07e9f, type: 3}
+  sentences:
+  - text: "H-ho-hola... \xBFC-co-conoces a aqu\xE9l guardia tan guapo? Me gustar\xEDa
+      hablar con \xE9l..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+  - text: "P-pe-perd\xF3n... Me he d-da-dado cuenta de que tienes p-pri-prisa..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+  - text: "O-ol-olvida lo que he d-di-dicho, \xBFvale? Je, je..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+  - text: "\xBFE-es-est\xE1s bien? P-pa-parece que no ha ido b-bi-bien el entrenamiento..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+  - text: "L-lo s-si-siento... Deber\xEDas ir a casa... Y-yo m-me quedar\xE9 a ver
+      s-si Zupho s-se queda s-so-solo..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+  - text: "N-nos v-ve-vemos... M-ma-ma\xF1ana s-su-supongo..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+  - text: "Me lo he p-pro-\xA1PROPUESTO! P-pe-perd\xF3n por gritar..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+  - text: "\xBFP-po-podr\xEDas darle e-es-esta carta a Zuphe? P-por f-fa-favor...
+      Es muy s-se-serio y varonil..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+  - text: P-pe-pero... No le d-di-digas que la he escrito yo...
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+  - text: "Zupho n-no r-res-responde... \xA1A NINGUNA DE MIS SE\xD1ALES! E-es-estoy..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+  - text: Estoy a punto de darme por vencida...
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+  - text: "\xBFSabes? Solo tartamudeo h-ha-hablando s-so-sobre Zupho..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+  - text: "Hola compi de aventuras, \xBFsabes? T\xFA eres el \xFAnico que s-sa-sabe
+      s-so-sobre Zupho..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+  - text: "As\xED que este ser\xE1 nuestro peque\xF1o secreto..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+  - text: Cada vez intento ir mejorando mi tartamudeo, p-pe-pero c-cuan-cuando pienso
+      en Zupho...
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+  - text: Hoy no quiero hablar... Lo... Siento...
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+  - text: Estoy triste Jakov, no es justo...
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+  - text: "Esta ma\xF1ana ha ido la herrera a devolver una espada que alg\xFAn maldito
+      le hab\xEDa llevado..."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+  - text: "Maldigo a la persona que llev\xF3 la espada... \xBFPorque no me lo pidi\xF3
+      a mi? Siempre estoy aqu\xED y ni caso..."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+  - text: Hola Jakov... Vamos de mal en peor...
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+  - text: "No s\xE9 si te has enterado, pero Patzo y Patza se casan..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+  - text: "Zupho va con Phoska... No quiero ir sola... Me preguntaba si querr\xEDas
+      venir conmigo..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+  - text: "\xA1LO HE DECIDIDO! Perd\xF3n por gritar... Je, je..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+  - text: "\xA1Voy a dejar de perseguir a una persona que siquiera sabe si existo!
+      Por cierto..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+  - text: "\xBFTe acuerdas que te pregunt\xE9 si me pod\xEDas acompa\xF1ar a la boda
+      de Patzo y Patza? He decidido ir sola... \xA1PORQUE NO HAY NADA MALO EN ESTAR
+      SOLA! Perd\xF3n de nuevo... Je, je..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
