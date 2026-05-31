@@ -17,6 +17,9 @@ public class BlacksmithShop : MonoBehaviour
 
     public Image swordImage;
     public Image armorImage;
+    public event Action OnTradeUpdated;
+
+    public ShopUI shopUI;
 
     public enum BlacksmithMode
     {
@@ -32,10 +35,19 @@ public class BlacksmithShop : MonoBehaviour
         RefreshUI();
     }
 
+    private void OnEnable()
+    {
+        UIState.IsUIOpen = true;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIState.IsUIOpen = false;
             canvas.SetActive(false);
+        }
+            
     }
     public BlackSmithTrade GetCurrentTrade()
     {
@@ -124,6 +136,20 @@ public class BlacksmithShop : MonoBehaviour
         pendingBuy[index]++;
     }
 
+    public void CancelTrade()
+    {
+        for (int i = 0; i < shopUI.buttons.Count; i++)
+        {
+            if (shopUI.buttons[i].isSelected)
+            {
+                shopUI.buttons[i].DeSelect();
+            }
+
+        }
+        pendingBuy.Clear();
+        OnTradeUpdated?.Invoke();
+    }
+
     // 🔹 Confirmar todas las compras
     public void ConfirmBuy()
     {
@@ -146,6 +172,7 @@ public class BlacksmithShop : MonoBehaviour
 
             // Aplicar la mejora
             ApplyUpgrade(trade.potionResult, qty);
+            //trades[entry.Key].ty = GetType()
             Debug.Log($"trade mejorado {trade.potionResult}");
         }
         for (int i = 0; i < tradeUIs.Count; i++)
@@ -183,7 +210,6 @@ public class BlacksmithShop : MonoBehaviour
         }
     }
 
-    // 🔹 Obtiene el nivel del item a partir de su nombre (ESPADA_NV4 → 4)
     private int GetLevel(ItemType type)
     {
         string name = type.ToString();
@@ -200,6 +226,17 @@ public class BlacksmithShop : MonoBehaviour
             return level;
 
         return 0;
+    }
+
+    private string GetType(ItemType type)
+    {
+        string name = type.ToString();
+
+        int lastUnderscore = name.LastIndexOf('_');
+        if (lastUnderscore == -1)
+            return name;
+
+        return name.Substring(0, lastUnderscore);
     }
 
     private bool IsWeapon(ItemType type) => type.ToString().StartsWith("ESPADA");
@@ -240,10 +277,6 @@ public class BlacksmithShop : MonoBehaviour
     public void SetMode(BlacksmithMode mode)
     {
         currentMode = mode;
-
-        
-
-        
     }
 
     ItemType GetWeaponTypeByLevel(int level)
@@ -274,6 +307,19 @@ public class BlacksmithShop : MonoBehaviour
         for (int i = 0; i < tradeUIs.Count; i++)
         {
             tradeUIs[i].Refresh();
+        }
+
+        for (int i = 0; i < tradeUIs.Count; i++)
+        {
+            if(tradeUIs[i].mode == BlacksmithMode.Weapon)
+            {
+                tradeUIs[i].GetComponent<ShopButton>().itemType = swordType;
+            }
+            else
+            {
+                tradeUIs[i].GetComponent<ShopButton>().itemType = armorType;
+            }
+            
         }
 
 

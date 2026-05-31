@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dbf4bb952f694409fe53dd8afb006f, type: 3}
+  m_Name: Phoska
+  m_EditorClassIdentifier: 
+  npcName: Phoska
+  portrait: {fileID: 21300000, guid: 3dc49e0832cb44b4389e29c425fc0ef4, type: 3}
+  sentences:
+  - text: "\xA1Buenos d\xEDas! Bienvenido a la herrer\xEDa de Phoska."
+    id: 
+    type: 1
+    minState: 0
+    options:
+    - optionText: "\xBFQu\xE9 ofreces?"
+      nextSentences:
+      - text: "Con los materiales necesarios podr\xE9 forjar mejoras para tu equipo.
+          \xA1No dudes en venir cuando quieras mejorar tus herramientas de combate!"
+        id: 
+        type: 2
+        minState: 0
+        options: []
+        commerceID: 0
+    - optionText: "\xA1Adi\xF3s!"
+      nextSentences:
+      - text: "\xA1No dudes en venir m\xE1s por aqu\xED!"
+        id: 
+        type: 0
+        minState: 0
+        options: []
+        commerceID: 0
+    commerceID: 0

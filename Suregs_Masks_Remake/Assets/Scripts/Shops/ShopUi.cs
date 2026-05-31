@@ -119,7 +119,7 @@ public class ShopUI : MonoBehaviour
             }
             else
             {
-                // 🔹 CASO NORMAL (Potion / Merchant)
+                
                 Item.ItemType type = buttons[currentIndex].itemType;
 
                 Item.GetItemData(type, out string name, out string description, out string itemType, out Sprite sprite);

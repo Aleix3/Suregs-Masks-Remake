@@ -49,6 +49,9 @@ public class DialogueManager : MonoBehaviour
 
     private bool blockAdvanceInput;
 
+    [Header("Commerce")]
+    public GameObject[] shops;
+
 
     private void Awake()
     {
@@ -275,7 +278,7 @@ public class DialogueManager : MonoBehaviour
 
     private void OpenCommerce(int commerceID)
     {
-        Debug.Log("Open Shop: " + commerceID);
+        shops[commerceID].SetActive(true);
     }
 
 
