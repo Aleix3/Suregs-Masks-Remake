@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dbf4bb952f694409fe53dd8afb006f, type: 3}
+  m_Name: Pareja
+  m_EditorClassIdentifier: 
+  npcName: 
+  portrait: {fileID: 0}
+  sentences:
+  - text: "Hombre, Jakov, \xBFtanta prisa llevas? No disfrutas de los placeres de
+      la vida..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patzo
+    speakerPortrait: {fileID: 21300000, guid: 916e7d1e8ebeb6d48bcd8028c453704d, type: 3}
+  - text: "Tienes que buscar una pareja para poder asentar tu vida. Aunque todos
+      los j\xF3venes son guerreros o se han ido del pueblo..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patza
+    speakerPortrait: {fileID: 21300000, guid: fea666ba17523cc4cbf002ffe45ad1d5, type: 3}
+  - text: "\xBFSales ya de entrenar? \xBFQu\xE9 tal ha ido? Se te ve cansado y con
+      rasgu\xF1os..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patzo
+    speakerPortrait: {fileID: 21300000, guid: 916e7d1e8ebeb6d48bcd8028c453704d, type: 3}
+  - text: "\xBFHas perdido el combate de entrenamiento? No pasa nada, siempre puedes
+      mejorar..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patza
+    speakerPortrait: {fileID: 21300000, guid: fea666ba17523cc4cbf002ffe45ad1d5, type: 3}
+  - text: "\xA1Hola Jakov! Estamos aqu\xED tranquilos, \xBFc\xF3mo te encuentras
+      t\xFA? Hoy no est\xE1s muy animado..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patzo
+    speakerPortrait: {fileID: 21300000, guid: 916e7d1e8ebeb6d48bcd8028c453704d, type: 3}
+  - text: "Si est\xE1s mal, te recomiendo mirar algo que te pueda gustar en la tienda
+      de mi hermana, est\xE1 en el noroeste del pueblo..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patza
+    speakerPortrait: {fileID: 21300000, guid: fea666ba17523cc4cbf002ffe45ad1d5, type: 3}
+  - text: Estamos un poco ocupados...
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patzo
+    speakerPortrait: {fileID: 21300000, guid: 916e7d1e8ebeb6d48bcd8028c453704d, type: 3}
+  - text: "S\xED, lo siento Jakov, estamos hablando de cosas de pareja..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patza
+    speakerPortrait: {fileID: 21300000, guid: fea666ba17523cc4cbf002ffe45ad1d5, type: 3}
+  - text: "Jakov, \xBFpuedes decirle, por favor, que no tiene sentido irnos del pueblo?
+      A m\xED no me hace ni caso..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patzo
+    speakerPortrait: {fileID: 21300000, guid: 916e7d1e8ebeb6d48bcd8028c453704d, type: 3}
+  - text: "\xA1Ni se te ocurra! \xA1Esto es una conversaci\xF3n de los dos! No quiero
+      quedarme en este pueblucho..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patza
+    speakerPortrait: {fileID: 21300000, guid: fea666ba17523cc4cbf002ffe45ad1d5, type: 3}
+  - text: Nada, Jakov, no va a querer hablar contigo...
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patzo
+    speakerPortrait: {fileID: 21300000, guid: 916e7d1e8ebeb6d48bcd8028c453704d, type: 3}
+  - text: "Desde la discusi\xF3n que tuvimos, solo salimos y nos quedamos aqu\xED
+      en silencio..."
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patza
+    speakerPortrait: {fileID: 21300000, guid: fea666ba17523cc4cbf002ffe45ad1d5, type: 3}
+  - text: "\xA1Hombre Jakov! Te veo m\xE1s guapet\xF3n, \xBFeh, chaval? Te ves bien..."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patzo
+    speakerPortrait: {fileID: 21300000, guid: 916e7d1e8ebeb6d48bcd8028c453704d, type: 3}
+  - text: Ya hemos arreglado nuestras diferencias, hemos decidido quedarnos en el
+      pueblo por ahora...
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patza
+    speakerPortrait: {fileID: 21300000, guid: fea666ba17523cc4cbf002ffe45ad1d5, type: 3}
+  - text: "\xA1Hola Jakov, te tenemos que decir algo s\xFAper importante! D\xEDselo
+      Patza..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patzo
+    speakerPortrait: {fileID: 21300000, guid: 916e7d1e8ebeb6d48bcd8028c453704d, type: 3}
+  - text: "\xA1Vamos a casarnos! Hemos decidido casarnos en el pueblo dentro de unos
+      meses y mudarnos a la ciudad..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patza
+    speakerPortrait: {fileID: 21300000, guid: fea666ba17523cc4cbf002ffe45ad1d5, type: 3}
+  - text: "Que feliz estoy por mi boda Jakov, \xA1espero que vengas bien guapo! D\xEDselo
+      tambi\xE9n a tu abuela..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patzo
+    speakerPortrait: {fileID: 21300000, guid: 916e7d1e8ebeb6d48bcd8028c453704d, type: 3}
+  - text: "Hemos decidido que la boda ser\xE1 en tan solo 3 meses, despu\xE9s nos
+      iremos a la ciudad..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Patza
+    speakerPortrait: {fileID: 21300000, guid: fea666ba17523cc4cbf002ffe45ad1d5, type: 3}

@@ -1,0 +1,285 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dbf4bb952f694409fe53dd8afb006f, type: 3}
+  m_Name: Bullies
+  m_EditorClassIdentifier: 
+  npcName: 
+  portrait: {fileID: 0}
+  sentences:
+  - text: "Mirad a quien tenemos aqu\xED, el peor caballero de toda la aldea, adem\xE1s
+      hijo de el mejor de todos los tiempos..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "La verdad es que es bastante triste, imaginad lo que pensar\xEDa su padre
+      de \xE9l si lo viese..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Xiby
+    speakerPortrait: {fileID: 21300000, guid: 0a837c894985a9241bfeb9a502e9049a, type: 3}
+  - text: "No digas eso, ya sabes que su padre no podr\xE1 verlo nunca m\xE1s, \xA1ja,
+      ja ja...!"
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "\xBFTe vas llorando a tu casa? Que triste, \xA1ja, ja, ja! Ves con tu
+      abuelita, que ella si te aguanta..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: Esa ha sido buena, pero no creo que lo aguante siquiera...
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Xiby
+    speakerPortrait: {fileID: 21300000, guid: 0a837c894985a9241bfeb9a502e9049a, type: 3}
+  - text: "Es cierto, toda la familia se fu\xE9 y se tuvo que quedar con el peor
+      de todos, \xA1ja, ja, ja...!"
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "Ayer no viniste a entrenar, \xBFya has desistido, In\xFAtilakhov? \xA1Ja,
+      ja, ja...!"
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "No le llames as\xED, hombre, recuerda que es el hijo del 'Legendario H\xE9roe
+      de la Aldea'..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Xiby
+    speakerPortrait: {fileID: 21300000, guid: 0a837c894985a9241bfeb9a502e9049a, type: 3}
+  - text: "Seguramente su padre era igual de in\xFAtil que \xE9l. \xA1Ja, ja, ja...!"
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "No paras de venir, \xBFeh? Se nota que te gusta recibir tu dosis diaria
+      de atenci\xF3n..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "Es cierto, como no quiere recibir golpes, viene a recibir insultos, \xA1ja,
+      ja, ja...!"
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Xiby
+    speakerPortrait: {fileID: 21300000, guid: 0a837c894985a9241bfeb9a502e9049a, type: 3}
+  - text: "\xBFCu\xE1ntos d\xEDas lleva sin venir? Yo tampoco lo notaba cuando ven\xEDa,
+      \xA1ja, ja, ja...!"
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "Otra vez vienes, \xBFeh? Por mucho que entrenes tu fuerza seguir\xE1s
+      siendo un in\xFAtil..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "Es cierto, In\xFAtilakhov nunca se terminar\xE1, por mucho que vayas a
+      entrenar al bosque..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Xiby
+    speakerPortrait: {fileID: 21300000, guid: 0a837c894985a9241bfeb9a502e9049a, type: 3}
+  - text: "Por mucha fuerza que tengas seguir\xE1s sin saber dominar la espada. \xA1Ja,
+      ja, ja...!"
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "Mirad a quien tenemos por aqu\xED, a In\xFAtilakhov, dile donde le has
+      visto, Xiby..."
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "\xA1Es cierto! \xBFQue pasar\xEDa si le contamos a tu pobre abuela donde
+      est\xE1s yendo? Que pena..."
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Xiby
+    speakerPortrait: {fileID: 21300000, guid: 0a837c894985a9241bfeb9a502e9049a, type: 3}
+  - text: "No se lo podremos decir, pobrecilla, el in\xFAtil de su hijo ya muri\xF3
+      dentro, y ahora su nieto, \xA1ja, ja, ja...!"
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "No hemos encontrado a tu abuela, chaval, \xBFdesde la muerte de tus padres
+      no sale de casa? Vaya..."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "Se lo hemos tenido que decir al viejales de tu vecino, a ver si \xE9l
+      se lo dice a tu abuela y se pone m\xE1s triste a\xFAn..."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Xiby
+    speakerPortrait: {fileID: 21300000, guid: 0a837c894985a9241bfeb9a502e9049a, type: 3}
+  - text: "No seas malo, \xA1hombre! No puede estar m\xE1s triste que ahora, \xBFolvidas
+      qui\xE9n es su nieto? \xA1Ja, ja, ja...!"
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "Mirad quien est\xE1 aqu\xED de nuevo, In\xFAtilakhov, \xA1ja, ja, ja...!
+      Entras a la cueva pero te quedas en la entrada, \xA1seguro...!"
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "Claro que s\xED, \xBFd\xF3nde podr\xEDa ir este pobre animal si no es
+      a la entrada de la cueva? Dispuesto a salir por patas cuando salga un Sureg..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Xiby
+    speakerPortrait: {fileID: 21300000, guid: 0a837c894985a9241bfeb9a502e9049a, type: 3}
+  - text: "\xA1No cantes victoria! Recuerda que su madre no pudo huir, y eso que
+      estaba m\xE1s cerca de la aldea, \xA1ja, ja, ja...!"
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "\xBFPorqu\xE9 nos miras as\xED, In\xFAtilakhov? \xBFTe crees que por entrenar
+      en la cueva esa eres m\xE1s fuerte que nosotros? Espero que no..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}
+  - text: "\xBFC\xF3mo va a creer eso? No le hemos dado tanto en la cabeza para que
+      est\xE9 loco. \xA1Ja, ja, ja...!"
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Xiby
+    speakerPortrait: {fileID: 21300000, guid: 0a837c894985a9241bfeb9a502e9049a, type: 3}
+  - text: "Como os pas\xE1is, seguro que se cree invencible, como el 'Legendario
+      H\xE9rore de la Aldea'..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Huhan
+    speakerPortrait: {fileID: 21300000, guid: 3eaf72c82defdb44fbb32f9080570773, type: 3}

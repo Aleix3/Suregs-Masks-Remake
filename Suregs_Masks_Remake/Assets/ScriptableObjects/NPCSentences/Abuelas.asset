@@ -1,0 +1,312 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dbf4bb952f694409fe53dd8afb006f, type: 3}
+  m_Name: Abuelas
+  m_EditorClassIdentifier: 
+  npcName: 
+  portrait: {fileID: 0}
+  sentences:
+  - text: "Hola Jakov, \xA1hay que ver c\xF3mo creces! Hace nada eras a\xFAn un ni\xF1o..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Dorothy
+    speakerPortrait: {fileID: 21300000, guid: 78f7231f6575a9140884e5498f42e997, type: 3}
+  - text: "\xBFVas al entrenamiento? Creo que ya te est\xE1n esperando. Deber\xEDas
+      darte prisa cari\xF1o..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Hely
+    speakerPortrait: {fileID: 21300000, guid: 33a86cebcc272244787b678e0eb2c227, type: 3}
+  - text: "No te molestamos m\xE1s, \xA1cuando salgas podemos seguir hablando! Ya
+      sabes que siempre estamos aqu\xED..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "\xBFYa ha terminado el entrenamiento? Hoy ha sido m\xE1s r\xE1pido de
+      lo normal..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Dorothy
+    speakerPortrait: {fileID: 21300000, guid: 78f7231f6575a9140884e5498f42e997, type: 3}
+  - text: "\xBFTe encuentras bien Jakov? Normalmente no eres tan hablador, creo que
+      es una mala costumbre que se te peg\xF3 de tu abuela..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Hely
+    speakerPortrait: {fileID: 21300000, guid: 33a86cebcc272244787b678e0eb2c227, type: 3}
+  - text: Pobrecita, desde el incidente ya no quiere salir a hablar con la gente
+      del pueblo, Hemyl le tiene que llevar la comida siempre...
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "\xBFTe has metido ah\xED dentro? No puedes hacer estas cosas, nos hemos
+      preocupado mucho cuando nos lo han contado los trillizos...\"/>"
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Dorothy
+    speakerPortrait: {fileID: 21300000, guid: 78f7231f6575a9140884e5498f42e997, type: 3}
+  - text: "Ya sabes lo que le pas\xF3 a tu padre, no deber\xEDas entrar ah\xED ni
+      por curiosidad, \xE9l era mucho m\xE1s fuerte que t\xFA..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Hely
+    speakerPortrait: {fileID: 21300000, guid: 33a86cebcc272244787b678e0eb2c227, type: 3}
+  - text: "Ves a casa, \xBFs\xED? La pobre Vhea debe estar super preocupada, vaya
+      cara ha puesto cuando se lo hemos contado, ves a dormir y hablad..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "\xA1Hola Jakov! Est\xE1bamos recordando viejos tiempos del pueblo, record\xE1bamos
+      lo apuesto que era tu padre, siempre tan servicial..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Dorothy
+    speakerPortrait: {fileID: 21300000, guid: 78f7231f6575a9140884e5498f42e997, type: 3}
+  - text: "Cu\xE1nto m\xE1s tiempo pasa, m\xE1s te pareces a \xE9l, siempre con una
+      sonrisa hablando con todo el mundo..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Hely
+    speakerPortrait: {fileID: 21300000, guid: 33a86cebcc272244787b678e0eb2c227, type: 3}
+  - text: "Aunque, a diferencia de \xE9l, debemos decirte que t\xFA pareces mucho
+      m\xE1s sincero, \xE9l parec\xEDa siempre preocupado..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "\xBFT\xFA de nuevo? Realmente te est\xE1s volviendo muy abierto con nosotras,
+      Jakov..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Dorothy
+    speakerPortrait: {fileID: 21300000, guid: 78f7231f6575a9140884e5498f42e997, type: 3}
+  - text: "Nos alegra much\xEDsimo que hables con unas ancianas como nosotras, ya
+      estamos cansadas de hablar siempre entre nosotras..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Hely
+    speakerPortrait: {fileID: 21300000, guid: 33a86cebcc272244787b678e0eb2c227, type: 3}
+  - text: "Cada vez pareces m\xE1s confiado, Jakov. Te debes estar esforzando mucho
+      entrenando en el bosque, cada d\xEDa vas por all\xED..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "Vaya d\xEDa que llevamos Jakov, este clima es muy malo para nosotras..."
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Dorothy
+    speakerPortrait: {fileID: 21300000, guid: 78f7231f6575a9140884e5498f42e997, type: 3}
+  - text: "A Dorothy y Pathy le duelen las rodillas, y a m\xED, la cadera, vaya l\xEDo..."
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Hely
+    speakerPortrait: {fileID: 21300000, guid: 33a86cebcc272244787b678e0eb2c227, type: 3}
+  - text: "Hemos ido a hablar con Zhyuka, pero dice que las pociones que puede fabricar
+      ella son muy d\xE9biles todav\xEDa..."
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "\xA1Que alivio! Muchas gracias Jakov, Zhyuka nos coment\xF3 que encontraste
+      por casualidad un objeto que potencia sus pociones..."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Dorothy
+    speakerPortrait: {fileID: 21300000, guid: 78f7231f6575a9140884e5498f42e997, type: 3}
+  - text: "No s\xE9 donde lo habr\xE1s encontrado, pero espero que no est\xE9s yendo
+      a esa cueva jovencito, ya te hemos dicho que es muy peligroso..."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Hely
+    speakerPortrait: {fileID: 21300000, guid: 33a86cebcc272244787b678e0eb2c227, type: 3}
+  - text: "Es cierto, no deber\xEDas acercarte Jakov, puedes seguir entrenando en
+      el bosque, como siempre haces.."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "\xBFOtra vez por aqu\xED? Como me alegra hablar con gente joven como t\xFA,
+      Jakov. Adem\xE1s, veo mucho m\xE1s fuerte \xFAltimamente..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "Es cierto, te est\xE1s conviertiendo en un aut\xE9ntico hombre Jakov,
+      cada vez te pareces m\xE1s a tu padre..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "Desde luego, no s\xE9 c\xF3mo te ir\xE1 en los entrenamientos, pero est\xE1s
+      convirti\xE9ndote en un aut\xE9ntico guerrero."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "\xA1Jakov! Ven aqu\xED ahora mismo, estamos muy enfadadas contigo..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "Nos han dicho los guardias que llevan varios d\xEDas vi\xE9ndote entrar
+      en la cueva, nosotras pens\xE1bamos que ibas al bosque a entrenar..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "Y adem\xE1s le he preguntado yo a mi nieto si vas a los entrenamientos,
+      y me ha dicho que no..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "Cada vez te pareces m\xE1s a tu padre jovencito, pero no en el buen sentido..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "Es cierto lo que dice Dorothy. Como hac\xEDa tu padre, siempre est\xE1s
+      entrando y saliendo de all\xED..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}
+  - text: "Adem\xE1s, como \xE9l, hablas con una sonrisa con todo el mundo, pero
+      parece que est\xE1s preocupado por algo..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Pathy
+    speakerPortrait: {fileID: 21300000, guid: d6178b789a208d1419f1e4dd9f94fb50, type: 3}

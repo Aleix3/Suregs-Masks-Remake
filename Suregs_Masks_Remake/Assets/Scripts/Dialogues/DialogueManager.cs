@@ -51,6 +51,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Commerce")]
     public GameObject[] shops;
+    private bool commerceOpen;
 
 
     private void Awake()
@@ -197,6 +198,17 @@ public class DialogueManager : MonoBehaviour
 
         DialogueMemory.MarkSeen(key);
 
+        if (sentence.overrideSpeaker)
+        {
+            npcNameText.text = sentence.speakerName;
+            portraitImage.sprite = sentence.speakerPortrait;
+        }
+        else
+        {
+            npcNameText.text = currentDialogue.npcName;
+            portraitImage.sprite = currentDialogue.portrait;
+        }
+
         dialogueText.text = sentence.text;
 
         switch (sentence.type)
@@ -278,6 +290,7 @@ public class DialogueManager : MonoBehaviour
 
     private void OpenCommerce(int commerceID)
     {
+        commerceOpen = true;
         shops[commerceID].SetActive(true);
     }
 
@@ -313,7 +326,10 @@ public class DialogueManager : MonoBehaviour
             GameProgress.Advance();
         }
 
-        if (!dialogueActive)
+        if (!dialogueActive )
+            return;
+
+        if (commerceOpen)
             return;
 
         if (blockAdvanceInput)
@@ -375,5 +391,12 @@ public class DialogueManager : MonoBehaviour
     private bool IsSentenceAvailable(DialogueSentence sentence)
     {
         return sentence.minState <= GameProgress.CurrentState;
+    }
+
+    public void CloseCommerce()
+    {
+        commerceOpen = false;
+
+        DisplayNextSentence();
     }
 }

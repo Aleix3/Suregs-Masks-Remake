@@ -17,6 +17,7 @@ public class Merchant : MonoBehaviour, IShop
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            DialogueManager.Instance.CloseCommerce();
             merchantCanvas.SetActive(false);
         }
     }

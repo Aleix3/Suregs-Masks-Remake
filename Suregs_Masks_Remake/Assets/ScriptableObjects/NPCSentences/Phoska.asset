@@ -22,10 +22,16 @@ MonoBehaviour:
     options:
     - optionText: "\xBFQu\xE9 ofreces?"
       nextSentences:
+      - text: 
+        id: 
+        type: 2
+        minState: 0
+        options: []
+        commerceID: 0
       - text: "Con los materiales necesarios podr\xE9 forjar mejoras para tu equipo.
           \xA1No dudes en venir cuando quieras mejorar tus herramientas de combate!"
         id: 
-        type: 2
+        type: 0
         minState: 0
         options: []
         commerceID: 0

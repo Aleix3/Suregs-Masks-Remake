@@ -23,4 +23,10 @@ public class DialogueSentence
     public List<DialogueOption> options;
 
     public int commerceID;
+
+    [Header("Override Speaker")]
+    public bool overrideSpeaker;
+
+    public string speakerName;
+    public Sprite speakerPortrait;
 }

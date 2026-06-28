@@ -18,7 +18,11 @@ public class PotionShop : MonoBehaviour, IShop
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
             witchCanvas.SetActive(false);
+            DialogueManager.Instance.CloseCommerce();
+        }
+            
     }
 
     public void Interact()

@@ -44,8 +44,8 @@ public class BlacksmithShop : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            UIState.IsUIOpen = false;
             canvas.SetActive(false);
+            DialogueManager.Instance.CloseCommerce();
         }
             
     }

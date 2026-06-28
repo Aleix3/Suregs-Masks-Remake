@@ -1,0 +1,310 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dbf4bb952f694409fe53dd8afb006f, type: 3}
+  m_Name: Soldados
+  m_EditorClassIdentifier: 
+  npcName: 
+  portrait: {fileID: 0}
+  sentences:
+  - text: "\xBFT\xFA no deber\xEDas estar entrenando? El entrenamiento no puede esperar..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zupho
+    speakerPortrait: {fileID: 21300000, guid: e4b52ca29ee71f04caff01421d157d59, type: 3}
+  - text: "Cualquier otro d\xEDa te dejar\xEDamos faltar, pero hoy es el d\xEDa de
+      combate..."
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphe
+    speakerPortrait: {fileID: 21300000, guid: d13fd9d03524a1946a50fe7580b79b49, type: 3}
+  - text: Si quieres tener una novia tan guapa como mi Phylippa, debes entrenar duro...
+    id: 
+    type: 0
+    minState: 0
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphu
+    speakerPortrait: {fileID: 21300000, guid: 556f2a449814ae74d81fc0c2e1a526ae, type: 3}
+  - text: "\xBFYa has salido del entreno? Espero que haya ido bien..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zupho
+    speakerPortrait: {fileID: 21300000, guid: e4b52ca29ee71f04caff01421d157d59, type: 3}
+  - text: Ya sabes que por la noche no se puede cruzar Jakov, son las normas...
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphe
+    speakerPortrait: {fileID: 21300000, guid: d13fd9d03524a1946a50fe7580b79b49, type: 3}
+  - text: "Ves a casa con tu abuela Jakov, yo ahora ir\xE9 con mi maravillosa Phylippa..."
+    id: 
+    type: 0
+    minState: 1
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphu
+    speakerPortrait: {fileID: 21300000, guid: 556f2a449814ae74d81fc0c2e1a526ae, type: 3}
+  - text: "\xBFYa has vuelto de ah\xED fuera? Ya sabes que cualquier cosa que te
+      pase no es nuestra responsabilidad..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zupho
+    speakerPortrait: {fileID: 21300000, guid: e4b52ca29ee71f04caff01421d157d59, type: 3}
+  - text: "Es cierto, nosotros abrimos por la ma\xF1ana y vamos a buscar a la gente
+      que falte por la noche..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphe
+    speakerPortrait: {fileID: 21300000, guid: d13fd9d03524a1946a50fe7580b79b49, type: 3}
+  - text: "Yo te recomendar\xEDa entrenar en el campo de entrenamiento, la cueva
+      es peligrosa..."
+    id: 
+    type: 0
+    minState: 2
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphu
+    speakerPortrait: {fileID: 21300000, guid: 556f2a449814ae74d81fc0c2e1a526ae, type: 3}
+  - text: "Siento haberle contado a las ancianas sobre tu escapada del otro d\xEDa
+      a la cueva..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zupho
+    speakerPortrait: {fileID: 21300000, guid: e4b52ca29ee71f04caff01421d157d59, type: 3}
+  - text: "Es cierto, pero entendemos que solo vas a husmear y despu\xE9s te marchas
+      al bosque, tranquilo..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphe
+    speakerPortrait: {fileID: 21300000, guid: d13fd9d03524a1946a50fe7580b79b49, type: 3}
+  - text: "Si, tranquilo Jakov, no hemos dicho que seguramente te marches, no quer\xEDamos
+      herir tu honor..."
+    id: 
+    type: 0
+    minState: 3
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphu
+    speakerPortrait: {fileID: 21300000, guid: 556f2a449814ae74d81fc0c2e1a526ae, type: 3}
+  - text: "Oye, cada d\xEDa vuelves m\xE1s tarde, ya sabes que no podemos ayudarte
+      si te adentras mucho en el bosque..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zupho
+    speakerPortrait: {fileID: 21300000, guid: e4b52ca29ee71f04caff01421d157d59, type: 3}
+  - text: "\xA1Es cierto! Adem\xE1s, no s\xE9 que est\xE1s haciendo, pero desde que
+      sales cada d\xEDa est\xE1 de un raro el \xE1rbol ese..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphe
+    speakerPortrait: {fileID: 21300000, guid: d13fd9d03524a1946a50fe7580b79b49, type: 3}
+  - text: "Justo, ya sab\xEDamos que brillaba algo por la noche, pero siempre hab\xEDamos
+      pensado que ser\xEDan luci\xE9rnagas..."
+    id: 
+    type: 0
+    minState: 4
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphu
+    speakerPortrait: {fileID: 21300000, guid: 556f2a449814ae74d81fc0c2e1a526ae, type: 3}
+  - text: "Jakov, a ti te estaba buscando yo. \xBFPodr\xEDas darle esta espada a
+      Phoska? Por favor..."
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zupho
+    speakerPortrait: {fileID: 21300000, guid: e4b52ca29ee71f04caff01421d157d59, type: 3}
+  - text: "Es una espada de uno de los estudiantes de cavallero, le he tenido que
+      dejar la m\xEDa momentaniamente..."
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphe
+    speakerPortrait: {fileID: 21300000, guid: d13fd9d03524a1946a50fe7580b79b49, type: 3}
+  - text: "No podemos movernos de aqu\xED, ya sabes que son las normas. Se lo pedir\xEDa
+      a Phylippa, pero no se ha pasado hoy..."
+    id: 
+    type: 0
+    minState: 5
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphu
+    speakerPortrait: {fileID: 21300000, guid: 556f2a449814ae74d81fc0c2e1a526ae, type: 3}
+  - text: "\xA1Gracias por la ayuda el otro d\xEDa Jakov! Estoy muy agradecido..."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zupho
+    speakerPortrait: {fileID: 21300000, guid: e4b52ca29ee71f04caff01421d157d59, type: 3}
+  - text: "Desde hace alg\xFAn tiempo te ve\xEDa m\xE1s alegre, el otro d\xEDa te
+      vimos con bastante mala cara..."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphe
+    speakerPortrait: {fileID: 21300000, guid: d13fd9d03524a1946a50fe7580b79b49, type: 3}
+  - text: "Espero que no te haya molestado nuestra propuesta, se lo iba a pedir a
+      Philyppa, pero no pas\xF3 por aqu\xED..."
+    id: 
+    type: 0
+    minState: 6
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphu
+    speakerPortrait: {fileID: 21300000, guid: 556f2a449814ae74d81fc0c2e1a526ae, type: 3}
+  - text: "\xBFTe pasa algo Jakov? Tienes cara de estar estrsado. Espero que el entreno
+      haya ido bien..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zupho
+    speakerPortrait: {fileID: 21300000, guid: e4b52ca29ee71f04caff01421d157d59, type: 3}
+  - text: "Parece que te est\xE1 funcionando, tienes m\xE1s musculatura y pones una
+      sonrisa siempre..."
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphe
+    speakerPortrait: {fileID: 21300000, guid: d13fd9d03524a1946a50fe7580b79b49, type: 3}
+  - text: Es cierto, siempre tienes una sonrisa en la cara pero pareces preocupado.
+      Recuerda que puedes hablar con el pueblo...
+    id: 
+    type: 0
+    minState: 7
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphu
+    speakerPortrait: {fileID: 21300000, guid: 556f2a449814ae74d81fc0c2e1a526ae, type: 3}
+  - text: "Jakov, ven aqu\xED..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zupho
+    speakerPortrait: {fileID: 21300000, guid: e4b52ca29ee71f04caff01421d157d59, type: 3}
+  - text: "Ayer yo mismo fu\xED a terminar con un Sureg que hab\xEDa salido de la
+      cueva, y despu\xE9s estuve busc\xE1ndote..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphe
+    speakerPortrait: {fileID: 21300000, guid: d13fd9d03524a1946a50fe7580b79b49, type: 3}
+  - text: "Cuando dijo que no estabas por el bosque, nos asustamos... Y hoy sales
+      de la cueva despu\xE9s de horas dentro..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphu
+    speakerPortrait: {fileID: 21300000, guid: 556f2a449814ae74d81fc0c2e1a526ae, type: 3}
+  - text: "Se lo hemos contado al pueblo, es muy grave esto Jakov, no podemos prohibirte
+      ir, pero es pr\xE1cticamente un suicidio..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zupho
+    speakerPortrait: {fileID: 21300000, guid: e4b52ca29ee71f04caff01421d157d59, type: 3}
+  - text: "Sabes que todos los guerreros admiramos a tu padre, pero creo que no deber\xEDas
+      intentar seguir sus pasos..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphe
+    speakerPortrait: {fileID: 21300000, guid: d13fd9d03524a1946a50fe7580b79b49, type: 3}
+  - text: "Piensa en tu abuela, yo no me puedo ni imaginar que pasar\xEDa si dejo
+      a mi Philyppa sola..."
+    id: 
+    type: 0
+    minState: 8
+    options: []
+    commerceID: 0
+    overrideSpeaker: 1
+    speakerName: Zuphu
+    speakerPortrait: {fileID: 21300000, guid: 556f2a449814ae74d81fc0c2e1a526ae, type: 3}
