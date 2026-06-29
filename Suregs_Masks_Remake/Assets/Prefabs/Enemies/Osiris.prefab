@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4293019591842975858}
   - component: {fileID: 3370494203231889287}
   - component: {fileID: 2607322578229682771}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Osiris
   m_TagString: Enemy
   m_Icon: {fileID: 0}

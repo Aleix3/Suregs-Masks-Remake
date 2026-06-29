@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6255237340032214821}
   - component: {fileID: 3055101950449712070}
   - component: {fileID: 2615514091221702222}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BossInuit
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -154,6 +154,7 @@ MonoBehaviour:
   maxHealth: 3000
   health: 0
   speed: 2
+  initialSpeed: 0
   attackDistance: 4
   viewDistance: 8
   viewColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

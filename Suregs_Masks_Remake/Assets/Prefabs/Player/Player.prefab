@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 4382748051436559833}
   - component: {fileID: 3664542672430604018}
   - component: {fileID: 9152237918208041046}
+  - component: {fileID: 8231884241296565130}
+  - component: {fileID: 4280659145124894079}
+  - component: {fileID: 8116843313300243663}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -128,12 +131,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1290c089a3994f4381b6b8703ef0c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   maxHealth: 100
   speed: 5
   dashForce: 10
   dashCooldown: 1
   dashDuration: 0.2
   swordDamage: 100
+  canMove: 1
   attackHitboxPrefab: {fileID: 3803651259362562942, guid: 7485853c63d01714aa4d3fc5ef41f11d, type: 3}
   attackWidth: 1
   attackHeight: 1
@@ -149,6 +154,13 @@ MonoBehaviour:
   - {fileID: 7400000, guid: e2fc7dae83ffe874f976a6521b29b530, type: 2}
   - {fileID: 7400000, guid: e754d78c7b95c0744b57dff5af25fc7c, type: 2}
   - {fileID: 7400000, guid: 538b4291e1e8cda4d868e7518e64d1a4, type: 2}
+  godMode: 0
+  weaponLevel: 1
+  armorLevel: 1
+  BasicDamageMultiplier: 1
+  SpeedMultiplier: 1
+  MaxHealthMultiplier: 1
+  basicAttackBonusPercent: 0.15
 --- !u!61 &4382748051436559833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -250,3 +262,116 @@ CircleCollider2D:
   m_Offset: {x: -0.27027526, y: -0.69914013}
   serializedVersion: 2
   m_Radius: 0.44885248
+--- !u!114 &8231884241296565130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064188762051051564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e67172fa5eba5f429673e43926bfe5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotPrimary: {fileID: 4280659145124894079}
+  slotSecondary: {fileID: 8116843313300243663}
+  swapKey: 114
+  swapButton: Y
+--- !u!114 &4280659145124894079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064188762051051564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d61c3cedcd58a439af405dd490c6f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 3671cfa17877212499a95193081285c3, type: 2}
+  statLife: 0
+  statSpeed: -0.1
+  statDamage: 0.1
+  statAtkSpeed: 0.1
+  passiveBasicDamageBonus: 0.2
+  detectionRadius: 15
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  baseDamage: 50
+  damageByLevel:
+  - 80
+  - 130
+  - 200
+  - 300
+  baseCooldown: 25
+  cooldownByLevel:
+  - 23
+  - 20
+  - 17
+  - 15
+  baseLightningCount: 1
+  lightningCountByLevel: 02000000030000000400000005000000
+  poisonTickRate: 1.5
+  poisonDamageByLevel:
+  - 10
+  - 20
+  - 20
+  - 30
+  poisonDurationByLevel:
+  - 6
+  - 6
+  - 9
+  - 11
+  lightningVFXPrefab: {fileID: 0}
+--- !u!114 &8116843313300243663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064188762051051564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb92190c46355344b849aedf93cbd58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 0943e9537ed85fb4aadf172f4f65ad2d, type: 2}
+  statLife: -0.1
+  statSpeed: 0.1
+  statDamage: 0.1
+  statAtkSpeed: 0
+  passiveWaveDamageFraction: 0.333
+  passiveWaveRadius: 2.5
+  baseExplosionRadius: 4
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  baseDamage: 100
+  damageByLevel:
+  - 120
+  - 180
+  - 250
+  - 400
+  baseCooldown: 30
+  cooldownByLevel:
+  - 28
+  - 25
+  - 23
+  - 20
+  alcanceBonus: 0.05
+  poisonTickRate: 1
+  poisonDamageByLevel:
+  - 5
+  - 10
+  - 10
+  - 15
+  poisonDurationByLevel:
+  - 5
+  - 5
+  - 10
+  - 15
+  explosionVFXPrefab: {fileID: 0}
+  waveVFXPrefab: {fileID: 0}

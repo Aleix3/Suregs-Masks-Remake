@@ -2,25 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MenuManager : MonoBehaviour
 {
-    public GameObject[] canvases;
+    public CanvasGroup[] canvases;
+
     private int currentIndex = 0;
     private bool activeMenu = false;
 
     void Start()
     {
-        // Apagar todos al inicio
-        foreach (GameObject canvas in canvases)
-        {
-            canvas.SetActive(false);
-        }
+        OcultarTodos();
     }
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             activeMenu = !activeMenu;
 
@@ -40,6 +37,7 @@ public class MenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             currentIndex++;
+
             if (currentIndex >= canvases.Length)
                 currentIndex = 0;
 
@@ -49,6 +47,7 @@ public class MenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             currentIndex--;
+
             if (currentIndex < 0)
                 currentIndex = canvases.Length - 1;
 
@@ -59,14 +58,19 @@ public class MenuManager : MonoBehaviour
     void MostrarCanvas(int index)
     {
         OcultarTodos();
-        canvases[index].SetActive(true);
+
+        canvases[index].alpha = 1;
+        canvases[index].interactable = true;
+        canvases[index].blocksRaycasts = true;
     }
 
     void OcultarTodos()
     {
-        foreach (GameObject canvas in canvases)
+        foreach (CanvasGroup canvas in canvases)
         {
-            canvas.SetActive(false);
+            canvas.alpha = 0;
+            canvas.interactable = false;
+            canvas.blocksRaycasts = false;
         }
     }
 }

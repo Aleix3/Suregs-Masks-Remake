@@ -61,7 +61,17 @@ public class Player : MonoBehaviour
     private bool isKnockedBack = false;
     private float knockbackTimer = 0f;
 
-    // Start is called before the first frame update
+    // Multiplicadores (las máscaras los suman/restan)
+    [HideInInspector] public float BasicDamageMultiplier = 1f;
+    [HideInInspector] public float SpeedMultiplier = 1f;
+    [HideInInspector] public float MaxHealthMultiplier = 1f;
+
+    [Header("Mascaras")]
+    public float basicAttackBonusPercent = 0.15f;
+    public bool BonusBasicDamageActive { get; set; } = false;
+    public MaskManager MaskManager { get; private set; }
+    
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -74,6 +84,7 @@ public class Player : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+        MaskManager = GetComponent<MaskManager>();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -98,7 +109,6 @@ public class Player : MonoBehaviour
         health = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
         UpdateKnockback();
@@ -114,7 +124,7 @@ public class Player : MonoBehaviour
             ToggleGodMode();
         }
 
-        healthBar.fillAmount = health / maxHealth;
+        //healthBar.fillAmount = health / maxHealth;
 
     }
 
@@ -257,6 +267,11 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+    }
+
+    public void HealToPercent(float percent)
+    {
+        health = Mathf.Min(maxHealth, maxHealth * percent);
     }
 
     protected void Flip()

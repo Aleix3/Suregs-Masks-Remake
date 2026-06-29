@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5024984355911440924}
   - component: {fileID: 3025464041298174710}
   - component: {fileID: 2035808442731716477}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Muur
   m_TagString: Enemy
   m_Icon: {fileID: 0}

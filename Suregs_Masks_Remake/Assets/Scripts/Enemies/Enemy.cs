@@ -2,9 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using static Enemy;
-using static Item;
-using static UnityEngine.UI.Image;
+
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -271,6 +269,40 @@ public abstract class Enemy : MonoBehaviour
 
         sr.color = original;
         flashRoutine = null;
+    }
+
+    public void ApplySlow(float speedFactor, float duration)
+    {
+        StopCoroutine(nameof(SlowRoutine));
+        StartCoroutine(SlowRoutine(speedFactor, duration));
+    }
+
+    private IEnumerator SlowRoutine(float factor, float duration)
+    {
+        speed = initialSpeed * factor;
+        yield return new WaitForSeconds(duration);
+        speed = initialSpeed;
+    }
+
+    public void ApplyPoison(float damagePerTick, float totalDuration, float tickRate)
+    {
+        StartCoroutine(DotRoutine(damagePerTick, totalDuration, tickRate));
+    }
+
+    public void ApplyBurn(float damagePerTick, float totalDuration, float tickRate)
+    {
+        StartCoroutine(DotRoutine(damagePerTick, totalDuration, tickRate));
+    }
+
+    private IEnumerator DotRoutine(float dmg, float duration, float rate)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration && !isDead)
+        {
+            yield return new WaitForSeconds(rate);
+            elapsed += rate;
+            TakeDamage((int)dmg);
+        }
     }
 
     protected virtual void OnDrawGizmosSelected()

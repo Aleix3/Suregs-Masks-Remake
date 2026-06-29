@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3055101950449712070}
   - component: {fileID: 816105898226232880}
   - component: {fileID: 5931411963363280205}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BossMussri
   m_TagString: Enemy
   m_Icon: {fileID: 0}
