@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 8231884241296565130}
   - component: {fileID: 4280659145124894079}
   - component: {fileID: 8116843313300243663}
+  - component: {fileID: 7442818282558098565}
+  - component: {fileID: 3651245318472302311}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -80,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 492635627, guid: 46dfdbb6c7ff0de478830b6baa4771cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,13 +133,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1290c089a3994f4381b6b8703ef0c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseSpeed: 5
+  baseSwordDamage: 100
+  baseMaxHealth: 100
   health: 100
-  maxHealth: 100
-  speed: 5
   dashForce: 10
   dashCooldown: 1
   dashDuration: 0.2
-  swordDamage: 100
+  lastMovementDirection: {x: 0, y: 0}
   canMove: 1
   actualRoom: {fileID: 0}
   attackHitboxPrefab: {fileID: 3803651259362562942, guid: 7485853c63d01714aa4d3fc5ef41f11d, type: 3}
@@ -342,6 +345,7 @@ MonoBehaviour:
   statAtkSpeed: 0
   passiveWaveDamageFraction: 0.333
   passiveWaveRadius: 2.5
+  passiveWaveBaseRadius: 2.5
   baseExplosionRadius: 4
   enemyLayer:
     serializedVersion: 2
@@ -372,3 +376,103 @@ MonoBehaviour:
   - 15
   explosionVFXPrefab: {fileID: 0}
   waveVFXPrefab: {fileID: 0}
+--- !u!114 &7442818282558098565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064188762051051564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86595879b7f09f84791703a9c145bfe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: d213c62f0795830468993420ddc602fd, type: 2}
+  statLife: -0.2
+  statSpeed: 0.1
+  statDamage: 0.1
+  statAtkSpeed: 0.1
+  passiveInvisDuration: 1
+  dashExtraFactor: 0.33
+  distanceBonusPerLevel: 0.05
+  stunDurationByLevel:
+  - 1
+  - 1.5
+  - 2
+  - 3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  dashHitRadius: 1.5
+  baseDamage: 40
+  damageByLevel:
+  - 50
+  - 70
+  - 100
+  - 150
+  baseInvisDuration: 5
+  invisDurationByLevel:
+  - 6
+  - 7.3
+  - 8.6
+  - 10
+  dashVFXPrefab: {fileID: 0}
+  baseCooldown: 20
+  cooldownByLevel:
+  - 18
+  - 16
+  - 13
+  - 10
+--- !u!114 &3651245318472302311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064188762051051564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f143d58455bd1f429f50ed47e2dbd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 67927d9d1d9569940944b28e92044a28, type: 2}
+  statLife: -0.05
+  statSpeed: -0.05
+  statDamage: -0.05
+  statAtkSpeed: -0.05
+  passiveHealthThreshold: 0.3
+  passiveDamageBonus: 0.2
+  passiveSpeedBonus: 0.1
+  baseBuff: 0.1
+  buffByLevel:
+  - 0.15
+  - 0.2
+  - 0.25
+  - 0.35
+  baseDuration: 20
+  durationByLevel:
+  - 22
+  - 25
+  - 27
+  - 30
+  baseDebuffDuration: 10
+  baseDebuffAmount: 0.2
+  debuffDurationByLevel:
+  - 8
+  - 7
+  - 5
+  - 3
+  debuffAmountByLevel:
+  - 0.15
+  - 0.12
+  - 0.08
+  - 0.05
+  baseCooldown: 60
+  cooldownByLevel:
+  - 58
+  - 56
+  - 53
+  - 50
+  buffVFXPrefab: {fileID: 0}
+  debuffVFXPrefab: {fileID: 0}

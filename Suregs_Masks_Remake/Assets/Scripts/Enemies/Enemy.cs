@@ -192,7 +192,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Die()
     {
-        if(isDead) return;
+        if (isDead) return;
         isDead = true;
 
         rb.velocity = Vector2.zero;
@@ -233,7 +233,7 @@ public abstract class Enemy : MonoBehaviour
         health -= damage;
         print("health:" + health);
 
-        // FLASH BLANCO AUTOMÁTICO
+        // FLASH BLANCO
         if (flashRoutine == null)
             flashRoutine = StartCoroutine(FlashWhite(0.15f));
         else
@@ -315,7 +315,7 @@ public abstract class Enemy : MonoBehaviour
         Gizmos.color = attackColor;
         Gizmos.DrawWireSphere(transform.position, attackDistance);
 
-        
+
     }
 
     public void StopCorroutinesGeneral()
@@ -323,7 +323,41 @@ public abstract class Enemy : MonoBehaviour
         sr.color = Color.white;
         StopAllCoroutines();
     }
-        
 
+
+    //  MÁSCARAS
+
+
+
+    public void SetFrozen(bool frozen)
+    {
+        canMove = !frozen;
+
+        if (agent != null)
+        {
+            agent.isStopped = frozen;
+            if (frozen) agent.ResetPath();
+        }
+
+        rb.velocity = Vector2.zero;
+    }
+
+    public void ApplyStun(float duration)
+    {
+        if (isDead) return;
+        StopCoroutine(nameof(StunRoutine));
+        StartCoroutine(StunRoutine(duration));
+    }
+
+    private IEnumerator StunRoutine(float duration)
+    {
+        isStunned = true;
+        SetFrozen(true);
+
+        yield return new WaitForSeconds(duration);
+
+        isStunned = false;
+        SetFrozen(false);
+    }
 
 }

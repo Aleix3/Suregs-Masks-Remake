@@ -10,16 +10,24 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
+    [Header("Stats Base")]
+    [SerializeField] private float baseSpeed = 5f;
+    [SerializeField] private int baseSwordDamage = 100;
+    [SerializeField] private float baseMaxHealth = 100f;
+
+    public float Speed => baseSpeed * SpeedMultiplier;
+    public int SwordDamage => Mathf.RoundToInt(baseSwordDamage * BasicDamageMultiplier);
+    public float MaxHealth => baseMaxHealth * MaxHealthMultiplier;
+
     [SerializeField] private float health = 100f;
-    public float maxHealth = 100;
-    public float speed = 5f;
+
     public float dashForce = 10f;
     public float dashCooldown = 1f;
     public float dashDuration = 1f;
-    public int swordDamage = 100;
+
 
     private Rigidbody2D rb;
-    private Vector2 lastMovementDirection;
+    public Vector2 lastMovementDirection;
     private bool isFacingLeft = false;
     private bool isDashing = false;
     private float dashTimer = 0f;
@@ -106,9 +114,9 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        health = Mathf.Clamp(health, 0, maxHealth);
+        health = Mathf.Clamp(health, 0, MaxHealth);
         rb = GetComponent<Rigidbody2D>();
-        health = maxHealth;
+        health = MaxHealth;
     }
 
     void Update()
@@ -126,7 +134,7 @@ public class Player : MonoBehaviour
             ToggleGodMode();
         }
 
-        //healthBar.fillAmount = health / maxHealth;
+        //healthBar.fillAmount = health / MaxHealth;
 
     }
 
@@ -149,11 +157,10 @@ public class Player : MonoBehaviour
         // Movimiento normal
         if (!isDashing)
         {
-            rb.velocity = inputDir * speed;
+            rb.velocity = inputDir * Speed;
 
             if (inputDir != Vector2.zero)
             {
-                //isFacingLeft = (inputDir.x < 0);
                 lastMovementDirection = inputDir;
             }
 
@@ -172,6 +179,10 @@ public class Player : MonoBehaviour
             dashTimer = dashDuration;
             dashCooldownTimer = dashCooldown;
             animator.SetBool("isDashing", true);
+
+            // Pasiva Musri: dash normal, invisibilidad
+            (MaskManager?.Primary as MaskMusri)?.OnPlayerDash();
+            (MaskManager?.Secondary as MaskMusri)?.OnPlayerDash();
         }
 
         // Control de duración del dash
@@ -256,8 +267,10 @@ public class Player : MonoBehaviour
 
         Invoke(nameof(ResetAttack), attackDuration);
 
-        
 
+        // Romper invisibilidad de Musri al atacar
+        (MaskManager?.Primary as MaskMusri)?.OnPlayerAttacked();
+        (MaskManager?.Secondary as MaskMusri)?.OnPlayerAttacked();
     }
 
     void ResetAttack()
@@ -266,14 +279,44 @@ public class Player : MonoBehaviour
         
     }
 
+    /// Musri: activa y desactiva invisibilidad visual e invulnerabilidad
+    /// También para y reanuda los enemigos de la sala
+
+    public void SetInvisible(bool invisible)
+    {
+
+        godMode = invisible;
+
+
+        var sr = GetComponentInChildren<SpriteRenderer>();
+        if (sr) sr.color = invisible ? new Color(1f, 1f, 1f, 0.3f) : Color.white;
+
+
+        if (actualRoom != null)
+        {
+            foreach (Enemy e in actualRoom.enemiesInRoom)
+            {
+                if (e == null || e.isDead) continue;
+                e.SetFrozen(invisible);
+            }
+        }
+    }
+
+    //Surma: recorta la vida al nuevo máximo (tras retirar buff)
+    public void ClampHealthToMax()
+    {
+        if (health > MaxHealth) health = MaxHealth;
+    }
+
+    //Surma: rellena vida hasta el porcentaje del máximo actual
+    public void HealToPercent(float percent)
+    {
+        health = Mathf.Min(MaxHealth, MaxHealth * percent);
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;
-    }
-
-    public void HealToPercent(float percent)
-    {
-        health = Mathf.Min(maxHealth, maxHealth * percent);
     }
 
     protected void Flip()
@@ -332,42 +375,42 @@ public class Player : MonoBehaviour
 
     public float GetMaxHealth()
     {
-        return maxHealth;
+        return MaxHealth;
     }
 
     public int GetSwordDamage()
     {
-        return swordDamage;
+        return SwordDamage;
     }
 
     public void UpgradeSword(int level)
     {
         weaponLevel = level;
 
-        swordDamage = PlayerStatsTable.GetWeaponDamage(level);
+        baseSwordDamage = PlayerStatsTable.GetWeaponDamage(level);
 
-        Debug.Log($"Weapon level: {level} | Damage: {swordDamage}");
+        Debug.Log($"Weapon level: {level} | Damage: {SwordDamage}");
     }
 
     public void UpgradeArmor(int level)
     {
         armorLevel = level;
 
-        float previousMax = maxHealth;
+        float previousMax = MaxHealth;
 
-        maxHealth = PlayerStatsTable.GetArmorHealth(level);
+        baseMaxHealth = PlayerStatsTable.GetArmorHealth(level);
 
-        health = (health / previousMax) * maxHealth;
+        health = (health / previousMax) * MaxHealth;
 
-        Debug.Log($"Armor level: {level} | MaxHealth: {maxHealth}");
+        Debug.Log($"Armor level: {level} | MaxHealth: {MaxHealth}");
     }
 
     public void Heal(float amount)
     {
         health += amount;
 
-        if (health > maxHealth)
-            health = maxHealth;
+        if (health > MaxHealth)
+            health = MaxHealth;
     }
 
     public void ApplyKnockback(Vector2 direction,float force,float duration)

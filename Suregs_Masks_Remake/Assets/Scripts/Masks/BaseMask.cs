@@ -29,12 +29,15 @@ public abstract class BaseMask : MonoBehaviour
         if (_cd > 0f) _cd -= Time.deltaTime;
     }
 
-
+    protected virtual bool ManualCooldown => false;
     public void TryActivate()
     {
         if (!IsReady) return;
         OnActivate();
-        _cd = GetEffectiveCooldown();
+
+        if (!ManualCooldown)
+            _cd = GetEffectiveCooldown();
+
     }
 
     public virtual void OnBasicAttack() { }
@@ -44,6 +47,8 @@ public abstract class BaseMask : MonoBehaviour
     protected abstract float GetEffectiveCooldown();
 
     public void ReduceCooldown(float seconds) => _cd = Mathf.Max(0f, _cd - seconds);
+
+    public void ForceStartCooldown(float seconds) => _cd = seconds;
     public void ForceReadyCooldown() => _cd = 0f;
 
 

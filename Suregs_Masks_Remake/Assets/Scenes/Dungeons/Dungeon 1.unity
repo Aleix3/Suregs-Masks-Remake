@@ -12248,6 +12248,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6156516644448943978, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
   m_PrefabInstance: {fileID: 520151458}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1836853460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7442818282558098565, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+  m_PrefabInstance: {fileID: 142958719442154951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86595879b7f09f84791703a9c145bfe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1836853461 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3651245318472302311, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+  m_PrefabInstance: {fileID: 142958719442154951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f143d58455bd1f429f50ed47e2dbd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1838239733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14205,6 +14227,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3651245318472302311, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: baseDebuffAmount
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4382748051436559833, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: m_Size.x
       value: 1.1241279
@@ -14218,6 +14244,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8116843313300243663, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: waveVFXPrefab
+      value: 
+      objectReference: {fileID: 7270222356401338064, guid: 6eda6147128999c4bb5d0f7857229542, type: 3}
+    - target: {fileID: 8116843313300243663, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: passiveWaveRadius
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116843313300243663, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: explosionVFXPrefab
       value: 
       objectReference: {fileID: 7270222356401338064, guid: 1ee8529f3ec0d2a4e8b0b2511c0a53d6, type: 3}
@@ -14225,6 +14259,14 @@ PrefabInstance:
       propertyPath: baseExplosionRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8231884241296565130, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: slotPrimary
+      value: 
+      objectReference: {fileID: 1836853461}
+    - target: {fileID: 8231884241296565130, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: slotSecondary
+      value: 
+      objectReference: {fileID: 1836853460}
     - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: dashForce
       value: 8

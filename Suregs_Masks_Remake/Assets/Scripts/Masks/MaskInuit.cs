@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -27,6 +28,7 @@ public class MaskInuit : BaseMask
     [Tooltip("Fracción del daño del arma que hace la onda")]
     public float passiveWaveDamageFraction = 0.333f;
     public float passiveWaveRadius = 2.5f;
+    public float passiveWaveBaseRadius = 2.5f;
 
     [Header("Activa – valores base")]
     public float baseExplosionRadius = 4f;
@@ -78,18 +80,45 @@ public class MaskInuit : BaseMask
     public override void ApplyPassive() => _passiveActive = true;
     public override void RemovePassive() => _passiveActive = false;
 
-    public void TriggerPassiveWave()
+    public void TriggerPassiveWave(Transform targetTransf)
     {
         if (!_passiveActive) return;
 
-        float waveDamage = player.swordDamage * passiveWaveDamageFraction;
-        var cols = Physics2D.OverlapCircleAll(player.transform.position, passiveWaveRadius, enemyLayer);
-        foreach (var c in cols)
+        float waveDamage = player.SwordDamage * passiveWaveDamageFraction;
+
+        var targets = new List<Enemy>();
+
+        Vector2 center = targetTransf.position;
+        float radius = passiveWaveRadius;
+        float radiusSqr = radius * radius;
+
+        if (player.actualRoom != null)
         {
-            var e = c.GetComponent<Enemy>();
-            if (e != null && !e.isDead) e.TakeDamage((int)waveDamage);
+            foreach (Enemy e in player.actualRoom.enemiesInRoom)
+            {
+                if (e == null || e.isDead || e == targetTransf.GetComponent<Enemy>())
+                    continue;
+
+                if (((Vector2)e.transform.position - center).sqrMagnitude <= radiusSqr)
+                    targets.Add(e);
+            }
         }
-        if (waveVFXPrefab) Instantiate(waveVFXPrefab, player.transform.position, Quaternion.identity);
+
+        if (waveVFXPrefab)
+        {
+            var go = Instantiate(waveVFXPrefab, targetTransf.position, Quaternion.identity);
+
+            // Escalar el efecto visual según el radio de la onda
+            go.transform.localScale = Vector3.one * (radius / passiveWaveBaseRadius);
+
+            var vfx = go.GetComponentInChildren<MaskDinkaWaveVFX>();
+
+            if (vfx != null)
+            {
+                vfx.targets = targets;
+                vfx.damage = waveDamage;
+            }
+        }
     }
 
 

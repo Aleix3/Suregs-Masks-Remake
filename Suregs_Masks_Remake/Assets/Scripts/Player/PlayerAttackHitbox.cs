@@ -18,11 +18,11 @@ public class PlayerAttackHitbox : MonoBehaviour
             Enemy enemy = collision.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(player.swordDamage);
+                enemy.TakeDamage(player.SwordDamage);
                 player.MaskManager.NotifyBasicAttack();
 
                 if (player.MaskManager.Secondary is MaskInuit inuit)
-                    inuit.TriggerPassiveWave();
+                    inuit.TriggerPassiveWave(enemy.transform);
 
                 // Romper invisibilidad de Musri si es primaria o secundaria
                 //if (player.MaskManager.Primary is MaskMusri musriP) musriP.OnPlayerAttackedWhileInvisible();
