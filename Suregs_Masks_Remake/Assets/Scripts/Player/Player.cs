@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     private float dashCooldownTimer = 0f;
     public bool canMove = true;
 
+    [SerializeField] public Room actualRoom;
+
     [Header("Attack")]
     public GameObject attackHitboxPrefab;
     public float attackWidth = 1f;

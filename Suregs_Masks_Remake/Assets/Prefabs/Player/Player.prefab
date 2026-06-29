@@ -139,6 +139,7 @@ MonoBehaviour:
   dashDuration: 0.2
   swordDamage: 100
   canMove: 1
+  actualRoom: {fileID: 0}
   attackHitboxPrefab: {fileID: 3803651259362562942, guid: 7485853c63d01714aa4d3fc5ef41f11d, type: 3}
   attackWidth: 1
   attackHeight: 1
@@ -296,10 +297,6 @@ MonoBehaviour:
   statDamage: 0.1
   statAtkSpeed: 0.1
   passiveBasicDamageBonus: 0.2
-  detectionRadius: 15
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
   baseDamage: 50
   damageByLevel:
   - 80
@@ -325,7 +322,7 @@ MonoBehaviour:
   - 6
   - 9
   - 11
-  lightningVFXPrefab: {fileID: 0}
+  lightningVFXPrefab: {fileID: 7270222356401338064, guid: 1f4789eaa57611e46b2682d08b9ad781, type: 3}
 --- !u!114 &8116843313300243663
 MonoBehaviour:
   m_ObjectHideFlags: 0

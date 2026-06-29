@@ -92,19 +92,12 @@ public class MaskInuit : BaseMask
         if (waveVFXPrefab) Instantiate(waveVFXPrefab, player.transform.position, Quaternion.identity);
     }
 
-    // ─────────────────────────────────────────────────────────────
-    //  Activa
-    // ─────────────────────────────────────────────────────────────
-    protected override void OnActivate() => StartCoroutine(BallRoutine());
 
-    private IEnumerator BallRoutine()
+    protected override void OnActivate()
     {
-        //animación
-        yield return new WaitForSeconds(0.4f);   // ajustar al timing del VFX
-
         float radius = baseExplosionRadius;
         if (ActiveBranchIndex == 2 && ActiveBranchLevel > 0)
-            radius *= 1f + alcanceBonus * ActiveBranchLevel;  // +5% acumulativo
+            radius *= 1f + alcanceBonus * ActiveBranchLevel;
 
         float damage = ActiveBranchIndex == 0 && ActiveBranchLevel > 0
             ? damageByLevel[ActiveBranchLevel - 1]
@@ -114,21 +107,39 @@ public class MaskInuit : BaseMask
         float poisonDmg = hasPoison ? poisonDamageByLevel[ActiveBranchLevel - 1] : 0f;
         float poisonDur = hasPoison ? poisonDurationByLevel[ActiveBranchLevel - 1] : 0f;
 
-        var cols = Physics2D.OverlapCircleAll(transform.position, radius, enemyLayer);
-        foreach (var c in cols)
+        var targets = new System.Collections.Generic.List<Enemy>();
+
+        if (player.actualRoom != null)
         {
-            var e = c.GetComponent<Enemy>();
-            if (e == null || !!e.isDead) continue;
-            e.TakeDamage((int)damage);
-            if (hasPoison) e.ApplyPoison(poisonDmg, poisonDur, poisonTickRate);
+            Vector2 center = player.transform.position;
+            float radiusSqr = radius * radius;
+
+            foreach (Enemy e in player.actualRoom.enemiesInRoom)
+            {
+                if (e == null || e.isDead)
+                    continue;
+
+                if (((Vector2)e.transform.position - center).sqrMagnitude <= radiusSqr)
+                    targets.Add(e);
+            }
         }
 
         if (explosionVFXPrefab)
         {
-            var vfx = Instantiate(explosionVFXPrefab, transform.position, Quaternion.identity);
-            vfx.transform.localScale = Vector3.one * (radius / baseExplosionRadius);
-        }
+            var go = Instantiate(explosionVFXPrefab, player.transform.position, Quaternion.identity);
+            go.transform.localScale = Vector3.one * (radius / baseExplosionRadius);
 
+            var vfx = go.GetComponentInChildren<MaskExplosionVFX>();
+            if (vfx != null)
+            {
+                vfx.targets = targets;
+                vfx.damage = damage;
+                vfx.hasPoison = hasPoison;
+                vfx.poisonDmg = poisonDmg;
+                vfx.poisonDur = poisonDur;
+                vfx.poisonTickRate = poisonTickRate;
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()

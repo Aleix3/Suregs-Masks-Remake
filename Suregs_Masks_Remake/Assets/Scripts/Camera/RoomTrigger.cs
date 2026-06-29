@@ -9,10 +9,6 @@ public class RoomTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Player") || other.isTrigger) return;
 
-        //Vector2 dir = (other.transform.position - transform.position).normalized;
-
-        //if (dir == Vector2.zero)
-        //    dir = Vector2.up; 
 
         float distance = 1.5f;
 
@@ -24,5 +20,8 @@ public class RoomTrigger : MonoBehaviour
             roomData,
             positionToSpawn
         );
+        this.transform.parent.GetComponent<Room>().isPlayerInRoom = true;
+        Player.Instance.actualRoom = this.transform.parent.GetComponent<Room>();
+        roomTriggerConnected.parent.GetComponent<Room>().isPlayerInRoom = false;
     }
 }

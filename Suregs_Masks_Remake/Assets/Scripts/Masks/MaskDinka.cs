@@ -27,11 +27,6 @@ public class MaskDinka : BaseMask
     public float passiveBasicDamageBonus = 0.20f;
 
 
-    [Header("Activa – valores base")]
-    public float detectionRadius = 15f;
-    public LayerMask enemyLayer;
-
-
     [Header("Árbol 0 – Daño")]
     public float baseDamage = 50f;
     public float[] damageByLevel = { 80f, 130f, 200f, 300f };
@@ -88,7 +83,7 @@ public class MaskDinka : BaseMask
 
     protected override void OnActivate()
     {
-        var target = GetStrongestEnemy();
+        var target = GetStrongestEnemyInRoom();
         if (target == null) { Debug.Log("[Dinka] Sin objetivo."); return; }
         StartCoroutine(FireSequence(target));
     }
@@ -121,17 +116,20 @@ public class MaskDinka : BaseMask
     }
 
 
-    private Enemy GetStrongestEnemy()
+    private Enemy GetStrongestEnemyInRoom()
     {
-        var cols = Physics2D.OverlapCircleAll(transform.position, detectionRadius, enemyLayer);
+        var enemies = player.actualRoom?.enemiesInRoom;
+        if (enemies == null || enemies.Count == 0) return null;
+
         Enemy best = null;
         float maxHP = float.MinValue;
-        foreach (var c in cols)
+
+        foreach (Enemy e in enemies)
         {
-            var e = c.GetComponent<Enemy>();
             if (e == null || e.isDead) continue;
             if (e.health > maxHP) { maxHP = e.health; best = e; }
         }
+
         return best;
     }
 
@@ -140,9 +138,4 @@ public class MaskDinka : BaseMask
         if (lightningVFXPrefab) Instantiate(lightningVFXPrefab, pos, Quaternion.identity);
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, detectionRadius);
-    }
 }

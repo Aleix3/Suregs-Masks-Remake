@@ -51,6 +51,8 @@ public abstract class Enemy : MonoBehaviour
 
     public NavMeshAgent agent;
 
+    [SerializeField] public Room roomConected;
+
     protected virtual void Start()
     {
         initialSpeed = speed;
@@ -66,51 +68,51 @@ public abstract class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
 
 
-        for (int i = 0; i < 12; i++)
-        {
-            GameObject newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
+        //for (int i = 0; i < 12; i++)
+        //{
+        //    GameObject newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
 
-            Item item = newItem.GetComponent<Item>();
-            if (item != null)
-            {
-                if (i < 3)
-                {
-                    item.type = Item.ItemType.RUBI;
-                }
-                else if (3 < i && i < 5) 
-                {
-                    item.type = Item.ItemType.SALIVA;
-                }
-                else if (5 < i && i < 7)
-                {
-                    item.type = Item.ItemType.OJO;
-                }
-                else if (7 <= i && i < 8)
-                {
-                    item.type = Item.ItemType.DIENTE;
-                }
-                else if (8 < i && i < 10)
-                {
-                    item.type = Item.ItemType.COLA;
-                }
-                else if (10 <= i && i < 11)
-                {
-                    item.type = Item.ItemType.POLVORA;
-                }
-                else
-                {
-                    item.type = Item.ItemType.VISCERA;
-                }
-            }
-        }
+        //    Item item = newItem.GetComponent<Item>();
+        //    if (item != null)
+        //    {
+        //        if (i < 3)
+        //        {
+        //            item.type = Item.ItemType.RUBI;
+        //        }
+        //        else if (3 < i && i < 5) 
+        //        {
+        //            item.type = Item.ItemType.SALIVA;
+        //        }
+        //        else if (5 < i && i < 7)
+        //        {
+        //            item.type = Item.ItemType.OJO;
+        //        }
+        //        else if (7 <= i && i < 8)
+        //        {
+        //            item.type = Item.ItemType.DIENTE;
+        //        }
+        //        else if (8 < i && i < 10)
+        //        {
+        //            item.type = Item.ItemType.COLA;
+        //        }
+        //        else if (10 <= i && i < 11)
+        //        {
+        //            item.type = Item.ItemType.POLVORA;
+        //        }
+        //        else
+        //        {
+        //            item.type = Item.ItemType.VISCERA;
+        //        }
+        //    }
+        //}
     }
 
     protected virtual void ExtraUpdate() { }
 
     protected virtual void Update()
     {
-        if (player == null || isStunned || isDead) return;
 
+        if (player == null || isStunned || isDead || !roomConected.isPlayerInRoom) return;
         // BLOQUEAR IA mientras ataca
         if (!isNotAttacking || !canMove)
         {
