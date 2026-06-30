@@ -196,6 +196,7 @@ public abstract class Enemy : MonoBehaviour
         isDead = true;
 
         rb.velocity = Vector2.zero;
+        roomConected.enemiesInRoom.Remove(this);
         //animator.Play("Die");
         Destroy(gameObject, 1f);
     }

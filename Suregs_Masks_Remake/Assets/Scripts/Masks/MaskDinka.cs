@@ -90,6 +90,7 @@ public class MaskDinka : BaseMask
 
     private System.Collections.IEnumerator FireSequence(Enemy target)
     {
+        IsBusy = true;
         float damage = ActiveBranchIndex == 0 && ActiveBranchLevel > 0
             ? damageByLevel[ActiveBranchLevel - 1]
             : baseDamage;
@@ -113,6 +114,7 @@ public class MaskDinka : BaseMask
             if (i < count - 1)
                 yield return new WaitForSeconds(0.15f);
         }
+        IsBusy = false;
     }
 
 

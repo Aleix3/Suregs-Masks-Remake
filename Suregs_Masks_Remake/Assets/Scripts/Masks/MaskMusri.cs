@@ -97,7 +97,7 @@ public class MaskMusri : BaseMask
 
     private IEnumerator DashRoutine()
     {
-
+        IsBusy = true;
         float damage = ActiveBranchIndex == 2 && ActiveBranchLevel > 0
             ? damageByLevel[ActiveBranchLevel - 1]
             : baseDamage;
@@ -172,9 +172,10 @@ public class MaskMusri : BaseMask
 
     private void ExitInvisibility()
     {
+        
         _isInvisible = false;
         player.SetInvisible(false);
-
+        IsBusy = false;
 
         if (_cdPending)
         {

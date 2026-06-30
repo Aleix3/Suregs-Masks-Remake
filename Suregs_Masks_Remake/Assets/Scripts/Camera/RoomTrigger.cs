@@ -9,6 +9,13 @@ public class RoomTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Player") || other.isTrigger) return;
 
+        if(Player.Instance.actualRoom)
+        {
+            if(Player.Instance.actualRoom.enemiesInRoom.Count > 0)
+            {
+                return;
+            }
+        }
 
         float distance = 1.5f;
 

@@ -13,8 +13,11 @@ public abstract class BaseMask : MonoBehaviour
     private float _cd;
     public float CurrentCooldown => _cd;
     public bool IsReady => _cd <= 0f;
+    public float LastCooldownDuration { get; private set; } = 0f;
 
+    public bool IsBusy { get; protected set; } = false;
 
+    public bool IsLocked => !IsReady || IsBusy;
     public int ActiveBranchIndex { get; private set; } = -1;
     public int ActiveBranchLevel { get; private set; } = 0;
 
@@ -36,7 +39,12 @@ public abstract class BaseMask : MonoBehaviour
         OnActivate();
 
         if (!ManualCooldown)
-            _cd = GetEffectiveCooldown();
+        {
+            float cd = GetEffectiveCooldown();
+            _cd = cd;
+            LastCooldownDuration = cd;
+        }
+
 
     }
 
@@ -48,7 +56,11 @@ public abstract class BaseMask : MonoBehaviour
 
     public void ReduceCooldown(float seconds) => _cd = Mathf.Max(0f, _cd - seconds);
 
-    public void ForceStartCooldown(float seconds) => _cd = seconds;
+    public void ForceStartCooldown(float seconds)
+    {
+        _cd = seconds;
+        LastCooldownDuration = seconds;
+    }
     public void ForceReadyCooldown() => _cd = 0f;
 
 

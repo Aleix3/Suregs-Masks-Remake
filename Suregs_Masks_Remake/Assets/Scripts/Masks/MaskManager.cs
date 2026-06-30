@@ -9,15 +9,20 @@ public class MaskManager : MonoBehaviour
     public BaseMask slotSecondary;
 
     [Header("Input")]
-    public KeyCode  swapKey         = KeyCode.R;
-    public string   swapButton      = "Y"; 
+    public KeyCode swapKey = KeyCode.R;
+    public string swapButton = "Y";
 
 
-    public BaseMask Primary   { get; private set; }
+    public BaseMask Primary { get; private set; }
     public BaseMask Secondary { get; private set; }
 
 
-    public System.Action<BaseMask, BaseMask> OnSwap; 
+    public System.Action<BaseMask, BaseMask> OnSwap;
+
+
+    public System.Action<BaseMask, BaseMask> OnSwapBlocked;
+
+    public System.Action<BaseMask> OnActivateBlocked;
 
 
     private void Start()
@@ -37,7 +42,7 @@ public class MaskManager : MonoBehaviour
 
     private void HandleSwapInput()
     {
-        bool pressedKey    = Input.GetKeyDown(swapKey);
+        bool pressedKey = Input.GetKeyDown(swapKey);
         bool pressedButton = false;
 
         try { pressedButton = Input.GetButtonDown(swapButton); }
@@ -49,14 +54,32 @@ public class MaskManager : MonoBehaviour
 
     private void HandleActivateInput()
     {
+        if (!Input.GetKeyDown(KeyCode.F)) return;
+        if (Primary == null) return;
 
-        if (Input.GetKeyDown(KeyCode.F))
-            Primary?.TryActivate();
+        if (!Primary.IsReady || Primary.IsLocked)
+        {
+            OnActivateBlocked?.Invoke(Primary);
+            return;
+        }
+
+        Primary.TryActivate();
     }
+
+    public bool IsSwapLocked =>
+        (Primary != null && Primary.IsLocked) ||
+        (Secondary != null && Secondary.IsLocked);
 
     public void Swap()
     {
         if (Primary == null || Secondary == null) return;
+
+        if (IsSwapLocked)
+        {
+            Debug.Log("[MaskManager] Swap bloqueado: una máscara está en CD o en uso.");
+            OnSwapBlocked?.Invoke(Primary, Secondary);
+            return;
+        }
 
         // Quitar pasiva de la secundaria antes de intercambiar
         Secondary.RemovePassive();
@@ -72,7 +95,7 @@ public class MaskManager : MonoBehaviour
         // Limpiar estado previo
         Secondary?.RemovePassive();
 
-        Primary   = primary;
+        Primary = primary;
         Secondary = secondary;
 
         OnSwap?.Invoke(Primary, Secondary);
