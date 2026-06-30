@@ -110,7 +110,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 100, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1699558350842253997
 CanvasRenderer:
@@ -733,7 +733,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 100, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5505334578164239321
 CanvasRenderer:
@@ -974,7 +974,11 @@ MonoBehaviour:
   iconSecondary: {fileID: 4012995539793044880}
   cooldownOverlayPrimary: {fileID: 4183517948149484143}
   HealthBar: {fileID: 5685427215935530757}
-  actualMoney: 0
+  actualMoney: {fileID: 5194562737825252572}
+  deniedFlashColor: {r: 1, g: 0.25, b: 0.25, a: 1}
+  deniedFlashDuration: 0.35
+  shakeStrength: 8
+  shakeVibrations: 6
 --- !u!1 &8074629335825819603
 GameObject:
   m_ObjectHideFlags: 0

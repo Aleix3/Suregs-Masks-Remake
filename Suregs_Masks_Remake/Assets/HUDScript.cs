@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class HUDScript : MonoBehaviour
 
     public Image HealthBar;
 
-    public int actualMoney;
+    public TextMeshProUGUI actualMoney;
 
     [Header("Feedback de acción bloqueada")]
 
@@ -61,6 +62,9 @@ public class HUDScript : MonoBehaviour
 
         if (Player.Instance != null && HealthBar != null)
             HealthBar.fillAmount = Player.Instance.GetHealth() / Player.Instance.GetMaxHealth();
+
+        if(PlayerEconomy.instance != null)
+        { actualMoney.text = PlayerEconomy.instance.gold.ToString(); }
     }
 
 
@@ -99,6 +103,7 @@ public class HUDScript : MonoBehaviour
         if (mask != null && mask.data != null && mask.data.maskIcon != null)
         {
             iconImage.sprite = mask.data.maskIcon;
+            iconImage.preserveAspect = true;
             iconImage.enabled = true;
         }
         else

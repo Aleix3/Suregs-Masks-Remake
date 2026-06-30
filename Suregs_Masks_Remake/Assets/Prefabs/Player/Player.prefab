@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 8116843313300243663}
   - component: {fileID: 7442818282558098565}
   - component: {fileID: 3651245318472302311}
+  - component: {fileID: 7003371624462747284}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -476,3 +477,16 @@ MonoBehaviour:
   - 50
   buffVFXPrefab: {fileID: 7270222356401338064, guid: 9f0af31c70610cf46b4cf48dc053a1bc, type: 3}
   debuffVFXPrefab: {fileID: 7270222356401338064, guid: 8f648761ab07c77459e2c02c3e5400f6, type: 3}
+--- !u!114 &7003371624462747284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064188762051051564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107d157cc0179f7469a80a956efbb4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 2116
