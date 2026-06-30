@@ -10502,6 +10502,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1514145306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7715617539962827069, guid: daf0f064a8fbd674e92d8e369a505225, type: 3}
+  m_PrefabInstance: {fileID: 2034689089}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1514145307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514145306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da227573a21fc8498728fc3b0e87dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maskSlotPrimary: {fileID: 0}
+  maskSlotSecondary: {fileID: 0}
+  iconPrimary: {fileID: 0}
+  iconSecondary: {fileID: 0}
+  cooldownOverlayPrimary: {fileID: 0}
+  HealthBar: {fileID: 0}
+  actualMoney: 0
+  deniedFlashColor: {r: 1, g: 0.25, b: 0.25, a: 1}
+  deniedFlashDuration: 0.35
+  shakeStrength: 8
+  shakeVibrations: 6
 --- !u!1001 &1527485030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13756,7 +13784,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7715617539962827069, guid: daf0f064a8fbd674e92d8e369a505225, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1514145307}
   m_SourcePrefab: {fileID: 100100000, guid: daf0f064a8fbd674e92d8e369a505225, type: 3}
 --- !u!114 &2044236297 stripped
 MonoBehaviour:
