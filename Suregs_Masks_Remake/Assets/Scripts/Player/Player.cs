@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
     public float basicAttackBonusPercent = 0.15f;
     public bool BonusBasicDamageActive { get; set; } = false;
     public MaskManager MaskManager { get; private set; }
-    
+
 
     void Awake()
     {
@@ -94,15 +94,35 @@ public class Player : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+
         MaskManager = GetComponent<MaskManager>();
+    }
+
+    void ResetPlayerState()
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        GameObject spawn = GameObject.Find("SpawnPoint");
+        StartCoroutine(SetSpawn());
+    }
+
+    System.Collections.IEnumerator SetSpawn()
+    {
+        yield return null;
+
+        GameObject spawn = GameObject.FindWithTag("SpawnPoint");
 
         if (spawn != null)
         {
+            ResetPlayerState();
             transform.position = spawn.transform.position;
         }
     }
@@ -117,6 +137,10 @@ public class Player : MonoBehaviour
         health = Mathf.Clamp(health, 0, MaxHealth);
         rb = GetComponent<Rigidbody2D>();
         health = MaxHealth;
+
+        canMove = true;
+        //PlayerPrefs.DeleteAll();
+        //PlayerPrefs.Save();
     }
 
     void Update()

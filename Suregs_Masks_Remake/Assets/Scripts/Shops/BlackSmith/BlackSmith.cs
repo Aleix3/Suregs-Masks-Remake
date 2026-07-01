@@ -186,7 +186,7 @@ public class BlacksmithShop : MonoBehaviour
         pendingBuy.Clear();
     }
 
-    // 🔹 Aplica la mejora de arma o armadura
+    // Aplica la mejora de arma o armadura
     private void ApplyUpgrade(ItemType type, int qty)
     {
         int level = GetLevel(type);

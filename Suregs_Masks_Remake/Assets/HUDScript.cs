@@ -64,7 +64,9 @@ public class HUDScript : MonoBehaviour
             HealthBar.fillAmount = Player.Instance.GetHealth() / Player.Instance.GetMaxHealth();
 
         if(PlayerEconomy.instance != null)
-        { actualMoney.text = PlayerEconomy.instance.gold.ToString(); }
+        { 
+            actualMoney.text = PlayerEconomy.instance.gold.ToString(); 
+        }
     }
 
 

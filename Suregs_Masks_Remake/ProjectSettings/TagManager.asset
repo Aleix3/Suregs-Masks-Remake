@@ -8,6 +8,7 @@ TagManager:
   - Item
   - Slot
   - Note
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
