@@ -1,0 +1,1192 @@
+fileFormatVersion: 2
+guid: 3335be81a07f6fd4f8e95fdcb0f53f67
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet_boorok_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2574
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3373756eac042b499a69b1eb201bad6
+      internalID: -1218899430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2574
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819f83b8ba719874a9cad5b1467079ac
+      internalID: -21651859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2574
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a85d47e4cf22df429db545099832b96
+      internalID: -2047433859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2574
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1719c01d6480c1458cfb83583a24801
+      internalID: -553424833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2574
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d2c540972deb44b86446806768065c
+      internalID: 1088690263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2574
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66bf88031d59e6f49816acb64527385f
+      internalID: -861282330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_6
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2574
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac329d4d92bdcc43b9d30f66ec802db
+      internalID: 1057441439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_7
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2574
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36622e6fa8b2ca4295a52610a746915
+      internalID: -1217661285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_8
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2574
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae496f0da45e1e4aacb1060046cb855
+      internalID: -1485835545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_9
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 2574
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c813ef075c7294ba1f5a83adf3f9ce
+      internalID: 758507628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2145
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08c34d336938d24ca766642ec15c2ef
+      internalID: -799114467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_11
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2145
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e02f8a64db11624598a367d42ac8133
+      internalID: 2105969013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_12
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2145
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcba3ac0bcab9745b0008c0738c0e74
+      internalID: 128227060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_13
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2145
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f024af094e9cd0d4a967fbcc63d479e7
+      internalID: -981229733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_14
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2145
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0dc4eb23b93d8648ad82e04a8413494
+      internalID: 130925509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_15
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2145
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac40564269fe564e8ea049cc349d110
+      internalID: 316824327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_16
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2145
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f18a11a981dc0c41808567b63618a37
+      internalID: 1317284141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_17
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 2145
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3221880e9b7efe40a42a237b9446edf
+      internalID: -907931133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_18
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2145
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55be097e0eec22345b1d1ac628653579
+      internalID: 771320618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1716
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0972e592465308144a4f590ecda54a74
+      internalID: 1979384284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_20
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1716
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cdaa3dcac5f54e418649b0d793ab600
+      internalID: 1436410672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_21
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1716
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b53930eacb34b9459ce93fa7e0b72a4
+      internalID: -312941115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_22
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1716
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab1e162187574247a7fc5880425cabe
+      internalID: 899693575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_23
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1716
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f333fb1f165c241a7d837434f7a22d
+      internalID: 472442510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_24
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1716
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2e25ef20d7ed34f9d2c1e7eea54eb8
+      internalID: -522616317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_25
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1716
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7308639af2652ef428b1cd79057a8d81
+      internalID: 23775950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1287
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d394261b69e92544acd72d24cb02f17
+      internalID: 877861974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_27
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1287
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a0985a1c47b32e46a72e167243f5545
+      internalID: 245325614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_28
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1287
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57c8b325b991d34e860095887dcdf5f
+      internalID: -527839726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_29
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1287
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089bda3adedacd84c94244651775ffb8
+      internalID: -18724512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_30
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1287
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f473519560b8406468c4ad5e6eb8a166
+      internalID: 645109629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_31
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1287
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c410ba4a0576b9640ad43e134a80b950
+      internalID: 907634216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_32
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1287
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844817a55df51ed4094f488a407248f2
+      internalID: 2132980017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 858
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04925e337dedd7e4ba7ba29f350515b0
+      internalID: 1013168595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_34
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 858
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e75e39526ae5614ca09216b9e88ad79
+      internalID: -1211992617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_35
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 858
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eea20286994940409fbdc13c2ac3618
+      internalID: 42744133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_36
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 858
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83ca54c2f4c9e545855ca3683681e00
+      internalID: -356332566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_37
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 858
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fd90056c7d4bf4a939c96340c3beae
+      internalID: -1893914553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_38
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 858
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e56d17079765ab44be5c8d750e71a1e
+      internalID: 1414045208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 429
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50bf3a36c37d56649a415e88c6b61bf8
+      internalID: 1235999324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_40
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 429
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3beccb8ad2f5b849a3142d01525f45c
+      internalID: 665654012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_41
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 429
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a86dc5a84795e44b9a5e220647a1f1
+      internalID: -529669495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_42
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 429
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f6113def91a374a900a8703443b59a
+      internalID: 408709519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_43
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 429
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebb56ba4395f044dbd1dd6a91e84561
+      internalID: -1517351644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_44
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 429
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8592e1440f298cb43a9f5fd82df77921
+      internalID: 1468239773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232cfc6b6f167dc45a08cd757497fc26
+      internalID: -1528060398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_46
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3128d7dd147b96045b267ab02356eb20
+      internalID: -1456837827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_47
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33d21a88059f6a4ebff6d2e20527dcc
+      internalID: 1473410816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_boorok_48
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 500
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec231df9dfd4c4e42b25ea0bea53796c
+      internalID: 694801975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      spritesheet_boorok_0: -1218899430
+      spritesheet_boorok_1: -21651859
+      spritesheet_boorok_10: -799114467
+      spritesheet_boorok_11: 2105969013
+      spritesheet_boorok_12: 128227060
+      spritesheet_boorok_13: -981229733
+      spritesheet_boorok_14: 130925509
+      spritesheet_boorok_15: 316824327
+      spritesheet_boorok_16: 1317284141
+      spritesheet_boorok_17: -907931133
+      spritesheet_boorok_18: 771320618
+      spritesheet_boorok_19: 1979384284
+      spritesheet_boorok_2: -2047433859
+      spritesheet_boorok_20: 1436410672
+      spritesheet_boorok_21: -312941115
+      spritesheet_boorok_22: 899693575
+      spritesheet_boorok_23: 472442510
+      spritesheet_boorok_24: -522616317
+      spritesheet_boorok_25: 23775950
+      spritesheet_boorok_26: 877861974
+      spritesheet_boorok_27: 245325614
+      spritesheet_boorok_28: -527839726
+      spritesheet_boorok_29: -18724512
+      spritesheet_boorok_3: -553424833
+      spritesheet_boorok_30: 645109629
+      spritesheet_boorok_31: 907634216
+      spritesheet_boorok_32: 2132980017
+      spritesheet_boorok_33: 1013168595
+      spritesheet_boorok_34: -1211992617
+      spritesheet_boorok_35: 42744133
+      spritesheet_boorok_36: -356332566
+      spritesheet_boorok_37: -1893914553
+      spritesheet_boorok_38: 1414045208
+      spritesheet_boorok_39: 1235999324
+      spritesheet_boorok_4: 1088690263
+      spritesheet_boorok_40: 665654012
+      spritesheet_boorok_41: -529669495
+      spritesheet_boorok_42: 408709519
+      spritesheet_boorok_43: -1517351644
+      spritesheet_boorok_44: 1468239773
+      spritesheet_boorok_45: -1528060398
+      spritesheet_boorok_46: -1456837827
+      spritesheet_boorok_47: 1473410816
+      spritesheet_boorok_48: 694801975
+      spritesheet_boorok_5: -861282330
+      spritesheet_boorok_6: 1057441439
+      spritesheet_boorok_7: -1217661285
+      spritesheet_boorok_8: -1485835545
+      spritesheet_boorok_9: 758507628
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,13 +1,14 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static Cinemachine.DocumentationSortingAttribute;
 using static Item;
 
 public class JourneyManager : MonoBehaviour
 {
+    private CanvasGroup canvasGroup;
+
     [Header("SwordSlot")]
     public TextMeshProUGUI swordLevelText;
     public TextMeshProUGUI swordDescText;
@@ -18,53 +19,116 @@ public class JourneyManager : MonoBehaviour
     public TextMeshProUGUI armorDescText;
     public Image armorIcon;
 
-    private void OnEnable()
+    [Header("Masks — slot primaria")]
+    public Image primaryMaskIcon;
+    public TextMeshProUGUI primaryMaskName;
+    public TextMeshProUGUI primaryMaskAbility;   // "Rayo Devastador", "Esfera Expansiva"…
+
+    [Header("Masks — slot secundaria")]
+    public Image secondaryMaskIcon;
+    public TextMeshProUGUI secondaryMaskName;
+    public TextMeshProUGUI secondaryMaskAbility;
+
+    private void Start()
     {
-        UpdateUI();
+        canvasGroup = GetComponent<CanvasGroup>();
     }
+
+    private void Update()
+    {
+        if(canvasGroup.alpha == 1)
+        {
+            UpdateUI();
+        }
+    }
+
     public void UpdateUI()
     {
+        // ── Espada ────────────────────────────────────────────────
         swordLevelText.text = "Nivel: " + Player.Instance.weaponLevel;
         swordDescText.text = "Ataque: " + PlayerStatsTable.GetWeaponDamage(Player.Instance.weaponLevel);
-        
 
+        // ── Armadura ──────────────────────────────────────────────
         armorLevelText.text = "Nivel: " + Player.Instance.armorLevel;
-        armorDescText.text = "Vida: " + PlayerStatsTable.GetWeaponDamage(Player.Instance.armorLevel);
+        armorDescText.text = "Vida: " + PlayerStatsTable.GetArmorHealth(Player.Instance.armorLevel);
 
+        // ── Iconos de equipo ──────────────────────────────────────
         ItemType swordType = GetWeaponTypeByLevel(Player.Instance.weaponLevel);
         ItemType armorType = GetArmorTypeByLevel(Player.Instance.armorLevel);
 
-        //obtener sprites desde el sistema
         Item.GetItemData(swordType, out _, out _, out _, out Sprite swordSprite);
         Item.GetItemData(armorType, out _, out _, out _, out Sprite armorSprite);
-        if (swordSprite != null)
+
+        SetEquipIcon(swordIcon, swordSprite);
+        SetEquipIcon(armorIcon, armorSprite);
+
+        // ── Máscaras ──────────────────────────────────────────────
+        MaskManager mm = Player.Instance.MaskManager;
+
+        if (mm != null && mm.Primary != null && mm.Secondary != null)
         {
-            swordIcon.color = new Color(swordIcon.color.r, swordIcon.color.g, swordIcon.color.b, 100f);
-            swordIcon.sprite = swordSprite;
+
+            SetMaskSlot(mm.Primary, primaryMaskIcon, primaryMaskName, primaryMaskAbility,
+                        mm.Primary.data.abilityDescription);
+
+
+            SetMaskSlot(mm.Secondary, secondaryMaskIcon, secondaryMaskName, secondaryMaskAbility,
+                        mm.Secondary.data.passiveDescription);
         }
         else
         {
-            swordIcon.color = new Color(swordIcon.color.r, swordIcon.color.g, swordIcon.color.b, 0f);
+            ClearMaskSlot(primaryMaskIcon, primaryMaskName, primaryMaskAbility);
+            ClearMaskSlot(secondaryMaskIcon, secondaryMaskName, secondaryMaskAbility);
+        }
+    }
+
+
+    private void SetMaskSlot(BaseMask mask, Image icon, TextMeshProUGUI nameText, TextMeshProUGUI abilityText, string description)
+    {
+        if (mask == null || mask.data == null)
+        {
+            ClearMaskSlot(icon, nameText, abilityText);
+            return;
         }
 
-        if (armorSprite != null)
+        // Icono
+        if (icon != null)
         {
-            armorIcon.color = new Color(armorIcon.color.r, armorIcon.color.g, armorIcon.color.b, 100f);
-            armorIcon.sprite = armorSprite;
+            icon.sprite = mask.data.maskIcon;
+            icon.enabled = mask.data.maskIcon != null;
+        }
+
+
+        if (nameText != null) nameText.text = mask.data.maskName;
+
+
+        if (abilityText != null) abilityText.text = description;
+    }
+
+    private void ClearMaskSlot(Image icon, TextMeshProUGUI nameText, TextMeshProUGUI abilityText)
+    {
+        if (icon != null) { icon.sprite = null; icon.enabled = false; }
+        if (nameText != null) nameText.text = "—";
+        if (abilityText != null) abilityText.text = "—";
+    }
+
+    private void SetEquipIcon(Image icon, Sprite sprite)
+    {
+        if (icon == null) return;
+        if (sprite != null)
+        {
+            icon.sprite = sprite;
+            icon.color = new Color(icon.color.r, icon.color.g, icon.color.b, 1f);
         }
         else
         {
-            armorIcon.color = new Color(armorIcon.color.r, armorIcon.color.g, armorIcon.color.b, 0f);
+            icon.color = new Color(icon.color.r, icon.color.g, icon.color.b, 0f);
         }
     }
 
     ItemType GetWeaponTypeByLevel(int level)
-    {
-        return (ItemType)System.Enum.Parse(typeof(ItemType), $"ESPADA_NV{level}");
-    }
+        => (ItemType)System.Enum.Parse(typeof(ItemType), $"ESPADA_NV{level}");
 
     ItemType GetArmorTypeByLevel(int level)
-    {
-        return (ItemType)System.Enum.Parse(typeof(ItemType), $"ARMADURA_NV{level}");
-    }
+        => (ItemType)System.Enum.Parse(typeof(ItemType), $"ARMADURA_NV{level}");
 }

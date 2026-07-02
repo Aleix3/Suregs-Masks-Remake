@@ -15,3 +15,5 @@ MonoBehaviour:
   maskName: Surma
   maskID: 3
   maskIcon: {fileID: 21300000, guid: a271611b1695bba41a7fc20c017ebcfa, type: 3}
+  abilityDescription: Mejora Interna
+  passiveDescription: "Estado Cr\xEDtico"

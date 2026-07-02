@@ -15,3 +15,5 @@ MonoBehaviour:
   maskName: Musri
   maskID: 2
   maskIcon: {fileID: 21300000, guid: 6b09b5eee6b76a94390a7d473e1c1e8f, type: 3}
+  abilityDescription: Invisibilidad
+  passiveDescription: Dash Invisible

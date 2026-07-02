@@ -15,3 +15,5 @@ MonoBehaviour:
   maskName: Dinka
   maskID: 0
   maskIcon: {fileID: 21300000, guid: 0d108d40142505a4dbd140d136772991, type: 3}
+  abilityDescription: Rayo Devastador
+  passiveDescription: Ataque Poderoso
