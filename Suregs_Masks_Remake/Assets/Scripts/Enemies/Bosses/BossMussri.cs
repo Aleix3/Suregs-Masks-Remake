@@ -77,7 +77,7 @@ public class BossMussri : Enemy
 
     protected override void Update()
     {
-        if (player == null || isDead || isStunned)
+        if (player == null || isDead || isStunned || !roomConected.isPlayerInRoom)
             return;
 
         Cooldowns();

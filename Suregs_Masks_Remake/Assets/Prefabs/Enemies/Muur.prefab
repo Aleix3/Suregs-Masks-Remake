@@ -121,6 +121,7 @@ MonoBehaviour:
   isDead: 0
   itemPrefab: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
   agent: {fileID: 0}
+  roomConected: {fileID: 0}
   attackHitbox: {fileID: 6607231279209429024}
   dashDistance: 3.98
   dashForce: 8
@@ -139,7 +140,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

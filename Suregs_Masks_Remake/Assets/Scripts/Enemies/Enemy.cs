@@ -44,6 +44,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] public GameObject itemPrefab;
 
     private SpriteRenderer sr;
+    private Color initialColor;
 
     private Coroutine flashRoutine;
 
@@ -60,6 +61,7 @@ public abstract class Enemy : MonoBehaviour
         currentState = EnemyState.Idle;
         desiredState = EnemyState.Idle;
         sr = GetComponent<SpriteRenderer>();
+        initialColor = sr.color;
         player = Player.Instance.transform;
 
         agent = GetComponent<NavMeshAgent>();
@@ -259,7 +261,7 @@ public abstract class Enemy : MonoBehaviour
     IEnumerator FlashWhite(float duration)
     {
 
-        Color original = Color.white;
+        Color original = initialColor;
         sr.color = Color.red;
 
         float t = 0f;

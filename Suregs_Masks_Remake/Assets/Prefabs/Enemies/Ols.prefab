@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   isDead: 0
   itemPrefab: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
   agent: {fileID: 0}
+  roomConected: {fileID: 0}
   escapeDistance: 4.31
   olsProjectile: {fileID: 4535473329264882499, guid: 22fc18a40b15a574f84d0795cc6b4575, type: 3}
   projectileSpeed: 5

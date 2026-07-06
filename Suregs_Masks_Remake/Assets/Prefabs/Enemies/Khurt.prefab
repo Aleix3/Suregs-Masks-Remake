@@ -108,27 +108,27 @@ MonoBehaviour:
   health: 220
   speed: 1
   initialSpeed: 1
-  attackDistance: 1.3
-  viewDistance: 3.1
+  attackDistance: -4.13
+  viewDistance: 6.16
   viewColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackColor: {r: 1, g: 0, b: 0, a: 1}
-  attackDamage: 90
+  attackDamage: 50
   rb: {fileID: 6017077128991380820}
   animator: {fileID: 3370494203231889287}
   player: {fileID: 0}
   canMove: 1
   isStunned: 0
-  attackCooldown: 0
+  attackCooldown: 1.01
   isDead: 0
   itemPrefab: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
   agent: {fileID: 2607322578229682771}
   roomConected: {fileID: 0}
   undergroundMoveDuration: 2
   undergroundSpeed: 4
-  jumpAttackRange: 1.87
-  jumpSpeed: 8
+  jumpAttackRange: 1.54
+  jumpSpeed: 2.05
   stunDurationAfterJump: 3
-  attackHitbox: {fileID: 3145757345607632492}
+  attackHitbox: {fileID: 4137307173460566450}
 --- !u!50 &6017077128991380820
 Rigidbody2D:
   serializedVersion: 4
@@ -141,7 +141,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -288,8 +288,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4204906720308401303}
-  - component: {fileID: 3145757345607632492}
   - component: {fileID: 4900467213750074832}
+  - component: {fileID: 4137307173460566450}
   m_Layer: 0
   m_Name: AttackCollider
   m_TagString: Untagged
@@ -312,14 +312,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6525441108890427984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3145757345607632492
-BoxCollider2D:
+--- !u!114 &4900467213750074832
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4618788347601749221}
-  m_Enabled: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f93ff87260de374eae9c9b6e42b2606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &4137307173460566450
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4618788347601749221}
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -344,28 +356,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.8055378, y: 0.036059976}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.86, y: 0.2}
   serializedVersion: 2
-  m_Size: {x: 3.6960866, y: 3.037411}
-  m_EdgeRadius: 0
---- !u!114 &4900467213750074832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4618788347601749221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f93ff87260de374eae9c9b6e42b2606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 2.71
