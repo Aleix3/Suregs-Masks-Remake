@@ -42,18 +42,14 @@ public class CameraManager : MonoBehaviour
 
     private IEnumerator RoomRoutine(RoomCameraData room, Vector3 teleportPosition)
     {
-        // 1. FADE OUT
         yield return Fade(1);
 
-        // 2. TELEPORT
 
         player.position = teleportPosition;
 
-        // 3. ESPERA ESTABILIZACIÓN
         yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
 
-        // 4. CAMBIO DE CÁMARA
         virtualCamera.Follow = room.followPlayer ? player : room.cameraAnchor;
 
         if (confiner != null && room.confinerShape != null)
@@ -64,11 +60,10 @@ public class CameraManager : MonoBehaviour
 
         virtualCamera.m_Lens.OrthographicSize = room.orthographicSize;
 
-        // 5. FADE IN
         yield return Fade(0);
     }
 
-    private IEnumerator Fade(float targetAlpha)
+    public IEnumerator Fade(float targetAlpha)
     {
         if (fadeImage == null) yield break;
 

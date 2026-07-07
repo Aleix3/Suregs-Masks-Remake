@@ -32,6 +32,17 @@ public class ElevatorButton : MonoBehaviour
         if (SceneManager.GetActiveScene().name == sceneName)
             return;
         Player.Instance.canMove = true;
+        if (sceneName == "Town")
+        {
+            if (Player.Instance.isFacingLeft)
+            {
+                Player.Instance.transform.localScale = new Vector3(0.55f, 0.55f, 0.55f);
+            }
+            else
+            {
+                Player.Instance.transform.localScale = new Vector3(-0.55f, 0.55f, 0.55f);
+            }
+        }
         SceneManager.LoadScene(sceneName); 
     }
 }

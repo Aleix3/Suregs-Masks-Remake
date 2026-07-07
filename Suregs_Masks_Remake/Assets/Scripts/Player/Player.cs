@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
     public Vector2 lastMovementDirection;
-    private bool isFacingLeft = false;
+    public bool isFacingLeft = false;
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
@@ -81,6 +81,7 @@ public class Player : MonoBehaviour
     public bool BonusBasicDamageActive { get; set; } = false;
     public MaskManager MaskManager { get; private set; }
 
+    public bool spawnPointChanged = false;
 
     void Awake()
     {
@@ -139,6 +140,7 @@ public class Player : MonoBehaviour
         health = MaxHealth;
 
         canMove = true;
+
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.Save();
     }

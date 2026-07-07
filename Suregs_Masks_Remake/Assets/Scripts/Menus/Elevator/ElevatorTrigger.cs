@@ -29,6 +29,7 @@ public class ElevatorTrigger : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Player.Instance.canMove = true;
             elevatorCanvas.SetActive(false);
         }
     }

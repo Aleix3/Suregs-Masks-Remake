@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public abstract class Enemy : MonoBehaviour
 {
     public enum EnemyState { Idle, Running, Attacking, Dead }
-    public enum EnemyType { Osiris, Muur }
+    public enum EnemyType { Osiris, Muur, Ols, Boorok, Khurt, OsirisVariation, MuurVariation, OlsVariation, BoorokVariation, KhurtVariation, BossInuit, BossMussri, BossSurma }
 
     [Header("Stats")]
     public EnemyType enemyType;
@@ -206,26 +206,96 @@ public abstract class Enemy : MonoBehaviour
     private void OnDestroy()
     {
         if (!isDead) return;
+        if (itemPrefab == null) return;
 
-        if (itemPrefab != null)
+        float roll = Random.Range(0f, 100f);
+        Item.ItemType? drop = null;
+
+        switch (enemyType)
         {
-            GameObject newItem = Instantiate(itemPrefab, transform.position, Quaternion.identity);
+            case EnemyType.Osiris:
+                if (roll <= 25f)
+                    drop = Item.ItemType.HUESO;
+                break;
 
-            Item item = newItem.GetComponent<Item>();
-            if (item != null)
-            {
-                switch (enemyType)
-                {
-                    case EnemyType.Osiris:
-                        item.type = Item.ItemType.HUESO;
-                        break;
-                    case EnemyType.Muur:
-                        item.type = Item.ItemType.COLA;
-                        break;
-                }
-                newItem.AddComponent<ItemSpawnAnim>();
-            }
+            case EnemyType.OsirisVariation:
+                if (roll <= 40f)
+                    drop = Item.ItemType.HUESO;
+                break;
+
+            case EnemyType.Muur:
+                if (roll <= 30f)
+                    drop = Item.ItemType.COLA;
+                break;
+
+            case EnemyType.MuurVariation:
+                if (roll <= 45f)
+                    drop = Item.ItemType.COLA;
+                else if (roll <= 60f)
+                    drop = Item.ItemType.POLVORA;
+                break;
+
+            case EnemyType.Ols:
+                if (roll <= 30f)
+                    drop = Item.ItemType.SALIVA;
+                break;
+
+            case EnemyType.OlsVariation:
+                if (roll <= 40f)
+                    drop = Item.ItemType.SALIVA;
+                else if (roll <= 70f)
+                    drop = Item.ItemType.OJO;
+                break;
+
+            case EnemyType.Khurt:
+                if (roll <= 30f)
+                    drop = Item.ItemType.GARRA;
+                break;
+
+            case EnemyType.KhurtVariation:
+                if (roll <= 40f)
+                    drop = Item.ItemType.GARRA;
+                else if (roll <= 60f)
+                    drop = Item.ItemType.DIENTE;
+                else if (roll <= 80f)
+                    drop = Item.ItemType.OJO;
+                break;
+
+            case EnemyType.Boorok:
+                if (roll <= 35f)
+                    drop = Item.ItemType.VISCERA;
+                break;
+
+            case EnemyType.BoorokVariation:
+                if (roll <= 45f)
+                    drop = Item.ItemType.VISCERA;
+                else if (roll <= 75f)
+                    drop = Item.ItemType.DIENTE;
+                break;
+
+            case EnemyType.BossInuit:
+                    drop = Item.ItemType.ZAFIRO;
+                break;
+
+            case EnemyType.BossMussri:
+                drop = Item.ItemType.RUBI;
+                break;
+
+            case EnemyType.BossSurma:
+                drop = Item.ItemType.DIAMANTE;
+                break;
+
         }
+
+        if (!drop.HasValue)
+            return;
+
+        GameObject newItem = Instantiate(itemPrefab, transform.position, Quaternion.identity);
+
+        Item item = newItem.GetComponent<Item>();
+        item.type = drop.Value;
+
+        newItem.AddComponent<ItemSpawnAnim>();
     }
 
     public virtual void TakeDamage(int damage)

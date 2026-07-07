@@ -54,10 +54,8 @@ public class Chest : MonoBehaviour, IInteractable
 
         if (r < 35)
             type = Item.ItemType.AMATISTA;
-        else if (r >= 65)
-            type = Item.ItemType.CARBON;
         else
-            type = Item.ItemType.RUBI;
+            type = Item.ItemType.CARBON;
 
         SpawnItem(type);
     }
@@ -89,9 +87,6 @@ public class Chest : MonoBehaviour, IInteractable
 
         SpawnItem(type);
     }
-
-
-    // SPAWNEO
 
     void SpawnItem(Item.ItemType type)
     {
