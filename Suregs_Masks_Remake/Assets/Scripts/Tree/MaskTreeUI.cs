@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 
 
@@ -45,8 +46,13 @@ public class MaskTreeUI : MonoBehaviour
     public Color colorLocked    = new Color(0.3f,0.3f,0.3f,1f);
     public Color colorSelected  = new Color(0.8f,0.6f,0f,  1f);
 
-    [Header("Datos de mejoras (16 entradas: rama0lv1..lv4, rama1lv1..lv4, ...)")]
-    public UpgradeNodeData[] nodeData = new UpgradeNodeData[16];
+    [System.Serializable]
+    public class MaskUpgradeSet
+    {
+        public UpgradeNodeData[] nodes = new UpgradeNodeData[16];
+    }
+
+    public MaskUpgradeSet[] maskData = new MaskUpgradeSet[4];
 
     [System.Serializable]
     public struct UpgradeNodeData
@@ -88,7 +94,7 @@ public class MaskTreeUI : MonoBehaviour
 
     private void OnEnable() => Refresh();
 
-    private void SelectMask(int maskIndex)
+    public void SelectMask(int maskIndex)
     {
         _selectedMask = maskIndex;
         Refresh();
@@ -163,8 +169,7 @@ public class MaskTreeUI : MonoBehaviour
                     else if (isAvailable) icon.color = colorUnlocked;
                     else                  icon.color = colorLocked;
 
-                    if (nodeIndex < nodeData.Length && nodeData[nodeIndex].icon != null)
-                        icon.sprite = nodeData[nodeIndex].icon;
+                    upgradeIcons[nodeIndex].sprite = maskData[_selectedMask].nodes[nodeIndex].icon;
                 }
 
                 btn.interactable = isAvailable;
@@ -206,12 +211,12 @@ public class MaskTreeUI : MonoBehaviour
     public void OnNodeHoverEnter(int nodeIndex)
     {
         _hoveredNode = nodeIndex;
-        if (nodeIndex < 0 || nodeIndex >= nodeData.Length) return;
+        if (nodeIndex < 0 || nodeIndex >= maskData[_selectedMask].nodes.Length) return;
 
-        if (upgradeName != null) upgradeName.text = nodeData[nodeIndex].upgradeName;
-        if (upgradeDesc != null) upgradeDesc.text  = nodeData[nodeIndex].upgradeDesc;
-        if (upgradeIcon != null && nodeData[nodeIndex].icon != null)
-            upgradeIcon.sprite = nodeData[nodeIndex].icon;
+        if (upgradeName != null) upgradeName.text = maskData[_selectedMask].nodes[nodeIndex].upgradeName;
+        if (upgradeDesc != null) upgradeDesc.text  = maskData[_selectedMask].nodes[nodeIndex].upgradeDesc;
+        if (upgradeIcon != null && maskData[_selectedMask].nodes[nodeIndex].icon != null)
+            upgradeIcon.sprite = maskData[_selectedMask].nodes[nodeIndex].icon;
     }
 
     public void OnNodeHoverExit()

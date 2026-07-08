@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 
-/// Cada máscara tiene 4 ramas de hasta 4 mejoras.
+/// Cada máscara tiene 4 ramas de 4 mejoras.
 /// Máximo 8 mejoras activas por máscara.
 /// 
 /// Uso:

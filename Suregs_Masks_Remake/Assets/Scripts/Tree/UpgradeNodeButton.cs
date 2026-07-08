@@ -1,23 +1,32 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+public class UpgradeNodeButton :MonoBehaviour, ISelectHandler,
+    IDeselectHandler
 
-public class UpgradeNodeButton : MonoBehaviour,
-    IPointerEnterHandler, IPointerExitHandler
 {
-    [Tooltip("Índice del nodo (0-15)")]
     public int nodeIndex;
 
-    private MaskTreeUI _ui;
+    private MaskTreeUI ui;
 
-    private void Start()
+    [SerializeField] public GameObject hover;
+
+    void Awake()
     {
-        _ui = GetComponentInParent<MaskTreeUI>();
+        ui = GetComponentInParent<MaskTreeUI>();
+        hover = transform.Find("Hover").gameObject;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-        => _ui?.OnNodeHoverEnter(nodeIndex);
 
-    public void OnPointerExit(PointerEventData eventData)
-        => _ui?.OnNodeHoverExit();
+    public void OnSelect(BaseEventData e)
+    {
+        ui.OnNodeHoverEnter(nodeIndex);
+        hover.SetActive(true);
+    }
+
+    public void OnDeselect(BaseEventData e)
+    {
+        ui.OnNodeHoverExit();
+        hover.SetActive(false);
+    }
 }
