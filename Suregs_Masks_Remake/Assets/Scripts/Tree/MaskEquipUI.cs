@@ -38,7 +38,8 @@ public class MaskEquipUI : MonoBehaviour
     [Header("Primer botón seleccionado al abrir el picker")]
     public GameObject firstPickButton;
 
-    // ─────────────────────────────────────────────────────────────
+    bool isOpen = false;
+
     private void Awake()
     {
         _tm     = MaskTreeManager.Instance;
@@ -54,14 +55,13 @@ public class MaskEquipUI : MonoBehaviour
         panel.SetActive(false);
     }
 
-    // ─────────────────────────────────────────────────────────────
-    //  API pública — llamada desde los botones de equipar
-    // ─────────────────────────────────────────────────────────────
     public void OpenForPrimary()   => Open(primary: true);
     public void OpenForSecondary() => Open(primary: false);
 
     private void Open(bool primary)
     {
+        isOpen = true;
+
         _equipingPrimary = primary;
         panel.SetActive(true);
         RefreshPickButtons();
@@ -75,15 +75,13 @@ public class MaskEquipUI : MonoBehaviour
         panel.SetActive(false);
         // Devolver foco al botón correcto del árbol
         _treeUI?.RestoreFocus();
+        isOpen = false;
     }
 
-    // ─────────────────────────────────────────────────────────────
-    //  Elegir máscara
-    // ─────────────────────────────────────────────────────────────
     private void PickMask(int maskIndex)
     {
         if (_mm == null) return;
-
+        if (!isOpen) return;
         bool unlocked = _tm.masks[maskIndex]?.data?.isUnlocked ?? false;
         if (!unlocked) return;
 
@@ -106,9 +104,6 @@ public class MaskEquipUI : MonoBehaviour
         Close();
     }
 
-    // ─────────────────────────────────────────────────────────────
-    //  Refresh
-    // ─────────────────────────────────────────────────────────────
     private void RefreshPickButtons()
     {
         for (int m = 0; m < 4; m++)
@@ -126,8 +121,8 @@ public class MaskEquipUI : MonoBehaviour
                 pickIcons[m].color = unlocked ? colorAvailable : colorLocked;
             }
 
-            if (pickNames[m] != null)
-                pickNames[m].text = unlocked ? (_tm.masks[m]?.data?.maskName ?? "") : "???";
+            //if (pickNames[m] != null)
+            //    pickNames[m].text = unlocked ? (_tm.masks[m]?.data?.maskName ?? "") : "???";
         }
     }
 }

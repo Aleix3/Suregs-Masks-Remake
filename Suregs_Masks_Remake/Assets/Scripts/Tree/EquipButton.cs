@@ -44,6 +44,7 @@ public class EquipButton : MonoBehaviour,
         if (mask?.data?.maskIcon != null)
         {
             maskIcon.sprite  = mask.data.maskIcon;
+            maskIcon.preserveAspect = true;
             maskIcon.enabled = true;
             // restaurar alpha por si estaba oculto
             var c = maskIcon.color; c.a = 1f; maskIcon.color = c;

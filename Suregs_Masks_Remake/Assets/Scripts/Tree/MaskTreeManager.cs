@@ -14,14 +14,14 @@ public class MaskTreeManager : MonoBehaviour
 {
     public static MaskTreeManager Instance { get; private set; }
 
-    public const int MASK_COUNT    = 4;
-    public const int BRANCH_COUNT  = 4;
-    public const int MAX_LEVEL     = 4;
-    public const int MAX_UPGRADES  = 8;
+    public const int MASK_COUNT = 4;
+    public const int BRANCH_COUNT = 4;
+    public const int MAX_LEVEL = 4;
+    public const int MAX_UPGRADES = 8;
 
-    public int[] _points   = new int[MASK_COUNT];
+    public int[] _points = new int[MASK_COUNT];
 
-    public int[,] _levels  = new int[MASK_COUNT, BRANCH_COUNT];
+    public int[,] _levels = new int[MASK_COUNT, BRANCH_COUNT];
 
     [Header("Máscaras")]
     public BaseMask[] masks = new BaseMask[MASK_COUNT];
@@ -32,8 +32,48 @@ public class MaskTreeManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+    }
 
+    private void Start()
+    {
+        // Cargar tras Awake para que MaskManager ya haya cargado los desbloqueos
+        LoadGame();
+    }
 
+    // ─────────────────────────────────────────────────────────────
+    //  SAVE / LOAD
+    // ─────────────────────────────────────────────────────────────
+    private const string KeyPoints = "MaskTree_Points_";
+    private const string KeyLevel = "MaskTree_Level_";
+
+    public void SaveGame()
+    {
+        for (int m = 0; m < MASK_COUNT; m++)
+        {
+            PlayerPrefs.SetInt($"{KeyPoints}{m}", _points[m]);
+
+            for (int b = 0; b < BRANCH_COUNT; b++)
+                PlayerPrefs.SetInt($"{KeyLevel}{m}_{b}", _levels[m, b]);
+        }
+        PlayerPrefs.Save();
+    }
+
+    private void LoadGame()
+    {
+        for (int m = 0; m < MASK_COUNT; m++)
+        {
+            _points[m] = PlayerPrefs.GetInt($"{KeyPoints}{m}", 0);
+
+            for (int b = 0; b < BRANCH_COUNT; b++)
+                _levels[m, b] = PlayerPrefs.GetInt($"{KeyLevel}{m}_{b}", 0);
+        }
+
+        // Restaurar las mejoras aplicadas a las máscaras
+        RestoreAllMasks();
+
+        // Notificar la UI
+        for (int m = 0; m < MASK_COUNT; m++)
+            OnTreeChanged?.Invoke(m);
     }
 
     public void AddPoints(int maskIndex, int amount)
@@ -41,6 +81,7 @@ public class MaskTreeManager : MonoBehaviour
         if (!ValidMask(maskIndex)) return;
         _points[maskIndex] += amount;
         OnTreeChanged?.Invoke(maskIndex);
+        SaveGame();
     }
 
     public int GetPoints(int maskIndex) =>
@@ -71,12 +112,13 @@ public class MaskTreeManager : MonoBehaviour
             return false;
         }
 
-        _points[maskIndex]              -= cost;
+        _points[maskIndex] -= cost;
         _levels[maskIndex, branchIndex] += 1;
 
         ApplyToMask(maskIndex, branchIndex);
 
         OnTreeChanged?.Invoke(maskIndex);
+        SaveGame();
         return true;
     }
 
@@ -96,6 +138,7 @@ public class MaskTreeManager : MonoBehaviour
             masks[maskIndex].ResetBranch();
 
         OnTreeChanged?.Invoke(maskIndex);
+        SaveGame();
     }
 
     public int GetLevel(int maskIndex, int branchIndex) =>
@@ -115,8 +158,8 @@ public class MaskTreeManager : MonoBehaviour
     public bool CanUpgrade(int maskIndex, int branchIndex)
     {
         if (!ValidMask(maskIndex) || !ValidBranch(branchIndex)) return false;
-        if (_levels[maskIndex, branchIndex] >= MAX_LEVEL)  return false;
-        if (GetTotalUpgrades(maskIndex) >= MAX_UPGRADES)    return false;
+        if (_levels[maskIndex, branchIndex] >= MAX_LEVEL) return false;
+        if (GetTotalUpgrades(maskIndex) >= MAX_UPGRADES) return false;
         return _points[maskIndex] >= GetUpgradeCost(maskIndex, branchIndex);
     }
 
@@ -147,7 +190,7 @@ public class MaskTreeManager : MonoBehaviour
             {
                 if (_levels[m, b] > bestLevel)
                 {
-                    bestLevel  = _levels[m, b];
+                    bestLevel = _levels[m, b];
                     bestBranch = b;
                 }
             }
@@ -159,8 +202,8 @@ public class MaskTreeManager : MonoBehaviour
     [System.Serializable]
     public struct SaveData
     {
-        public int[]   points;        // [4]
-        public int[]   levels;        // [16], [4,4]
+        public int[] points;        // [4]
+        public int[] levels;        // [16], [4,4]
     }
 
     public SaveData GetSaveData()
@@ -187,8 +230,8 @@ public class MaskTreeManager : MonoBehaviour
 
 
     private static int GetUpgradeCostForLevel(int level) =>
-        level switch { 0 => 1, 1 => 1, 2 => 2, 3 => 2, _ => 99 };
+        level switch { 0 => 1, 1 => 1, 2 => 1, 3 => 1, _ => 99 };
 
-    private static bool ValidMask(int i)   => i >= 0 && i < MASK_COUNT;
+    private static bool ValidMask(int i) => i >= 0 && i < MASK_COUNT;
     private static bool ValidBranch(int i) => i >= 0 && i < BRANCH_COUNT;
 }

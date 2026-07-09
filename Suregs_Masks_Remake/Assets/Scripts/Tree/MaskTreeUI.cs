@@ -63,8 +63,11 @@ public class MaskTreeUI : MonoBehaviour
 
     private void Start()
     {
+        // Los clicks/submit los gestionan UpgradeNodeButton y MaskButton
+        // directamente — no añadir listeners aquí para evitar doble llamada
 
-
+        // Primer refresh aquí — MaskManager ya ha cargado desbloqueos en su Awake
+        InitialRefresh();
     }
 
     private void OnDestroy()
@@ -74,10 +77,16 @@ public class MaskTreeUI : MonoBehaviour
 
     private void OnEnable()
     {
+        
         if (firstButton != null)
             EventSystem.current.SetSelectedGameObject(firstButton);
 
-        // Buscar la primera máscara desbloqueada para mostrarla
+        // Si ya está inicializado (segunda vez que se abre el panel), refrescar
+        if (_tm != null) InitialRefresh();
+    }
+
+    private void InitialRefresh()
+    {
         int firstUnlocked = -1;
         for (int m = 0; m < MaskTreeManager.MASK_COUNT; m++)
         {
@@ -89,15 +98,17 @@ public class MaskTreeUI : MonoBehaviour
         }
 
         if (firstUnlocked >= 0)
+        {
+            firstButton?.GetComponent<MaskButton>()?.hover?.SetActive(true);
             ShowMask(firstUnlocked);
+        }
         else
-            ClearPanel();   // ninguna desbloqueada → limpiar todo
+            ClearPanel();
 
         RefreshAll();
     }
 
-    /// <summary>Limpia el grid, el closeUp y el panel de info cuando no hay ninguna máscara disponible.</summary>
-    private void ClearPanel()
+    public void ClearPanel()
     {
         if (infoName != null) infoName.text = "";
         if (infoDesc != null) infoDesc.text = "";
@@ -274,13 +285,23 @@ public class MaskTreeUI : MonoBehaviour
         closeUpIcon.preserveAspect = true;
     }
 
-    /// <summary>Devuelve el foco al árbol tras cerrar el picker.</summary>
     public void RestoreFocus()
     {
         if (firstButton != null)
             EventSystem.current.SetSelectedGameObject(firstButton);
     }
 
-    /// <summary>Refresca los iconos de los botones de equipar.</summary>
     public void RefreshEquippedButtons() => RefreshEquipped();
+
+    public void ClearHovers()
+    {
+        for (int i = 0; i < upgradeButtons.Length; i++)
+        {
+            upgradeButtons[i].GetComponent<UpgradeNodeButton>().hover.SetActive(false);
+        }
+        for (int i = 0; i < maskButtonIcons.Length; i++)
+        {
+            maskButtonIcons[i].GetComponent<MaskButton>().hover.SetActive(false);
+        }
+    }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MaskItem : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class MaskItem : MonoBehaviour
             dialogue,
             this.GetComponent<NPCInteractable>()
         );
-        maskData.isUnlocked = true;
+        MaskManager.Instance.UnlockMask(maskData);
         Destroy(this.gameObject);
     }
 }
