@@ -17,3 +17,4 @@ MonoBehaviour:
   maskIcon: {fileID: 21300000, guid: bff6b73e8e830814ba1e6ac9704b8062, type: 3}
   abilityDescription: Esfera Expansiva
   passiveDescription: Onda Expansiva
+  isUnlocked: 1

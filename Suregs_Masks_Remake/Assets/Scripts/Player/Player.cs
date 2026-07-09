@@ -166,8 +166,14 @@ public class Player : MonoBehaviour
 
     void UpdatePlayerMovement()
     {
+        if(!canMove)
+        {
+            rb.velocity = Vector3.zero;
+            animator.SetBool("isRunning", false);
+        }
         if (isKnockedBack || !canMove)
             return;
+        
         // Entrada del jugador
         Vector2 inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
@@ -376,6 +382,12 @@ public class Player : MonoBehaviour
             Note note = collision.GetComponent<Note>();
             NotesManager.instance.CreateNoteItem(note.id, note.itemName, note.description);
             Destroy(collision.gameObject);
+        }
+
+        //MASKS
+        if(collision.CompareTag("Mask"))
+        {
+            collision.GetComponent<MaskItem>().GetMask();
         }
     }
 

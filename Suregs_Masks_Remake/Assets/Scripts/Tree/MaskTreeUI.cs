@@ -1,226 +1,286 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
-
-
-
-/// JERARQUÍA ESPERADA EN EL INSPECTOR:
-///
-/// SkillTreePanel
-/// ├── MaskSelector (4 botones — uno por máscara)
-/// │   ├── MaskBtn_0  (Image + Button)
-/// │   ├── MaskBtn_1
-/// │   ├── MaskBtn_2
-/// │   └── MaskBtn_3
-/// ├── Grid (4 filas × 4 columnas de botones de mejora)
-/// │   └── UpgradeBtn_[0-15]  (Image + Button)
-/// ├── InfoPanel
-/// │   ├── UpgradeName  (TMP)
-/// │   └── UpgradeDesc  (TMP)
-/// ├── PrimaryMaskIcon   (Image)
-/// ├── SecondaryMaskIcon (Image)
-/// ├── PointsText        (TMP)  "X/8 Mask Points"
-/// └── UpgradesText      (TMP)  "X/8 Mejoras"
+using UnityEngine.EventSystems;
 
 public class MaskTreeUI : MonoBehaviour
 {
-    public Button[] maskButtons       = new Button[4];
-    public Image[]  maskButtonIcons   = new Image[4];
+    [Header("Botones de máscara (4)")]
+    public Image[] maskButtonIcons = new Image[4];
 
-    public Button[] upgradeButtons    = new Button[16];
-    public Image[]  upgradeIcons      = new Image[16];
+    [Header("Botones de mejora (16)")]
+    public Button[] upgradeButtons = new Button[16];
+    public Image[] upgradeIcons = new Image[16];
 
-    public TextMeshProUGUI upgradeName;
-    public TextMeshProUGUI upgradeDesc;
-    public Image           upgradeIcon;
+    [Header("Panel de info")]
+    public TextMeshProUGUI infoName;
+    public TextMeshProUGUI infoDesc;
+    public Image closeUpIcon;
 
+    [Header("Máscaras equipadas")]
     public Image primaryMaskIcon;
     public Image secondaryMaskIcon;
 
+    [Header("Stats")]
     public TextMeshProUGUI pointsText;
     public TextMeshProUGUI upgradesText;
 
-    [Header("Colores de estado")]
-    public Color colorUnlocked  = new Color(1f,  1f,  1f,  1f);
-    public Color colorLocked    = new Color(0.3f,0.3f,0.3f,1f);
-    public Color colorSelected  = new Color(0.8f,0.6f,0f,  1f);
+    [Header("Colores")]
+    public Color colorUnlocked = Color.white;
+    public Color colorLocked = new Color(0.3f, 0.3f, 0.3f, 1f);
+    public Color colorBought = new Color(0.8f, 0.6f, 0f, 1f);
+
+    [Header("Datos (4 máscaras × 16 nodos)")]
+    public MaskUpgradeSet[] maskData = new MaskUpgradeSet[4];
 
     [System.Serializable]
     public class MaskUpgradeSet
     {
+        public string maskName;
+        [TextArea] public string maskDesc;
         public UpgradeNodeData[] nodes = new UpgradeNodeData[16];
     }
-
-    public MaskUpgradeSet[] maskData = new MaskUpgradeSet[4];
 
     [System.Serializable]
     public struct UpgradeNodeData
     {
-        public string      upgradeName;
+        public string upgradeName;
         [TextArea] public string upgradeDesc;
-        public Sprite      icon;
+        public Sprite icon;
     }
 
-    private int  _selectedMask   = 0;
-    private int  _hoveredNode    = -1;
+    [Header("Primer botón seleccionado al abrir")]
+    public GameObject firstButton;
+
+    private int _activeMask = 0;
     private MaskTreeManager _tm;
+
+    private void Awake()
+    {
+        _tm = MaskTreeManager.Instance;
+        _tm.OnTreeChanged += _ => RefreshGrid();
+    }
 
     private void Start()
     {
-        _tm = MaskTreeManager.Instance;
 
-        for (int m = 0; m < 4; m++)
-        {
-            int idx = m;
-            maskButtons[m]?.onClick.AddListener(() => SelectMask(idx));
-        }
 
-        for (int n = 0; n < 16; n++)
-        {
-            int nodeIdx = n;
-            upgradeButtons[n]?.onClick.AddListener(() => OnUpgradeClicked(nodeIdx));
-        }
-
-        _tm.OnTreeChanged += OnTreeChanged;
-
-        SelectMask(0);
     }
 
     private void OnDestroy()
     {
-        if (_tm != null) _tm.OnTreeChanged -= OnTreeChanged;
+        if (_tm != null) _tm.OnTreeChanged -= _ => RefreshGrid();
     }
 
-    private void OnEnable() => Refresh();
-
-    public void SelectMask(int maskIndex)
+    private void OnEnable()
     {
-        _selectedMask = maskIndex;
-        Refresh();
+        if (firstButton != null)
+            EventSystem.current.SetSelectedGameObject(firstButton);
+
+        // Buscar la primera máscara desbloqueada para mostrarla
+        int firstUnlocked = -1;
+        for (int m = 0; m < MaskTreeManager.MASK_COUNT; m++)
+        {
+            if (_tm.masks[m]?.data?.isUnlocked ?? false)
+            {
+                firstUnlocked = m;
+                break;
+            }
+        }
+
+        if (firstUnlocked >= 0)
+            ShowMask(firstUnlocked);
+        else
+            ClearPanel();   // ninguna desbloqueada → limpiar todo
+
+        RefreshAll();
     }
 
-    private void OnUpgradeClicked(int nodeIndex)
+    /// <summary>Limpia el grid, el closeUp y el panel de info cuando no hay ninguna máscara disponible.</summary>
+    private void ClearPanel()
+    {
+        if (infoName != null) infoName.text = "";
+        if (infoDesc != null) infoDesc.text = "";
+        if (closeUpIcon != null) closeUpIcon.sprite = null;
+
+        for (int i = 0; i < upgradeIcons.Length; i++)
+            if (upgradeIcons[i] != null)
+            {
+                upgradeIcons[i].sprite = null;
+                upgradeIcons[i].enabled = false;
+            }
+
+        if (pointsText != null) pointsText.text = "";
+        if (upgradesText != null) upgradesText.text = "";
+    }
+
+
+    public void ShowMask(int maskIndex)
+    {
+        bool unlocked = _tm.masks[maskIndex]?.data?.isUnlocked ?? false;
+        if (!unlocked) return;
+
+        _activeMask = maskIndex;
+
+        if (infoName != null) infoName.text = maskData[maskIndex].maskName;
+        if (infoDesc != null) infoDesc.text = maskData[maskIndex].maskDesc;
+
+        RefreshGrid();
+        RefreshStats();
+        RefreshMaskIcons();
+    }
+
+    public void BuyUpgrade(int nodeIndex)
     {
         int branch = nodeIndex / 4;
-        int level  = nodeIndex % 4;
+        int level = nodeIndex % 4;
+        int currentLevel = _tm.GetLevel(_activeMask, branch);
 
-        // Solo se puede comprar el siguiente nivel de la rama
-        int currentLevel = _tm.GetLevel(_selectedMask, branch);
         if (level != currentLevel)
         {
-            Debug.Log("[SkillTreeUI] Debes comprar los niveles anteriores primero.");
+            Debug.Log("[SkillTree] Debes comprar los niveles anteriores primero.");
             return;
         }
 
-        _tm.TryUpgrade(_selectedMask, branch);
-    }
-    private void OnTreeChanged(int maskIndex)
-    {
-        if (maskIndex == _selectedMask) Refresh();
+        _tm.TryUpgrade(_activeMask, branch);
     }
 
-    private void Refresh()
+    private void RefreshAll()
     {
         if (_tm == null) return;
-
-        RefreshMaskButtons();
+        RefreshMaskIcons();
         RefreshGrid();
         RefreshStats();
-        RefreshEquippedMasks();
+        RefreshEquipped();
     }
 
-    private void RefreshMaskButtons()
+    private void RefreshMaskIcons()
     {
         for (int m = 0; m < 4; m++)
         {
             if (maskButtonIcons[m] == null) continue;
-            // Resaltar la seleccionada
-            maskButtonIcons[m].color = m == _selectedMask ? colorSelected : colorUnlocked;
 
-            BaseMask mask = _tm.masks[m];
-            if (mask != null && mask.data?.maskIcon != null)
+            var mask = _tm.masks[m];
+            bool unlocked = mask?.data?.isUnlocked ?? false;
+
+            // Icono: visible solo si desbloqueada
+            if (mask?.data?.maskIcon != null && unlocked)
+            {
                 maskButtonIcons[m].sprite = mask.data.maskIcon;
+                maskButtonIcons[m].enabled = true;
+            }
+            else
+            {
+                maskButtonIcons[m].enabled = false;
+            }
+
+            maskButtonIcons[m].color = (m == _activeMask && unlocked)
+                ? colorBought : Color.white;
         }
+
+        // Sincronizar interactable de cada MaskButton
+        foreach (var mb in FindObjectsByType<MaskButton>(FindObjectsSortMode.None))
+            mb.RefreshInteractable();
     }
 
     private void RefreshGrid()
     {
+        if (_tm == null) return;
+
+        bool unlocked = _tm.masks[_activeMask]?.data?.isUnlocked ?? false;
+
+        // Si la máscara activa no está desbloqueada, ocultar todo el grid
+        if (!unlocked)
+        {
+            for (int i = 0; i < upgradeIcons.Length; i++)
+                if (upgradeIcons[i] != null)
+                {
+                    upgradeIcons[i].sprite = null;
+                    upgradeIcons[i].enabled = false;
+                }
+            return;
+        }
+
+        var nodes = maskData[_activeMask].nodes;
+
         for (int branch = 0; branch < 4; branch++)
         {
-            int branchLevel = _tm.GetLevel(_selectedMask, branch);
+            int bought = _tm.GetLevel(_activeMask, branch);
 
             for (int lvl = 0; lvl < 4; lvl++)
             {
-                int nodeIndex = branch * 4 + lvl;
-                if (nodeIndex >= upgradeButtons.Length) break;
+                int ni = branch * 4 + lvl;
+                if (ni >= upgradeButtons.Length) break;
 
-                Button btn   = upgradeButtons[nodeIndex];
-                Image  icon  = upgradeIcons[nodeIndex];
-                if (btn == null) continue;
-
-                bool isUnlocked  = lvl < branchLevel;     
-                bool isNext      = lvl == branchLevel;    
-                bool isAvailable = isNext && _tm.CanUpgrade(_selectedMask, branch);
-
+                Image icon = upgradeIcons[ni];
                 if (icon != null)
                 {
-                    if (isUnlocked)       icon.color = colorSelected;
-                    else if (isAvailable) icon.color = colorUnlocked;
-                    else                  icon.color = colorLocked;
+                    icon.enabled = true;
+                    icon.color = lvl < bought ? colorBought :
+                                   lvl == bought && _tm.CanUpgrade(_activeMask, branch)
+                                                ? colorUnlocked : colorLocked;
 
-                    upgradeIcons[nodeIndex].sprite = maskData[_selectedMask].nodes[nodeIndex].icon;
+                    if (ni < nodes.Length && nodes[ni].icon != null)
+                        icon.sprite = nodes[ni].icon;
                 }
-
-                btn.interactable = isAvailable;
             }
         }
     }
 
     private void RefreshStats()
     {
-        if (pointsText  != null)
-            pointsText.text  = $"{_tm.GetPoints(_selectedMask)}/8 Mask Points";
+        if (pointsText != null)
+            pointsText.text = $"{_tm.GetPoints(_activeMask)}/8 Mask Points";
         if (upgradesText != null)
-            upgradesText.text = $"{_tm.GetTotalUpgrades(_selectedMask)}/8 Mejoras";
+            upgradesText.text = $"{_tm.GetTotalUpgrades(_activeMask)}/8 Mejoras";
     }
 
-    private void RefreshEquippedMasks()
+    private void RefreshEquipped()
     {
         var mm = Player.Instance?.MaskManager;
         if (mm == null) return;
-
-        SetMaskIcon(primaryMaskIcon,   mm.Primary);
-        SetMaskIcon(secondaryMaskIcon, mm.Secondary);
+        SetIcon(primaryMaskIcon, mm.Primary);
+        SetIcon(secondaryMaskIcon, mm.Secondary);
     }
 
-    private void SetMaskIcon(Image img, BaseMask mask)
+    private void SetIcon(Image img, BaseMask mask)
     {
         if (img == null) return;
-        if (mask?.data?.maskIcon != null)
-        {
-            img.sprite  = mask.data.maskIcon;
-            img.enabled = true;
-        }
-        else
-        {
-            img.enabled = false;
-        }
+        img.enabled = mask?.data?.maskIcon != null;
+        if (img.enabled) img.sprite = mask.data.maskIcon;
     }
 
-    public void OnNodeHoverEnter(int nodeIndex)
+    public void OnNodeSelected(int nodeIndex)
     {
-        _hoveredNode = nodeIndex;
-        if (nodeIndex < 0 || nodeIndex >= maskData[_selectedMask].nodes.Length) return;
+        bool unlocked = _tm.masks[_activeMask]?.data?.isUnlocked ?? false;
+        if (!unlocked) return;
 
-        if (upgradeName != null) upgradeName.text = maskData[_selectedMask].nodes[nodeIndex].upgradeName;
-        if (upgradeDesc != null) upgradeDesc.text  = maskData[_selectedMask].nodes[nodeIndex].upgradeDesc;
-        if (upgradeIcon != null && maskData[_selectedMask].nodes[nodeIndex].icon != null)
-            upgradeIcon.sprite = maskData[_selectedMask].nodes[nodeIndex].icon;
+        var nodes = maskData[_activeMask].nodes;
+        if (nodeIndex < 0 || nodeIndex >= nodes.Length) return;
+        if (infoName != null) infoName.text = nodes[nodeIndex].upgradeName;
+        if (infoDesc != null) infoDesc.text = nodes[nodeIndex].upgradeDesc;
+        closeUpIcon.sprite = nodes[nodeIndex].icon;
+        closeUpIcon.preserveAspect = true;
     }
 
-    public void OnNodeHoverExit()
+    public void OnMaskSelected(int maskIndex)
     {
-        _hoveredNode = -1;
+        bool unlocked = _tm.masks[maskIndex]?.data?.isUnlocked ?? false;
+        if (!unlocked) return;
+
+        if (infoName != null) infoName.text = maskData[maskIndex].maskName;
+        if (infoDesc != null) infoDesc.text = maskData[maskIndex].maskDesc;
+        closeUpIcon.sprite = maskButtonIcons[maskIndex].sprite;
+        closeUpIcon.preserveAspect = true;
     }
+
+    /// <summary>Devuelve el foco al árbol tras cerrar el picker.</summary>
+    public void RestoreFocus()
+    {
+        if (firstButton != null)
+            EventSystem.current.SetSelectedGameObject(firstButton);
+    }
+
+    /// <summary>Refresca los iconos de los botones de equipar.</summary>
+    public void RefreshEquippedButtons() => RefreshEquipped();
 }

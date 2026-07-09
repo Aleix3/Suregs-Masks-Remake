@@ -19,9 +19,9 @@ public class MaskTreeManager : MonoBehaviour
     public const int MAX_LEVEL     = 4;
     public const int MAX_UPGRADES  = 8;
 
-    private int[] _points   = new int[MASK_COUNT];
+    public int[] _points   = new int[MASK_COUNT];
 
-    private int[,] _levels  = new int[MASK_COUNT, BRANCH_COUNT];
+    public int[,] _levels  = new int[MASK_COUNT, BRANCH_COUNT];
 
     [Header("Máscaras")]
     public BaseMask[] masks = new BaseMask[MASK_COUNT];
@@ -32,6 +32,8 @@ public class MaskTreeManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+
+
     }
 
     public void AddPoints(int maskIndex, int amount)

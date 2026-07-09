@@ -60,9 +60,6 @@ public class DialogueManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    //====================================================
-    // START DIALOGUE
-    //====================================================
 
     public void StartDialogue(DialogueData dialogue, NPCInteractable npc)
     {

@@ -10,4 +10,6 @@ public class MaskData : ScriptableObject
 
     [TextArea] public string abilityDescription;
     [TextArea] public string passiveDescription;
+
+    public bool isUnlocked = false;
 }

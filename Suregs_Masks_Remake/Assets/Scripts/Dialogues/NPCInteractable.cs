@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NPCInteractable : MonoBehaviour, IInteractable
 {
-    [SerializeField] private DialogueData currentDialogue;
+    [SerializeField] public DialogueData currentDialogue;
 
     public bool LockPlayerMovement => true;
 

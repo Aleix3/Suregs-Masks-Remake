@@ -2,31 +2,32 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class UpgradeNodeButton :MonoBehaviour, ISelectHandler,
-    IDeselectHandler
+    IDeselectHandler, ISubmitHandler
 
 {
     public int nodeIndex;
 
     private MaskTreeUI ui;
 
-    [SerializeField] public GameObject hover;
+    [HideInInspector] public GameObject hover;
 
     void Awake()
     {
-        ui = GetComponentInParent<MaskTreeUI>();
+        ui = FindAnyObjectByType<MaskTreeUI>();
         hover = transform.Find("Hover").gameObject;
     }
 
 
     public void OnSelect(BaseEventData e)
     {
-        ui.OnNodeHoverEnter(nodeIndex);
+        ui.OnNodeSelected(nodeIndex);
         hover.SetActive(true);
     }
 
     public void OnDeselect(BaseEventData e)
     {
-        ui.OnNodeHoverExit();
         hover.SetActive(false);
     }
+
+    public void OnSubmit(BaseEventData e) => ui.BuyUpgrade(nodeIndex);
 }
