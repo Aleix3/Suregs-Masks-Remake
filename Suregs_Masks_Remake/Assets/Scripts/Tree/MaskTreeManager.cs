@@ -36,13 +36,11 @@ public class MaskTreeManager : MonoBehaviour
 
     private void Start()
     {
-        // Cargar tras Awake para que MaskManager ya haya cargado los desbloqueos
+
         LoadGame();
     }
 
-    // ─────────────────────────────────────────────────────────────
-    //  SAVE / LOAD
-    // ─────────────────────────────────────────────────────────────
+
     private const string KeyPoints = "MaskTree_Points_";
     private const string KeyLevel = "MaskTree_Level_";
 
@@ -68,10 +66,8 @@ public class MaskTreeManager : MonoBehaviour
                 _levels[m, b] = PlayerPrefs.GetInt($"{KeyLevel}{m}_{b}", 0);
         }
 
-        // Restaurar las mejoras aplicadas a las máscaras
         RestoreAllMasks();
 
-        // Notificar la UI
         for (int m = 0; m < MASK_COUNT; m++)
             OnTreeChanged?.Invoke(m);
     }

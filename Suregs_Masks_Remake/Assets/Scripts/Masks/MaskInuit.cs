@@ -68,11 +68,22 @@ public class MaskInuit : BaseMask
 
     private bool _passiveActive;
 
+    private int MaskIndex => data != null
+        ? System.Array.FindIndex(MaskTreeManager.Instance.masks, m => m == this)
+        : -1;
+
+    private int GetBranchLevel(int branch)
+    {
+        int idx = MaskIndex;
+        if (idx < 0 || MaskTreeManager.Instance == null) return 0;
+        return MaskTreeManager.Instance.GetLevel(idx, branch);
+    }
+
 
     protected override float GetEffectiveCooldown()
     {
-        if (ActiveBranchIndex == 1 && ActiveBranchLevel > 0)
-            return cooldownByLevel[ActiveBranchLevel - 1];
+        int cdLevel = GetBranchLevel(1);
+        if (cdLevel > 0) return cooldownByLevel[cdLevel - 1];
         return baseCooldown;
     }
 
@@ -124,17 +135,18 @@ public class MaskInuit : BaseMask
 
     protected override void OnActivate()
     {
+        int dmgLevel = GetBranchLevel(0);
+        int rangeLevel = GetBranchLevel(2);
+        int poisonLevel = GetBranchLevel(3);
+
         float radius = baseExplosionRadius;
-        if (ActiveBranchIndex == 2 && ActiveBranchLevel > 0)
-            radius *= 1f + alcanceBonus * ActiveBranchLevel;
+        if (rangeLevel > 0) radius *= 1f + alcanceBonus * rangeLevel;
 
-        float damage = ActiveBranchIndex == 0 && ActiveBranchLevel > 0
-            ? damageByLevel[ActiveBranchLevel - 1]
-            : baseDamage;
+        float damage = dmgLevel > 0 ? damageByLevel[dmgLevel - 1] : baseDamage;
 
-        bool hasPoison = ActiveBranchIndex == 3 && ActiveBranchLevel > 0;
-        float poisonDmg = hasPoison ? poisonDamageByLevel[ActiveBranchLevel - 1] : 0f;
-        float poisonDur = hasPoison ? poisonDurationByLevel[ActiveBranchLevel - 1] : 0f;
+        bool hasPoison = poisonLevel > 0;
+        float poisonDmg = hasPoison ? poisonDamageByLevel[poisonLevel - 1] : 0f;
+        float poisonDur = hasPoison ? poisonDurationByLevel[poisonLevel - 1] : 0f;
 
         var targets = new System.Collections.Generic.List<Enemy>();
 
@@ -173,9 +185,13 @@ public class MaskInuit : BaseMask
 
     private void OnDrawGizmosSelected()
     {
+        // GetBranchLevel requiere MaskTreeManager.Instance — solo disponible en runtime
         float r = baseExplosionRadius;
-        if (ActiveBranchIndex == 2 && ActiveBranchLevel > 0)
-            r *= 1f + alcanceBonus * ActiveBranchLevel;
+        if (MaskTreeManager.Instance != null)
+        {
+            int rangeLevel = GetBranchLevel(2);
+            if (rangeLevel > 0) r *= 1f + alcanceBonus * rangeLevel;
+        }
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, r);
         Gizmos.color = new Color(0, 1, 1, 0.25f);

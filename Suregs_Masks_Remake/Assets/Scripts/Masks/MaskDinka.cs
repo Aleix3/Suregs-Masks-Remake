@@ -59,10 +59,24 @@ public class MaskDinka : BaseMask
     private bool _passiveApplied;
 
 
+    // Índice de esta máscara en el MaskTreeManager
+    private int MaskIndex => data != null
+        ? System.Array.FindIndex(MaskTreeManager.Instance.masks, m => m == this)
+        : -1;
+
+    /// <summary>Obtiene el nivel de una rama directamente del árbol, sin depender de ActiveBranchIndex.</summary>
+    private int GetBranchLevel(int branch)
+    {
+        int idx = MaskIndex;
+        if (idx < 0 || MaskTreeManager.Instance == null) return 0;
+        return MaskTreeManager.Instance.GetLevel(idx, branch);
+    }
+
     protected override float GetEffectiveCooldown()
     {
-        if (ActiveBranchIndex == 1 && ActiveBranchLevel > 0)
-            return cooldownByLevel[ActiveBranchLevel - 1];
+        int cdLevel = GetBranchLevel(1);   // rama 1 = cooldown
+        if (cdLevel > 0)
+            return cooldownByLevel[cdLevel - 1];
         return baseCooldown;
     }
 
@@ -91,17 +105,16 @@ public class MaskDinka : BaseMask
     private System.Collections.IEnumerator FireSequence(Enemy target)
     {
         IsBusy = true;
-        float damage = ActiveBranchIndex == 0 && ActiveBranchLevel > 0
-            ? damageByLevel[ActiveBranchLevel - 1]
-            : baseDamage;
+        int dmgLevel = GetBranchLevel(0);
+        int rayLevel = GetBranchLevel(2);
+        int poisonLevel = GetBranchLevel(3);
 
-        int count = ActiveBranchIndex == 2 && ActiveBranchLevel > 0
-            ? lightningCountByLevel[ActiveBranchLevel - 1]
-            : baseLightningCount;
+        float damage = dmgLevel > 0 ? damageByLevel[dmgLevel - 1] : baseDamage;
+        int count = rayLevel > 0 ? lightningCountByLevel[rayLevel - 1] : baseLightningCount;
 
-        bool hasPoison = ActiveBranchIndex == 3 && ActiveBranchLevel > 0;
-        float poisonDmg = hasPoison ? poisonDamageByLevel[ActiveBranchLevel - 1] : 0f;
-        float poisonDur = hasPoison ? poisonDurationByLevel[ActiveBranchLevel - 1] : 0f;
+        bool hasPoison = poisonLevel > 0;
+        float poisonDmg = hasPoison ? poisonDamageByLevel[poisonLevel - 1] : 0f;
+        float poisonDur = hasPoison ? poisonDurationByLevel[poisonLevel - 1] : 0f;
 
         for (int i = 0; i < count; i++)
         {

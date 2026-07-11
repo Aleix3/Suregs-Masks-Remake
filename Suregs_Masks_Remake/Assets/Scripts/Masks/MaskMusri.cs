@@ -19,9 +19,9 @@ public class MaskMusri : BaseMask
 {
 
     [Header("Stats aplicados al jugador")]
-    public float statLife     = -0.20f;
-    public float statSpeed    = +0.10f;
-    public float statDamage   = +0.10f;
+    public float statLife = -0.20f;
+    public float statSpeed = +0.10f;
+    public float statDamage = +0.10f;
     public float statAtkSpeed = +0.10f;
 
 
@@ -58,18 +58,31 @@ public class MaskMusri : BaseMask
     public GameObject dashVFXPrefab;
 
 
-    private bool      _passiveActive;
-    private bool      _isInvisible;
+    private bool _passiveActive;
+    private bool _isInvisible;
     private Coroutine _invisRoutine;
 
     // Mientras es invisible el CD no corre al acabar
     private bool _cdPending;
 
+    private int MaskIndex => data != null
+        ? System.Array.FindIndex(MaskTreeManager.Instance.masks, m => m == this)
+        : -1;
 
-    protected override bool  ManualCooldown => true;
+    private int GetBranchLevel(int branch)
+    {
+        int idx = MaskIndex;
+        if (idx < 0 || MaskTreeManager.Instance == null) return 0;
+        return MaskTreeManager.Instance.GetLevel(idx, branch);
+    }
+
+
+    protected override bool ManualCooldown => true;
 
     protected override float GetEffectiveCooldown()
     {
+        int cdLevel = GetBranchLevel(1);
+        if (cdLevel > 0) return cooldownByLevel[cdLevel - 1];
         return baseCooldown;
     }
 
@@ -78,10 +91,10 @@ public class MaskMusri : BaseMask
     public float[] cooldownByLevel = { 18f, 16f, 13f, 10f };
 
 
-    public override void ApplyPassive()  => _passiveActive = true;
+    public override void ApplyPassive() => _passiveActive = true;
     public override void RemovePassive() => _passiveActive = false;
 
-    
+
 
     public void OnPlayerDash()
     {
@@ -98,21 +111,15 @@ public class MaskMusri : BaseMask
     private IEnumerator DashRoutine()
     {
         IsBusy = true;
-        float damage = ActiveBranchIndex == 2 && ActiveBranchLevel > 0
-            ? damageByLevel[ActiveBranchLevel - 1]
-            : baseDamage;
+        int distLevel = GetBranchLevel(0);
+        int stunLevel = GetBranchLevel(1);
+        int dmgLevel = GetBranchLevel(2);
+        int invisLevel = GetBranchLevel(3);
 
-        float distMult = 1f + dashExtraFactor;
-        if (ActiveBranchIndex == 0 && ActiveBranchLevel > 0)
-            distMult += distanceBonusPerLevel * ActiveBranchLevel;
-
-        float stunDur = ActiveBranchIndex == 1 && ActiveBranchLevel > 0
-            ? stunDurationByLevel[ActiveBranchLevel - 1]
-            : 0f;
-
-        float invisDur = ActiveBranchIndex == 3 && ActiveBranchLevel > 0
-            ? invisDurationByLevel[ActiveBranchLevel - 1]
-            : baseInvisDuration;
+        float damage = dmgLevel > 0 ? damageByLevel[dmgLevel - 1] : baseDamage;
+        float distMult = 1f + dashExtraFactor + (distLevel > 0 ? distanceBonusPerLevel * distLevel : 0f);
+        float stunDur = stunLevel > 0 ? stunDurationByLevel[stunLevel - 1] : 0f;
+        float invisDur = invisLevel > 0 ? invisDurationByLevel[invisLevel - 1] : baseInvisDuration;
 
 
         Vector2 dir = player.lastMovementDirection == Vector2.zero
@@ -172,7 +179,7 @@ public class MaskMusri : BaseMask
 
     private void ExitInvisibility()
     {
-        
+
         _isInvisible = false;
         player.SetInvisible(false);
         IsBusy = false;
@@ -180,8 +187,7 @@ public class MaskMusri : BaseMask
         if (_cdPending)
         {
             _cdPending = false;
-            float cd = baseCooldown;
-            ForceStartCooldown(cd);
+            ForceStartCooldown(GetEffectiveCooldown());
         }
     }
 

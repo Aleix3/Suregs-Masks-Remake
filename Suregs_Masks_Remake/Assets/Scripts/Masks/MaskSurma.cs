@@ -22,21 +22,21 @@ public class MaskSurma : BaseMask
 {
 
     [Header("Stats aplicados al jugador")]
-    public float statLife     = -0.05f;
-    public float statSpeed    = -0.05f;
-    public float statDamage   = -0.05f;
+    public float statLife = -0.05f;
+    public float statSpeed = -0.05f;
+    public float statDamage = -0.05f;
     public float statAtkSpeed = -0.05f;
 
 
     [Header("Pasiva")]
 
-    public float passiveHealthThreshold  = 0.30f;
-    public float passiveDamageBonus      = 0.20f;
-    public float passiveSpeedBonus       = 0.10f;
+    public float passiveHealthThreshold = 0.30f;
+    public float passiveDamageBonus = 0.20f;
+    public float passiveSpeedBonus = 0.10f;
 
 
     [Header("Árbol 0")]
-    public float baseBuff = 0.10f;                             
+    public float baseBuff = 0.10f;
     public float[] buffByLevel = { 0.15f, 0.20f, 0.25f, 0.35f };
 
 
@@ -47,10 +47,10 @@ public class MaskSurma : BaseMask
 
     [Header("Árbol 2")]
     public float baseDebuffDuration = 10f;
-    public float baseDebuffAmount   = 0.20f;  
+    public float baseDebuffAmount = 0.20f;
     public float[] debuffDurationByLevel = { 8f, 7f, 5f, 3f };
 
-    public float[] debuffAmountByLevel   = { 0.15f, 0.12f, 0.08f, 0.05f };
+    public float[] debuffAmountByLevel = { 0.15f, 0.12f, 0.08f, 0.05f };
 
 
     [Header("Árbol 3")]
@@ -63,23 +63,40 @@ public class MaskSurma : BaseMask
     public GameObject debuffVFXPrefab;
 
 
-    private bool      _passiveActive;
-    private bool      _passiveTriggered;
-    private bool      _buffActive;
+    private bool _passiveActive;
+    private bool _passiveTriggered;
+    private bool _buffActive;
     private Coroutine _buffRoutine;
 
+    private int MaskIndex => data != null
+        ? System.Array.FindIndex(MaskTreeManager.Instance.masks, m => m == this)
+        : -1;
 
-    protected override bool  ManualCooldown => true;
+    private int GetBranchLevel(int branch)
+    {
+        int idx = MaskIndex;
+        if (idx < 0 || MaskTreeManager.Instance == null) return 0;
+        return MaskTreeManager.Instance.GetLevel(idx, branch);
+    }
+
+
+    protected override bool ManualCooldown => true;
+
+    // Índices de rama según el árbol visual
+    private const int BRANCH_STATS = 0;   // fila 1 – aumento de poder del buff
+    private const int BRANCH_CDWN = 1;   // fila 2 – cooldown
+    private const int BRANCH_DURATION = 2;   // fila 3 – tiempo de uso
+    private const int BRANCH_DEBUFF = 3;   // fila 4 – robo de vida / debuff
 
     protected override float GetEffectiveCooldown()
     {
-        if (ActiveBranchIndex == 3 && ActiveBranchLevel > 0)
-            return cooldownByLevel[ActiveBranchLevel - 1];
+        int cdLevel = GetBranchLevel(BRANCH_CDWN);
+        if (cdLevel > 0) return cooldownByLevel[cdLevel - 1];
         return baseCooldown;
     }
 
 
-    public override void ApplyPassive()  => _passiveActive = true;
+    public override void ApplyPassive() => _passiveActive = true;
     public override void RemovePassive()
     {
         _passiveActive = false;
@@ -93,28 +110,28 @@ public class MaskSurma : BaseMask
 
         bool belowThreshold = (player.GetHealth() / player.GetMaxHealth()) <= passiveHealthThreshold;
 
-        if (belowThreshold && !_passiveTriggered)       ApplyPassiveBuff();
-        else if (!belowThreshold && _passiveTriggered)  RemovePassiveBuff();
+        if (belowThreshold && !_passiveTriggered) ApplyPassiveBuff();
+        else if (!belowThreshold && _passiveTriggered) RemovePassiveBuff();
     }
 
     private void ApplyPassiveBuff()
     {
         _passiveTriggered = true;
         player.BasicDamageMultiplier += passiveDamageBonus;
-        player.SpeedMultiplier       += passiveSpeedBonus;
+        player.SpeedMultiplier += passiveSpeedBonus;
     }
 
     private void RemovePassiveBuff()
     {
         _passiveTriggered = false;
         player.BasicDamageMultiplier -= passiveDamageBonus;
-        player.SpeedMultiplier       -= passiveSpeedBonus;
+        player.SpeedMultiplier -= passiveSpeedBonus;
     }
 
 
     protected override void OnActivate()
     {
-        if (_buffActive) return;   
+        if (_buffActive) return;
         if (_buffRoutine != null) StopCoroutine(_buffRoutine);
         _buffRoutine = StartCoroutine(BuffSequence());
     }
@@ -122,28 +139,22 @@ public class MaskSurma : BaseMask
     private IEnumerator BuffSequence()
     {
         IsBusy = true;
-        float buffAmount = ActiveBranchIndex == 0 && ActiveBranchLevel > 0
-            ? buffByLevel[ActiveBranchLevel - 1]
-            : baseBuff;
+        int buffLevel = GetBranchLevel(BRANCH_STATS);
+        int cdwLevel = GetBranchLevel(BRANCH_CDWN);
+        int debuffLevel = GetBranchLevel(BRANCH_DEBUFF);
+        int durLevel = GetBranchLevel(BRANCH_DURATION);
 
-        float buffDuration = ActiveBranchIndex == 1 && ActiveBranchLevel > 0
-            ? durationByLevel[ActiveBranchLevel - 1]
-            : baseDuration;
-
-        float debuffDuration = ActiveBranchIndex == 2 && ActiveBranchLevel > 0
-            ? debuffDurationByLevel[ActiveBranchLevel - 1]
-            : baseDebuffDuration;
-
-        float debuffAmount = ActiveBranchIndex == 2 && ActiveBranchLevel > 0
-            ? debuffAmountByLevel[ActiveBranchLevel - 1]
-            : baseDebuffAmount;
+        float buffAmount = buffLevel > 0 ? buffByLevel[buffLevel - 1] : baseBuff;
+        float buffDuration = durLevel > 0 ? durationByLevel[durLevel - 1] : baseDuration;
+        float debuffDuration = debuffLevel > 0 ? debuffDurationByLevel[debuffLevel - 1] : baseDebuffDuration;
+        float debuffAmount = debuffLevel > 0 ? debuffAmountByLevel[debuffLevel - 1] : baseDebuffAmount;
 
 
         _buffActive = true;
 
         player.BasicDamageMultiplier += buffAmount;
-        player.SpeedMultiplier       += buffAmount;
-        player.MaxHealthMultiplier   += buffAmount;
+        player.SpeedMultiplier += buffAmount;
+        player.MaxHealthMultiplier += buffAmount;
 
         player.HealToPercent(1f);
         GameObject GO = null;
@@ -162,14 +173,14 @@ public class MaskSurma : BaseMask
 
         //QUITAR BUFF
         player.BasicDamageMultiplier -= buffAmount;
-        player.SpeedMultiplier       -= buffAmount;
-        player.MaxHealthMultiplier   -= buffAmount;
+        player.SpeedMultiplier -= buffAmount;
+        player.MaxHealthMultiplier -= buffAmount;
         _buffActive = false;
 
         //DEBUFF
         player.BasicDamageMultiplier -= debuffAmount;
-        player.SpeedMultiplier       -= debuffAmount;
-        player.MaxHealthMultiplier   -= debuffAmount;
+        player.SpeedMultiplier -= debuffAmount;
+        player.MaxHealthMultiplier -= debuffAmount;
 
         player.ClampHealthToMax();
 
@@ -190,8 +201,8 @@ public class MaskSurma : BaseMask
         }
 
         player.BasicDamageMultiplier += debuffAmount;
-        player.SpeedMultiplier       += debuffAmount;
-        player.MaxHealthMultiplier   += debuffAmount;
+        player.SpeedMultiplier += debuffAmount;
+        player.MaxHealthMultiplier += debuffAmount;
 
         Debug.Log("[Surma] Debuff terminado. CD iniciado.");
 

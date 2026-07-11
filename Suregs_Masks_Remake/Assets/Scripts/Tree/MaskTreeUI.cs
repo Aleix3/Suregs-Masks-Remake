@@ -57,8 +57,7 @@ public class MaskTreeUI : MonoBehaviour
 
     private void Awake()
     {
-        _tm = MaskTreeManager.Instance;
-        _tm.OnTreeChanged += _ => RefreshGrid();
+        
     }
 
     private void Start()
@@ -67,6 +66,8 @@ public class MaskTreeUI : MonoBehaviour
         // directamente — no añadir listeners aquí para evitar doble llamada
 
         // Primer refresh aquí — MaskManager ya ha cargado desbloqueos en su Awake
+        _tm = MaskTreeManager.Instance;
+        _tm.OnTreeChanged += _ => RefreshGrid();
         InitialRefresh();
     }
 
