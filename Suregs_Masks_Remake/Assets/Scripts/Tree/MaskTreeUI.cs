@@ -57,7 +57,7 @@ public class MaskTreeUI : MonoBehaviour
 
     private void Awake()
     {
-        
+
     }
 
     private void Start()
@@ -78,12 +78,14 @@ public class MaskTreeUI : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        // Asegurarse de que _tm está listo antes de hacer nada
+        if (_tm == null) _tm = MaskTreeManager.Instance;
+        if (_tm == null) return;
+
         if (firstButton != null)
             EventSystem.current.SetSelectedGameObject(firstButton);
 
-        // Si ya está inicializado (segunda vez que se abre el panel), refrescar
-        if (_tm != null) InitialRefresh();
+        InitialRefresh();
     }
 
     private void InitialRefresh()
@@ -145,16 +147,27 @@ public class MaskTreeUI : MonoBehaviour
     public void BuyUpgrade(int nodeIndex)
     {
         int branch = nodeIndex / 4;
-        int level = nodeIndex % 4;
-        int currentLevel = _tm.GetLevel(_activeMask, branch);
+        int levelClicked = nodeIndex % 4;           // 0-3
+        int currentLevel = _tm.GetLevel(_activeMask, branch);  // niveles comprados (0-4)
 
-        if (level != currentLevel)
+        bool isBought = levelClicked < currentLevel;
+        bool isNext = levelClicked == currentLevel;
+        bool isLast = levelClicked == currentLevel - 1;  // último comprado
+
+        if (isBought && isLast)
         {
-            Debug.Log("[SkillTree] Debes comprar los niveles anteriores primero.");
-            return;
+            // Deshacer el último nivel de la rama
+            _tm.TryDowngrade(_activeMask, branch);
         }
-
-        _tm.TryUpgrade(_activeMask, branch);
+        else if (isNext)
+        {
+            // Comprar el siguiente nivel
+            _tm.TryUpgrade(_activeMask, branch);
+        }
+        else
+        {
+            Debug.Log("[SkillTree] Solo puedes deshacer el último nivel comprado o comprar el siguiente.");
+        }
     }
 
     private void RefreshAll()
@@ -277,13 +290,19 @@ public class MaskTreeUI : MonoBehaviour
 
     public void OnMaskSelected(int maskIndex)
     {
-        bool unlocked = _tm.masks[maskIndex]?.data?.isUnlocked ?? false;
+        bool unlocked = _tm?.masks[maskIndex]?.data?.isUnlocked ?? false;
         if (!unlocked) return;
 
         if (infoName != null) infoName.text = maskData[maskIndex].maskName;
         if (infoDesc != null) infoDesc.text = maskData[maskIndex].maskDesc;
-        closeUpIcon.sprite = maskButtonIcons[maskIndex].sprite;
-        closeUpIcon.preserveAspect = true;
+
+        if (closeUpIcon != null && maskButtonIcons[maskIndex] != null
+            && maskButtonIcons[maskIndex].sprite != null)
+        {
+            closeUpIcon.sprite = maskButtonIcons[maskIndex].sprite;
+            closeUpIcon.preserveAspect = true;
+            var c = closeUpIcon.color; c.a = 1f; closeUpIcon.color = c;
+        }
     }
 
     public void RestoreFocus()

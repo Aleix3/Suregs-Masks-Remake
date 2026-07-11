@@ -32,6 +32,7 @@ public class MaskTreeManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -82,6 +83,45 @@ public class MaskTreeManager : MonoBehaviour
 
     public int GetPoints(int maskIndex) =>
         ValidMask(maskIndex) ? _points[maskIndex] : 0;
+
+    /// <summary>
+    /// Elimina el último nivel comprado de una rama y devuelve el punto gastado.
+    /// Solo funciona si es el nivel más alto de esa rama.
+    /// </summary>
+    public bool TryDowngrade(int maskIndex, int branchIndex)
+    {
+        if (!ValidMask(maskIndex) || !ValidBranch(branchIndex)) return false;
+
+        int currentLevel = _levels[maskIndex, branchIndex];
+        if (currentLevel <= 0)
+        {
+            Debug.Log($"[SkillTree] Rama {branchIndex} de máscara {maskIndex} ya está en nivel 0.");
+            return false;
+        }
+
+        // Devolver el punto gastado en ese nivel
+        _points[maskIndex] += GetUpgradeCostForLevel(currentLevel - 1);
+        _levels[maskIndex, branchIndex]--;
+
+        // Actualizar la máscara
+        DowngradeInMask(maskIndex, branchIndex);
+
+        OnTreeChanged?.Invoke(maskIndex);
+        SaveGame();
+        return true;
+    }
+
+    private void DowngradeInMask(int maskIndex, int branchIndex)
+    {
+        BaseMask mask = masks[maskIndex];
+        if (mask == null) return;
+
+        // Reseleccionar la rama al nivel correcto desde 0
+        mask.SelectBranch(branchIndex);
+        int targetLevel = _levels[maskIndex, branchIndex];
+        while (mask.ActiveBranchLevel < targetLevel)
+            mask.UpgradeBranch();
+    }
 
     public bool TryUpgrade(int maskIndex, int branchIndex)
     {

@@ -9,30 +9,29 @@ using UnityEngine.UI;
 public class EquipButton : MonoBehaviour,
     ISelectHandler, IDeselectHandler, ISubmitHandler
 {
-    public bool         isPrimary;
-    public Image        maskIcon;
+    public bool isPrimary;
+    public Image maskIcon;
 
     [HideInInspector] public GameObject hover;
 
-    private MaskEquipUI  _equipUI;
-    private MaskManager  _mm;
+    public MaskEquipUI _equipUI;
+    private MaskManager _mm;
 
     private void Awake()
     {
-        _equipUI = FindAnyObjectByType<MaskEquipUI>();
-        _mm      = Player.Instance?.MaskManager;
-        hover    = transform.Find("Hover")?.gameObject;
+        hover = transform.Find("Hover")?.gameObject;
+        _mm = Player.Instance?.MaskManager;
 
-        // Escuchar cambios de máscara equipada
+        if (_mm != null) _mm.OnSwap -= OnSwapChanged;
         if (_mm != null) _mm.OnSwap += OnSwapChanged;
     }
 
-    private void OnDestroy()
+    private void OnEnable()
     {
-        if (_mm != null) _mm.OnSwap -= OnSwapChanged;
-    }
+        
 
-    private void OnEnable() => RefreshIcon();
+        RefreshIcon();
+    }
 
     private void OnSwapChanged(BaseMask p, BaseMask s) => RefreshIcon();
 
@@ -43,7 +42,7 @@ public class EquipButton : MonoBehaviour,
 
         if (mask?.data?.maskIcon != null)
         {
-            maskIcon.sprite  = mask.data.maskIcon;
+            maskIcon.sprite = mask.data.maskIcon;
             maskIcon.preserveAspect = true;
             maskIcon.enabled = true;
             // restaurar alpha por si estaba oculto
@@ -70,6 +69,6 @@ public class EquipButton : MonoBehaviour,
     public void OnSubmit(BaseEventData e)
     {
         if (isPrimary) _equipUI.OpenForPrimary();
-        else           _equipUI.OpenForSecondary();
+        else _equipUI.OpenForSecondary();
     }
 }

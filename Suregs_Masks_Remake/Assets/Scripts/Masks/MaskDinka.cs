@@ -72,9 +72,15 @@ public class MaskDinka : BaseMask
         return MaskTreeManager.Instance.GetLevel(idx, branch);
     }
 
+    // Índices de rama según el árbol visual (fila 1=0, fila 2=1, fila 3=2, fila 4=3)
+    private const int BRANCH_DAMAGE = 0;   // fila 1 – daño
+    private const int BRANCH_COOLDOWN = 1;   // fila 2 – cooldown
+    private const int BRANCH_RAYS = 2;   // fila 3 – cantidad de rayos
+    private const int BRANCH_POISON = 3;   // fila 4 – veneno
+
     protected override float GetEffectiveCooldown()
     {
-        int cdLevel = GetBranchLevel(1);   // rama 1 = cooldown
+        int cdLevel = GetBranchLevel(BRANCH_COOLDOWN);
         if (cdLevel > 0)
             return cooldownByLevel[cdLevel - 1];
         return baseCooldown;
@@ -102,12 +108,16 @@ public class MaskDinka : BaseMask
         StartCoroutine(FireSequence(target));
     }
 
-    private System.Collections.IEnumerator FireSequence(Enemy target)
+    [Header("Multi-rayo")]
+    [Tooltip("Delay en segundos entre cada rayo")]
+    public float delayBetweenRays = 0.3f;
+
+    private System.Collections.IEnumerator FireSequence(Enemy firstTarget)
     {
         IsBusy = true;
-        int dmgLevel = GetBranchLevel(0);
-        int rayLevel = GetBranchLevel(2);
-        int poisonLevel = GetBranchLevel(3);
+        int dmgLevel = GetBranchLevel(BRANCH_DAMAGE);
+        int rayLevel = GetBranchLevel(BRANCH_RAYS);
+        int poisonLevel = GetBranchLevel(BRANCH_POISON);
 
         float damage = dmgLevel > 0 ? damageByLevel[dmgLevel - 1] : baseDamage;
         int count = rayLevel > 0 ? lightningCountByLevel[rayLevel - 1] : baseLightningCount;
@@ -116,18 +126,60 @@ public class MaskDinka : BaseMask
         float poisonDmg = hasPoison ? poisonDamageByLevel[poisonLevel - 1] : 0f;
         float poisonDur = hasPoison ? poisonDurationByLevel[poisonLevel - 1] : 0f;
 
-        for (int i = 0; i < count; i++)
+        // Construir lista de objetivos priorizando enemigos distintos
+        var targets = BuildTargetList(firstTarget, count);
+
+        for (int i = 0; i < targets.Count; i++)
         {
-            if (target == null || target.isDead) break;
+            Enemy t = targets[i];
+            if (t == null || t.isDead) continue;
 
-            target.TakeDamage((int)damage);
-            if (hasPoison) target.ApplyPoison(poisonDmg, poisonDur, poisonTickRate);
-            SpawnVFX(target.transform.position);
+            t.TakeDamage((int)damage);
+            if (hasPoison) t.ApplyPoison(poisonDmg, poisonDur, poisonTickRate);
+            SpawnVFX(t.transform.position);
 
-            if (i < count - 1)
-                yield return new WaitForSeconds(0.15f);
+            if (i < targets.Count - 1)
+                yield return new WaitForSeconds(delayBetweenRays);
         }
+
         IsBusy = false;
+    }
+
+    /// <summary>
+    /// Devuelve una lista de N objetivos:
+    /// - Primero el objetivo inicial.
+    /// - Luego otros enemigos vivos de la sala (ordenados por vida desc).
+    /// - Si no hay suficientes enemigos distintos, repite el primero.
+    /// </summary>
+    private System.Collections.Generic.List<Enemy> BuildTargetList(Enemy first, int count)
+    {
+        var list = new System.Collections.Generic.List<Enemy>();
+        var inRoom = player.actualRoom?.enemiesInRoom;
+
+        list.Add(first);
+
+        if (count > 1 && inRoom != null)
+        {
+            // Ordenar el resto por vida descendente, excluyendo el primero
+            var others = new System.Collections.Generic.List<Enemy>();
+            foreach (Enemy e in inRoom)
+            {
+                if (e == null || e.isDead || e == first) continue;
+                others.Add(e);
+            }
+            others.Sort((a, b) => b.health.CompareTo(a.health));
+
+            int othersNeeded = count - 1;
+            for (int i = 0; i < othersNeeded; i++)
+            {
+                if (i < others.Count)
+                    list.Add(others[i]);        // enemigo distinto
+                else
+                    list.Add(first);            // fallback: repetir el primero
+            }
+        }
+
+        return list;
     }
 
 

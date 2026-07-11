@@ -142,6 +142,7 @@ MonoBehaviour:
   dashCooldown: 1
   dashDuration: 0.2
   lastMovementDirection: {x: 0, y: 0}
+  isFacingLeft: 0
   canMove: 1
   actualRoom: {fileID: 0}
   attackHitboxPrefab: {fileID: 3803651259362562942, guid: 7485853c63d01714aa4d3fc5ef41f11d, type: 3}
@@ -166,6 +167,7 @@ MonoBehaviour:
   SpeedMultiplier: 1
   MaxHealthMultiplier: 1
   basicAttackBonusPercent: 0.15
+  spawnPointChanged: 0
 --- !u!61 &4382748051436559833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -281,6 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotPrimary: {fileID: 4280659145124894079}
   slotSecondary: {fileID: 8116843313300243663}
+  allMasks: []
   swapKey: 114
   swapButton: Y
 --- !u!114 &4280659145124894079
@@ -327,6 +330,7 @@ MonoBehaviour:
   - 9
   - 11
   lightningVFXPrefab: {fileID: 7270222356401338064, guid: 1f4789eaa57611e46b2682d08b9ad781, type: 3}
+  delayBetweenRays: 0.4
 --- !u!114 &8116843313300243663
 MonoBehaviour:
   m_ObjectHideFlags: 0
