@@ -138,9 +138,9 @@ MonoBehaviour:
   baseSwordDamage: 100
   baseMaxHealth: 100
   health: 100
-  dashForce: 10
+  dashForce: 8
   dashCooldown: 1
-  dashDuration: 0.2
+  dashDuration: 0.33
   lastMovementDirection: {x: 0, y: 0}
   isFacingLeft: 0
   canMove: 1
@@ -281,9 +281,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e67172fa5eba5f429673e43926bfe5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotPrimary: {fileID: 4280659145124894079}
-  slotSecondary: {fileID: 8116843313300243663}
-  allMasks: []
+  slotPrimary: {fileID: 0}
+  slotSecondary: {fileID: 0}
+  allMasks:
+  - {fileID: 4280659145124894079}
+  - {fileID: 8116843313300243663}
+  - {fileID: 7442818282558098565}
+  - {fileID: 3651245318472302311}
   swapKey: 114
   swapButton: Y
 --- !u!114 &4280659145124894079
@@ -300,9 +304,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 3671cfa17877212499a95193081285c3, type: 2}
   statLife: 0
-  statSpeed: -0.1
-  statDamage: 0.1
-  statAtkSpeed: 0.1
+  statSpeed: 0
+  statDamage: 0
+  statAtkSpeed: 0
   passiveBasicDamageBonus: 0.2
   baseDamage: 50
   damageByLevel:
@@ -330,7 +334,7 @@ MonoBehaviour:
   - 9
   - 11
   lightningVFXPrefab: {fileID: 7270222356401338064, guid: 1f4789eaa57611e46b2682d08b9ad781, type: 3}
-  delayBetweenRays: 0.4
+  delayBetweenRays: 0.6
 --- !u!114 &8116843313300243663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,9 +348,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 0943e9537ed85fb4aadf172f4f65ad2d, type: 2}
-  statLife: -0.1
-  statSpeed: 0.1
-  statDamage: 0.1
+  statLife: 0
+  statSpeed: 0
+  statDamage: 0
   statAtkSpeed: 0
   passiveWaveDamageFraction: 0.333
   passiveWaveRadius: 2.5
@@ -394,10 +398,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: d213c62f0795830468993420ddc602fd, type: 2}
-  statLife: -0.2
-  statSpeed: 0.1
-  statDamage: 0.1
-  statAtkSpeed: 0.1
+  statLife: 0
+  statSpeed: 0
+  statDamage: 0
+  statAtkSpeed: 0
   passiveInvisDuration: 1
   dashExtraFactor: 0.33
   distanceBonusPerLevel: 0.05
@@ -442,10 +446,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 67927d9d1d9569940944b28e92044a28, type: 2}
-  statLife: -0.05
-  statSpeed: -0.05
-  statDamage: -0.05
-  statAtkSpeed: -0.05
+  statLife: 0
+  statSpeed: 0
+  statDamage: 0
+  statAtkSpeed: 0
   passiveHealthThreshold: 0.3
   passiveDamageBonus: 0.2
   passiveSpeedBonus: 0.1

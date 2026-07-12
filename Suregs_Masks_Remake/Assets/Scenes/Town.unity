@@ -10884,6 +10884,76 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].maskDesc
+      value: "Al activar la habilidad, Jakov se vuelve invisible durante 5 segundos,
+        con 20 segundos de cooldown. Al golpear a un enemigo saldr\xE1 de la invisibilidad.
+        Su pasiva provoca que el dash simple cuente con 2 segundos de invisibilidad."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[0].upgradeDesc
+      value: Aumenta el poder del primer golpe mientras Jakov sea invisble un 50%.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[1].upgradeDesc
+      value: Aumenta el poder del primer golpe mientras Jakov sea invisble un 100%.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[2].upgradeDesc
+      value: Aumenta el poder del primer golpe mientras Jakov sea invisble un 150%.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[3].upgradeDesc
+      value: Aumenta el poder del primer golpe mientras Jakov sea invisble un 200%.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[8].upgradeDesc
+      value: Aumenta la distancia del dash en la habilidad principal un 10%
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[9].upgradeDesc
+      value: Aumenta la distancia del dash en la habilidad principal un 15%
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[10].upgradeDesc
+      value: Aumenta la distancia del dash en la habilidad principal un 25%
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[11].upgradeDesc
+      value: Aumenta la distancia del dash en la habilidad principal un 75%
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[13].upgradeDesc
+      value: Aumenta el tiempo de la habilidad principal a 7,3 segundos
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[14].upgradeDesc
+      value: Aumenta el tiempo de la habilidad principal a 8,6 segundos
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[2].nodes.Array.data[15].upgradeDesc
+      value: Aumenta el tiempo de la habilidad principal a segundos
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[3].nodes.Array.data[12].upgradeDesc
+      value: Disminuye la vida restada despues de usar la habilidad principal un
+        5%
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[3].nodes.Array.data[13].upgradeDesc
+      value: Disminuye la vida restada despues de usar la habilidad principal un
+        5%
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[3].nodes.Array.data[14].upgradeDesc
+      value: Disminuye la vida restada despues de usar la habilidad principal un
+        5%
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059957622071223876, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
+      propertyPath: maskData.Array.data[3].nodes.Array.data[15].upgradeDesc
+      value: Disminuye la vida restada despues de usar la habilidad principal un
+        10%
+      objectReference: {fileID: 0}
     - target: {fileID: 2517020387029963405, guid: a084cabbd00134d4fb8bbd756e6ee3ac, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11790,53 +11860,41 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4280659145124894079, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: delayBetweenRays
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 7064188762051051564, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8231884241296565130, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: slotPrimary
-      value: 
+    - target: {fileID: 7442818282558098565, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: dashBonusByLevel.Array.data[0]
+      value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 8231884241296565130, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: slotSecondary
-      value: 
+    - target: {fileID: 7442818282558098565, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: dashBonusByLevel.Array.data[1]
+      value: 0.25
       objectReference: {fileID: 0}
-    - target: {fileID: 8231884241296565130, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: allMasks.Array.size
-      value: 4
+    - target: {fileID: 7442818282558098565, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: dashBonusByLevel.Array.data[2]
+      value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8231884241296565130, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: allMasks.Array.data[0]
-      value: 
-      objectReference: {fileID: 1440577844}
-    - target: {fileID: 8231884241296565130, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: allMasks.Array.data[1]
-      value: 
-      objectReference: {fileID: 1440577843}
-    - target: {fileID: 8231884241296565130, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: allMasks.Array.data[2]
-      value: 
-      objectReference: {fileID: 1440577842}
-    - target: {fileID: 8231884241296565130, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: allMasks.Array.data[3]
-      value: 
-      objectReference: {fileID: 1440577841}
-    - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: dashForce
-      value: 8
+    - target: {fileID: 7442818282558098565, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: dashBonusByLevel.Array.data[3]
+      value: 0.75
       objectReference: {fileID: 0}
-    - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: healthBar
-      value: 
+    - target: {fileID: 7442818282558098565, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: firstHitBonusByLevel.Array.data[0]
+      value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
-      propertyPath: dashDuration
-      value: 0.33
+    - target: {fileID: 7442818282558098565, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: firstHitBonusByLevel.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442818282558098565, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: firstHitBonusByLevel.Array.data[2]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442818282558098565, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: firstHitBonusByLevel.Array.data[3]
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

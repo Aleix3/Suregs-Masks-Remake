@@ -206,7 +206,11 @@ public class Player : MonoBehaviour
             if (lastMovementDirection == Vector2.zero)
                 lastMovementDirection = Vector2.right; // si no hay dirección, dash hacia la derecha
 
-            rb.AddForce(lastMovementDirection * dashForce, ForceMode2D.Impulse);
+            // Árbol 2 Musri — bonus de distancia durante invisibilidad activa
+            float dashBonus = 0f;
+            if (MaskManager?.Primary is MaskMusri musriP) dashBonus = musriP.GetDashBonus();
+            if (MaskManager?.Secondary is MaskMusri musriS) dashBonus = musriS.GetDashBonus();
+            rb.AddForce(lastMovementDirection * dashForce * (1f + dashBonus), ForceMode2D.Impulse);
             isDashing = true;
             dashTimer = dashDuration;
             dashCooldownTimer = dashCooldown;
@@ -300,9 +304,8 @@ public class Player : MonoBehaviour
         Invoke(nameof(ResetAttack), attackDuration);
 
 
-        // Romper invisibilidad de Musri al atacar
-        (MaskManager?.Primary as MaskMusri)?.OnPlayerAttacked();
-        (MaskManager?.Secondary as MaskMusri)?.OnPlayerAttacked();
+        
+        
     }
 
     void ResetAttack()

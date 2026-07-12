@@ -102,7 +102,8 @@ public class MaskTreeUI : MonoBehaviour
 
         if (firstUnlocked >= 0)
         {
-            firstButton?.GetComponent<MaskButton>()?.hover?.SetActive(true);
+            if(firstButton.GetComponent<MaskButton>().hover != null)
+                firstButton?.GetComponent<MaskButton>()?.hover?.SetActive(true);
             ShowMask(firstUnlocked);
         }
         else
@@ -168,6 +169,7 @@ public class MaskTreeUI : MonoBehaviour
         {
             Debug.Log("[SkillTree] Solo puedes deshacer el último nivel comprado o comprar el siguiente.");
         }
+        RefreshStats();
     }
 
     private void RefreshAll()
