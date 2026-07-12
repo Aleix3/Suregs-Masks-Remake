@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class MaskPointsOnKill : MonoBehaviour
 {
-    [Tooltip("Puntos que otorga este enemigo al morir")]
-    public int pointsOnKill = 1;
+    public int expPointsOnKill = 20;
 
     public void GrantPoints()
     {
@@ -14,13 +13,13 @@ public class MaskPointsOnKill : MonoBehaviour
         if (mm.Primary != null)
         {
             int idx = GetMaskIndex(mm.Primary);
-            if (idx >= 0) MaskTreeManager.Instance.AddPoints(idx, pointsOnKill);
+            if (idx >= 0) MaskTreeManager.Instance.AddExpPoints(idx, expPointsOnKill);
         }
 
         if (mm.Secondary != null)
         {
             int idx = GetMaskIndex(mm.Secondary);
-            if (idx >= 0) MaskTreeManager.Instance.AddPoints(idx, pointsOnKill);
+            if (idx >= 0) MaskTreeManager.Instance.AddExpPoints(idx, expPointsOnKill);
         }
     }
 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6255237340032214821}
   - component: {fileID: 3055101950449712070}
   - component: {fileID: 2615514091221702222}
+  - component: {fileID: -9110448414978103223}
   m_Layer: 7
   m_Name: BossInuit
   m_TagString: Enemy
@@ -169,6 +170,7 @@ MonoBehaviour:
   isDead: 0
   itemPrefab: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
   agent: {fileID: 8589144347580291022}
+  roomConected: {fileID: 0}
   bossState: 0
   currentPhase: 0
   wavePrefab: {fileID: 4531685987252974836, guid: 6097aa96424fb0e40a46cecf7ff971e1, type: 3}
@@ -232,3 +234,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.30617893}
   m_Size: {x: 1.7, y: 3.922358}
   m_Direction: 0
+--- !u!114 &-9110448414978103223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233585022467933213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95fee3369ccb4054ab379a8366f7e2a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expPointsOnKill: 1000

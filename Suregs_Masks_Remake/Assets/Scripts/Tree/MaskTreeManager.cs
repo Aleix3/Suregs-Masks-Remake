@@ -19,6 +19,20 @@ public class MaskTreeManager : MonoBehaviour
     public const int MAX_LEVEL = 4;
     public const int MAX_UPGRADES = 8;
 
+    private int[] _exp = new int[MASK_COUNT];
+
+    public int[] expToLevel =
+    {
+        1000,
+        1800,
+        3000,
+        3600,
+        4500,
+        6000,
+        6600,
+        8000
+    };
+
     public int[] _points = new int[MASK_COUNT];
 
     public int[,] _levels = new int[MASK_COUNT, BRANCH_COUNT];
@@ -27,6 +41,9 @@ public class MaskTreeManager : MonoBehaviour
     public BaseMask[] masks = new BaseMask[MASK_COUNT];
 
     public System.Action<int> OnTreeChanged;
+
+    /// <summary>Se dispara cuando una máscara gana puntos. Parámetros: maskIndex, cantidad.</summary>
+    public System.Action<int, int> OnPointsAdded;
 
     private void Awake()
     {
@@ -44,16 +61,19 @@ public class MaskTreeManager : MonoBehaviour
 
     private const string KeyPoints = "MaskTree_Points_";
     private const string KeyLevel = "MaskTree_Level_";
+    private const string KeyExp = "MaskTree_Exp_";
 
     public void SaveGame()
     {
         for (int m = 0; m < MASK_COUNT; m++)
         {
+            PlayerPrefs.SetInt($"{KeyExp}{m}", _exp[m]);
             PlayerPrefs.SetInt($"{KeyPoints}{m}", _points[m]);
 
             for (int b = 0; b < BRANCH_COUNT; b++)
                 PlayerPrefs.SetInt($"{KeyLevel}{m}_{b}", _levels[m, b]);
         }
+
         PlayerPrefs.Save();
     }
 
@@ -61,6 +81,7 @@ public class MaskTreeManager : MonoBehaviour
     {
         for (int m = 0; m < MASK_COUNT; m++)
         {
+            _exp[m] = PlayerPrefs.GetInt($"{KeyExp}{m}", 0);
             _points[m] = PlayerPrefs.GetInt($"{KeyPoints}{m}", 0);
 
             for (int b = 0; b < BRANCH_COUNT; b++)
@@ -73,21 +94,42 @@ public class MaskTreeManager : MonoBehaviour
             OnTreeChanged?.Invoke(m);
     }
 
-    public void AddPoints(int maskIndex, int amount)
+    public void AddExpPoints(int maskIndex, int amount)
     {
-        if (!ValidMask(maskIndex)) return;
-        _points[maskIndex] += amount;
+        if (!ValidMask(maskIndex))
+            return;
+
+        _exp[maskIndex] += amount;
+
+        // Mientras haya suficiente XP para el siguiente punto
+        while (_points[maskIndex] < MAX_UPGRADES &&
+               _exp[maskIndex] >= expToLevel[_points[maskIndex]])
+        {
+            _points[maskIndex]++;
+            OnPointsAdded?.Invoke(maskIndex, 1);
+        }
+
         OnTreeChanged?.Invoke(maskIndex);
         SaveGame();
     }
 
+    //public void AddExpPoints(int maskIndex, int amount)
+    //{
+    //    if (!ValidMask(maskIndex)) return;
+    //    if(amount > expPointsToReachPerLevel)
+    //    {
+    //        _points[maskIndex] += amount;
+    //    }
+
+
+    //    OnTreeChanged?.Invoke(maskIndex);
+    //    OnPointsAdded?.Invoke(maskIndex, amount);
+    //    SaveGame();
+    //}
+
     public int GetPoints(int maskIndex) =>
         ValidMask(maskIndex) ? _points[maskIndex] : 0;
 
-    /// <summary>
-    /// Elimina el último nivel comprado de una rama y devuelve el punto gastado.
-    /// Solo funciona si es el nivel más alto de esa rama.
-    /// </summary>
     public bool TryDowngrade(int maskIndex, int branchIndex)
     {
         if (!ValidMask(maskIndex) || !ValidBranch(branchIndex)) return false;

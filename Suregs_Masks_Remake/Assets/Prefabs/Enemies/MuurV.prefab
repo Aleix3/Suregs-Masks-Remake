@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5024984355911440924}
   - component: {fileID: 3025464041298174710}
   - component: {fileID: 2035808442731716477}
+  - component: {fileID: 2928162569860918088}
   m_Layer: 7
   m_Name: MuurV
   m_TagString: Enemy
@@ -243,6 +244,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2928162569860918088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575917181284405686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95fee3369ccb4054ab379a8366f7e2a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expPointsOnKill: 40
 --- !u!1 &3866245383376042723
 GameObject:
   m_ObjectHideFlags: 0

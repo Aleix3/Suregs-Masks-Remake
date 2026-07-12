@@ -25,7 +25,7 @@ public abstract class Enemy : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public Transform player;
-
+    private MaskPointsOnKill maskPointsOnKill;
 
     protected EnemyState currentState;
     protected EnemyState desiredState;
@@ -68,7 +68,7 @@ public abstract class Enemy : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         animator = GetComponent<Animator>();
-
+        maskPointsOnKill = GetComponent<MaskPointsOnKill>();
 
         //for (int i = 0; i < 12; i++)
         //{
@@ -199,6 +199,7 @@ public abstract class Enemy : MonoBehaviour
 
         rb.velocity = Vector2.zero;
         roomConected.enemiesInRoom.Remove(this);
+        maskPointsOnKill.GrantPoints();
         //animator.Play("Die");
         Destroy(gameObject, 1f);
     }

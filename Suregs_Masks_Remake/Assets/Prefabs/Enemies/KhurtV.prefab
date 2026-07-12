@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4293019591842975858}
   - component: {fileID: 3370494203231889287}
   - component: {fileID: 2607322578229682771}
+  - component: {fileID: 4632175960327731021}
   m_Layer: 7
   m_Name: KhurtV
   m_TagString: Enemy
@@ -279,6 +280,19 @@ NavMeshAgent:
   m_BaseOffset: 0.555
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4632175960327731021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233585022467933213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95fee3369ccb4054ab379a8366f7e2a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expPointsOnKill: 250
 --- !u!1 &4618788347601749221
 GameObject:
   m_ObjectHideFlags: 0
