@@ -50,10 +50,10 @@ public class EnemyOsiris : Enemy
         agent.updatePosition = false;
         agent.updateRotation = false;
 
-        StartCoroutine(DoAttack());
+        DoAttack();
     }
 
-    private IEnumerator DoAttack()
+    private void DoAttack()
     {
         isNotAttacking = false;
         canMove = false;
@@ -71,6 +71,11 @@ public class EnemyOsiris : Enemy
 
         //yield return new WaitForSeconds(0.1f);
 
+        
+    }
+
+    public IEnumerator TriggerHitBox()
+    {
         attackHitbox.enabled = true;
 
         yield return new WaitForSeconds(0.05f);

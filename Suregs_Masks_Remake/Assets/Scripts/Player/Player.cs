@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
     private bool isKnockedBack = false;
     private float knockbackTimer = 0f;
 
-    // Multiplicadores (las máscaras los suman/restan)
+    // Multiplicadores (las mï¿½scaras los suman/restan)
     [HideInInspector] public float BasicDamageMultiplier = 1f;
     [HideInInspector] public float SpeedMultiplier = 1f;
     [HideInInspector] public float MaxHealthMultiplier = 1f;
@@ -166,14 +166,24 @@ public class Player : MonoBehaviour
 
     void UpdatePlayerMovement()
     {
-        if(!canMove)
+        if (!canMove)
         {
             rb.velocity = Vector3.zero;
             animator.SetBool("isRunning", false);
         }
+
+        // Durante el ataque, el personaje queda "anclado": no aceptamos input
+        // de movimiento ni tocamos isRunning, para que solo la animaciï¿½n
+        // de ataque estï¿½ activa en el Animator (evita el solape de estados).
+        if (isAttacking)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         if (isKnockedBack || !canMove)
             return;
-        
+
         // Entrada del jugador
         Vector2 inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
@@ -204,9 +214,9 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0f && inputDir != Vector2.zero)
         {
             if (lastMovementDirection == Vector2.zero)
-                lastMovementDirection = Vector2.right; // si no hay dirección, dash hacia la derecha
+                lastMovementDirection = Vector2.right; // si no hay direcciï¿½n, dash hacia la derecha
 
-            // Árbol 2 Musri — bonus de distancia durante invisibilidad activa
+            // ï¿½rbol 2 Musri ï¿½ bonus de distancia durante invisibilidad activa
             float dashBonus = 0f;
             if (MaskManager?.Primary is MaskMusri musriP) dashBonus = musriP.GetDashBonus();
             if (MaskManager?.Secondary is MaskMusri musriS) dashBonus = musriS.GetDashBonus();
@@ -221,7 +231,7 @@ public class Player : MonoBehaviour
             (MaskManager?.Secondary as MaskMusri)?.OnPlayerDash();
         }
 
-        // Control de duración del dash
+        // Control de duraciï¿½n del dash
         if (isDashing)
         {
             dashTimer -= Time.deltaTime;
@@ -239,24 +249,23 @@ public class Player : MonoBehaviour
 
     void UpdateAttack()
     {
-        // Reset combo si pasa demasiado tiempo
+        // Reset combo si pasa demasiado tiempo (solo cuando expira, no cada frame)
         if (comboTimer > 0f)
         {
             comboTimer -= Time.deltaTime;
             if (comboTimer <= 0f)
+            {
                 attackNum = 0;
-            animator.SetInteger("attackIndex", 0);
+                animator.SetInteger("attackIndex", 0);
+            }
         }
 
-        // Input ataque
+        // Input ataque - se ignora mientras isAttacking sea true,
+        // y ahora isAttacking dura lo mismo que la animaciÃ³n real (ver Attack())
         if (Input.GetKeyDown(KeyCode.J) && !isAttacking)
         {
             Attack();
-            animator.SetTrigger("attackTrigger");
-            StartCoroutine(ResetAttackIndex(attackClips[0]));
         }
-
-        
     }
 
     IEnumerator ResetAttackIndex(AnimationClip clip)
@@ -273,7 +282,7 @@ public class Player : MonoBehaviour
         if (attackNum > 3) attackNum = 1;
         comboTimer = comboResetTimer;
 
-        // Detectar dirección y aplicar offset
+        // Detectar direcciï¿½n y aplicar offset
         Vector2 attackPos = transform.position;
 
         if (lastMovementDirection == Vector2.zero)
@@ -288,7 +297,7 @@ public class Player : MonoBehaviour
         else if (lastMovementDirection.x > 0)  // derecha
             attackPos += offsetRight;
 
-        
+
 
         // Instanciar el hitbox temporal
         GameObject hitbox = Instantiate(attackHitboxPrefab, attackPos, Quaternion.identity);
@@ -296,26 +305,34 @@ public class Player : MonoBehaviour
 
         Destroy(hitbox, attackDuration);
 
-        // Empuje hacia la dirección del ataque
+        // Empuje hacia la direcciï¿½n del ataque
         rb.AddForce(lastMovementDirection.normalized * attackForce, ForceMode2D.Impulse);
 
         animator.SetInteger("attackIndex", attackNum);
+        animator.SetTrigger("attackTrigger");
 
-        Invoke(nameof(ResetAttack), attackDuration);
+        // Duracion del "lock" de ataque = duracion real de la animacion de ESTE golpe
+        // del combo, no el valor fijo attackDuration (que solo controla la vida del hitbox).
+        AnimationClip clip = (attackClips != null && attackClips.Length >= attackNum)
+            ? attackClips[attackNum - 1]
+            : null;
+        float lockDuration = clip != null ? clip.length : attackDuration;
 
+        CancelInvoke(nameof(ResetAttack));
+        Invoke(nameof(ResetAttack), lockDuration);
 
-        
-        
+        StopCoroutine(nameof(ResetAttackIndex));
+        StartCoroutine(ResetAttackIndex(clip != null ? clip : attackClips[0]));
     }
 
     void ResetAttack()
     {
         isAttacking = false;
-        
+
     }
 
     /// Musri: activa y desactiva invisibilidad visual e invulnerabilidad
-    /// También para y reanuda los enemigos de la sala
+    /// Tambiï¿½n para y reanuda los enemigos de la sala
 
     public void SetInvisible(bool invisible)
     {
@@ -337,13 +354,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    //Surma: recorta la vida al nuevo máximo (tras retirar buff)
+    //Surma: recorta la vida al nuevo mï¿½ximo (tras retirar buff)
     public void ClampHealthToMax()
     {
         if (health > MaxHealth) health = MaxHealth;
     }
 
-    //Surma: rellena vida hasta el porcentaje del máximo actual
+    //Surma: rellena vida hasta el porcentaje del mï¿½ximo actual
     public void HealToPercent(float percent)
     {
         health = Mathf.Min(MaxHealth, MaxHealth * percent);
@@ -370,12 +387,12 @@ public class Player : MonoBehaviour
         {
             currentInteractable = interactable;
         }
-            
+
         //ITEMS
         if (collision.CompareTag("Item"))
         {
             Item item = collision.GetComponent<Item>();
-            InventoryManager.instance.CreateInventoryItem(item.type,item.itemType, item.itemName, item.description, item.sr.sprite);
+            InventoryManager.instance.CreateInventoryItem(item.type, item.itemType, item.itemName, item.description, item.sr.sprite);
             Destroy(collision.gameObject);
         }
 
@@ -388,7 +405,7 @@ public class Player : MonoBehaviour
         }
 
         //MASKS
-        if(collision.CompareTag("Mask"))
+        if (collision.CompareTag("Mask"))
         {
             collision.GetComponent<MaskItem>().GetMask();
         }
@@ -454,7 +471,7 @@ public class Player : MonoBehaviour
             health = MaxHealth;
     }
 
-    public void ApplyKnockback(Vector2 direction,float force,float duration)
+    public void ApplyKnockback(Vector2 direction, float force, float duration)
     {
         isKnockedBack = true;
 

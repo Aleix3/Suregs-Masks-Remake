@@ -6,6 +6,6 @@ public class DinkaRayVFX : MonoBehaviour
 {
     public void DestroyRay()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

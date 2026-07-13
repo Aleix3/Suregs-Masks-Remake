@@ -145,12 +145,6 @@ public class MaskDinka : BaseMask
         IsBusy = false;
     }
 
-    /// <summary>
-    /// Devuelve una lista de N objetivos:
-    /// - Primero el objetivo inicial.
-    /// - Luego otros enemigos vivos de la sala (ordenados por vida desc).
-    /// - Si no hay suficientes enemigos distintos, repite el primero.
-    /// </summary>
     private System.Collections.Generic.List<Enemy> BuildTargetList(Enemy first, int count)
     {
         var list = new System.Collections.Generic.List<Enemy>();

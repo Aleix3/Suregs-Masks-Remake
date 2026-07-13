@@ -30,6 +30,6 @@ public class MaskExplosionVFX : MonoBehaviour
 
     public void DestroyVFX()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

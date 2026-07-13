@@ -31,6 +31,18 @@ public class NotesManager : MonoBehaviour
 
     bool firstTime = false;
 
+    [System.Serializable]
+    public class NoteSaveData
+    {
+        public int id;
+    }
+
+    [System.Serializable]
+    public class NotesSave
+    {
+        public List<NoteSaveData> notes = new();
+    }
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -41,6 +53,8 @@ public class NotesManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject); // opcional: persiste entre escenas
+
+        LoadNotes();
     }
 
     private void Start()
@@ -109,6 +123,10 @@ public class NotesManager : MonoBehaviour
 
     public NoteItem CreateNoteItem(int id, string name, string description)
     {
+        NoteItem existing = notes.Find(n => n.id == id);
+        if (existing != null)
+            return existing;
+
         GameObject newItem = Instantiate(notePrefab, notesParent);
 
         NoteItem itemComp = newItem.GetComponent<NoteItem>();
@@ -117,6 +135,7 @@ public class NotesManager : MonoBehaviour
         itemComp.description = description;
 
         notes.Add(itemComp);
+        SaveNotes();
         notesParent.GetComponent<GridResizer>().UpdateSize();
 
         OnNotesChanged?.Invoke();
@@ -147,5 +166,60 @@ public class NotesManager : MonoBehaviour
         scrollRect.verticalNormalizedPosition = normalized;
     }
 
+    private const string NOTES_KEY = "Notes";
 
+    public void SaveNotes()
+    {
+        NotesSave save = new NotesSave();
+
+        foreach (NoteItem note in notes)
+        {
+            save.notes.Add(new NoteSaveData
+            {
+                id = note.id
+            });
+        }
+
+        string json = JsonUtility.ToJson(save);
+        PlayerPrefs.SetString(NOTES_KEY, json);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadNotes()
+    {
+        if (!PlayerPrefs.HasKey(NOTES_KEY))
+            return;
+
+        ClearNotes();
+
+        string json = PlayerPrefs.GetString(NOTES_KEY);
+        NotesSave save = JsonUtility.FromJson<NotesSave>(json);
+
+        if (save == null)
+            return;
+
+        foreach (var note in save.notes)
+        {
+            (string name, string description) = Note.GetItemData(note.id);
+
+            CreateNoteItem(note.id, name, description);
+        }
+
+        if (notes.Count > 0)
+            MoveHoverTo(0);
+    }
+
+    public void ClearNotes()
+    {
+        foreach (NoteItem note in notes)
+        {
+            if (note != null)
+                Destroy(note.gameObject);
+        }
+
+        notes.Clear();
+
+        currentIndex = 0;
+        closeUpNote.gameObject.SetActive(false);
+    }
 }

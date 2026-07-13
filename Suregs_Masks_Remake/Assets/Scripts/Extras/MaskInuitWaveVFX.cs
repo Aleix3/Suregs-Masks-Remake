@@ -19,6 +19,6 @@ public class MaskDinkaWaveVFX : MonoBehaviour
 
     public void DestroyVFX()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

@@ -32,6 +32,19 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private CanvasGroup inventoryGroup;
     private bool isInventoryOpen;
 
+    [System.Serializable]
+    public class InventorySaveData
+    {
+        public Item.ItemType type;
+        public uint quantity;
+    }
+
+    [System.Serializable]
+    public class InventorySave
+    {
+        public List<InventorySaveData> items = new();
+    }
+
 
     //public GameObject merchantCanvas;
 
@@ -44,7 +57,9 @@ public class InventoryManager : MonoBehaviour
         }
 
         instance = this;
-        DontDestroyOnLoad(gameObject); // opcional: persiste entre escenas
+        DontDestroyOnLoad(gameObject);
+
+        LoadInventory();
     }
 
     private void Start()
@@ -60,17 +75,7 @@ public class InventoryManager : MonoBehaviour
     private void Update()
     {
 
-        //if (Input.GetKeyDown(KeyCode.C) && merchantCanvas != null)
-        //{
 
-        //    merchantCanvas.SetActive(true);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.Tab))
-        //{
-        //    isInventoryOpen = !isInventoryOpen;
-        //    SetInventoryVisible(isInventoryOpen);
-        //}
 
         if (inventoryCanvas.gameObject.activeSelf == false) return;
         if (inventorySlots.transform.childCount == 0) return;
@@ -144,6 +149,7 @@ public class InventoryManager : MonoBehaviour
         if (found != null)
         {
             found.AddQuantity(quantity);
+            SaveInventory();
             return found;
         }
 
@@ -173,6 +179,7 @@ public class InventoryManager : MonoBehaviour
         }
         
         inventoryItems.Add(itemComp);
+        SaveInventory();
         MoveHoverTo(currentIndex);
         OnInventoryChanged?.Invoke();
         return itemComp;
@@ -208,6 +215,7 @@ public class InventoryManager : MonoBehaviour
                 }
                 ReorderInventory();
                 OnInventoryChanged?.Invoke();
+                SaveInventory();
                 return true;
             }
         }
@@ -275,5 +283,66 @@ public class InventoryManager : MonoBehaviour
         inventoryGroup.alpha = visible ? 1 : 0;
         inventoryGroup.interactable = visible;
         inventoryGroup.blocksRaycasts = visible;
+    }
+
+    private const string INVENTORY_KEY = "Inventory";
+
+    public void SaveInventory()
+    {
+        InventorySave save = new InventorySave();
+
+        foreach (InventoryItem item in inventoryItems)
+        {
+            save.items.Add(new InventorySaveData
+            {
+                type = item.type,
+                quantity = item.quantity
+            });
+        }
+
+        string json = JsonUtility.ToJson(save);
+        PlayerPrefs.SetString(INVENTORY_KEY, json);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadInventory()
+    {
+        if (!PlayerPrefs.HasKey(INVENTORY_KEY))
+            return;
+
+        ClearInventory();
+
+        string json = PlayerPrefs.GetString(INVENTORY_KEY);
+
+        InventorySave save = JsonUtility.FromJson<InventorySave>(json);
+
+        if (save == null)
+            return;
+
+        foreach (var item in save.items)
+        {
+            AddItem(item.type, item.quantity);
+        }
+
+        ReorderInventory();
+    }
+
+    public void ClearInventory()
+    {
+        foreach (InventoryItem item in inventoryItems)
+        {
+            if (item != null)
+                Destroy(item.gameObject);
+        }
+
+        inventoryItems.Clear();
+
+        foreach (Transform slot in inventorySlots.transform)
+        {
+            foreach (Transform child in slot)
+                Destroy(child.gameObject);
+        }
+
+        currentIndex = 0;
     }
 }
