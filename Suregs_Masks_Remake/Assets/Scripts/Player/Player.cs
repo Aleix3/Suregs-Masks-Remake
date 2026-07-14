@@ -471,6 +471,67 @@ public class Player : MonoBehaviour
             health = MaxHealth;
     }
 
+    // Cura un porcentaje del MaxHealth actual (ej. 0.2f = 20%)
+    public void HealPercentOfMax(float percent)
+    {
+        Heal(MaxHealth * percent);
+    }
+
+    // Cura gradualmente un porcentaje del MaxHealth a lo largo de "duration" segundos
+    public void HealOverTime(float percentOfMax, float duration)
+    {
+        StartCoroutine(HealOverTimeRoutine(percentOfMax, duration));
+    }
+
+    private IEnumerator HealOverTimeRoutine(float percentOfMax, float duration)
+    {
+        float totalHeal = MaxHealth * percentOfMax;
+        float elapsed = 0f;
+        float healedSoFar = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            float target = Mathf.Lerp(0f, totalHeal, elapsed / duration);
+            float delta = target - healedSoFar;
+
+            if (delta > 0f)
+            {
+                Heal(delta);
+                healedSoFar += delta;
+            }
+
+            yield return null;
+        }
+    }
+
+    // Aumenta BasicDamageMultiplier durante "duration" segundos y luego lo revierte
+    public void ApplyTemporaryDamageBuff(float bonusPercent, float duration)
+    {
+        StartCoroutine(TemporaryDamageBuffRoutine(bonusPercent, duration));
+    }
+
+    private IEnumerator TemporaryDamageBuffRoutine(float bonusPercent, float duration)
+    {
+        BasicDamageMultiplier += bonusPercent;
+        yield return new WaitForSeconds(duration);
+        BasicDamageMultiplier -= bonusPercent;
+    }
+
+    // Aumenta SpeedMultiplier durante "duration" segundos y luego lo revierte
+    public void ApplyTemporarySpeedBuff(float bonusPercent, float duration)
+    {
+        StartCoroutine(TemporarySpeedBuffRoutine(bonusPercent, duration));
+    }
+
+    private IEnumerator TemporarySpeedBuffRoutine(float bonusPercent, float duration)
+    {
+        SpeedMultiplier += bonusPercent;
+        yield return new WaitForSeconds(duration);
+        SpeedMultiplier -= bonusPercent;
+    }
+
     public void ApplyKnockback(Vector2 direction, float force, float duration)
     {
         isKnockedBack = true;

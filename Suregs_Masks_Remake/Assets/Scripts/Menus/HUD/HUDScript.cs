@@ -18,6 +18,10 @@ public class HUDScript : MonoBehaviour
 
     public TextMeshProUGUI actualMoney;
 
+    [Header("Pociones")]
+    public Image potionIcon;
+    public TextMeshProUGUI potionQuantity;
+
     [Header("Feedback de acción bloqueada")]
 
     public Color deniedFlashColor = new Color(1f, 0.25f, 0.25f, 1f);
@@ -31,6 +35,7 @@ public class HUDScript : MonoBehaviour
     public RectTransform notificationContainer;
 
     private MaskManager maskManager;
+    private PotionManager potionManager;
 
     // Posiciones originales de los iconos, para el shake al invertir mascaras
     private Vector3 _primaryOriginalPos;
@@ -47,15 +52,22 @@ public class HUDScript : MonoBehaviour
         if (iconSecondary != null) { _secondaryOriginalPos = iconSecondary.rectTransform.localPosition; _secondaryOriginalColor = iconSecondary.color; }
 
         TryBindMaskManager();
+        TryBindPotionManager();
     }
 
     void OnDestroy()
     {
         UnbindMaskManager();
+        UnbindPotionManager();
     }
 
     void Update()
     {
+        if (potionManager == null)
+        {
+            TryBindPotionManager();
+        }
+
         if (maskManager == null)
         {
             TryBindMaskManager();
@@ -101,6 +113,48 @@ public class HUDScript : MonoBehaviour
 
         if (MaskTreeManager.Instance != null)
             MaskTreeManager.Instance.OnPointsAdded -= HandlePointsAdded;
+    }
+
+    private void TryBindPotionManager()
+    {
+        if (PotionManager.instance == null) return;
+
+        potionManager = PotionManager.instance;
+        potionManager.OnPotionChanged += UpdatePotionIcon;
+        potionManager.OnNoPotions += ClearPotionIcon;
+
+        // Pintar el estado actual ya mismo (el evento solo dispara con cambios futuros)
+        potionManager.PublishCurrentState();
+    }
+
+    private void UnbindPotionManager()
+    {
+        if (potionManager == null) return;
+
+        potionManager.OnPotionChanged -= UpdatePotionIcon;
+        potionManager.OnNoPotions -= ClearPotionIcon;
+    }
+
+    private void UpdatePotionIcon(Item.ItemType type, Sprite sprite, uint quantity)
+    {
+        if (potionIcon != null)
+        {
+            potionIcon.sprite = sprite;
+            potionIcon.enabled = sprite != null;
+            potionIcon.preserveAspect = true;
+        }
+
+        if (potionQuantity != null)
+            potionQuantity.text = "X" + quantity;
+    }
+
+    private void ClearPotionIcon()
+    {
+        if (potionIcon != null)
+            potionIcon.enabled = false;
+
+        if (potionQuantity != null)
+            potionQuantity.text = "";
     }
 
     private void HandlePointsAdded(int maskIndex, int amount)
