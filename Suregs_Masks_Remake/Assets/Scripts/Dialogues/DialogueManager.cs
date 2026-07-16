@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -72,6 +73,9 @@ public class DialogueManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
+
+
 
 
     public void StartDialogue(DialogueData dialogue, NPCInteractable npc)
@@ -154,10 +158,15 @@ public class DialogueManager : MonoBehaviour
             foreach (var s in newSentences)
                 flow.Enqueue(s);
         }
-        else
+        else if (fallbackSentences.Count > 0)
         {
             foreach (var s in fallbackSentences)
                 flow.Enqueue(s);
+        }
+        else if (dialogue.isCommerceDialogue && dialogue.sentences.Count > 0)
+        {
+            // Los NPCs de comercio siempre deben poder hablarse, así que repetimos la primera frase.
+            flow.Enqueue(new RuntimeSentence(dialogue.sentences[0], 0));
         }
 
         return flow;
@@ -170,7 +179,7 @@ public class DialogueManager : MonoBehaviour
         {
             triggerTuorialCombat.enabled = true;
             lastSentenceType = null;
-            QuestManager.Instance.CompleteMainStepById("2");
+            GameProgress.Advance();
         }
 
         ClearOptions();
@@ -346,13 +355,13 @@ public class DialogueManager : MonoBehaviour
 
         if (simpleMessageActive)
         {
-            //if (simpleMessageBlockInput)
-            //{
-            //    if (Input.GetKeyUp(KeyCode.E))
-            //        simpleMessageBlockInput = false;
+            if (simpleMessageBlockInput)
+            {
+                if (Input.GetKeyUp(KeyCode.E))
+                    simpleMessageBlockInput = false;
 
-            //    return;
-            //}
+                return;
+            }
 
             if (Input.GetKeyDown(KeyCode.E))
                 CloseSimpleMessage();
@@ -434,13 +443,17 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
-    public void ShowSimpleMessage(string speaker, string text, Sprite portrait = null)
+    public void ShowSimpleMessage(string speaker, string text, Sprite portrait = null, bool comesFromInput = false)
     {
-        // No interrumpimos un diálogo narrativo real si por lo que sea ya hay uno activo.
+
         if (dialogueActive || simpleMessageActive) return;
 
         simpleMessageActive = true;
-        simpleMessageBlockInput = true;
+        if(comesFromInput)
+        {
+            simpleMessageBlockInput = true;
+        }
+        
         UIState.IsUIOpen = true;
 
         ClearOptions();
@@ -464,8 +477,41 @@ public class DialogueManager : MonoBehaviour
             Player.Instance.canMove = true;
     }
 
-    private void StartCombatTutorial(DialogueSentence sentence)
+    public void FindShops()
     {
-        
+        shops = new GameObject[3];
+
+        shops[0] = FindSceneObject("BlackSmithCanvas");
+        shops[1] = FindSceneObject("MerchantCanvas");
+        shops[2] = FindSceneObject("WitchCanvas");
+    }
+
+    private GameObject FindSceneObject(string objectName)
+    {
+        Scene scene = SceneManager.GetActiveScene();
+
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            GameObject result = FindInChildren(root.transform, objectName);
+            if (result != null)
+                return result;
+        }
+
+        return null;
+    }
+
+    private GameObject FindInChildren(Transform parent, string objectName)
+    {
+        if (parent.name == objectName)
+            return parent.gameObject;
+
+        foreach (Transform child in parent)
+        {
+            GameObject result = FindInChildren(child, objectName);
+            if (result != null)
+                return result;
+        }
+
+        return null;
     }
 }

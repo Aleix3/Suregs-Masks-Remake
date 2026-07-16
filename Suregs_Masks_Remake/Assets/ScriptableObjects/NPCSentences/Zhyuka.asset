@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Zhyuka
   portrait: {fileID: 21300000, guid: f0805f503ec09a04abf46c46a9bd66e4, type: 3}
+  isCommerceDialogue: 1
   sentences:
   - text: "\xBFQu\xE9 tenemos por aqu\xED, un nuevo cliente? Jijiji\u2026"
     id: 
@@ -29,12 +30,18 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 2
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
       - text: 
         id: 
         type: 2
         minState: 0
         options: []
         commerceID: 2
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     - optionText: "\xA1Adi\xF3s!"
       nextSentences:
       - text: "\xA1Te estar\xE9 esperando! Jijiji\u2026"
@@ -43,4 +50,10 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}

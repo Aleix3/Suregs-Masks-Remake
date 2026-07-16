@@ -1043,30 +1043,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 354743835}
     m_Modifications:
-    - target: {fileID: 2001183158487598257, guid: daf0f064a8fbd674e92d8e369a505225, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 460.6652
-      objectReference: {fileID: 0}
-    - target: {fileID: 2001183158487598257, guid: daf0f064a8fbd674e92d8e369a505225, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 48.1264
-      objectReference: {fileID: 0}
-    - target: {fileID: 2001183158487598257, guid: daf0f064a8fbd674e92d8e369a505225, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 8.128802
-      objectReference: {fileID: 0}
-    - target: {fileID: 2001183158487598257, guid: daf0f064a8fbd674e92d8e369a505225, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 2.5317
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792518219156960576, guid: daf0f064a8fbd674e92d8e369a505225, type: 3}
-      propertyPath: m_fontSize
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792518219156960576, guid: daf0f064a8fbd674e92d8e369a505225, type: 3}
-      propertyPath: m_fontSizeMax
-      value: 35
-      objectReference: {fileID: 0}
     - target: {fileID: 7715617539962827069, guid: daf0f064a8fbd674e92d8e369a505225, type: 3}
       propertyPath: m_Name
       value: Hud

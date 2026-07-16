@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -36,6 +37,17 @@ public abstract class BaseMask : MonoBehaviour
     public void TryActivate()
     {
         if (!IsReady) return;
+        StartCoroutine(UseMaskPrincipalRoutine());
+
+
+    }
+
+    public IEnumerator UseMaskPrincipalRoutine()
+    {
+        Player.Instance.UseMaskSkill();
+
+        yield return new WaitForSeconds(1.17f);
+
         OnActivate();
 
         if (!ManualCooldown)
@@ -44,7 +56,6 @@ public abstract class BaseMask : MonoBehaviour
             _cd = cd;
             LastCooldownDuration = cd;
         }
-
 
     }
 

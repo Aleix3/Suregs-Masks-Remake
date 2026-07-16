@@ -83,6 +83,8 @@ public class Player : MonoBehaviour
 
     public bool spawnPointChanged = false;
 
+    public bool isDead = false;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -147,6 +149,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (isDead)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+            
         UpdateKnockback();
         UpdatePlayerMovement();
         UpdateAttack();
@@ -173,13 +181,12 @@ public class Player : MonoBehaviour
         }
 
         // Durante el ataque, el personaje queda "anclado": no aceptamos input
-        // de movimiento ni tocamos isRunning, para que solo la animaci�n
-        // de ataque est� activa en el Animator (evita el solape de estados).
-        if (isAttacking)
-        {
-            rb.velocity = Vector2.zero;
-            return;
-        }
+
+        //if (isAttacking)
+        //{
+        //    rb.velocity = Vector2.zero;
+        //    return;
+        //}
 
         if (isKnockedBack || !canMove)
             return;
@@ -260,8 +267,6 @@ public class Player : MonoBehaviour
             }
         }
 
-        // Input ataque - se ignora mientras isAttacking sea true,
-        // y ahora isAttacking dura lo mismo que la animación real (ver Attack())
         if (Input.GetKeyDown(KeyCode.J) && !isAttacking)
         {
             Attack();
@@ -282,7 +287,6 @@ public class Player : MonoBehaviour
         if (attackNum > 3) attackNum = 1;
         comboTimer = comboResetTimer;
 
-        // Detectar direcci�n y aplicar offset
         Vector2 attackPos = transform.position;
 
         if (lastMovementDirection == Vector2.zero)
@@ -368,7 +372,14 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (godMode || isDead)
+            return;
         health -= damage;
+
+        if(health <= 0)
+        {
+            Die();
+        }
     }
 
     protected void Flip()
@@ -553,5 +564,41 @@ public class Player : MonoBehaviour
 
             rb.velocity = Vector2.zero;
         }
+    }
+
+    public void UsePotion()
+    {
+        animator.SetTrigger("usePotion");
+    }
+
+    public void UseMaskSkill()
+    {
+        animator.SetTrigger("useMask");
+    }
+
+    public void Die()
+    {
+        isDead = true;
+        QuestManager.Instance.CompleteMainStepById("2");
+        animator.SetTrigger("die");
+        StartCoroutine(DieRoutine());
+    }
+
+    public IEnumerator DieRoutine()
+    {
+        yield return new WaitForSeconds(0.833f);
+        yield return StartCoroutine(CameraManager.Instance.Fade(1));
+        if (Player.Instance.isFacingLeft)
+        {
+            transform.localScale = new Vector3(0.55f, 0.55f, 0.55f);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-0.55f, 0.55f, 0.55f);
+        }
+        Heal(MaxHealth);
+        isDead = false;
+        SceneManager.LoadScene("Town");
+        
     }
 }

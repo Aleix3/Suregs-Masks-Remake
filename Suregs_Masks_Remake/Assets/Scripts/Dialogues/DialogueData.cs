@@ -7,5 +7,8 @@ public class DialogueData : ScriptableObject
     public string npcName;
     public Sprite portrait;
 
+    [Header("Comercio")]
+    public bool isCommerceDialogue;
+
     public List<DialogueSentence> sentences;
 }

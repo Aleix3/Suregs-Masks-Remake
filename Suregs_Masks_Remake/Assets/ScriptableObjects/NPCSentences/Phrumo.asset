@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Phrumo
   portrait: {fileID: 21300000, guid: 489579a7a862523478db64c94077ab40, type: 3}
+  isCommerceDialogue: 1
   sentences:
   - text: "\xA1Qu\xE9 sorpresa! Bienvenido a la tienda de Phrumo"
     id: 
@@ -28,6 +29,9 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 1
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
       - text: "Aqu\xED podr\xE1s vender todo tipo de materiales obtenidos al derrotar
           los Sureg que intenten entrar en la aldea"
         id: 
@@ -35,6 +39,9 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 1
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     - optionText: "\xA1Adi\xF3s!"
       nextSentences:
       - text: "\xA1Estar\xE9 aqu\xED para comprar tus objetos!"
@@ -43,4 +50,10 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}

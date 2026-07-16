@@ -9,7 +9,7 @@ public static class QuestDatabase
             "Comienzo de la historia"),
         new QuestStep("2",  "Lucha en el campo de entrenamiento.", //done
             "Después de hablar con Vhea"),
-        new QuestStep("3",  "Ve a casa y habla con Vhea.", //done
+        new QuestStep("3",  "Habla con Vhea.", //done
             "Después de perder en el Tutorial"),
         new QuestStep("4",  "Abre el cofre del dormitorio.", //done
             "Después de hablar con Vhea"),

@@ -14,9 +14,14 @@ public class BeedRoomChest : MonoBehaviour, IInteractable
     private Player currentPlayer;
     public Transform spawnItemsPos;
 
-
+    private void Start()
+    {
+        DialogueManager.Instance.FindShops();
+    }
     public void Interact(Player player)
     {
+        if (QuestManager.Instance.CurrentMainQuest.id != "4")
+            return;
         currentPlayer = player;
         trigger.enabled = false;
         DropItems();

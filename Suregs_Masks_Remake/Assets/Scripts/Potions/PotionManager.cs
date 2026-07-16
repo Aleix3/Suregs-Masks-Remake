@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Item;
@@ -61,7 +62,11 @@ public class PotionManager : MonoBehaviour
             CyclePotion(1);
 
         if (Input.GetKeyDown(consumeKey) || GetGamepadButtonDown(gamepadConsumeButton))
-            ConsumeCurrentPotion();
+        {
+            if (potionTypes.Count == 0) return;
+            StartCoroutine(ConsumePotionRoutine());
+        }
+            
     }
 
     private bool GetGamepadButtonDown(string buttonName)
@@ -157,14 +162,16 @@ public class PotionManager : MonoBehaviour
         OnPotionChanged?.Invoke(current, sprite, quantity);
     }
 
-    public void ConsumeCurrentPotion()
+    public IEnumerator ConsumePotionRoutine()
     {
-        if (potionTypes.Count == 0) return;
+        
+        Player.Instance.UsePotion();
+
+        yield return new WaitForSeconds(0.833f);
 
         ItemType current = potionTypes[currentIndex];
 
         ApplyPotionEffect(current);
-
         inventoryManager.RemoveQuantity(current, 1);
     }
 

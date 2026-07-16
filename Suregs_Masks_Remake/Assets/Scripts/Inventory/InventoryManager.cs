@@ -261,6 +261,8 @@ public class InventoryManager : MonoBehaviour
 
             foreach (Transform child in slot)
             {
+                if (child == hover)
+                    return;
                 Destroy(child.gameObject);
             }
         }
@@ -345,7 +347,12 @@ public class InventoryManager : MonoBehaviour
         foreach (Transform slot in inventorySlots.transform)
         {
             foreach (Transform child in slot)
+            {
+                if (child == hover)
+                    return;
                 Destroy(child.gameObject);
+            }
+                
         }
 
         currentIndex = 0;

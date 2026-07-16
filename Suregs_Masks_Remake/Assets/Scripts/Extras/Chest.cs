@@ -53,7 +53,7 @@ public class Chest : MonoBehaviour, IInteractable
         Item.ItemType type;
 
         if (r < 35)
-            type = Item.ItemType.AMATISTA;
+            return;
         else
             type = Item.ItemType.CARBON;
 

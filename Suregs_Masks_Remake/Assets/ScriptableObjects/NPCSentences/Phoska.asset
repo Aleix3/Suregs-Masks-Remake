@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Phoska
   portrait: {fileID: 21300000, guid: 3dc49e0832cb44b4389e29c425fc0ef4, type: 3}
+  isCommerceDialogue: 1
   sentences:
   - text: "\xA1Buenos d\xEDas! Bienvenido a la herrer\xEDa de Phoska."
     id: 
@@ -28,6 +29,9 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
       - text: "Con los materiales necesarios podr\xE9 forjar mejoras para tu equipo.
           \xA1No dudes en venir cuando quieras mejorar tus herramientas de combate!"
         id: 
@@ -35,6 +39,9 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     - optionText: "\xA1Adi\xF3s!"
       nextSentences:
       - text: "\xA1No dudes en venir m\xE1s por aqu\xED!"
@@ -43,4 +50,10 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
