@@ -7,6 +7,13 @@ public class MaskItem : MonoBehaviour
 {
     public MaskData maskData;
 
+    private void Awake()
+    {
+        if(maskData.isUnlocked)
+        {
+            Destroy(gameObject);
+        }
+    }
     public void GetMask()
     {
         DialogueData dialogue = this.GetComponent<NPCInteractable>().currentDialogue;
@@ -17,6 +24,13 @@ public class MaskItem : MonoBehaviour
             this.GetComponent<NPCInteractable>()
         );
         MaskManager.Instance.UnlockMask(maskData);
+        switch (maskData.maskID)
+        {   
+            case 0:
+                QuestManager.Instance.CompleteMainStepById("5");
+                break;
+
+        }
         Destroy(this.gameObject);
     }
 }

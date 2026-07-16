@@ -688,6 +688,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 82242616205052847, guid: c508640867ed5cd4ea189771230d869c, type: 3}
+      propertyPath: elevatorTriggerScript
+      value: 
+      objectReference: {fileID: 339119710}
+    - target: {fileID: 1222058255232223374, guid: c508640867ed5cd4ea189771230d869c, type: 3}
+      propertyPath: elevatorTriggerScript
+      value: 
+      objectReference: {fileID: 339119710}
     - target: {fileID: 1565150614686648849, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -768,6 +776,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1831061980863622121, guid: c508640867ed5cd4ea189771230d869c, type: 3}
+      propertyPath: elevatorTriggerScript
+      value: 
+      objectReference: {fileID: 339119710}
+    - target: {fileID: 4496234491416447114, guid: c508640867ed5cd4ea189771230d869c, type: 3}
+      propertyPath: elevatorTriggerScript
+      value: 
+      objectReference: {fileID: 339119710}
+    - target: {fileID: 4997777215137795262, guid: c508640867ed5cd4ea189771230d869c, type: 3}
+      propertyPath: elevatorTriggerScript
+      value: 
+      objectReference: {fileID: 339119710}
+    - target: {fileID: 6088921337891462818, guid: c508640867ed5cd4ea189771230d869c, type: 3}
+      propertyPath: elevatorTriggerScript
+      value: 
+      objectReference: {fileID: 339119710}
+    - target: {fileID: 6112919016233051383, guid: c508640867ed5cd4ea189771230d869c, type: 3}
+      propertyPath: elevatorTriggerScript
+      value: 
+      objectReference: {fileID: 339119710}
+    - target: {fileID: 8624650075572203736, guid: c508640867ed5cd4ea189771230d869c, type: 3}
+      propertyPath: elevatorTriggerScript
+      value: 
+      objectReference: {fileID: 339119710}
     - target: {fileID: 8897614914483060951, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: m_Name
       value: ElevatorCanvas
@@ -4077,6 +4109,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3105271343402747512, guid: bbff7d90cb0d81a4885864b33a14e021, type: 3}
+      propertyPath: dungeonId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105271343402747512, guid: bbff7d90cb0d81a4885864b33a14e021, type: 3}
       propertyPath: elevatorCanvas
       value: 
       objectReference: {fileID: 34565404}
@@ -4129,6 +4165,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbff7d90cb0d81a4885864b33a14e021, type: 3}
+--- !u!114 &339119710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3105271343402747512, guid: bbff7d90cb0d81a4885864b33a14e021, type: 3}
+  m_PrefabInstance: {fileID: 339119709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45895552fcb0ed946b4d1f826af391c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &345310175
 GameObject:
   m_ObjectHideFlags: 0

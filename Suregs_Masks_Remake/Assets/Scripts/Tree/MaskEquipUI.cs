@@ -3,18 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-/// <summary>
-/// Panel de equipar máscara.
-/// Al pulsar E en "Primary Mask" o "Secondary Mask", aparece este panel
-/// sobre el grid mostrando las máscaras desbloqueadas para elegir.
-/// 
-/// JERARQUÍA:
-/// EquipPanel (este script)
-/// ├── MaskPickButton_0  (Button + MaskPickButton)
-/// ├── MaskPickButton_1
-/// ├── MaskPickButton_2
-/// └── MaskPickButton_3
-/// </summary>
+
 public class MaskEquipUI : MonoBehaviour
 {
     [Header("Panel negro que tapa el grid")]
@@ -29,7 +18,6 @@ public class MaskEquipUI : MonoBehaviour
     public Color colorAvailable = Color.white;
     public Color colorLocked    = new Color(0.3f, 0.3f, 0.3f, 1f);
 
-    // ── estado ────────────────────────────────────────────────────
     private bool         _equipingPrimary;
     private MaskTreeManager _tm;
     private MaskManager  _mm;
@@ -73,7 +61,7 @@ public class MaskEquipUI : MonoBehaviour
     public void Close()
     {
         panel.SetActive(false);
-        // Devolver foco al botón correcto del árbol
+
         _treeUI?.RestoreFocus();
         isOpen = false;
     }

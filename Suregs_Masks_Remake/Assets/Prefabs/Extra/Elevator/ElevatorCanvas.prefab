@@ -166,10 +166,16 @@ MonoBehaviour:
   locked: 0
   sceneName: Dungeon 0
   levelIndex: 1
+  elevatorTriggerScript: {fileID: 0}
   up: {fileID: 109576428331969307}
   down: {fileID: 1222058255232223374}
   left: {fileID: 6112919016233051383}
   right: {fileID: 6112919016233051383}
+  isDungeonEntrance: 1
+  pendingTasksSpeaker: Jakov
+  speakerSprite: {fileID: 21300000, guid: 40396ffe27ad7ad47bd54e7338e884c1, type: 3}
+  pendingTasksMessage: "Todav\xEDa tengo cosas pendientes que hacer antes de volver
+    a la mazmorra."
 --- !u!1 &784525196451023219
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,10 +267,16 @@ MonoBehaviour:
   locked: 1
   sceneName: Dungeon 6
   levelIndex: 7
+  elevatorTriggerScript: {fileID: 0}
   up: {fileID: 4496234491416447114}
   down: {fileID: 109576428331969307}
   left: {fileID: 1831061980863622121}
   right: {fileID: 1831061980863622121}
+  isDungeonEntrance: 1
+  pendingTasksSpeaker: Jakov
+  speakerSprite: {fileID: 21300000, guid: 40396ffe27ad7ad47bd54e7338e884c1, type: 3}
+  pendingTasksMessage: "Todav\xEDa tengo cosas pendientes que hacer antes de volver
+    a la mazmorra."
 --- !u!1 &1692859196145146184
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,10 +452,16 @@ MonoBehaviour:
   locked: 1
   sceneName: Dungeon 5
   levelIndex: 6
+  elevatorTriggerScript: {fileID: 0}
   up: {fileID: 6088921337891462818}
   down: {fileID: 1831061980863622121}
   left: {fileID: 4496234491416447114}
   right: {fileID: 4496234491416447114}
+  isDungeonEntrance: 1
+  pendingTasksSpeaker: Jakov
+  speakerSprite: {fileID: 21300000, guid: 40396ffe27ad7ad47bd54e7338e884c1, type: 3}
+  pendingTasksMessage: "Todav\xEDa tengo cosas pendientes que hacer antes de volver
+    a la mazmorra."
 --- !u!1 &3396759605992366759
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,10 +553,16 @@ MonoBehaviour:
   locked: 1
   sceneName: Dungeon 7
   levelIndex: 8
+  elevatorTriggerScript: {fileID: 0}
   up: {fileID: 4997777215137795262}
   down: {fileID: 109576428331969307}
   left: {fileID: 82242616205052847}
   right: {fileID: 82242616205052847}
+  isDungeonEntrance: 1
+  pendingTasksSpeaker: Jakov
+  speakerSprite: {fileID: 21300000, guid: 40396ffe27ad7ad47bd54e7338e884c1, type: 3}
+  pendingTasksMessage: "Todav\xEDa tengo cosas pendientes que hacer antes de volver
+    a la mazmorra."
 --- !u!1 &4363585128311507246
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,10 +654,16 @@ MonoBehaviour:
   locked: 1
   sceneName: Dungeon 3
   levelIndex: 4
+  elevatorTriggerScript: {fileID: 0}
   up: {fileID: 6112919016233051383}
   down: {fileID: 4997777215137795262}
   left: {fileID: 1222058255232223374}
   right: {fileID: 1222058255232223374}
+  isDungeonEntrance: 1
+  pendingTasksSpeaker: Jakov
+  speakerSprite: {fileID: 21300000, guid: 40396ffe27ad7ad47bd54e7338e884c1, type: 3}
+  pendingTasksMessage: "Todav\xEDa tengo cosas pendientes que hacer antes de volver
+    a la mazmorra."
 --- !u!1 &6819624795454046115
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,10 +755,16 @@ MonoBehaviour:
   locked: 1
   sceneName: Dungeon 1
   levelIndex: 2
+  elevatorTriggerScript: {fileID: 0}
   up: {fileID: 109576428331969307}
   down: {fileID: 6088921337891462818}
   left: {fileID: 8624650075572203736}
   right: {fileID: 8624650075572203736}
+  isDungeonEntrance: 1
+  pendingTasksSpeaker: Jakov
+  speakerSprite: {fileID: 21300000, guid: 40396ffe27ad7ad47bd54e7338e884c1, type: 3}
+  pendingTasksMessage: "Todav\xEDa tengo cosas pendientes que hacer antes de volver
+    a la mazmorra."
 --- !u!1 &7421066911473046724
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,10 +856,16 @@ MonoBehaviour:
   locked: 1
   sceneName: Dungeon 4
   levelIndex: 5
+  elevatorTriggerScript: {fileID: 0}
   up: {fileID: 1222058255232223374}
   down: {fileID: 82242616205052847}
   left: {fileID: 4997777215137795262}
   right: {fileID: 4997777215137795262}
+  isDungeonEntrance: 1
+  pendingTasksSpeaker: Jakov
+  speakerSprite: {fileID: 21300000, guid: 40396ffe27ad7ad47bd54e7338e884c1, type: 3}
+  pendingTasksMessage: "Todav\xEDa tengo cosas pendientes que hacer antes de volver
+    a la mazmorra."
 --- !u!1 &7497152996670756076
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,10 +958,16 @@ MonoBehaviour:
   locked: 0
   sceneName: Town
   levelIndex: 0
+  elevatorTriggerScript: {fileID: 0}
   up: {fileID: 1831061980863622121}
   down: {fileID: 8624650075572203736}
   left: {fileID: 8624650075572203736}
   right: {fileID: 6112919016233051383}
+  isDungeonEntrance: 0
+  pendingTasksSpeaker: Yo
+  speakerSprite: {fileID: 0}
+  pendingTasksMessage: "Todav\xEDa tengo cosas pendientes que hacer antes de volver
+    a la mazmorra."
 --- !u!1 &8455013953404946863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,10 +1059,16 @@ MonoBehaviour:
   locked: 1
   sceneName: Dungeon 2
   levelIndex: 3
+  elevatorTriggerScript: {fileID: 0}
   up: {fileID: 8624650075572203736}
   down: {fileID: 4496234491416447114}
   left: {fileID: 6088921337891462818}
   right: {fileID: 6088921337891462818}
+  isDungeonEntrance: 1
+  pendingTasksSpeaker: Jakov
+  speakerSprite: {fileID: 21300000, guid: 40396ffe27ad7ad47bd54e7338e884c1, type: 3}
+  pendingTasksMessage: "Todav\xEDa tengo cosas pendientes que hacer antes de volver
+    a la mazmorra."
 --- !u!1 &8897614914483060951
 GameObject:
   m_ObjectHideFlags: 0

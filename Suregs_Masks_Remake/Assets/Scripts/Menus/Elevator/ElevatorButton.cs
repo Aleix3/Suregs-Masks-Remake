@@ -7,17 +7,27 @@ public class ElevatorButton : MonoBehaviour
     public bool locked;
     public string sceneName;
     public int levelIndex;
+    public ElevatorTrigger elevatorTriggerScript;
 
     [Header("Navigation")]
     public ElevatorButton up;
     public ElevatorButton down;
     public ElevatorButton left;
     public ElevatorButton right;
+
+    [Header("Bloqueo por misión")]
+    public bool isDungeonEntrance = false;
+
+    public string pendingTasksSpeaker = "Jakov";
+    public Sprite speakerSprite;
+
+    [TextArea]
+    public string pendingTasksMessage = "Todavía tengo cosas pendientes que hacer antes de volver a la mazmorra.";
     void Start()
     {
         locked = !ElevatorLevelProgress.IsUnlocked(levelIndex);
 
-        if(!locked)
+        if (!locked)
         {
             GetComponent<Image>().enabled = false;
         }
@@ -31,6 +41,20 @@ public class ElevatorButton : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == sceneName)
             return;
+
+        if (isDungeonEntrance
+            && QuestManager.Instance != null
+            && !QuestManager.Instance.CurrentQuestAllowsDungeonEntry())
+        {
+            if (DialogueManager.Instance != null)
+            {
+                elevatorTriggerScript.CloseCanvas();
+                DialogueManager.Instance.ShowSimpleMessage(pendingTasksSpeaker, pendingTasksMessage, speakerSprite);
+            }
+                
+            return;
+        }
+
         Player.Instance.canMove = true;
         if (sceneName == "Town")
         {
@@ -43,6 +67,6 @@ public class ElevatorButton : MonoBehaviour
                 Player.Instance.transform.localScale = new Vector3(-0.55f, 0.55f, 0.55f);
             }
         }
-        SceneManager.LoadScene(sceneName); 
+        SceneManager.LoadScene(sceneName);
     }
 }

@@ -10,9 +10,11 @@ public class ElevatorTrigger : MonoBehaviour
 
     bool alreadyUnlocked = false;
 
+    public int dungeonId;
+
     private void Update()
     {
-        if (!playerInside)
+        if (!playerInside || DialogueManager.Instance.simpleMessageActive)
             return;
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Fire1"))
@@ -21,6 +23,41 @@ public class ElevatorTrigger : MonoBehaviour
 
             if(isFinal && !alreadyUnlocked)
             {
+                switch (dungeonId)
+                {
+                    case 0:
+                        GameProgress.Advance();
+                        break;
+                    case 1:
+                        GameProgress.Advance();
+                        QuestManager.Instance.CompleteMainStepById("10");
+                        break;
+                    case 2:
+                        GameProgress.Advance();
+                        QuestManager.Instance.CompleteMainStepById("12");
+                        break;
+                    case 3:
+                        GameProgress.Advance();
+                        QuestManager.Instance.CompleteMainStepById("14");
+                        break;
+                    case 4:
+                        GameProgress.Advance();
+                        QuestManager.Instance.CompleteMainStepById("17");
+                        break;
+                    case 5:
+                        GameProgress.Advance();
+                        QuestManager.Instance.CompleteMainStepById("19");
+                        break;
+                    case 6:
+                        GameProgress.Advance();
+                        QuestManager.Instance.CompleteMainStepById("21");
+                        break;
+                    case 7:
+                        QuestManager.Instance.CompleteMainStepById("25");
+                        break;
+                    default:
+                        break;
+                }
                 ElevatorLevelProgress.UnlockNextLevel();
                 alreadyUnlocked = true;
             }
@@ -29,9 +66,14 @@ public class ElevatorTrigger : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Player.Instance.canMove = true;
-            elevatorCanvas.SetActive(false);
+            CloseCanvas();
         }
+    }
+
+    public void CloseCanvas()
+    {
+        Player.Instance.canMove = true;
+        elevatorCanvas.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

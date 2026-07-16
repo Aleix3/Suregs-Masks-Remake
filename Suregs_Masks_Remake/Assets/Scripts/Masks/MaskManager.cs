@@ -194,7 +194,11 @@ public class MaskManager : MonoBehaviour
         Secondary = secondary;
 
         OnSwap?.Invoke(Primary, Secondary);
-
+        if(QuestManager.Instance != null)
+        {
+            QuestManager.Instance.CompleteMainStepById("6");
+        }
+        
         SaveGame();
     }
 

@@ -11,6 +11,8 @@ public class ElevatorScript : MonoBehaviour
 
     private Vector2 lastMoveInput;
 
+    
+
     void Start()
     {
         MoveHover();

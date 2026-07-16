@@ -38,6 +38,8 @@ public class BlacksmithShop : MonoBehaviour
     private void OnEnable()
     {
         UIState.IsUIOpen = true;
+        QuestManager.Instance.CompleteMainStepById("9");
+        QuestManager.Instance.CompleteMainStepById("22");
     }
 
     private void Update()

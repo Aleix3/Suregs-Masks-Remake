@@ -1628,7 +1628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7154173983985705631
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2147,21 +2147,25 @@ MonoBehaviour:
         segundos"
       icon: {fileID: 21300000, guid: 5d763e4dc0577844fae214fe5a676f2b, type: 3}
   - maskName: Musri
-    maskDesc: Lanza un dash con un alcance mayor y quita a los enemigos 40 puntos
-      de vida, otorgandole invisibilidad a Jakov durante 5 segundos, con 20 segundos
-      de cooldown.Su pasiva provoca que el dash simple cuente con 2 segundos de invisibilidad.
+    maskDesc: "Al activar la habilidad, Jakov se vuelve invisible durante 5 segundos,
+      con 20 segundos de cooldown. Al golpear a un enemigo saldr\xE1 de la invisibilidad.
+      Su pasiva provoca que el dash simple cuente con 2 segundos de invisibilidad."
     nodes:
     - upgradeName: Poder I
-      upgradeDesc: Aumenta el poder de la habilidad principal a 50 puntos
+      upgradeDesc: Aumenta el poder del primer golpe mientras Jakov sea invisble
+        un 50%.
       icon: {fileID: 21300000, guid: 4bcfd1b83cd454a468db1597f8a0eaef, type: 3}
     - upgradeName: Poder II
-      upgradeDesc: Aumenta el poder de la habilidad principal a 70 puntos
+      upgradeDesc: Aumenta el poder del primer golpe mientras Jakov sea invisble
+        un 100%.
       icon: {fileID: 21300000, guid: 4bcfd1b83cd454a468db1597f8a0eaef, type: 3}
     - upgradeName: Poder III
-      upgradeDesc: Aumenta el poder de la habilidad principal a 100 puntos
+      upgradeDesc: Aumenta el poder del primer golpe mientras Jakov sea invisble
+        un 150%.
       icon: {fileID: 21300000, guid: 4bcfd1b83cd454a468db1597f8a0eaef, type: 3}
     - upgradeName: Poder IV
-      upgradeDesc: Aumenta el poder de la habilidad principal a 150 puntos
+      upgradeDesc: Aumenta el poder del primer golpe mientras Jakov sea invisble
+        un 200%.
       icon: {fileID: 21300000, guid: 4bcfd1b83cd454a468db1597f8a0eaef, type: 3}
     - upgradeName: CoolDown I
       upgradeDesc: Reduce el cooldown de la habilidad principal a 18 segundos
@@ -2176,28 +2180,28 @@ MonoBehaviour:
       upgradeDesc: Reduce el cooldown de la habilidad principal a 10 segundos
       icon: {fileID: 21300000, guid: 15dcf2d7a95dfe3448aa01e444b24c63, type: 3}
     - upgradeName: Distancia I
-      upgradeDesc: Aumenta la distancia del dash en la habilidad principal un 5%
+      upgradeDesc: Aumenta la distancia del dash en la habilidad principal un 10%
       icon: {fileID: 21300000, guid: 61aceb921f0003044b00b7df24845ee3, type: 3}
     - upgradeName: Distancia II
-      upgradeDesc: Aumenta la distancia del dash en la habilidad principal un 5%
+      upgradeDesc: Aumenta la distancia del dash en la habilidad principal un 15%
       icon: {fileID: 21300000, guid: 61aceb921f0003044b00b7df24845ee3, type: 3}
     - upgradeName: Distancia III
-      upgradeDesc: Aumenta la distancia del dash en la habilidad principal un 5%
+      upgradeDesc: Aumenta la distancia del dash en la habilidad principal un 25%
       icon: {fileID: 21300000, guid: 61aceb921f0003044b00b7df24845ee3, type: 3}
     - upgradeName: Distancia IV
-      upgradeDesc: Aumenta la distancia del dash en la habilidad principal un 5%
+      upgradeDesc: Aumenta la distancia del dash en la habilidad principal un 75%
       icon: {fileID: 21300000, guid: 61aceb921f0003044b00b7df24845ee3, type: 3}
     - upgradeName: Invisible I
       upgradeDesc: Aumenta el tiempo de la habilidad principal a 6 segundos
       icon: {fileID: 21300000, guid: 1bbeb8f5ce4b8874c95b5b0c257ce745, type: 3}
     - upgradeName: Invisible II
-      upgradeDesc: "Aumenta la duraci\uFFFDn de la habilidad principal a 7,3 segundos"
+      upgradeDesc: Aumenta el tiempo de la habilidad principal a 7,3 segundos
       icon: {fileID: 21300000, guid: 1bbeb8f5ce4b8874c95b5b0c257ce745, type: 3}
     - upgradeName: Invisible III
-      upgradeDesc: "Aumenta la duraci\uFFFDn de la habilidad principal a 8,6 segundos"
+      upgradeDesc: Aumenta el tiempo de la habilidad principal a 8,6 segundos
       icon: {fileID: 21300000, guid: 1bbeb8f5ce4b8874c95b5b0c257ce745, type: 3}
     - upgradeName: Invisible IV
-      upgradeDesc: "Aumenta la duraci\uFFFDn de la habilidad principal a 10 segundos"
+      upgradeDesc: Aumenta el tiempo de la habilidad principal a segundos
       icon: {fileID: 21300000, guid: 1bbeb8f5ce4b8874c95b5b0c257ce745, type: 3}
   - maskName: Surma
     maskDesc: Su poder genera que la fuerza y la vida de Jakov aumente un 10% durante
@@ -2242,16 +2246,20 @@ MonoBehaviour:
       upgradeDesc: Aumenta el tiempo de uso a 30 segundos
       icon: {fileID: 21300000, guid: 668133c8434bcd740985a5f56de33e4d, type: 3}
     - upgradeName: Aumento I
-      upgradeDesc: Aumenta la vida que otorga la habilidad principal un 5%
+      upgradeDesc: Disminuye la vida restada despues de usar la habilidad principal
+        un 5%
       icon: {fileID: 21300000, guid: 547e9e40fff504f42b519aae21b51044, type: 3}
     - upgradeName: Aumento II
-      upgradeDesc: Aumenta la vida que otorga la habilidad principal un 5%
+      upgradeDesc: Disminuye la vida restada despues de usar la habilidad principal
+        un 5%
       icon: {fileID: 21300000, guid: 547e9e40fff504f42b519aae21b51044, type: 3}
     - upgradeName: Aumento III
-      upgradeDesc: Aumenta la vida que otorga la habilidad principal un 5%
+      upgradeDesc: Disminuye la vida restada despues de usar la habilidad principal
+        un 5%
       icon: {fileID: 21300000, guid: 547e9e40fff504f42b519aae21b51044, type: 3}
     - upgradeName: Aumento IV
-      upgradeDesc: Aumenta la vida que otorga la habilidad principal un 10%
+      upgradeDesc: Disminuye la vida restada despues de usar la habilidad principal
+        un 10%
       icon: {fileID: 21300000, guid: 547e9e40fff504f42b519aae21b51044, type: 3}
   firstButton: {fileID: 8484606500195384100}
 --- !u!1 &3288223068169627756
@@ -2363,8 +2371,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -213.57632, y: 0}
-  m_SizeDelta: {x: 238.96735, y: 0}
+  m_AnchoredPosition: {x: -218.89633, y: 0}
+  m_SizeDelta: {x: 249.60736, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2716886932126500218
 CanvasRenderer:
@@ -2394,7 +2402,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Secondary Mask
+  m_text: Mascara Secundaria
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2421,8 +2429,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.28
-  m_fontSizeBase: 45.28
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2686,8 +2694,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -209, y: 0}
-  m_SizeDelta: {x: 229.8147, y: 0}
+  m_AnchoredPosition: {x: -214.94632, y: 0}
+  m_SizeDelta: {x: 241.70734, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7269002055105780207
 CanvasRenderer:
@@ -2717,7 +2725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Primary Mask
+  m_text: Mascara principal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2744,8 +2752,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.28
-  m_fontSizeBase: 45.28
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4042,7 +4050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2517020387029963405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5482,7 +5490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3352248967331912839
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5499,8 +5507,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 168.71484, y: 0}
-  m_SizeDelta: {x: -337.4298, y: 0}
+  m_AnchoredPosition: {x: -65.464355, y: -1.6768188}
+  m_SizeDelta: {x: -1037.7161, y: -201.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5374342279617255287
 CanvasRenderer:

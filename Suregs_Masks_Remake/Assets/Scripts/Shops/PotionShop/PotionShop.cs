@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using static Item;
@@ -15,6 +15,29 @@ public class PotionShop : MonoBehaviour, IShop
 
     public ShopUI shopUI;
 
+    [Header("Descuento Amatista")]
+    [Tooltip("Nombre de itemType que, si estÃ¡ en el inventario, aplica el descuento del 50%.")]
+    public string discountItemType = "AMATISTA";
+
+    private bool HasDiscount()
+    {
+        return InventoryManager.instance != null && InventoryManager.instance.HasItem(ItemType.AMATISTA);
+    }
+
+    private int GetEffectiveGoldCost(PotionTrade trade)
+    {
+        if (!HasDiscount()) return trade.goldCost;
+        return Mathf.Max(1, trade.goldCost / 2);
+    }
+
+    private int GetEffectiveRequiredItemQty(PotionTrade trade)
+    {
+        // 0 significa "no requiere item", eso no se toca
+        if (trade.requiredItemQty <= 0) return trade.requiredItemQty;
+        if (!HasDiscount()) return trade.requiredItemQty;
+        return Mathf.Max(1, trade.requiredItemQty / 2);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -22,12 +45,19 @@ public class PotionShop : MonoBehaviour, IShop
             witchCanvas.SetActive(false);
             DialogueManager.Instance.CloseCommerce();
         }
-            
+
+    }
+
+    private void OnEnable()
+    {
+        QuestManager.Instance.CompleteMainStepById("8");
+        QuestManager.Instance.CompleteMainStepById("23");
     }
 
     public void Interact()
     {
         witchCanvas.SetActive(true);
+
     }
 
     public void SelectTrade(int tradeIndexFake)
@@ -38,12 +68,15 @@ public class PotionShop : MonoBehaviour, IShop
 
         PotionTrade trade = trades[tradeIndex];
 
+
+        int effectiveGoldCost = GetEffectiveGoldCost(trade);
+        int effectiveItemQty = GetEffectiveRequiredItemQty(trade);
         // Calcula lo pendiente antes de sumar
         int alreadyPending = pendingBuy.ContainsKey(tradeIndex) ? pendingBuy[tradeIndex] : 0;
 
-        // Comprueba oro disponible menos lo que ya está pendiente
-        int goldAvailable = PlayerEconomy.instance.GetGold() - (trade.goldCost * alreadyPending);
-        if (goldAvailable < trade.goldCost)
+        // Comprueba oro disponible menos lo que ya estï¿½ pendiente
+        int goldAvailable = PlayerEconomy.instance.GetGold() - (effectiveGoldCost * alreadyPending);
+        if (goldAvailable < effectiveGoldCost)
         {
             for (int i = 0; i < shopUI.buttons.Count; i++)
             {
@@ -53,15 +86,15 @@ public class PotionShop : MonoBehaviour, IShop
                 }
 
             }
-            Debug.Log("No tienes suficiente oro para añadir otra de esta poción.");
+            Debug.Log("No tienes suficiente oro para aï¿½adir otra de esta pociï¿½n.");
             return;
         }
 
         // Comprueba items requeridos menos lo pendiente
         if (trade.requiredItemQty > 0)
         {
-            int qtyAvailable = InventoryManager.instance.GetQuantity(trade.requiredItem) - (trade.requiredItemQty * alreadyPending);
-            if (qtyAvailable < trade.requiredItemQty)
+            int qtyAvailable = InventoryManager.instance.GetQuantity(trade.requiredItem) - (effectiveItemQty * alreadyPending);
+            if (qtyAvailable < effectiveItemQty)
             {
                 for (int i = 0; i < shopUI.buttons.Count; i++)
                 {
@@ -71,7 +104,7 @@ public class PotionShop : MonoBehaviour, IShop
                     }
 
                 }
-                Debug.Log("No tienes suficientes items para añadir otra de esta poción.");
+                Debug.Log("No tienes suficientes items para aï¿½adir otra de esta pociï¿½n.");
                 return;
             }
         }
@@ -89,7 +122,7 @@ public class PotionShop : MonoBehaviour, IShop
 
         pendingBuy[tradeIndex]++;
 
-        Debug.Log("Añadida poción: " + trade.potionResult + " | Pendiente ahora: " + pendingBuy[tradeIndex]);
+        Debug.Log("Aï¿½adida pociï¿½n: " + trade.potionResult + " | Pendiente ahora: " + pendingBuy[tradeIndex]);
 
         OnTradeUpdated?.Invoke();
     }
@@ -102,24 +135,27 @@ public class PotionShop : MonoBehaviour, IShop
 
         PotionTrade trade = trades[tradeIndex];
 
+        int effectiveGoldCost = GetEffectiveGoldCost(trade);
+        int effectiveItemQty = GetEffectiveRequiredItemQty(trade);
+
         // Calcula lo pendiente
         int alreadyPending = pendingBuy.ContainsKey(tradeIndex) ? pendingBuy[tradeIndex] : 0;
 
         // Oro disponible teniendo en cuenta lo pendiente
-        int goldAvailable = PlayerEconomy.instance.GetGold() - (trade.goldCost * alreadyPending);
+        int goldAvailable = PlayerEconomy.instance.GetGold() - (effectiveGoldCost * alreadyPending);
 
-        // Items disponibles si hace falta algún item
+        // Items disponibles si hace falta algï¿½n item
         int itemAvailable = 0;
         if (trade.requiredItemQty > 0)
-            itemAvailable = InventoryManager.instance.GetQuantity(trade.requiredItem) - (trade.requiredItemQty * alreadyPending);
+            itemAvailable = InventoryManager.instance.GetQuantity(trade.requiredItem) - (effectiveItemQty * alreadyPending);
 
-        // Calcula cuántas pociones puedes comprar con oro
-        int maxByGold = goldAvailable / trade.goldCost;
+        // Calcula cuï¿½ntas pociones puedes comprar con oro
+        int maxByGold = goldAvailable / effectiveGoldCost;
 
-        // Calcula cuántas pociones puedes comprar con items (si aplica)
-        int maxByItem = trade.requiredItemQty > 0 ? itemAvailable / trade.requiredItemQty : int.MaxValue;
+        // Calcula cuï¿½ntas pociones puedes comprar con items (si aplica)
+        int maxByItem = trade.requiredItemQty > 0 ? itemAvailable / effectiveItemQty : int.MaxValue;
 
-        // Cuántas se pueden comprar realmente
+        // Cuï¿½ntas se pueden comprar realmente
         int canBuy = Mathf.Min(maxByGold, maxByItem);
 
         if (canBuy <= 0)
@@ -132,7 +168,7 @@ public class PotionShop : MonoBehaviour, IShop
                 }
 
             }
-            Debug.Log("No tienes suficiente oro o items para comprar más pociones.");
+            Debug.Log("No tienes suficiente oro o items para comprar mï¿½s pociones.");
             return;
         }
 
@@ -160,9 +196,11 @@ public class PotionShop : MonoBehaviour, IShop
         foreach (var entry in pendingBuy)
         {
             PotionTrade trade = trades[entry.Key];
+            int effectiveGoldCost = GetEffectiveGoldCost(trade);
+            int effectiveItemQty = GetEffectiveRequiredItemQty(trade);
             int qty = entry.Value;
 
-            int totalGold = trade.goldCost * qty;
+            int totalGold = effectiveGoldCost * qty;
 
             if (PlayerEconomy.instance.GetGold() < totalGold)
                 continue;
@@ -173,7 +211,7 @@ public class PotionShop : MonoBehaviour, IShop
             {
                 InventoryManager.instance.RemoveQuantity(
                     trade.requiredItem,
-                    (uint)(trade.requiredItemQty * qty)
+                    (uint)(effectiveItemQty * qty)
                 );
             }
 
@@ -232,7 +270,7 @@ public class PotionShop : MonoBehaviour, IShop
         if (tradeIndex == -1)
             return 0;
 
-            return trades[tradeIndex].requiredItemQty;
+        return GetEffectiveRequiredItemQty(trades[tradeIndex]);
 
 
     }
@@ -243,7 +281,7 @@ public class PotionShop : MonoBehaviour, IShop
         {
             if (trades[i].potionResult == type)
             {
-                value = trades[i].goldCost;
+                value = GetEffectiveGoldCost(trades[i]);
                 return true;
             }
         }
@@ -265,7 +303,7 @@ public class PotionShop : MonoBehaviour, IShop
 
             int pending = pendingBuy.ContainsKey(i) ? pendingBuy[i] : 0;
 
-            total += pending * trade.requiredItemQty;
+            total += pending * GetEffectiveRequiredItemQty(trade);
         }
 
         return total;

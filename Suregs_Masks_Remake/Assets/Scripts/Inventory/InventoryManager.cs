@@ -305,6 +305,11 @@ public class InventoryManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public bool HasItem(ItemType itemType)
+    {
+        return inventoryItems.Exists(i => i.type == itemType);
+    }
+
     public void LoadInventory()
     {
         if (!PlayerPrefs.HasKey(INVENTORY_KEY))

@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public static DialogueManager Instance;
+    public static DialogueManager Instance { get; private set; }
 
     [Header("UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -53,11 +53,24 @@ public class DialogueManager : MonoBehaviour
     public GameObject[] shops;
     private bool commerceOpen;
 
+    [Header("Mensajes simples (avisos, bloqueos, etc)")]
+    [HideInInspector] public bool simpleMessageActive;
+    private bool simpleMessageBlockInput;
+
+    public BoxCollider2D triggerTuorialCombat;
+    private SentenceType? lastSentenceType = null;
+
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
 
@@ -89,7 +102,6 @@ public class DialogueManager : MonoBehaviour
         // construir flujo base correctamente
         Queue<RuntimeSentence> mainFlow = BuildMainFlow(dialogue);
 
-        // si no hay diálogo válido
         if (mainFlow == null || mainFlow.Count == 0)
         {
             EndDialogue();
@@ -154,7 +166,12 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-
+        if (lastSentenceType == SentenceType.CombatTutorial)
+        {
+            triggerTuorialCombat.enabled = true;
+            lastSentenceType = null;
+            QuestManager.Instance.CompleteMainStepById("2");
+        }
 
         ClearOptions();
 
@@ -224,7 +241,11 @@ public class DialogueManager : MonoBehaviour
             case SentenceType.QuestUpdate:
                 UpdateQuest(sentence);
                 return;
+
+            case SentenceType.CombatTutorial:
+                break;
         }
+        lastSentenceType = sentence.type;
     }
 
 
@@ -323,7 +344,23 @@ public class DialogueManager : MonoBehaviour
             GameProgress.Advance();
         }
 
-        if (!dialogueActive )
+        if (simpleMessageActive)
+        {
+            //if (simpleMessageBlockInput)
+            //{
+            //    if (Input.GetKeyUp(KeyCode.E))
+            //        simpleMessageBlockInput = false;
+
+            //    return;
+            //}
+
+            if (Input.GetKeyDown(KeyCode.E))
+                CloseSimpleMessage();
+
+            return;
+        }
+
+        if (!dialogueActive)
             return;
 
         if (commerceOpen)
@@ -395,5 +432,40 @@ public class DialogueManager : MonoBehaviour
         commerceOpen = false;
 
         DisplayNextSentence();
+    }
+
+    public void ShowSimpleMessage(string speaker, string text, Sprite portrait = null)
+    {
+        // No interrumpimos un diálogo narrativo real si por lo que sea ya hay uno activo.
+        if (dialogueActive || simpleMessageActive) return;
+
+        simpleMessageActive = true;
+        simpleMessageBlockInput = true;
+        UIState.IsUIOpen = true;
+
+        ClearOptions();
+        dialoguePanel.SetActive(true);
+        npcNameText.text = speaker;
+        portraitImage.sprite = portrait;
+        dialogueText.text = text;
+
+        if (Player.Instance != null)
+            Player.Instance.canMove = false;
+    }
+
+    private void CloseSimpleMessage()
+    {
+        simpleMessageActive = false;
+        simpleMessageBlockInput = false;
+        dialoguePanel.SetActive(false);
+        UIState.IsUIOpen = false;
+
+        if (Player.Instance != null)
+            Player.Instance.canMove = true;
+    }
+
+    private void StartCombatTutorial(DialogueSentence sentence)
+    {
+        
     }
 }

@@ -34,8 +34,16 @@ public class HUDScript : MonoBehaviour
 
     public RectTransform notificationContainer;
 
+    [Header("Misiones")]
+    [Tooltip("Texto donde se muestra la descripción de la misión principal actual.")]
+    public TextMeshProUGUI mainQuestText;
+
+    [Tooltip("Prefab de notificación para cuando arranca una misión secundaria. Puede ser el mismo que maskPointNotificationPrefab si comparten el mismo componente MaskPointNotification.")]
+    public GameObject sideQuestNotificationPrefab;
+
     private MaskManager maskManager;
     private PotionManager potionManager;
+    private QuestManager questManager;
 
     // Posiciones originales de los iconos, para el shake al invertir mascaras
     private Vector3 _primaryOriginalPos;
@@ -53,12 +61,14 @@ public class HUDScript : MonoBehaviour
 
         TryBindMaskManager();
         TryBindPotionManager();
+        TryBindQuestManager();
     }
 
     void OnDestroy()
     {
         UnbindMaskManager();
         UnbindPotionManager();
+        UnbindQuestManager();
     }
 
     void Update()
@@ -66,6 +76,11 @@ public class HUDScript : MonoBehaviour
         if (potionManager == null)
         {
             TryBindPotionManager();
+        }
+
+        if (questManager == null)
+        {
+            TryBindQuestManager();
         }
 
         if (maskManager == null)
@@ -133,6 +148,54 @@ public class HUDScript : MonoBehaviour
 
         potionManager.OnPotionChanged -= UpdatePotionIcon;
         potionManager.OnNoPotions -= ClearPotionIcon;
+    }
+
+    private void TryBindQuestManager()
+    {
+        if (QuestManager.Instance == null) return;
+
+        questManager = QuestManager.Instance;
+        questManager.OnMainQuestChanged += UpdateMainQuestText;
+        questManager.OnSideQuestStarted += HandleSideQuestStarted;
+        questManager.OnSideQuestCompleted += HandleSideQuestCompleted;
+
+        // Pintar el estado actual ya mismo (el evento solo dispara con cambios futuros)
+        UpdateMainQuestText(questManager.CurrentMainQuest);
+    }
+
+    private void UnbindQuestManager()
+    {
+        if (questManager == null) return;
+
+        questManager.OnMainQuestChanged -= UpdateMainQuestText;
+        questManager.OnSideQuestStarted -= HandleSideQuestStarted;
+        questManager.OnSideQuestCompleted -= HandleSideQuestCompleted;
+    }
+
+    private void UpdateMainQuestText(QuestStep step)
+    {
+        if (mainQuestText == null) return;
+        mainQuestText.text = step != null ? step.description : "";
+    }
+
+    private void HandleSideQuestStarted(QuestStep step)
+    {
+        if (sideQuestNotificationPrefab == null || notificationContainer == null) return;
+
+        var go = Instantiate(sideQuestNotificationPrefab, notificationContainer);
+        go.transform.SetAsLastSibling();
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(
+            notificationContainer.GetComponent<RectTransform>());
+
+        var notif = go.GetComponent<MaskPointNotification>();
+        notif?.Show(null, $"Nueva misión: {step.description}");
+    }
+
+    private void HandleSideQuestCompleted(QuestStep step)
+    {
+        // Opcional: aquí puedes disparar una notificación de "misión completada"
+        // reutilizando el mismo sistema, si lo necesitas más adelante.
     }
 
     private void UpdatePotionIcon(Item.ItemType type, Sprite sprite, uint quantity)

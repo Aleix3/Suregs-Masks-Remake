@@ -27,6 +27,11 @@ public class Merchant : MonoBehaviour, IShop
 
     }
 
+    private void OnEnable()
+    {
+        QuestManager.Instance.CompleteMainStepById("7");
+    }
+
     public void SelectTrade(int num)
     {
         if (!GetTradeData(num, out ItemType type, out int goldValue))
