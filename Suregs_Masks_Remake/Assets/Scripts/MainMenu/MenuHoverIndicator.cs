@@ -6,6 +6,11 @@ using DG.Tweening;
 /// Mueve una Image (hoverImage) hasta la posición del botón seleccionado
 /// actualmente en el EventSystem, con una animación suave de DOTween.
 /// Ponlo en un GameObject vacío dentro de tu Canvas del menú.
+///
+/// Se pausa automáticamente mientras el menú principal está bloqueado
+/// (mismo CanvasGroup que usas como "Block While Open" en los
+/// UIRevealAnimator), para que no reaccione a lo que se selecciona dentro
+/// de Ajustes/Controles/Créditos ni se líe durante la animación de cierre.
 /// </summary>
 public class MenuHoverIndicator : MonoBehaviour
 {
@@ -13,15 +18,26 @@ public class MenuHoverIndicator : MonoBehaviour
     [SerializeField] private RectTransform hoverImage;
     [SerializeField] private GameObject firstSelected;
 
+    [Header("Bloqueo mientras hay un panel abierto")]
+    [Tooltip("El mismo Transform que contiene los botones del menú principal (p.ej. 'Buttons'). Se ignora cualquier selección que no sea hija de este contenedor.")]
+    [SerializeField] private Transform menuButtonsContainer;
+    [Tooltip("El mismo CanvasGroup que usas como 'Block While Open' en los UIRevealAnimator. Mientras esté no-interactable (panel abierto), este script no hace nada.")]
+    [SerializeField] private CanvasGroup menuButtonsCanvasGroup;
+
     [Header("Animación")]
     [SerializeField] private float moveDuration = 0.25f;
     [SerializeField] private Ease moveEase = Ease.OutQuad;
     [SerializeField] private bool matchWidth = true;
     [SerializeField] private bool matchHeight = false;
 
+    [Header("Ajuste de posición")]
+    [Tooltip("Desplazamiento (en píxeles de UI) que se suma a la posición del botón seleccionado. Usa esto para descentrar el hover si no encaja perfecto con tu sprite.")]
+    [SerializeField] private Vector2 offset = Vector2.zero;
+
     private GameObject lastSelected;
     private Tween moveTween;
     private Tween sizeTween;
+    private bool wasBlocked;
 
     private void Start()
     {
@@ -36,6 +52,28 @@ public class MenuHoverIndicator : MonoBehaviour
 
     private void Update()
     {
+        bool isBlocked = menuButtonsCanvasGroup != null && !menuButtonsCanvasGroup.interactable;
+
+        if (isBlocked)
+        {
+            // Mientras haya un panel abierto no tocamos nada: ni movemos el
+            // hover, ni forzamos selección. Solo recordamos que estábamos
+            // bloqueados para resincronizar en cuanto se desbloquee.
+            wasBlocked = true;
+            return;
+        }
+
+        if (wasBlocked)
+        {
+            // Se acaba de cerrar el panel: nos colocamos al instante sobre el
+            // botón que quedó seleccionado, sin animar (evita el salto raro).
+            wasBlocked = false;
+            moveTween?.Kill();
+            sizeTween?.Kill();
+            SnapToSelected();
+            return;
+        }
+
         GameObject current = EventSystem.current.currentSelectedGameObject;
 
         // Si se pierde la selección (p.ej. click fuera), volvemos a la última
@@ -45,6 +83,10 @@ public class MenuHoverIndicator : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(lastSelected);
             return;
         }
+
+        // Ignoramos selecciones que no pertenezcan a los botones del menú principal
+        if (menuButtonsContainer != null && !current.transform.IsChildOf(menuButtonsContainer))
+            return;
 
         if (current != lastSelected)
         {
@@ -65,7 +107,7 @@ public class MenuHoverIndicator : MonoBehaviour
         RectTransform target = current.GetComponent<RectTransform>();
         if (target == null) return;
 
-        hoverImage.position = target.position;
+        hoverImage.position = target.position + (Vector3)offset;
 
         Vector2 size = hoverImage.sizeDelta;
         if (matchWidth) size.x = target.rect.width;
@@ -80,7 +122,7 @@ public class MenuHoverIndicator : MonoBehaviour
         moveTween?.Kill();
         sizeTween?.Kill();
 
-        moveTween = hoverImage.DOMove(target.position, moveDuration).SetEase(moveEase);
+        moveTween = hoverImage.DOMove(target.position + (Vector3)offset, moveDuration).SetEase(moveEase);
 
         if (matchWidth || matchHeight)
         {
