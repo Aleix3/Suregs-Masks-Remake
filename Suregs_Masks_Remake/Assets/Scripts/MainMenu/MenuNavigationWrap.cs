@@ -36,7 +36,7 @@ public class MenuNavigationWrap : MonoBehaviour
             {
                 nav.selectOnUp = prev;
                 nav.selectOnDown = next;
-            }
+            } 
             else
             {
                 nav.selectOnLeft = prev;

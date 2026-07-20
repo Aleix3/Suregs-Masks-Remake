@@ -21,6 +21,7 @@ public class ToggleSpriteSwap : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         toggle = GetComponent<Toggle>();
         toggle.onValueChanged.AddListener(OnValueChanged);
+        
     }
 
     private void OnEnable() => UpdateVisual();
@@ -38,7 +39,7 @@ public class ToggleSpriteSwap : MonoBehaviour, IPointerEnterHandler, IPointerExi
     }
     public void OnDeselect(BaseEventData eventData) { isSelected = false; UpdateVisual(); }
 
-    private void UpdateVisual()
+    public void UpdateVisual()
     {
         if (targetGraphic == null) return;
 

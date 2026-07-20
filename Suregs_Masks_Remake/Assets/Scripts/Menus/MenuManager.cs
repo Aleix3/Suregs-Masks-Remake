@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 
 public class MenuManager : MonoBehaviour
 {
     public CanvasGroup[] canvases;
 
+    public GameObject[] firstSelectedPerCanvas;
+
     private int currentIndex = 0;
     private bool activeMenu = false;
+
+    private EnabledSettings enabledSettings;
+
+    void Awake()
+    {
+        enabledSettings = FindFirstObjectByType<EnabledSettings>();
+    }
 
     void Start()
     {
@@ -32,7 +41,16 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (!activeMenu) return;
+        if (!activeMenu)
+        {
+            Player.Instance.canMove = true;
+            return;
+        }
+        else
+        {
+            Player.Instance.canMove = false;
+        }
+
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -62,6 +80,20 @@ public class MenuManager : MonoBehaviour
         canvases[index].alpha = 1;
         canvases[index].interactable = true;
         canvases[index].blocksRaycasts = true;
+
+        if(index == 3)
+        {
+            enabledSettings.Enable();
+        }
+
+        // Seleccionamos el primer elemento navegable de este canvas para que
+        // las flechas/mando funcionen desde el primer momento.
+        EventSystem.current.SetSelectedGameObject(null);
+
+        if (firstSelectedPerCanvas != null && index < firstSelectedPerCanvas.Length && firstSelectedPerCanvas[index] != null)
+        {
+            EventSystem.current.SetSelectedGameObject(firstSelectedPerCanvas[index]);
+        }
     }
 
     void OcultarTodos()
@@ -72,5 +104,9 @@ public class MenuManager : MonoBehaviour
             canvas.interactable = false;
             canvas.blocksRaycasts = false;
         }
+
+        // Limpiamos la selección para que no se quede "enganchada" a un
+        // elemento de un canvas que ya no es visible.
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }
