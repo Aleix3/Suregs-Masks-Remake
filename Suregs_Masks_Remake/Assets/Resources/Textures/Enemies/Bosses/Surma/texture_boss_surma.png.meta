@@ -1,0 +1,1236 @@
+fileFormatVersion: 2
+guid: 958033d13d0888645a2f5a2eec293806
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: texture_boss_surma_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5874
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b79be4202209f44aecdf8e76ba8fda
+      internalID: -1954372460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_1
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 5874
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c3441804bfab8459f32ef535c032b9
+      internalID: 740955157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_2
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 5874
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d8856d5f4d96642ab3b76fd30b777c
+      internalID: -1817330867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_3
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 5874
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8ba7e67e4b7ac4392620dd3d872677
+      internalID: 1049641550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_4
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 5874
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab5a15b3fb2ead4abd01c1347fdb1f0
+      internalID: -1755048592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_5
+      rect:
+        serializedVersion: 2
+        x: 5070
+        y: 5874
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5674f1178f71d4c8eb85c328c9946e
+      internalID: -886171574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_6
+      rect:
+        serializedVersion: 2
+        x: 6084
+        y: 5874
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68971afb64c2cea469d38cb18b837c47
+      internalID: 420771550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_7
+      rect:
+        serializedVersion: 2
+        x: 7098
+        y: 5874
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904227871fb2c8b4c8dd44589b416dca
+      internalID: -1635763487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_8
+      rect:
+        serializedVersion: 2
+        x: 8112
+        y: 5874
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83964cf5764dae646b931cf617896efb
+      internalID: 297177136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4895
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eae0caafcd993547a578eb9c61169c9
+      internalID: -457740527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_10
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 4895
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f780a2042894894c95ac7b81f4cc4b9
+      internalID: -589959459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_11
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 4895
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8352bebeacaca5540a2435f749ae725f
+      internalID: -474654122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3916
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288109ab18295474eb4243425cfbb93a
+      internalID: -711821912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_13
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 3916
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6648980402e874a93229e9c929911b
+      internalID: 1409265501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_14
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 3916
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31303fb21a99534087c2f3ba6d9bb77
+      internalID: 131110410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_15
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 3916
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9ce250f27ef69418568337a6f0be20
+      internalID: -661573168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_16
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 3916
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d704abbc90acd4589b840878a20da5
+      internalID: 79629631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_17
+      rect:
+        serializedVersion: 2
+        x: 5070
+        y: 3916
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c628baafc51fa47833415c0bfce7a1
+      internalID: -1651955736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_18
+      rect:
+        serializedVersion: 2
+        x: 6084
+        y: 3916
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c131fc6278d791248a204ceae8aa92a0
+      internalID: 1757046549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_19
+      rect:
+        serializedVersion: 2
+        x: 7098
+        y: 3916
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78bb47a85d88d964e919b37c228bb8d2
+      internalID: -2015216214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_20
+      rect:
+        serializedVersion: 2
+        x: 8112
+        y: 3916
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba0b19f4c9ba09e44a6936a298a5b5de
+      internalID: 1058815646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2937
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af38ca661fb85304bb2f96a8c93a88ec
+      internalID: -1216930000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_22
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 2937
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef455b0d4b460df429220049fbe81a6c
+      internalID: 1699534311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_23
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 2937
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1af6d9d2c8636347881f3e4cadd7b82
+      internalID: 1052731774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_24
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 2937
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a759d6ae2f58c9045994a49ba7e066d8
+      internalID: -1473409365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_25
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 2937
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd81fae4b58da9740b5f9f378ff83304
+      internalID: 242507136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_26
+      rect:
+        serializedVersion: 2
+        x: 5070
+        y: 2937
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2c1ae59c87566439256002b5e0bf8b
+      internalID: -192083355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_27
+      rect:
+        serializedVersion: 2
+        x: 6084
+        y: 2937
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f3cb83f749b884e9d2a7632e917fae
+      internalID: -1866959457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_28
+      rect:
+        serializedVersion: 2
+        x: 7098
+        y: 2937
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94951f7cbf64a4e47ab4e2b869c1308c
+      internalID: 1089979531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1958
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04fd2784dc626604d947817ebfd1a202
+      internalID: -630355105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_30
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 1958
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29687cc2c2adb0b41bcef9d821f77bc2
+      internalID: -2136775519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_31
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 1958
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20499234472742b4195710ed90151a95
+      internalID: -537300526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_32
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 1958
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5af31efc652d04eb4248f3b4dfe7cf
+      internalID: -1984173818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_33
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 1958
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d93532eca010694baeef55fad33de22
+      internalID: -668697712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_34
+      rect:
+        serializedVersion: 2
+        x: 5070
+        y: 1958
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3469e02e7cd29a84985e2ec1a72341ff
+      internalID: -439395857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_35
+      rect:
+        serializedVersion: 2
+        x: 6084
+        y: 1958
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb86d133e2964b5418bdc8e6b656f147
+      internalID: -768544108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_36
+      rect:
+        serializedVersion: 2
+        x: 7098
+        y: 1958
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424e3b2ee81d84f4a921b4cdddb48dc1
+      internalID: 1159742645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 979
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d69da9d78f9a3b44b757b083eed354d
+      internalID: 168505549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_38
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 979
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f10fe0f514f79340922c48e33b585e2
+      internalID: -734639530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_39
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 979
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c99cb93e97ab03b4b97a6539e248415f
+      internalID: 1353498156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_40
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 979
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e656362ff90c9e42999a74eed9d966d
+      internalID: -1023319972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_41
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 979
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb724be2baf82a148a072a23c0ee4066
+      internalID: -322833407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_42
+      rect:
+        serializedVersion: 2
+        x: 5070
+        y: 979
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc4f636d0cbb074c81a16ae9e50b4ca
+      internalID: 752393637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_43
+      rect:
+        serializedVersion: 2
+        x: 6084
+        y: 979
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c761749461f1d064592dae12ad183855
+      internalID: 1305414913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_44
+      rect:
+        serializedVersion: 2
+        x: 7098
+        y: 979
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6873bb89be3c3d145aa02d201049a9c1
+      internalID: -605108235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f0edd03b45a1542a8b2fef2ca87415
+      internalID: 1194345026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_46
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 0
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebeab68e3c35aac4080d35d0b3255071
+      internalID: -178568170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_47
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 0
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac200e59e7fb45a4fa11dba33548ceab
+      internalID: -98885484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_48
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 0
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c294b333e18c3044196cdfa677a014a2
+      internalID: 1929234392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_49
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 0
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34cbb5518e5e86647ba045c1a72c418f
+      internalID: 1395126046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texture_boss_surma_50
+      rect:
+        serializedVersion: 2
+        x: 5070
+        y: 0
+        width: 1014
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81262b38adb30a34fbd59bb880a76be7
+      internalID: -986108279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      texture_boss_surma_0: -1954372460
+      texture_boss_surma_1: 740955157
+      texture_boss_surma_10: -589959459
+      texture_boss_surma_11: -474654122
+      texture_boss_surma_12: -711821912
+      texture_boss_surma_13: 1409265501
+      texture_boss_surma_14: 131110410
+      texture_boss_surma_15: -661573168
+      texture_boss_surma_16: 79629631
+      texture_boss_surma_17: -1651955736
+      texture_boss_surma_18: 1757046549
+      texture_boss_surma_19: -2015216214
+      texture_boss_surma_2: -1817330867
+      texture_boss_surma_20: 1058815646
+      texture_boss_surma_21: -1216930000
+      texture_boss_surma_22: 1699534311
+      texture_boss_surma_23: 1052731774
+      texture_boss_surma_24: -1473409365
+      texture_boss_surma_25: 242507136
+      texture_boss_surma_26: -192083355
+      texture_boss_surma_27: -1866959457
+      texture_boss_surma_28: 1089979531
+      texture_boss_surma_29: -630355105
+      texture_boss_surma_3: 1049641550
+      texture_boss_surma_30: -2136775519
+      texture_boss_surma_31: -537300526
+      texture_boss_surma_32: -1984173818
+      texture_boss_surma_33: -668697712
+      texture_boss_surma_34: -439395857
+      texture_boss_surma_35: -768544108
+      texture_boss_surma_36: 1159742645
+      texture_boss_surma_37: 168505549
+      texture_boss_surma_38: -734639530
+      texture_boss_surma_39: 1353498156
+      texture_boss_surma_4: -1755048592
+      texture_boss_surma_40: -1023319972
+      texture_boss_surma_41: -322833407
+      texture_boss_surma_42: 752393637
+      texture_boss_surma_43: 1305414913
+      texture_boss_surma_44: -605108235
+      texture_boss_surma_45: 1194345026
+      texture_boss_surma_46: -178568170
+      texture_boss_surma_47: -98885484
+      texture_boss_surma_48: 1929234392
+      texture_boss_surma_49: 1395126046
+      texture_boss_surma_5: -886171574
+      texture_boss_surma_50: -986108279
+      texture_boss_surma_6: 420771550
+      texture_boss_surma_7: -1635763487
+      texture_boss_surma_8: 297177136
+      texture_boss_surma_9: -457740527
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
