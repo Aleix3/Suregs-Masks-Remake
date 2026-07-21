@@ -1,0 +1,2072 @@
+fileFormatVersion: 2
+guid: eb96013033b4c144fb435b6371c260e0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bossPapa_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6405
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbff059cdf23934d8185a3bf7fbb928
+      internalID: -1338986164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 6405
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319f358a628a2524190caa2dcaface05
+      internalID: -1094055376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 6405
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9147e9eb96c767142a92f5228f1e03ea
+      internalID: -743261570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_3
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 6405
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d90118c2d1f6d40b811e83065e16d4
+      internalID: -1135282554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_4
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 6405
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c5c4166abaad24fa3c8b08feaaf875
+      internalID: 882462299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_5
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 6405
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6061920e3599cb45ad42d920b020eae
+      internalID: -359486042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_6
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 6405
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 425643a9e79b3fc449ab1300378c9a28
+      internalID: 351994317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_7
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 6405
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced517ded781093408e8771870c4365f
+      internalID: 1968010926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5978
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306cbcf800a1e064bbe7917ccf9e4716
+      internalID: -528773444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_9
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 5978
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0bd7f00038a31142b0c2a2a48fc15be
+      internalID: -1863280846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_10
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 5978
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86710d1f79ef974b8666bc7968527cc
+      internalID: -255420522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_11
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 5978
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a2b1a7a9d6dee40884f04780d3e619
+      internalID: 981904603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_12
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 5978
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05809bb0e7213f84ca6ea62d78503e55
+      internalID: 1449839221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_13
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 5978
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c85ab14b3d71d49bf52032ab90d4fe
+      internalID: -2116546303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5551
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6305cc4a0ca7964a99e11641168fe8f
+      internalID: -1205484050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_15
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 5551
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8091ef4e191143409478d462898e1a5
+      internalID: 1085225088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_16
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 5551
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b6de6594e56dd4e921e9c84e3ad4a8
+      internalID: 1333431365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_17
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 5551
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf1574c591bb5d49a30bb02eb561881
+      internalID: 1947428964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_18
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 5551
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f07b0c023673d45b1193495130cd01
+      internalID: 1341134396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_19
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 5551
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a217cf899e4664bbd621d66364a550
+      internalID: 295563625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_20
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 5551
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23de966e210e3d488f4c26322f7e969
+      internalID: 1827846837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_21
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 5551
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8597e485b523d344f87e72aed1360a81
+      internalID: 1165193013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5124
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7975ef57dba3adb429ed5f94720291fd
+      internalID: 1884013499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_23
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 5124
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901e9c6866d8fa343976fe1bc9f655c6
+      internalID: 1588330376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_24
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 5124
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ee9a3dff611b341abbb06dfec979a5
+      internalID: -2136188014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_25
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 5124
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6901978f7bca9a489f8a6863cf2a0bb
+      internalID: -1171966802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4697
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab9b26a544fd7e4c8966f96649877fa
+      internalID: -379871001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_27
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 4697
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68aae04933f4684e9ef734349054bb0
+      internalID: -593194291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_28
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 4697
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4fcc138aba92ff4cb3d0cc54b31a23b
+      internalID: 83961824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_29
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4697
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f2274b167ff11439356f2d36dbc84c
+      internalID: 1416424422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_30
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 4697
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0139cf5191c4dbc4096cd09eb5cf6d05
+      internalID: 607440186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_31
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4697
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9728c9fd4bf0794689f1bd7968acb0d
+      internalID: -1631567396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_32
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 4697
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a940bf652233140a7017fa80f38047
+      internalID: 183316826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_33
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 4697
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8f988df5c1991429a386486f1cbdf0
+      internalID: -575458666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4270
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe5c477fa360ee4da10bae05681ae7b
+      internalID: -1426687406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_35
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 4270
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f881dd082dd5654eb8c639a62c6252f
+      internalID: -130737188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3843
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6edd34feac0d4e49af59e4ae4ae1087
+      internalID: -1771538098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_37
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 3843
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ebd9385908f2347bcb29013ba9cffc
+      internalID: -1149417749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_38
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 3843
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12572c0008e61e4b8fb28915c6e99d9
+      internalID: 1692797288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_39
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3843
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440d559e385b37d4ba88eca37f159ed1
+      internalID: -1117487401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_40
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3843
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298192a575649ed47a971c0e53dccc59
+      internalID: -603555309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_41
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3843
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693eeef0335cb6a429c001ec09c17323
+      internalID: -355331825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_42
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 3843
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e117aeeeb6a5e40a6d0d238df9f73a
+      internalID: -321096612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_43
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 3843
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b52d6808ad051418b0481f41c611ce
+      internalID: -1532919396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3416
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3adfa06a013314a8d29b1ea3d40c88
+      internalID: 2146738952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2989
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7e8f11f0c5d64469cc711bf6dd9fb9
+      internalID: 1570706554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_46
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2989
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbb5a5f0c4f0b14cb68131e05c76827
+      internalID: 1411510687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_47
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2989
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3529e42ef5c38f4ea93c874bf46805c
+      internalID: 801213546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_48
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2989
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d584380fc242b145a66d30ccfcf1ae5
+      internalID: 1710710343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_49
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2989
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4eb7fb25ab4fa47865640b23b0a4a5
+      internalID: 1903032244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_50
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2989
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eca1000a39a43a45bf3492051cd3ba7
+      internalID: 1035244434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_51
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 2989
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7e106c63cf7aa46bbb05ab64af378c
+      internalID: 1442783181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_52
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 2989
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc3a5ba495d29748b4585ffe708f123
+      internalID: 1069202720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2562
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf409a44740a9e4aa9cc8214384493c
+      internalID: -1418305002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_54
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2562
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af81767f2e2fdb4c9da2968cb803ba6
+      internalID: -1212706193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_55
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2562
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06668cb3e7a5114099c1ad39548fd99
+      internalID: 165383081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_56
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2562
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5994d896707c22459a35e5274ea5276
+      internalID: -1135231258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_57
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2562
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86985c50408feb439a62ec8aa1c7069
+      internalID: 423551908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_58
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2562
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b0114fc9b41aa4787c40688b8d8d97
+      internalID: -1917575700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_59
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 2562
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc26b1d33ac72046bfa82ff8e61b74a
+      internalID: -1021592832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2135
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8929742d2b738844db58d27236af0f80
+      internalID: -1641510960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_61
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2135
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74f287d49f5e81489d0579126387811
+      internalID: 1424299906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_62
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2135
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4beefa6e1e009b249af84be81f76270e
+      internalID: -255735559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_63
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2135
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757492802308df040a7fa1d7b42072c1
+      internalID: -968406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_64
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2135
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d634c5dbb136694b898c095eaca087e
+      internalID: -1650167065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_65
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2135
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f198c01b024def49972e9b3708d179a
+      internalID: 121905041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1708
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbe5c5fb768bb34d92408d37489b09a
+      internalID: -303446991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_67
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1708
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092368fa37aeebd44abf82ec488f20a7
+      internalID: 2026452611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_68
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1708
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a525fd171624cd4da662c389b99101e
+      internalID: -2116630881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_69
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1708
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94e8350f4cc1f24187c7d3d3bd7785c
+      internalID: -1633255680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_70
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1708
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b2f133067a5164b96d40afe8c8412d
+      internalID: -82287278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_71
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1708
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c421cf979f691c43bafb26dc03911dc
+      internalID: -2011129484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1281
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b024a6e9db6eab42a94b15640178890
+      internalID: 1931267706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_73
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1281
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754c2db9484dd6d429f729d73f137492
+      internalID: -1818273138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_74
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1281
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0eeff64dda6dd4c87167948b3433d9
+      internalID: 348826531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_75
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1281
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd8c92ab5ed6f743933f4c98ff449cb
+      internalID: 1068259514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_76
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1281
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad53e18e4815ad648982e28bfcac888b
+      internalID: 537899393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 854
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1826e35d9961ee34796b6f45caedce56
+      internalID: 1669328603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_78
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 854
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8718eafe0184e2f49a8123dddfed99d9
+      internalID: 861423792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_79
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 854
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e2e57abcfdd184d91eb9da57ba4f6f
+      internalID: 1213705073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_80
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 854
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29880428c05d1cb469af301cc48ac523
+      internalID: -1448688620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_81
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 854
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285736d9942647e4f92120626d06d5f0
+      internalID: 1338256734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_82
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 427
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ffd9b3ac8988e446bd8b857378edd99
+      internalID: -190242566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_83
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 427
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371df16d52925c54aa0efc62422d26d4
+      internalID: 1699080388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_84
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 427
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48339b5fbdfb3e4e981f75b793bc4b3
+      internalID: -1654984520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_85
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 427
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47d7c16aeb12904bace807d08dd7cd7
+      internalID: 818266439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_86
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 427
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e695a28fc26b04597005395aa91bd1
+      internalID: 42961851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f5654dc966d494280ef975167e38d5
+      internalID: 1106491583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossPapa_88
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 600
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9959a075dff16224cab377b74d15313d
+      internalID: 351807152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bossPapa_0: -1338986164
+      bossPapa_1: -1094055376
+      bossPapa_10: -255420522
+      bossPapa_11: 981904603
+      bossPapa_12: 1449839221
+      bossPapa_13: -2116546303
+      bossPapa_14: -1205484050
+      bossPapa_15: 1085225088
+      bossPapa_16: 1333431365
+      bossPapa_17: 1947428964
+      bossPapa_18: 1341134396
+      bossPapa_19: 295563625
+      bossPapa_2: -743261570
+      bossPapa_20: 1827846837
+      bossPapa_21: 1165193013
+      bossPapa_22: 1884013499
+      bossPapa_23: 1588330376
+      bossPapa_24: -2136188014
+      bossPapa_25: -1171966802
+      bossPapa_26: -379871001
+      bossPapa_27: -593194291
+      bossPapa_28: 83961824
+      bossPapa_29: 1416424422
+      bossPapa_3: -1135282554
+      bossPapa_30: 607440186
+      bossPapa_31: -1631567396
+      bossPapa_32: 183316826
+      bossPapa_33: -575458666
+      bossPapa_34: -1426687406
+      bossPapa_35: -130737188
+      bossPapa_36: -1771538098
+      bossPapa_37: -1149417749
+      bossPapa_38: 1692797288
+      bossPapa_39: -1117487401
+      bossPapa_4: 882462299
+      bossPapa_40: -603555309
+      bossPapa_41: -355331825
+      bossPapa_42: -321096612
+      bossPapa_43: -1532919396
+      bossPapa_44: 2146738952
+      bossPapa_45: 1570706554
+      bossPapa_46: 1411510687
+      bossPapa_47: 801213546
+      bossPapa_48: 1710710343
+      bossPapa_49: 1903032244
+      bossPapa_5: -359486042
+      bossPapa_50: 1035244434
+      bossPapa_51: 1442783181
+      bossPapa_52: 1069202720
+      bossPapa_53: -1418305002
+      bossPapa_54: -1212706193
+      bossPapa_55: 165383081
+      bossPapa_56: -1135231258
+      bossPapa_57: 423551908
+      bossPapa_58: -1917575700
+      bossPapa_59: -1021592832
+      bossPapa_6: 351994317
+      bossPapa_60: -1641510960
+      bossPapa_61: 1424299906
+      bossPapa_62: -255735559
+      bossPapa_63: -968406
+      bossPapa_64: -1650167065
+      bossPapa_65: 121905041
+      bossPapa_66: -303446991
+      bossPapa_67: 2026452611
+      bossPapa_68: -2116630881
+      bossPapa_69: -1633255680
+      bossPapa_7: 1968010926
+      bossPapa_70: -82287278
+      bossPapa_71: -2011129484
+      bossPapa_72: 1931267706
+      bossPapa_73: -1818273138
+      bossPapa_74: 348826531
+      bossPapa_75: 1068259514
+      bossPapa_76: 537899393
+      bossPapa_77: 1669328603
+      bossPapa_78: 861423792
+      bossPapa_79: 1213705073
+      bossPapa_8: -528773444
+      bossPapa_80: -1448688620
+      bossPapa_81: 1338256734
+      bossPapa_82: -190242566
+      bossPapa_83: 1699080388
+      bossPapa_84: -1654984520
+      bossPapa_85: 818266439
+      bossPapa_86: 42961851
+      bossPapa_87: 1106491583
+      bossPapa_88: 351807152
+      bossPapa_9: -1863280846
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
