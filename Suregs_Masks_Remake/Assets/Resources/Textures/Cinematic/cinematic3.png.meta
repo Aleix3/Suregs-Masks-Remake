@@ -1,0 +1,1962 @@
+fileFormatVersion: 2
+guid: fe1d784e8fef6664380d2211eb34d065
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cinematic3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb036893fa2b45741a84fe114acfa475
+      internalID: -373137959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f90461b6b7cfc49ab8412f0b0340c2
+      internalID: -1244676571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e092171ce14bc614d903e488e52e972e
+      internalID: 451178703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_3
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f68dbca18c5e640bd03c20f7d18635
+      internalID: 1407596726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_4
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ba4cd0718598e408cd050c6c6aed91
+      internalID: 1874820571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_5
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e24b5a5f73e8b46a1821ece86f36a6
+      internalID: -1552022241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_6
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135393e3431124749bca10955e901bf3
+      internalID: 2012284793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_7
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf0f0094fb660841b4a97ce3b51fc7d
+      internalID: -714888772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_8
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87647ef41f7f7654a8c2870956ff18ec
+      internalID: -673728842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_9
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0002c690f84c94e4381565f18bb4c1fd
+      internalID: -327038728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_10
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fd15483ff88ce43b513935c8b27f61
+      internalID: 1868666884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_11
+      rect:
+        serializedVersion: 2
+        x: 6600
+        y: 2028
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fb0f4a36a34f8489ce37b0c1d5ef59
+      internalID: -627896295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412644b972bffc647b2ee8299f98a0be
+      internalID: -1077602359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_13
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0833da2ab29293c42ba0a6af1949e994
+      internalID: -2006697240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_14
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22bb1990a150bdf42b5178a135006220
+      internalID: -918116039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_15
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a026b7a685899418f0d15d33cccd7c
+      internalID: -1680037999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_16
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d84fd1df8dbf7843baa4c24076c7a46
+      internalID: -979727654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_17
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2475f8ec07b1e454c81bcc212c70e4b7
+      internalID: -1622536172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_18
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed4a45249ccad343b16642a5cb7a68e
+      internalID: -111356961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_19
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5e0305f928b744197e08ce4d6058a6
+      internalID: -471929324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_20
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e184cdf1c2087043b8b52926f93cfc4
+      internalID: -386712968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_21
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dda276b84d34dc4e8cd4217bee00016
+      internalID: -2112747952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_22
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c51eecebe474c42914981dd32966d0
+      internalID: -286311090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_23
+      rect:
+        serializedVersion: 2
+        x: 6600
+        y: 1690
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ddfc0664f08114481d387e55901522
+      internalID: 1125103641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9b2f2f04b73834daf1c093458a7f54
+      internalID: 1896011837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_25
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e1487822de26f478159cb170597392
+      internalID: -1181625302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_26
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6589e611efd0d8b4fba4f7bb042eb73e
+      internalID: -1786162477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_27
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d1ea38877030346a0d6119d5cd765d
+      internalID: 259731491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_28
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5c60775b8c1f4409f045cb9bd8372a
+      internalID: -1988601146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_29
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb18dc4dc20be74d8d3878dbcbc3150
+      internalID: 2105797159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_30
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447145facb79b974c869625f4a0d2e98
+      internalID: -727835152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_31
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01da73ff96cf8154fbdfbb79c9ff7166
+      internalID: 1528238606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_32
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec8599fee2014c44b7ecdf3bae6106e
+      internalID: 1940291816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_33
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f836c24a491cfed4da6d3aea5b045b43
+      internalID: 1553312059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_34
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47c0b4ff353cf04e81a5c4f4a5b50ff
+      internalID: 660680655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_35
+      rect:
+        serializedVersion: 2
+        x: 6600
+        y: 1352
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f36b8c1200390647be049abd1fbff79
+      internalID: 1868625796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d47f91c14960d4eb1a658cd896534b
+      internalID: 329906079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_37
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc717181b44c2df45ad6f30b9b19402b
+      internalID: -1722282012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_38
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287acdae698c69b43b9a4fb405faf497
+      internalID: 1409125555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_39
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26bd0121e6681b4aa361c1a0289284d
+      internalID: -877593779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_40
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b084cfcedd93fa419344ce98b6ce8cc
+      internalID: 2057481394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_41
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663e1cb83ad724b4893eb765e9e61578
+      internalID: 1116743267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_42
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b072ee3dc3dee469a13cb8eeb3978d
+      internalID: 970480611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_43
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a183062f1244c424ab5d4d2ee1891447
+      internalID: -275587433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_44
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d9802bda3b8d424096d3987bdcfdd71
+      internalID: -1462816175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_45
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917e48750688517418fe0fb088e811e2
+      internalID: -1404428952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_46
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b342829ef5a9fb941ad9bce3119d844d
+      internalID: 1347169692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_47
+      rect:
+        serializedVersion: 2
+        x: 6600
+        y: 1014
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc7341bd2056934e85673e18404e3b2
+      internalID: -1267365370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b80804c14fa9094aaa8fe898bea32ce
+      internalID: 1317855326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_49
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96a461f243840c44b682571f57a729c
+      internalID: -990620016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_50
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155133fc7c019c644a84882c1ed2681f
+      internalID: 1796765023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_51
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ab944068fa4fc45988dd4d37ea5d34
+      internalID: -1356326097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_52
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc5cb7cc2460c74dbbbaf7953a67aa9
+      internalID: -805898530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_53
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b42e26e9c525a42b71d64758e5c62d
+      internalID: 1315458833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_54
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b7a34739bdb9949b15a5cf5fd5be73
+      internalID: 1081679147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_55
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b4f46031ed2124eb34eae64533f4bd
+      internalID: 965658109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_56
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb747311bc7c45841b799b62f9e17773
+      internalID: 1658348487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_57
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61bd9479f9cee0a4987a613404ecdadb
+      internalID: -1497152268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_58
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025f251212216b942bef3dffb4405e83
+      internalID: 1505309304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_59
+      rect:
+        serializedVersion: 2
+        x: 6600
+        y: 676
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd18ea11ebea0040aef85e0689d574b
+      internalID: 577678699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e17e7426e0130e4ca92bf10a9fdfd19
+      internalID: -155123160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_61
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91a3b9a3e985bd418bcca50ca64ee82
+      internalID: 1490608352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_62
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c8318422e6cef48b8ae05446d9c6f1
+      internalID: -125633611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_63
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ead3806bf89e14897f24f88f515bb3
+      internalID: 460429460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_64
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16bc32f6099b024896465776dde5da5
+      internalID: -1138774599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_65
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa83452ba96adb042b77999cd6989b40
+      internalID: 16337734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_66
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1ca921e29ca2040a3dd8a2a8db4b44
+      internalID: -724671336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_67
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85a6dee6a09fe94198aa7477fe8bc85
+      internalID: 1986483549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_68
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d562d6441d5c42443ae17d1a98b1a614
+      internalID: 2048173670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_69
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6282f95b2cbee4bb05284b27b8ec6d
+      internalID: -1003074154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_70
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7362b90b5e0efd84e845a54fd0e01a66
+      internalID: -1128659339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_71
+      rect:
+        serializedVersion: 2
+        x: 6600
+        y: 338
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614b698992c67e741b05ebd76a0d8bf2
+      internalID: 1966485012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee33401db38a234b8cb15cf13f449ee
+      internalID: 1338295241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_73
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a16967ce3fe334387f89130aac3c6b
+      internalID: 1214564868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_74
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa8ef735895ecc4385755e61f44af37
+      internalID: 1255059000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_75
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899dbfa38af0a684c83205978e3e263c
+      internalID: 651916612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_76
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97745efa5411559479d28b7e9d2eb18b
+      internalID: -237765422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_77
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea8af56301dfbb499c0129c446f88d2
+      internalID: -37323494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_78
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5db4f32e07598d4c8e9f32378dac8a4
+      internalID: -730064842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_79
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca155ee1d62945746b21e4325a3b1ace
+      internalID: -558008438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_80
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26906ff7cdce74040bc2205a9bd7eba5
+      internalID: 238826111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_81
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6703384e610d545a0dbdf1332a21b4
+      internalID: 2073837202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_82
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf3a97f5e44e9e45983ee4bc9aef17c
+      internalID: -1721766436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cinematic3_83
+      rect:
+        serializedVersion: 2
+        x: 6600
+        y: 0
+        width: 600
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0335cf6c921b445901702d13314815
+      internalID: -1753097768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      cinematic3_0: -373137959
+      cinematic3_1: -1244676571
+      cinematic3_10: 1868666884
+      cinematic3_11: -627896295
+      cinematic3_12: -1077602359
+      cinematic3_13: -2006697240
+      cinematic3_14: -918116039
+      cinematic3_15: -1680037999
+      cinematic3_16: -979727654
+      cinematic3_17: -1622536172
+      cinematic3_18: -111356961
+      cinematic3_19: -471929324
+      cinematic3_2: 451178703
+      cinematic3_20: -386712968
+      cinematic3_21: -2112747952
+      cinematic3_22: -286311090
+      cinematic3_23: 1125103641
+      cinematic3_24: 1896011837
+      cinematic3_25: -1181625302
+      cinematic3_26: -1786162477
+      cinematic3_27: 259731491
+      cinematic3_28: -1988601146
+      cinematic3_29: 2105797159
+      cinematic3_3: 1407596726
+      cinematic3_30: -727835152
+      cinematic3_31: 1528238606
+      cinematic3_32: 1940291816
+      cinematic3_33: 1553312059
+      cinematic3_34: 660680655
+      cinematic3_35: 1868625796
+      cinematic3_36: 329906079
+      cinematic3_37: -1722282012
+      cinematic3_38: 1409125555
+      cinematic3_39: -877593779
+      cinematic3_4: 1874820571
+      cinematic3_40: 2057481394
+      cinematic3_41: 1116743267
+      cinematic3_42: 970480611
+      cinematic3_43: -275587433
+      cinematic3_44: -1462816175
+      cinematic3_45: -1404428952
+      cinematic3_46: 1347169692
+      cinematic3_47: -1267365370
+      cinematic3_48: 1317855326
+      cinematic3_49: -990620016
+      cinematic3_5: -1552022241
+      cinematic3_50: 1796765023
+      cinematic3_51: -1356326097
+      cinematic3_52: -805898530
+      cinematic3_53: 1315458833
+      cinematic3_54: 1081679147
+      cinematic3_55: 965658109
+      cinematic3_56: 1658348487
+      cinematic3_57: -1497152268
+      cinematic3_58: 1505309304
+      cinematic3_59: 577678699
+      cinematic3_6: 2012284793
+      cinematic3_60: -155123160
+      cinematic3_61: 1490608352
+      cinematic3_62: -125633611
+      cinematic3_63: 460429460
+      cinematic3_64: -1138774599
+      cinematic3_65: 16337734
+      cinematic3_66: -724671336
+      cinematic3_67: 1986483549
+      cinematic3_68: 2048173670
+      cinematic3_69: -1003074154
+      cinematic3_7: -714888772
+      cinematic3_70: -1128659339
+      cinematic3_71: 1966485012
+      cinematic3_72: 1338295241
+      cinematic3_73: 1214564868
+      cinematic3_74: 1255059000
+      cinematic3_75: 651916612
+      cinematic3_76: -237765422
+      cinematic3_77: -37323494
+      cinematic3_78: -730064842
+      cinematic3_79: -558008438
+      cinematic3_8: -673728842
+      cinematic3_80: 238826111
+      cinematic3_81: 2073837202
+      cinematic3_82: -1721766436
+      cinematic3_83: -1753097768
+      cinematic3_9: -327038728
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

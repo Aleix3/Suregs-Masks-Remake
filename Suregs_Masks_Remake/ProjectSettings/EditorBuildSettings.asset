@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Splash.unity
+    guid: 72a311de9718b0342ac20ee3c69a9fe4
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d1855a1c6c1786741b7eddaaf51c3d4a
+  - enabled: 1
+    path: Assets/Scenes/Cinematic.unity
+    guid: 1bb5a2e61786b5e4ab195019437c7687
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 10aa28e1a52ba0d4bad02408a29a191d
   - enabled: 1
     path: Assets/Scenes/Town.unity
     guid: c50d6698e27a9174faa615ed8c086e40
@@ -29,10 +38,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeons/Dungeon 5.unity
     guid: 407c498685f739741b9ed7999c5778cc
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 10aa28e1a52ba0d4bad02408a29a191d
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: d1855a1c6c1786741b7eddaaf51c3d4a
   m_configObjects: {}

@@ -2106,7 +2106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f952fdf8f6e348646b8ae756a29dedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nuevaPartidaScene: Tutorial
+  nuevaPartidaScene: Cinematic
   continuarScene: Town
   ajustesPanel: {fileID: 1293007978}
   controlesImagen: {fileID: 4884540}
