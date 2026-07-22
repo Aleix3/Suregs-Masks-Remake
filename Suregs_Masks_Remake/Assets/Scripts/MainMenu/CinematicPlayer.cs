@@ -12,7 +12,7 @@ public class CinematicPlayer : MonoBehaviour
 
     [Header("Referencias UI")]
     public Image displayImage;
-    public Image skipProgressBar; // Opcional: Image tipo "Filled" para mostrar el progreso de saltar
+    public Image skipProgressBar;
 
     [Header("Tiempos")]
     public float timePerImage = 0.15f;
@@ -116,6 +116,15 @@ public class CinematicPlayer : MonoBehaviour
 
     void LoadNextScene()
     {
-        SceneManager.LoadScene(nextSceneName);
+        StartCoroutine(FadeAndLoadScene(nextSceneName));
+
+    }
+
+    private IEnumerator FadeAndLoadScene(string sceneName)
+    {
+        yield return StartCoroutine(CameraManager.Instance.Fade(1));
+
+
+        SceneManager.LoadScene(sceneName);
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -51,7 +52,7 @@ public class ElevatorButton : MonoBehaviour
                 elevatorTriggerScript.CloseCanvas();
                 DialogueManager.Instance.ShowSimpleMessage(pendingTasksSpeaker, pendingTasksMessage, speakerSprite);
             }
-                
+
             return;
         }
 
@@ -67,6 +68,14 @@ public class ElevatorButton : MonoBehaviour
                 Player.Instance.transform.localScale = new Vector3(-0.55f, 0.55f, 0.55f);
             }
         }
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(FadeAndLoadScene(sceneName));
+    }
+
+    private IEnumerator FadeAndLoadScene(string sceneNamee)
+    {
+        yield return StartCoroutine(CameraManager.Instance.Fade(1));
+
+
+        SceneManager.LoadScene(sceneNamee);
     }
 }

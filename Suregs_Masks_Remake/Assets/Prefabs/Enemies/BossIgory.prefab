@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 2615514091221702222}
   - component: {fileID: -9110448414978103223}
   - component: {fileID: 3715495013737660195}
+  - component: {fileID: 9039107947357745356}
+  - component: {fileID: 108478697268813307}
   m_Layer: 7
   m_Name: BossIgory
   m_TagString: Enemy
@@ -106,8 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 0
-  maxHealth: 8000
-  health: 8000
+  maxHealth: 10000
+  health: 10000
   speed: 2
   initialSpeed: 2
   attackDistance: 2.69
@@ -125,8 +127,8 @@ MonoBehaviour:
   itemPrefab: {fileID: 7841598415486188925, guid: 6e5722fc9c14cb74a8e0e9eceb6b15a8, type: 3}
   agent: {fileID: 8589144347580291022}
   roomConected: {fileID: 0}
-  phaseTwoHealthPercent: 0.8
-  phaseThreeHealthPercent: 0.4
+  phaseTwoHealthPercent: 0.85
+  phaseThreeHealthPercent: 0.5
   phaseOneSpeedMultiplier: 1
   phaseTwoSpeedMultiplier: 1.2
   phaseThreeSpeedMultiplier: 1.4
@@ -144,7 +146,7 @@ MonoBehaviour:
   - {fileID: 2233585022467933213, guid: 249e3b88354cca8489cd0197593375e8, type: 3}
   - {fileID: 2233585022467933213, guid: 9ef60d1877207af4a9dedc84a4789823, type: 3}
   - {fileID: 2233585022467933213, guid: 5b8329907c6bcef4c8cd87797e7967fd, type: 3}
-  summonInterval: 10
+  summonInterval: 20
   summonLockDuration: 5
   suregSpawnPoints:
   - {fileID: 8161824700040303676}
@@ -164,8 +166,8 @@ MonoBehaviour:
   shieldHealth: 1500
   healIfShieldSurvives: 1000
   stunIfShieldBreaks: 2
-  phaseTwoAuraPrefab: {fileID: 0}
-  phaseThreeAuraPrefab: {fileID: 0}
+  phaseTwoAuraPrefab: {fileID: 4535473329264882499, guid: d14d1eae2e981134cb32f35d46681a67, type: 3}
+  phaseThreeAuraPrefab: {fileID: 4535473329264882499, guid: ad35095e1e70f4f4f839327368ccd8bb, type: 3}
   shieldAuraPrefab: {fileID: 0}
   runningParameter: isRunning
   attack1Trigger: Attack1
@@ -174,6 +176,9 @@ MonoBehaviour:
   dashTrigger: Dash
   healTrigger: Heal
   summonTrigger: GenerateSuregs
+  defeatTrigger: Die
+  dialogueCollider: {fileID: 9039107947357745356}
+  dialogueData: {fileID: 11400000, guid: 26ed1805fe4fe124cb7a08f15681e609, type: 2}
 --- !u!50 &6017077128991380820
 Rigidbody2D:
   serializedVersion: 4
@@ -337,6 +342,64 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.725119, y: 4.050377}
   m_EdgeRadius: 0
+--- !u!61 &9039107947357745356
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233585022467933213}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.37995863, y: -0.17124867}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6, y: 4.27}
+    newSize: {x: 0.84, y: 1.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.2400827, y: 6.4106126}
+  m_EdgeRadius: 0
+--- !u!114 &108478697268813307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233585022467933213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cec4958fd083d74699e01bb8fed87f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDialogue: {fileID: 0}
 --- !u!1 &5586096822299058796
 GameObject:
   m_ObjectHideFlags: 0

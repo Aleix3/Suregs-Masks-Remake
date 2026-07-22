@@ -43,6 +43,8 @@ public class BeedRoomChest : MonoBehaviour, IInteractable
             yOfsset += 0.5f;
             itemsToSpawn[i].GetComponent<Note>().id = i + 1;
         }
+        PlayerPrefs.SetInt("HasSaveGame", 1);
+        PlayerPrefs.Save();
     }
 
     

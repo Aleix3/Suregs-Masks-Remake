@@ -10,8 +10,11 @@ public class NPCInteractable : MonoBehaviour, IInteractable
 
     public void Interact(Player player)
     {
-        if (currentDialogue.sentences.Count == 0)
+        if (currentDialogue == null || currentDialogue.sentences.Count == 0)
+        {
+            
             return;
+        }
 
         if (currentDialogue.name == "Zhyuka" && InventoryManager.instance.HasItem(ItemType.AMATISTA) && !alreadyGivenAmatist)
         {

@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 
@@ -60,6 +61,7 @@ public class BossIgory : Enemy
     [SerializeField] private string dashTrigger = "Dash";
     [SerializeField] private string healTrigger = "Heal";
     [SerializeField] private string summonTrigger = "GenerateSuregs";
+    [SerializeField] private string defeatTrigger = "Die";
 
     private Phase phase = Phase.One;
     private Action activeAction;
@@ -76,6 +78,9 @@ public class BossIgory : Enemy
     private Coroutine actionRoutine;
     private Coroutine healRoutine;
 
+    public BoxCollider2D dialogueCollider;
+    public DialogueData dialogueData;
+
     protected override void Start()
     {
         base.Start();
@@ -84,12 +89,12 @@ public class BossIgory : Enemy
 
     protected override void Update()
     {
-        if (player == null || isDead || isStunned)
+        if (player == null || isDead || isStunned || !roomConected.isPlayerInRoom)
             return;
 
-        if (health <= 0)
+        if (health <= 2000)
         {
-            Die();
+            Defeated();
             return;
         }
 
@@ -263,7 +268,8 @@ public class BossIgory : Enemy
 
             Vector3 position = GetSuregSpawnPosition(i);
             Instantiate(prefab, position, Quaternion.identity, roomConected.transform.Find("Enemies")?.transform);
-            prefab.GetComponent<Enemy>().roomConected = roomConected;
+            roomConected.enemiesInRoom.Add(prefab.GetComponent<Enemy>());
+            roomConected.Refresh();
             prefab.GetComponent<Enemy>().player = player;
         }
     }
@@ -406,8 +412,27 @@ public class BossIgory : Enemy
     {
         if (phaseAuraInstance != null)
             Destroy(phaseAuraInstance);
+
+        Vector3 auraLocalPos = new Vector3(0.4f, 1.25f, 0.59f);
+
         if (auraPrefab != null)
-            phaseAuraInstance = Instantiate(auraPrefab, transform.position, Quaternion.identity, transform);
+        {
+            phaseAuraInstance = Instantiate(auraPrefab, transform);
+
+            phaseAuraInstance.transform.localPosition = auraLocalPos;
+            phaseAuraInstance.transform.localRotation = Quaternion.identity;
+        }
+    }
+
+    public void Defeated()
+    {
+        rb.velocity = Vector2.zero;
+        animator.SetTrigger(defeatTrigger);
+        Destroy(phaseAuraInstance);
+        dialogueCollider.enabled = true;
+        this.GetComponent<NPCInteractable>().currentDialogue = dialogueData;
+        gameObject.tag = "Untagged";
+        this.enabled = false;
     }
 
     private void FacePlayer()

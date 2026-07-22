@@ -18,4 +18,17 @@ public class Room : MonoBehaviour
             enemy.roomConected = this;
         }
     }
+
+    public void Refresh()
+    {
+        enemiesInRoom.Clear();
+
+        Enemy[] enemies = GetComponentsInChildren<Enemy>();
+
+        foreach (Enemy enemy in enemies)
+        {
+            enemiesInRoom.Add(enemy);
+            enemy.roomConected = this;
+        }
+    }
 }

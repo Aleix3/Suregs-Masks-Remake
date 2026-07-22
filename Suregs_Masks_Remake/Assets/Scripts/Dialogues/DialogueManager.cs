@@ -253,6 +253,23 @@ public class DialogueManager : MonoBehaviour
 
             case SentenceType.CombatTutorial:
                 break;
+            case SentenceType.Destroy:
+                Destroy(currentNPC.gameObject);
+                break;
+            case SentenceType.Ending:
+            {
+                if (sentence.id == "1")
+                {
+                    StartCoroutine(ChangeScene("BadEnding"));
+                }
+                else
+                {
+                    StartCoroutine(ChangeScene("GoodEnding"));
+
+                }
+                break;
+            }
+                
         }
         lastSentenceType = sentence.type;
     }
@@ -513,5 +530,13 @@ public class DialogueManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    IEnumerator ChangeScene(string scene)
+    {
+        dialoguePanel.SetActive(false);
+        yield return StartCoroutine(CameraManager.Instance.Fade(1, 2));
+
+        SceneManager.LoadScene(scene);
     }
 }

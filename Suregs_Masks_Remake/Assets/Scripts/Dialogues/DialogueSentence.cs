@@ -7,7 +7,9 @@ public enum SentenceType
     Choice,
     Commerce,
     QuestUpdate,
-    CombatTutorial
+    CombatTutorial,
+    Destroy,
+    Ending
 }
 
 [System.Serializable]

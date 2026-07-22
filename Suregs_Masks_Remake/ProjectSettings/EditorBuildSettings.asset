@@ -47,4 +47,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeons/Dungeon 8.unity
     guid: 8aa1e1847faa0d24896d2c52916e7e1b
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: c35890867f56fc943be66f4c04b1065b
+  - enabled: 1
+    path: Assets/Scenes/BadEnding.unity
+    guid: 682aa5efdc6da364b98292f9f802bec6
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 963c18faa8f7c7d40971a8011478d980
   m_configObjects: {}

@@ -1,15 +1,6 @@
 using UnityEngine;
 
 
-
-/// Cada máscara tiene 4 ramas de 4 mejoras.
-/// Máximo 8 mejoras activas por máscara.
-/// 
-/// Uso:
-///   - Al matar un enemigo: MaskTreeManager.Instance.AddPoints(maskIndex, amount)
-///   - Al comprar una mejora: MaskTreeManager.Instance.TryUpgrade(maskIndex, branchIndex)
-///   - Para consultar estado: MaskTreeManager.Instance.GetState(maskIndex)
-
 public class MaskTreeManager : MonoBehaviour
 {
     public static MaskTreeManager Instance { get; private set; }

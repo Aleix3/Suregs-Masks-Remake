@@ -26,13 +26,19 @@ public class CameraManager : MonoBehaviour
         }
 
         Instance = this;
-
-        confiner = virtualCamera.GetComponent<CinemachineConfiner2D>();
+        if (virtualCamera != null)
+        {
+            confiner = virtualCamera.GetComponent<CinemachineConfiner2D>();
+        }
     }
 
     void Start()
     {
-        player = Player.Instance.transform;
+        if (player != null)
+        {
+            player = Player.Instance.transform;
+        }
+        
     }
 
     public void TransitionToRoom(RoomCameraData room, Vector3 teleportPosition)
@@ -42,7 +48,7 @@ public class CameraManager : MonoBehaviour
 
     private IEnumerator RoomRoutine(RoomCameraData room, Vector3 teleportPosition)
     {
-        yield return Fade(1);
+        yield return Fade(1, fadeDuration);
 
 
         player.position = teleportPosition;
@@ -60,20 +66,20 @@ public class CameraManager : MonoBehaviour
 
         virtualCamera.m_Lens.OrthographicSize = room.orthographicSize;
 
-        yield return Fade(0);
+        yield return Fade(0, fadeDuration);
     }
 
-    public IEnumerator Fade(float targetAlpha)
+    public IEnumerator Fade(float targetAlpha, float fadeTime = 0.5f)
     {
         if (fadeImage == null) yield break;
 
         float startAlpha = fadeImage.color.a;
         float t = 0;
 
-        while (t < fadeDuration)
+        while (t < fadeTime)
         {
             t += Time.deltaTime;
-            float lerp = t / fadeDuration;
+            float lerp = t / fadeTime;
 
             Color c = fadeImage.color;
             c.a = Mathf.Lerp(startAlpha, targetAlpha, lerp);

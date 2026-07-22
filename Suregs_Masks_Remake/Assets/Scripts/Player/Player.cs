@@ -143,8 +143,8 @@ public class Player : MonoBehaviour
 
         canMove = true;
 
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
+        //PlayerPrefs.DeleteAll();
+        //PlayerPrefs.Save();
     }
 
     void Update()

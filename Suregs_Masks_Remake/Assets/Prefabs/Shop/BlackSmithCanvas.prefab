@@ -222,7 +222,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_TargetDisplay: 0
 --- !u!114 &8000907034988169818
 MonoBehaviour:
@@ -2484,9 +2484,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7362617488350423816}
-        m_TargetAssemblyTypeName: Merchant, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 8352863947331540469}
+        m_TargetAssemblyTypeName: BlacksmithShop, Assembly-CSharp
+        m_MethodName: CancelTrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3008,6 +3008,7 @@ MonoBehaviour:
   - {fileID: 6006432302579707515}
   swordImage: {fileID: 5969879637305147100}
   armorImage: {fileID: 7141446811789132508}
+  shopUI: {fileID: 5013859604373056684}
   currentMode: 0
 --- !u!1 &8133666823490591963
 GameObject:
@@ -3413,7 +3414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverVisual: {fileID: 270604605213121798}
-  itemType: 36
+  itemType: 38
   canBeSelected: 1
   isSelected: 0
   isSelectedPermanent: 0
@@ -3720,7 +3721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverVisual: {fileID: 3603900718067523846}
-  itemType: 27
+  itemType: 28
   canBeSelected: 1
   isSelected: 0
   isSelectedPermanent: 0
