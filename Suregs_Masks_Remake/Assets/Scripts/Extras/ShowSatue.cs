@@ -12,6 +12,7 @@ public class ShowStatue : MonoBehaviour, IInteractable
 
     void Start()
     {
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.townMusic);
         statueCanvas.SetActive(false);
     }
 
@@ -29,8 +30,7 @@ public class ShowStatue : MonoBehaviour, IInteractable
 
         statueCanvas.SetActive(true);
 
-        if (LockPlayerMovement)
-            player.canMove = false;
+        Player.Instance.LockMovement(this);
     }
 
     public void StopInteract(Player player)
@@ -39,8 +39,7 @@ public class ShowStatue : MonoBehaviour, IInteractable
 
         statueCanvas.SetActive(false);
 
-        if (LockPlayerMovement)
-            player.canMove = true;
+        Player.Instance.UnlockMovement(this);
     }
 
     private void Update()

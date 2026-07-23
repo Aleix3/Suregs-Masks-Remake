@@ -13,9 +13,14 @@ public class SplashFadeManager : MonoBehaviour
 
     public string nextSceneName = "MainMenu";
 
+    public AudioClip introClip;
+
     void Start()
     {
-
+        if(nextSceneName == "MainMenu")
+        {
+            AudioManager.Instance.PlaySFX(introClip);
+        }
         image1.alpha = 0f;
         image2.alpha = 0f;
 

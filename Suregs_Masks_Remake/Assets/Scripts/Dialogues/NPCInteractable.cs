@@ -8,6 +8,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     public bool LockPlayerMovement => true;
     private bool alreadyGivenAmatist = false;
 
+
     public void Interact(Player player)
     {
         if (currentDialogue == null || currentDialogue.sentences.Count == 0)
@@ -15,7 +16,6 @@ public class NPCInteractable : MonoBehaviour, IInteractable
             
             return;
         }
-
         if (currentDialogue.name == "Zhyuka" && InventoryManager.instance.HasItem(ItemType.AMATISTA) && !alreadyGivenAmatist)
         {
             if (DialogueManager.Instance != null)
@@ -50,8 +50,5 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     public void StopInteract(Player player)
     {
         //DialogueManager.Instance.EndDialogue();
-
-        if (LockPlayerMovement)
-            player.canMove = true;
     }
 }

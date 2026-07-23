@@ -1,17 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
 
 public class SettingsManager : MonoBehaviour
 {
-    [Header("Audio")]
-    [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private string musicMixerParam = "MusicVolume";
-    [SerializeField] private string sfxMixerParam = "SFXVolume";
-
     [Header("Referencias UI")]
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
@@ -25,6 +19,9 @@ public class SettingsManager : MonoBehaviour
     private const string SFX_KEY = "sfxVolume";
     private const string FULLSCREEN_KEY = "fullscreen";
     private const string VSYNC_KEY = "vsync";
+
+    [Header("SFX")]
+    public AudioClip changeSliderClip;
 
     private void Start()
     {
@@ -57,24 +54,28 @@ public class SettingsManager : MonoBehaviour
 
     public void SetMusicVolume(float value)
     {
+        AudioManager.Instance.PlaySFX(changeSliderClip);
         ApplyMusicVolume(value);
         PlayerPrefs.SetFloat(MUSIC_KEY, value);
     }
 
     public void SetSfxVolume(float value)
     {
+        AudioManager.Instance.PlaySFX(changeSliderClip);
         ApplySfxVolume(value);
         PlayerPrefs.SetFloat(SFX_KEY, value);
     }
 
     public void SetFullscreen(bool value)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         ApplyFullscreen(value);
         PlayerPrefs.SetInt(FULLSCREEN_KEY, value ? 1 : 0);
     }
 
     public void SetVSync(bool value)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         ApplyVSync(value);
         PlayerPrefs.SetInt(VSYNC_KEY, value ? 1 : 0);
     }
@@ -82,6 +83,7 @@ public class SettingsManager : MonoBehaviour
     // ---------- VOLVER AL MENÚ (solo botón del panel InGame) ----------
     public void OnVolverAlMenu()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         StartCoroutine(FadeAndLoadMenu());
     }
 
@@ -96,17 +98,24 @@ public class SettingsManager : MonoBehaviour
 
     private void ApplyMusicVolume(float value)
     {
-        if (audioMixer == null) return;
-        // Los sliders van de 0 a 1, el Audio Mixer trabaja en decibelios (logarítmico)
-        float db = value <= 0.0001f ? -80f : Mathf.Log10(value) * 20f;
-        audioMixer.SetFloat(musicMixerParam, db);
+        if (AudioManager.Instance == null)
+        {
+            Debug.LogWarning("[SettingsManager] AudioManager.Instance es null todavía.");
+            return;
+        }
+
+        AudioManager.Instance.SetMusicVolume(value);
     }
 
     private void ApplySfxVolume(float value)
     {
-        if (audioMixer == null) return;
-        float db = value <= 0.0001f ? -80f : Mathf.Log10(value) * 20f;
-        audioMixer.SetFloat(sfxMixerParam, db);
+        if (AudioManager.Instance == null)
+        {
+            Debug.LogWarning("[SettingsManager] AudioManager.Instance es null todavía.");
+            return;
+        }
+
+        AudioManager.Instance.SetSFXVolume(value);
     }
 
     private void ApplyFullscreen(bool value)

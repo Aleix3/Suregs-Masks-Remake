@@ -65,7 +65,7 @@ public class PotionShop : MonoBehaviour, IShop
         int tradeIndex = tradeIndexFake - 1;
         if (tradeIndex < 0 || tradeIndex >= trades.Count)
             return;
-
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         PotionTrade trade = trades[tradeIndex];
 
 
@@ -132,7 +132,7 @@ public class PotionShop : MonoBehaviour, IShop
         int tradeIndex = tradeIndexFake - 1;
         if (tradeIndex < 0 || tradeIndex >= trades.Count)
             return;
-
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         PotionTrade trade = trades[tradeIndex];
 
         int effectiveGoldCost = GetEffectiveGoldCost(trade);
@@ -193,6 +193,7 @@ public class PotionShop : MonoBehaviour, IShop
 
     public void ConfirmBuy()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         foreach (var entry in pendingBuy)
         {
             PotionTrade trade = trades[entry.Key];
@@ -232,6 +233,7 @@ public class PotionShop : MonoBehaviour, IShop
 
     public void CancelTrade()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         for (int i = 0; i < shopUI.buttons.Count; i++)
         {
             if (shopUI.buttons[i].isSelected)

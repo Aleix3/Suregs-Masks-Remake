@@ -4516,11 +4516,15 @@ PrefabInstance:
     - target: {fileID: 82242616205052847, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: elevatorTriggerScript
       value: 
-      objectReference: {fileID: 1089239799}
+      objectReference: {fileID: 468376975}
+    - target: {fileID: 109576428331969307, guid: c508640867ed5cd4ea189771230d869c, type: 3}
+      propertyPath: elevatorTriggerScript
+      value: 
+      objectReference: {fileID: 468376975}
     - target: {fileID: 1222058255232223374, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: elevatorTriggerScript
       value: 
-      objectReference: {fileID: 1089239799}
+      objectReference: {fileID: 468376975}
     - target: {fileID: 1565150614686648849, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4604,27 +4608,31 @@ PrefabInstance:
     - target: {fileID: 1831061980863622121, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: elevatorTriggerScript
       value: 
-      objectReference: {fileID: 1089239799}
+      objectReference: {fileID: 468376975}
     - target: {fileID: 4496234491416447114, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: elevatorTriggerScript
       value: 
-      objectReference: {fileID: 1089239799}
+      objectReference: {fileID: 468376975}
     - target: {fileID: 4997777215137795262, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: elevatorTriggerScript
       value: 
-      objectReference: {fileID: 1089239799}
+      objectReference: {fileID: 468376975}
+    - target: {fileID: 5315524085048955360, guid: c508640867ed5cd4ea189771230d869c, type: 3}
+      propertyPath: elevatorTriggerScript
+      value: 
+      objectReference: {fileID: 468376975}
     - target: {fileID: 6088921337891462818, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: elevatorTriggerScript
       value: 
-      objectReference: {fileID: 1089239799}
+      objectReference: {fileID: 468376975}
     - target: {fileID: 6112919016233051383, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: elevatorTriggerScript
       value: 
-      objectReference: {fileID: 1089239799}
+      objectReference: {fileID: 468376975}
     - target: {fileID: 8624650075572203736, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: elevatorTriggerScript
       value: 
-      objectReference: {fileID: 1089239799}
+      objectReference: {fileID: 468376975}
     - target: {fileID: 8897614914483060951, guid: c508640867ed5cd4ea189771230d869c, type: 3}
       propertyPath: m_Name
       value: ElevatorCanvas
@@ -4925,6 +4933,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbff7d90cb0d81a4885864b33a14e021, type: 3}
+--- !u!114 &468376975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3105271343402747512, guid: bbff7d90cb0d81a4885864b33a14e021, type: 3}
+  m_PrefabInstance: {fileID: 468376974}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45895552fcb0ed946b4d1f826af391c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &483403711
 GameObject:
   m_ObjectHideFlags: 0
@@ -11042,17 +11061,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbff7d90cb0d81a4885864b33a14e021, type: 3}
---- !u!114 &1089239799 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3105271343402747512, guid: bbff7d90cb0d81a4885864b33a14e021, type: 3}
-  m_PrefabInstance: {fileID: 1089239798}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45895552fcb0ed946b4d1f826af391c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1094686442 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2252489116439606766, guid: 270f9ab3f19f61f438494c58446b227e, type: 3}
@@ -16497,7 +16505,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: f7ad4e226ef42b44eb78a6dd60b9a2f3, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 59ff4447a40949f49a7f890b84f9d50e, type: 2}
 --- !u!4 &1501799851
 Transform:
   m_ObjectHideFlags: 0

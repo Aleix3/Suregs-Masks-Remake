@@ -29,6 +29,11 @@ public class BlacksmithShop : MonoBehaviour
 
     public BlacksmithMode currentMode;
 
+    private void Start()
+    {
+        
+    }
+
     public void Interact()
     {
         canvas.SetActive(true);
@@ -79,6 +84,7 @@ public class BlacksmithShop : MonoBehaviour
     // 🔹 Lógica para seleccionar un trade
     public void SelectCurrentTrade()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         BlackSmithTrade trade = GetCurrentTrade();
 
         if (trade == null)
@@ -140,6 +146,7 @@ public class BlacksmithShop : MonoBehaviour
 
     public void CancelTrade()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         for (int i = 0; i < shopUI.buttons.Count; i++)
         {
             if (shopUI.buttons[i].isSelected)
@@ -155,6 +162,7 @@ public class BlacksmithShop : MonoBehaviour
     // 🔹 Confirmar todas las compras
     public void ConfirmBuy()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         foreach (var entry in pendingBuy)
         {
             BlackSmithTrade trade = trades[entry.Key];

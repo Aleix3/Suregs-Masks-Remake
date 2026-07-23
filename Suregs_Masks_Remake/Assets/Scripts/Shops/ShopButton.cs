@@ -58,6 +58,11 @@ public class ShopButton : MonoBehaviour
     }
     public void SetHover(bool value)
     {
+        if(value == true)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.selectClip);
+        }
+        
         if (hoverVisual != null)
             hoverVisual.SetActive(value);
     }

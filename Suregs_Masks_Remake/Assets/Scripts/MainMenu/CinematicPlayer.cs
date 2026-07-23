@@ -27,6 +27,8 @@ public class CinematicPlayer : MonoBehaviour
     private bool isSkipping = false;
     private Coroutine playbackCoroutine;
 
+    public AudioClip cinematicSFX;
+
     void Start()
     {
         // Carga y ordena numéricamente por nombre tipo "Cinematic X_Y" (grupo X, índice Y)
@@ -97,6 +99,7 @@ public class CinematicPlayer : MonoBehaviour
 
     IEnumerator PlayCinematic()
     {
+        AudioManager.Instance.PlaySFX(cinematicSFX);
         for (int i = 0; i < cinematicImages.Length; i++)
         {
             displayImage.sprite = cinematicImages[i];
@@ -124,7 +127,7 @@ public class CinematicPlayer : MonoBehaviour
     {
         yield return StartCoroutine(CameraManager.Instance.Fade(1));
 
-
+        
         SceneManager.LoadScene(sceneName);
     }
 }

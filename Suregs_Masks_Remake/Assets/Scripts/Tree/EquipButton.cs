@@ -57,6 +57,7 @@ public class EquipButton : MonoBehaviour,
     // ── Navegación WASD ───────────────────────────────────────────
     public void OnSelect(BaseEventData e)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.selectClip);
         hover?.SetActive(true);
     }
 
@@ -68,6 +69,7 @@ public class EquipButton : MonoBehaviour,
     // E → abrir picker
     public void OnSubmit(BaseEventData e)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         if (isPrimary) _equipUI.OpenForPrimary();
         else _equipUI.OpenForSecondary();
     }

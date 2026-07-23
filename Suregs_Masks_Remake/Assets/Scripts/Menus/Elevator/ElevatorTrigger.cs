@@ -12,9 +12,17 @@ public class ElevatorTrigger : MonoBehaviour
 
     public int dungeonId;
 
+    private void Start()
+    {
+                AudioManager.Instance.PlayMusic(AudioManager.Instance.dungeonMusic);
+    }
+
     private void Update()
     {
         if (!playerInside || DialogueManager.Instance.simpleMessageActive)
+            return;
+
+        if (MenuManager.Instance != null && MenuManager.Instance.IsMenuOpen)
             return;
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Fire1"))
@@ -62,7 +70,7 @@ public class ElevatorTrigger : MonoBehaviour
                 alreadyUnlocked = true;
             }
 
-            Player.Instance.canMove = false;
+            Player.Instance.LockMovement(this);
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -72,7 +80,7 @@ public class ElevatorTrigger : MonoBehaviour
 
     public void CloseCanvas()
     {
-        Player.Instance.canMove = true;
+        Player.Instance.UnlockMovement(this);
         elevatorCanvas.SetActive(false);
     }
 

@@ -17,6 +17,7 @@ public class SimpleFadeToCredits : MonoBehaviour
 
     private void Start()
     {
+        
         image.alpha = 0f;
         StartCoroutine(PlaySequence());
     }
@@ -28,7 +29,7 @@ public class SimpleFadeToCredits : MonoBehaviour
         yield return new WaitForSeconds(holdDuration);
 
         yield return StartCoroutine(Fade(1f, 0f, fadeOutDuration));
-
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.creditsMusic);
         SceneManager.LoadScene(nextSceneName);
     }
 

@@ -116,7 +116,7 @@ public class DialogueManager : MonoBehaviour
         currentSentences = flowStack.Peek();
         blockAdvanceInput = true;
         DisplayNextSentence();
-        Player.Instance.canMove = false;
+        Player.Instance.LockMovement(this);
     }
 
     private Queue<RuntimeSentence> BuildMainFlow(DialogueData dialogue)
@@ -175,6 +175,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         if (lastSentenceType == SentenceType.CombatTutorial)
         {
             triggerTuorialCombat.enabled = true;
@@ -260,11 +261,13 @@ public class DialogueManager : MonoBehaviour
             {
                 if (sentence.id == "1")
                 {
-                    StartCoroutine(ChangeScene("BadEnding"));
+                        AudioManager.Instance.PlayMusic(AudioManager.Instance.badEndingMusic);
+                        StartCoroutine(ChangeScene("BadEnding"));
                 }
                 else
                 {
-                    StartCoroutine(ChangeScene("GoodEnding"));
+                        AudioManager.Instance.PlayMusic(AudioManager.Instance.goodEndingMusic);
+                        StartCoroutine(ChangeScene("GoodEnding"));
 
                 }
                 break;
@@ -356,7 +359,7 @@ public class DialogueManager : MonoBehaviour
 
         currentNPC = null;
         currentDialogue = null;
-        Player.Instance.canMove = true;
+        Player.Instance.UnlockMovement(this);
         yield return new WaitForSeconds(0.3f);
 
         UIState.IsUIOpen = false;
@@ -365,6 +368,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        if (MenuManager.Instance != null && MenuManager.Instance.IsMenuOpen)
+            return;
         if (Input.GetKeyDown(KeyCode.H))
         {
             GameProgress.Advance();
@@ -436,12 +441,14 @@ public class DialogueManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
             optionButtons[currentOptionIndex].Select();
         }
     }
 
     private void UpdateOptionHover()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.selectClip);
         for (int i = 0; i < optionButtons.Count; i++)
         {
             optionButtons[i].SetHover(i == currentOptionIndex);
@@ -462,7 +469,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowSimpleMessage(string speaker, string text, Sprite portrait = null, bool comesFromInput = false)
     {
-
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         if (dialogueActive || simpleMessageActive) return;
 
         simpleMessageActive = true;
@@ -480,18 +487,19 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = text;
 
         if (Player.Instance != null)
-            Player.Instance.canMove = false;
+            Player.Instance.LockMovement(this);
     }
 
     private void CloseSimpleMessage()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         simpleMessageActive = false;
         simpleMessageBlockInput = false;
         dialoguePanel.SetActive(false);
         UIState.IsUIOpen = false;
 
         if (Player.Instance != null)
-            Player.Instance.canMove = true;
+            Player.Instance.UnlockMovement(this);
     }
 
     public void FindShops()

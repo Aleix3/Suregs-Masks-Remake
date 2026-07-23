@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5453084547768178447}
   - component: {fileID: 3916872257388660138}
   - component: {fileID: 7946806721389090034}
+  - component: {fileID: 6272343242678336694}
   m_Layer: 5
   m_Name: FullScreenToggle
   m_TagString: Untagged
@@ -114,6 +115,18 @@ MonoBehaviour:
   uncheckedSelectedSprite: {fileID: 21300000, guid: 15efd04ea2711d548a27e74f810e031e, type: 3}
   checkedSprite: {fileID: 21300000, guid: f2ff729c2c10ef94095d60d4a178d628, type: 3}
   checkedSelectedSprite: {fileID: 21300000, guid: 408ca606af262a94392a392a3e12797e, type: 3}
+--- !u!114 &6272343242678336694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32153675256540974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12db631090c762a43a7c2015912c40d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &255208148669001310
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 48371183956057992}
   - component: {fileID: 3728765372353017326}
+  - component: {fileID: 766727181772921753}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -216,6 +230,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &766727181772921753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255208148669001310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12db631090c762a43a7c2015912c40d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &277868450790021046
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9193406759075005190}
   - component: {fileID: 6814675065312706697}
+  - component: {fileID: 6641765506258030855}
   m_Layer: 5
   m_Name: SFXSlider
   m_TagString: Untagged
@@ -463,6 +490,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6641765506258030855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448895514635696981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12db631090c762a43a7c2015912c40d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2406273667066565041
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +940,7 @@ GameObject:
   - component: {fileID: 3329366542574162102}
   - component: {fileID: 4640760137691056610}
   - component: {fileID: 7651538336614426048}
+  - component: {fileID: 6037412543944004462}
   m_Layer: 5
   m_Name: VSYNCToggle
   m_TagString: Untagged
@@ -1004,6 +1044,18 @@ MonoBehaviour:
   uncheckedSelectedSprite: {fileID: 21300000, guid: 15efd04ea2711d548a27e74f810e031e, type: 3}
   checkedSprite: {fileID: 21300000, guid: f2ff729c2c10ef94095d60d4a178d628, type: 3}
   checkedSelectedSprite: {fileID: 21300000, guid: 408ca606af262a94392a392a3e12797e, type: 3}
+--- !u!114 &6037412543944004462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4688812409664490555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12db631090c762a43a7c2015912c40d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5300626279600072740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,14 +1100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021132ef0b6dc9047a58bcb52109d412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 9eb12ba50c8416444a016664c3474eec, type: 2}
-  musicMixerParam: MusicVolume
-  sfxMixerParam: SFXVolume
   musicSlider: {fileID: 3728765372353017326}
   sfxSlider: {fileID: 6814675065312706697}
   fullscreenToggle: {fileID: 3916872257388660138}
   vsyncToggle: {fileID: 4640760137691056610}
   mainMenuScene: MainMenu
+  changeSliderClip: {fileID: 0}
 --- !u!1 &5567068155574200663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,6 +1818,7 @@ GameObject:
   - component: {fileID: 9148487637303288969}
   - component: {fileID: 5147222563639409601}
   - component: {fileID: 3737766897810098550}
+  - component: {fileID: 1285289453400914035}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -1904,3 +1955,15 @@ MonoBehaviour:
   label: {fileID: 8082907869273141337}
   normalColor: {r: 0.20392157, g: 0.09019608, b: 0.015686275, a: 1}
   highlightedColor: {r: 0.6117647, g: 0, b: 0.7254902, a: 1}
+--- !u!114 &1285289453400914035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209446063000987201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12db631090c762a43a7c2015912c40d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

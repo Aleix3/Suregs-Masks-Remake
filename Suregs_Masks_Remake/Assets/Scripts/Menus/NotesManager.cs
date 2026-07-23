@@ -74,6 +74,11 @@ public class NotesManager : MonoBehaviour
         if (!notesCanvas.gameObject.activeSelf) return;
         if (notes.Count == 0) return;
 
+        if (MenuManager.Instance.currentIndex != 2)
+        {
+            return;
+        }
+
         if (!firstTime)
         {
             if (notes.Count > 0)
@@ -114,6 +119,7 @@ public class NotesManager : MonoBehaviour
 
     private void MoveHoverTo(int index)
     {
+        AudioManager.Instance?.PlaySFX(AudioManager.Instance.selectItemClip);
         Transform slot = notes[index].transform;
         hover.transform.SetParent(slot, false);
         hover.transform.localPosition = Vector3.zero;
@@ -144,6 +150,7 @@ public class NotesManager : MonoBehaviour
 
     public void OpenNote(int id)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         closeUpNote.gameObject.SetActive(true);
         noteDesc.text = notes[id].description;
 

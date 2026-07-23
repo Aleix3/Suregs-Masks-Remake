@@ -74,7 +74,10 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-
+        if (MenuManager.Instance.currentIndex != 0)
+        {
+            return;
+        }
 
 
         if (inventoryCanvas.gameObject.activeSelf == false) return;
@@ -119,6 +122,7 @@ public class InventoryManager : MonoBehaviour
 
     private void MoveHoverTo(int index)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.changeInventoryWindowClip);
         Transform slot = inventorySlots.transform.GetChild(index);
         hover.transform.SetParent(slot, false);
         hover.transform.localPosition = Vector3.zero;

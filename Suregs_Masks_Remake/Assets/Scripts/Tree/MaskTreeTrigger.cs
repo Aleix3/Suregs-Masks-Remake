@@ -14,16 +14,18 @@ public class MaskTree : MonoBehaviour
     {
         if (!playerInside)
             return;
+        if (MenuManager.Instance != null && MenuManager.Instance.IsMenuOpen)
+            return;
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Fire1"))
         {
             treeCanvas.SetActive(true);
-            
-            Player.Instance.canMove = false;
+
+            Player.Instance.LockMovement(this);
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Player.Instance.canMove = true;
+            Player.Instance.UnlockMovement(this);
             maskTreeUi.ClearHovers();
             treeCanvas.SetActive(false);
         }

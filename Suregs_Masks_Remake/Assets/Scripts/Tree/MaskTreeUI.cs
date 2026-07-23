@@ -62,10 +62,6 @@ public class MaskTreeUI : MonoBehaviour
 
     private void Start()
     {
-        // Los clicks/submit los gestionan UpgradeNodeButton y MaskButton
-        // directamente — no añadir listeners aquí para evitar doble llamada
-
-        // Primer refresh aquí — MaskManager ya ha cargado desbloqueos en su Awake
         _tm = MaskTreeManager.Instance;
         _tm.OnTreeChanged += _ => RefreshGrid();
         InitialRefresh();
@@ -147,6 +143,7 @@ public class MaskTreeUI : MonoBehaviour
 
     public void BuyUpgrade(int nodeIndex)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         int branch = nodeIndex / 4;
         int levelClicked = nodeIndex % 4;           // 0-3
         int currentLevel = _tm.GetLevel(_activeMask, branch);  // niveles comprados (0-4)
@@ -279,6 +276,7 @@ public class MaskTreeUI : MonoBehaviour
 
     public void OnNodeSelected(int nodeIndex)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.selectClip);
         bool unlocked = _tm.masks[_activeMask]?.data?.isUnlocked ?? false;
         if (!unlocked) return;
 
@@ -292,6 +290,7 @@ public class MaskTreeUI : MonoBehaviour
 
     public void OnMaskSelected(int maskIndex)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.selectClip);
         bool unlocked = _tm?.masks[maskIndex]?.data?.isUnlocked ?? false;
         if (!unlocked) return;
 

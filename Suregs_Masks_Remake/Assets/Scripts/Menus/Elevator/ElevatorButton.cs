@@ -43,6 +43,10 @@ public class ElevatorButton : MonoBehaviour
         if (SceneManager.GetActiveScene().name == sceneName)
             return;
 
+        if (MenuManager.Instance != null && MenuManager.Instance.IsMenuOpen)
+            return;
+
+
         if (isDungeonEntrance
             && QuestManager.Instance != null
             && !QuestManager.Instance.CurrentQuestAllowsDungeonEntry())
@@ -56,7 +60,7 @@ public class ElevatorButton : MonoBehaviour
             return;
         }
 
-        Player.Instance.canMove = true;
+        
         if (sceneName == "Town")
         {
             if (Player.Instance.isFacingLeft)
@@ -68,6 +72,7 @@ public class ElevatorButton : MonoBehaviour
                 Player.Instance.transform.localScale = new Vector3(-0.55f, 0.55f, 0.55f);
             }
         }
+        
         StartCoroutine(FadeAndLoadScene(sceneName));
     }
 
@@ -75,7 +80,7 @@ public class ElevatorButton : MonoBehaviour
     {
         yield return StartCoroutine(CameraManager.Instance.Fade(1));
 
-
+        elevatorTriggerScript.CloseCanvas();
         SceneManager.LoadScene(sceneNamee);
     }
 }

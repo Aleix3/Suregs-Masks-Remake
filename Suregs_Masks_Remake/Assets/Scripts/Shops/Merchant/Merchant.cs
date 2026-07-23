@@ -36,6 +36,7 @@ public class Merchant : MonoBehaviour, IShop
     {
         if (!GetTradeData(num, out ItemType type, out int goldValue))
             return;
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
 
         int currentQty = InventoryManager.instance.GetQuantity(type);
         int alreadyPending = pendingSell.ContainsKey(type) ? pendingSell[type] : 0;
@@ -78,7 +79,7 @@ public class Merchant : MonoBehaviour, IShop
     {
         if (!GetTradeData(num, out ItemType type, out int goldValue))
             return;
-
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         int currentQty = InventoryManager.instance.GetQuantity(type);
         int alreadyPending = pendingSell.ContainsKey(type) ? pendingSell[type] : 0;
 
@@ -122,6 +123,7 @@ public class Merchant : MonoBehaviour, IShop
 
     public void ConfirmBuy()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         foreach (var entry in pendingSell)
         {
             ItemType type = entry.Key;
@@ -147,6 +149,7 @@ public class Merchant : MonoBehaviour, IShop
 
     public void CancelTrade()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         pendingSell.Clear();
         pendingGold = 0;
 

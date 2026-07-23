@@ -54,7 +54,7 @@ public class ElevatorScript : MonoBehaviour
 
         if (input == lastMoveInput)
             return;
-
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.selectClip);
         lastMoveInput = input;
 
         if (input.x > 0)
@@ -87,6 +87,7 @@ public class ElevatorScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) /*|| Input.GetButtonDown("Fire1")*/)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
             current.Press();
         }
     }

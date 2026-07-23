@@ -32,7 +32,29 @@ public class Player : MonoBehaviour
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
-    public bool canMove = true;
+
+    private readonly HashSet<object> movementLocks = new HashSet<object>();
+
+    public bool canMove => movementLocks.Count == 0;
+
+
+    public void LockMovement(object source)
+    {
+        if (source == null) return;
+        movementLocks.Add(source);
+    }
+
+
+    public void UnlockMovement(object source)
+    {
+        if (source == null) return;
+        movementLocks.Remove(source);
+    }
+
+    public void ClearAllMovementLocks()
+    {
+        movementLocks.Clear();
+    }
 
     [SerializeField] public Room actualRoom;
 
@@ -141,7 +163,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         health = MaxHealth;
 
-        canMove = true;
+        ClearAllMovementLocks(); // por si acaso venimos de una recarga de escena con locks colgados
 
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.Save();
@@ -154,7 +176,7 @@ public class Player : MonoBehaviour
             rb.velocity = Vector3.zero;
             return;
         }
-            
+
         UpdateKnockback();
         UpdatePlayerMovement();
         UpdateAttack();
@@ -376,7 +398,7 @@ public class Player : MonoBehaviour
             return;
         health -= damage;
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Die();
         }
@@ -599,6 +621,6 @@ public class Player : MonoBehaviour
         Heal(MaxHealth);
         isDead = false;
         SceneManager.LoadScene("Town");
-        
+
     }
 }

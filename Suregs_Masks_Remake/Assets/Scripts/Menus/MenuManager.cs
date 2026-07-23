@@ -1,26 +1,35 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class MenuManager : MonoBehaviour
 {
+    // Otros scripts de menu pueden consultar MenuManager.Instance.IsMenuOpen
+    // para saber si el menu principal esta abierto y, si lo esta, no dejar
+    // que se abra ni procese input ningun otro menu.
+    public static MenuManager Instance { get; private set; }
+
+    public bool IsMenuOpen => activeMenu;
+
     public CanvasGroup[] canvases;
 
     public GameObject[] firstSelectedPerCanvas;
 
-    private int currentIndex = 0;
+    public int currentIndex = 0;
     private bool activeMenu = false;
 
     private EnabledSettings enabledSettings;
 
     void Awake()
     {
+        Instance = this;
         enabledSettings = FindFirstObjectByType<EnabledSettings>();
     }
 
     void Start()
     {
+
         OcultarTodos();
     }
 
@@ -32,28 +41,29 @@ public class MenuManager : MonoBehaviour
 
             if (activeMenu)
             {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.openInventoryClip);
+                Player.Instance.LockMovement(this);
                 currentIndex = 0;
                 MostrarCanvas(currentIndex);
             }
             else
             {
+                Player.Instance.UnlockMovement(this);
                 OcultarTodos();
             }
         }
 
         if (!activeMenu)
         {
-            Player.Instance.canMove = true;
+
             return;
         }
-        else
-        {
-            Player.Instance.canMove = false;
-        }
+
 
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.changeInventoryPageClip);
             currentIndex++;
 
             if (currentIndex >= canvases.Length)
@@ -64,6 +74,7 @@ public class MenuManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.changeInventoryPageClip);
             currentIndex--;
 
             if (currentIndex < 0)
@@ -81,7 +92,7 @@ public class MenuManager : MonoBehaviour
         canvases[index].interactable = true;
         canvases[index].blocksRaycasts = true;
 
-        if(index == 3)
+        if (index == 3)
         {
             enabledSettings.Enable();
         }
@@ -105,7 +116,7 @@ public class MenuManager : MonoBehaviour
             canvas.blocksRaycasts = false;
         }
 
-        // Limpiamos la selección para que no se quede "enganchada" a un
+        // Limpiamos la selecciï¿½n para que no se quede "enganchada" a un
         // elemento de un canvas que ya no es visible.
         EventSystem.current.SetSelectedGameObject(null);
     }

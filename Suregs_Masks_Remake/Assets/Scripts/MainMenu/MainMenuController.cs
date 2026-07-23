@@ -41,6 +41,7 @@ public class MainMenuController : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.mainMenuMusic);
         ActualizarBotonContinuar();
     }
 
@@ -70,6 +71,7 @@ public class MainMenuController : MonoBehaviour
 
     public void OnNuevaPartida()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         if (confirmarNuevaPartidaPopup != null)
             confirmarNuevaPartidaPopup.Show();
         else
@@ -79,6 +81,7 @@ public class MainMenuController : MonoBehaviour
     // Enganchado al botón "Confirmar" DENTRO del popup.
     public void OnConfirmarNuevaPartida()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         if (confirmarNuevaPartidaPopup != null) confirmarNuevaPartidaPopup.Hide();
         StartCoroutine(FadeAndLoadScene(nuevaPartidaScene, borrarProgreso: true));
     }
@@ -86,12 +89,14 @@ public class MainMenuController : MonoBehaviour
     // Enganchado al botón "Cancelar" DENTRO del popup.
     public void OnCancelarNuevaPartida()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         if (confirmarNuevaPartidaPopup != null) confirmarNuevaPartidaPopup.Hide();
     }
 
     // ---------- CONTINUAR ----------
     public void OnContinuar()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         StartCoroutine(FadeAndLoadScene(continuarScene, borrarProgreso: false));
     }
 
@@ -128,6 +133,7 @@ public class MainMenuController : MonoBehaviour
     // ---------- AJUSTES ----------
     public void OnAjustes()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         if (ajustesPanel != null) ajustesPanel.Show();
     }
 
@@ -139,6 +145,7 @@ public class MainMenuController : MonoBehaviour
     // ---------- CONTROLES ----------
     public void OnControles()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         if (controlesImagen != null) controlesImagen.Show();
     }
 
@@ -150,6 +157,7 @@ public class MainMenuController : MonoBehaviour
     // ---------- CREDITOS ----------
     public void OnCreditos()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         if (creditosImagen != null) creditosImagen.Show();
     }
 
