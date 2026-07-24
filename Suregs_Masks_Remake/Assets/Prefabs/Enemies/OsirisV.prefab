@@ -126,6 +126,8 @@ MonoBehaviour:
   roomConected: {fileID: 0}
   attackHitbox: {fileID: 3145757345607632492}
   reviveTime: 2
+  attackClip: {fileID: 8300000, guid: 94961a38ac24f8b4683ba80971d4e0bf, type: 3}
+  dieClip: {fileID: 8300000, guid: ff50f29c0e1becc45b161939ae29e57e, type: 3}
 --- !u!50 &6017077128991380820
 Rigidbody2D:
   serializedVersion: 4

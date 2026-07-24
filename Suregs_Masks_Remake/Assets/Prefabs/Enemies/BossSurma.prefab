@@ -136,14 +136,20 @@ MonoBehaviour:
   explosionDamage: 20
   playerSlowFactor: 0.55
   playerSlowDuration: 3
+  slowVfxPrefab: {fileID: 0}
   speedAfterExplosionHitMultiplier: 1.5
   runningParameter: isRunning
   fastAttackTrigger: FastAttack
   chargedAttackTrigger: ChargedAttack
   tiredTrigger: Tired
   phaseChangeTrigger: ChangePhase
+  phaseChangeStateName: Base Layer.changeFase
   explosionPrefab: {fileID: 4531685987252974836, guid: 7aa9ac1ee76b6d947939c4ad04eab1d0, type: 3}
   explosionSpawnPoint: {fileID: 5942511663553058152}
+  attack1Clip: {fileID: 8300000, guid: df81bd648975a204aa57e204db1b37b8, type: 3}
+  attack2Clip: {fileID: 0}
+  chargedAttackClip: {fileID: 8300000, guid: 26fc299095edf634f8f97e3d5732df76, type: 3}
+  dieClip: {fileID: 8300000, guid: 20df3f711a7f1174297e833d7520aa1e, type: 3}
 --- !u!50 &6017077128991380820
 Rigidbody2D:
   serializedVersion: 4

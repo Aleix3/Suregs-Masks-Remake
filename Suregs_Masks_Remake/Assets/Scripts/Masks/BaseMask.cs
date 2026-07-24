@@ -46,8 +46,8 @@ public abstract class BaseMask : MonoBehaviour
     {
         Player.Instance.UseMaskSkill();
 
-        yield return new WaitForSeconds(1.17f);
-
+        yield return new WaitForSeconds(1f);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.useMaskAbility);
         OnActivate();
 
         if (!ManualCooldown)

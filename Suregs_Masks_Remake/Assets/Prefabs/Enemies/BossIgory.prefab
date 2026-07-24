@@ -179,6 +179,10 @@ MonoBehaviour:
   defeatTrigger: Die
   dialogueCollider: {fileID: 9039107947357745356}
   dialogueData: {fileID: 11400000, guid: 26ed1805fe4fe124cb7a08f15681e609, type: 2}
+  attack1Clip: {fileID: 8300000, guid: bcca2b918ae89a44db51a01587a6a1be, type: 3}
+  attack2Clip: {fileID: 8300000, guid: 325ef90ec0e25c549a02322a11276c3c, type: 3}
+  generateSurgegsClip: {fileID: 8300000, guid: eb694a43aba6c5348bcef0063f751f9e, type: 3}
+  dieClip: {fileID: 8300000, guid: 38732ceac17fb1144a99c1800371ffda, type: 3}
 --- !u!50 &6017077128991380820
 Rigidbody2D:
   serializedVersion: 4

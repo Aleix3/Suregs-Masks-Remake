@@ -178,6 +178,10 @@ MonoBehaviour:
   comboInterval: 1
   waveInterval: 10
   boomerangOffset: {x: 1, y: 0}
+  attack1Clip: {fileID: 8300000, guid: 982d417de13a5d44999653d3cb92b2cf, type: 3}
+  attack2Clip: {fileID: 8300000, guid: d3ace50aa677b604baa6c9e4e0734a6a, type: 3}
+  boomerangClip: {fileID: 8300000, guid: 949e4b02079e2a941bed8af8e9eb3f38, type: 3}
+  dieClip: {fileID: 8300000, guid: 95cb8556de2e6404ca885bffffdc5083, type: 3}
 --- !u!95 &3055101950449712070
 Animator:
   serializedVersion: 5

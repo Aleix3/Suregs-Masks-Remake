@@ -130,6 +130,8 @@ MonoBehaviour:
   jumpSpeed: 2.05
   stunDurationAfterJump: 3
   attackHitbox: {fileID: 4137307173460566450}
+  attackClip: {fileID: 8300000, guid: 8a78cdb8286259f4b8d6db32910f107f, type: 3}
+  dieClip: {fileID: 8300000, guid: 750835f53c5866847b2e5932c2591cf7, type: 3}
 --- !u!50 &6017077128991380820
 Rigidbody2D:
   serializedVersion: 4

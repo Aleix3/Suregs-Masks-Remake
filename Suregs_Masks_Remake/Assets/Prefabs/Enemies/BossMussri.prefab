@@ -206,6 +206,7 @@ MonoBehaviour:
   shootPoint: {fileID: 4929813690763042983}
   phase2HealthPercent: 0.4
   sr: {fileID: 7418335765610216636}
+  dashClip: {fileID: 8300000, guid: 0cf95d395b59a084c9c0c869800cd9af, type: 3}
 --- !u!58 &5931411963363280205
 CircleCollider2D:
   m_ObjectHideFlags: 0

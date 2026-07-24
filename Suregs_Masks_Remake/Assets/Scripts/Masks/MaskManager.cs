@@ -156,7 +156,7 @@ public class MaskManager : MonoBehaviour
             OnActivateBlocked?.Invoke(Primary);
             return;
         }
-
+        
         Primary.TryActivate();
     }
 
@@ -174,6 +174,7 @@ public class MaskManager : MonoBehaviour
             OnSwapBlocked?.Invoke(Primary, Secondary);
             return;
         }
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.switchMask);
 
         Secondary.RemovePassive();
 

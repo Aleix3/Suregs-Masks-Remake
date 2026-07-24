@@ -17,7 +17,8 @@ public class EnemyMuur : Enemy
 
     private bool isDashing = false;
 
-    
+    public AudioClip attackClip;
+    public AudioClip dieClip;
 
 
     protected override void Start()
@@ -110,6 +111,7 @@ public class EnemyMuur : Enemy
         canMove = false;
 
         animator.SetTrigger("Dash");
+        AudioManager.Instance.PlaySFX(attackClip);
         attackHitbox.enabled = true;
         Vector2 direction = (player.position - transform.position).normalized;
 
@@ -163,6 +165,7 @@ public class EnemyMuur : Enemy
         canMove = false;
 
         yield return new WaitForSeconds(0.1f);
+        AudioManager.Instance.PlaySFX(attackClip);
         attackHitbox.enabled = true;
 
         yield return new WaitForSeconds(0.2f);
@@ -194,6 +197,7 @@ public class EnemyMuur : Enemy
 
         rb.velocity = Vector2.zero;
 
+        AudioManager.Instance.PlaySFX(dieClip);
         StartCoroutine(DieCoroutine());
     }
 

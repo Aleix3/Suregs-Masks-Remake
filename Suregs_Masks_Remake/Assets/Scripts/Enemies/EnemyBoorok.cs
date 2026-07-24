@@ -11,6 +11,9 @@ public class EnemyBoorok : Enemy
     public float hitboxActiveDuration = 0.25f;
     public GameObject groundSlamVFXPrefab;
 
+    public AudioClip attackClip;
+    public AudioClip dieClip;
+
     private enum BoorokState
     {
         Sleeping, WakingUp, Moving, FallingAsleep, ChargingAttack, Attacking
@@ -156,6 +159,7 @@ public class EnemyBoorok : Enemy
         agent.ResetPath();
 
         animator.SetTrigger("ChargeAttack");
+        AudioManager.Instance.PlaySFX(attackClip);
         yield return new WaitForSeconds(chargeTime + 1f);
 
         SetState(BoorokState.Attacking);
@@ -196,6 +200,7 @@ public class EnemyBoorok : Enemy
         StopAllCoroutines();
         agent.isStopped = true;
         agent.ResetPath();
+        AudioManager.Instance.PlaySFX(dieClip);
         if (areaAttackHitbox != null) areaAttackHitbox.enabled = false;
         animator.SetTrigger("Die");
         base.Die();

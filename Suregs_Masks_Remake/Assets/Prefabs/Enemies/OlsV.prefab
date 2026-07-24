@@ -198,6 +198,9 @@ MonoBehaviour:
   escapeDistance: 4.31
   olsProjectile: {fileID: 4535473329264882499, guid: 22fc18a40b15a574f84d0795cc6b4575, type: 3}
   projectileSpeed: 5
+  attackClip: {fileID: 8300000, guid: 188d4b50ccbd04c4587f6af2aee1aa1c, type: 3}
+  dieClip: {fileID: 8300000, guid: 03f1f47a1740a1b49a490c2feb75c4d3, type: 3}
+  getDamageClip: {fileID: 0}
 --- !u!58 &8390762161720460421
 CircleCollider2D:
   m_ObjectHideFlags: 0

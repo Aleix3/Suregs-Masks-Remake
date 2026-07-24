@@ -13,6 +13,9 @@ public class EnemyOsiris : Enemy
     private bool isAttackingAnimation = false;
     private bool finalKill = true;
 
+    public AudioClip attackClip;
+    public AudioClip dieClip;
+
     protected override void Start()
     {
         base.Start();
@@ -76,6 +79,7 @@ public class EnemyOsiris : Enemy
 
     public IEnumerator TriggerHitBox()
     {
+        AudioManager.Instance.PlaySFX(attackClip);
         attackHitbox.enabled = true;
 
         yield return new WaitForSeconds(0.05f);
@@ -101,7 +105,7 @@ public class EnemyOsiris : Enemy
         //if (isReviving) return;
 
         rb.velocity = Vector2.zero;
-
+        AudioManager.Instance.PlaySFX(dieClip);
         // Primera muerte
         if (!hasRevived && !firstDeathDone)
         {

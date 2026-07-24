@@ -41,6 +41,7 @@ public class FloorButton : MonoBehaviour
 
     public void SetPressed()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.pressPuzlleButton);
         isPressed = true;
         if (pressedSprite != null) spriteRenderer.sprite = pressedSprite;
     }

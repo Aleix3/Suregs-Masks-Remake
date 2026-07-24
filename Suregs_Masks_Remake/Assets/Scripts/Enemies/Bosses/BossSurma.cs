@@ -59,6 +59,11 @@ public class BossSurma : Enemy
     [SerializeField] private GameObject explosionPrefab;
     [SerializeField] private Transform explosionSpawnPoint;
 
+    public AudioClip attack1Clip;
+    public AudioClip attack2Clip;
+    public AudioClip chargedAttackClip;
+    public AudioClip dieClip;
+
     protected override void Start()
     {
         base.Start();
@@ -73,6 +78,7 @@ public class BossSurma : Enemy
 
         if (health <= 0)
         {
+            AudioManager.Instance.PlaySFX(dieClip);
             Die();
             return;
         }
@@ -140,7 +146,8 @@ public class BossSurma : Enemy
             ? Mathf.Min(2, meleeHitsRemaining)
             : 0;
         chargedDamageApplied = false;
-        animator.SetTrigger(activeAttack == AttackType.Fast ? fastAttackTrigger : chargedAttackTrigger);
+        animator.SetTrigger(activeAttack == AttackType.Fast ? fastAttackTrigger :  chargedAttackTrigger);
+
     }
 
     // Evento en cada impacto de FastAttack y ChargedAttack.
@@ -148,7 +155,15 @@ public class BossSurma : Enemy
     {
         if (!isBusy || player == null)
             return;
-
+        if(activeAttack == AttackType.Fast)
+        {
+            AudioManager.Instance.PlaySFX(attack1Clip);
+            //AudioManager.Instance.PlaySFX(attack2Clip);
+        }
+        else
+        {
+            
+        }
         bool canDealDamage = activeAttack == AttackType.Fast
             ? fastHitsAllowedThisAnimation-- > 0
             : !chargedDamageApplied;
@@ -363,6 +378,11 @@ public class BossSurma : Enemy
     {
         float phaseMultiplier = phase == Phase.Two ? phaseTwoSpeedMultiplier : phaseOneSpeedMultiplier;
         agent.speed = initialSpeed * phaseMultiplier * extraMultiplier;
+    }
+
+    public void PlayChargedAttackClip()
+    {
+        AudioManager.Instance.PlaySFX(chargedAttackClip);
     }
 
     private void FacePlayer()

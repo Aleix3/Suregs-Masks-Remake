@@ -168,7 +168,7 @@ public class PotionManager : MonoBehaviour
         Player.Instance.UsePotion();
 
         yield return new WaitForSeconds(0.833f);
-
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.usePotion);
         ItemType current = potionTypes[currentIndex];
 
         ApplyPotionEffect(current);

@@ -131,6 +131,8 @@ MonoBehaviour:
   chargeTime: 1.2
   hitboxActiveDuration: 0.25
   groundSlamVFXPrefab: {fileID: 4531685987252974836, guid: 7a9f651b2a9866a47b80e41599c14159, type: 3}
+  attackClip: {fileID: 8300000, guid: 4f4e9f3d106f21d4eaa39af2c3f23a06, type: 3}
+  dieClip: {fileID: 8300000, guid: 51a1bc0cc36916d4cafde713ad3bb727, type: 3}
 --- !u!50 &6017077128991380820
 Rigidbody2D:
   serializedVersion: 4

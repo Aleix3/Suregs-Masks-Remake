@@ -202,6 +202,9 @@ public class AudioManager : MonoBehaviour
 
         lastFootstepIndex = randomIndex;
 
+        float originalPitch = sfxSource.pitch;
+        sfxSource.pitch = Random.Range(0.9f, 1.1f);
         sfxSource.PlayOneShot(footStepsSFX[randomIndex]);
+        sfxSource.pitch = originalPitch;
     }
 }

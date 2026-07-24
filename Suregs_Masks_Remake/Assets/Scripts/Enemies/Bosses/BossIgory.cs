@@ -81,6 +81,11 @@ public class BossIgory : Enemy
     public BoxCollider2D dialogueCollider;
     public DialogueData dialogueData;
 
+    public AudioClip attack1Clip;
+    public AudioClip attack2Clip;
+    public AudioClip generateSurgegsClip;
+    public AudioClip dieClip;
+
     protected override void Start()
     {
         base.Start();
@@ -191,6 +196,7 @@ public class BossIgory : Enemy
 
     private void StartBasicAttack()
     {
+        AudioManager.Instance.PlaySFX(attack1Clip);
         BeginAction(Action.BasicAttack);
         attackTimer = CurrentAttackInterval();
 
@@ -200,6 +206,7 @@ public class BossIgory : Enemy
 
     private void StartSummoning()
     {
+        AudioManager.Instance.PlaySFX(generateSurgegsClip);
         BeginAction(Action.Summoning);
         summonTimer = 0f;
         animator.SetTrigger(summonTrigger);
@@ -242,7 +249,7 @@ public class BossIgory : Enemy
     {
         if (activeAction != Action.BasicAttack || player == null)
             return;
-
+        
         if (Vector2.Distance(transform.position, player.position) <= attackDistance)
             player.GetComponent<Player>()?.TakeDamage(attackDamage);
     }
@@ -288,7 +295,7 @@ public class BossIgory : Enemy
     {
         if (activeAction != Action.Dashing)
             return;
-
+        AudioManager.Instance.PlaySFX(attack2Clip);
         rb.velocity = dashDirection * dashSpeed;
     }
 
@@ -297,7 +304,7 @@ public class BossIgory : Enemy
     {
         if (activeAction != Action.Dashing || dashDamageApplied || player == null)
             return;
-
+        AudioManager.Instance.PlaySFX(attack2Clip);
         if (Vector2.Distance(transform.position, player.position) > dashHitRadius)
             return;
 
@@ -426,6 +433,15 @@ public class BossIgory : Enemy
 
     public void Defeated()
     {
+        for (int i = 0; i < roomConected.enemiesInRoom.Count; i++)
+        {
+            if (roomConected.enemiesInRoom[i].GetComponent<Enemy>() != this)
+            {
+                Destroy(roomConected.enemiesInRoom[i].gameObject);
+            }
+        }
+        
+        AudioManager.Instance.PlaySFX(dieClip);
         rb.velocity = Vector2.zero;
         animator.SetTrigger(defeatTrigger);
         Destroy(phaseAuraInstance);

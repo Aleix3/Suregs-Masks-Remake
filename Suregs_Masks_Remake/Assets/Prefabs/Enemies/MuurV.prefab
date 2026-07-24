@@ -129,6 +129,8 @@ MonoBehaviour:
   dashCooldown: 10
   viewSecondColor: {r: 0.9184408, g: 0, b: 1, a: 1}
   stunTime: 2
+  attackClip: {fileID: 8300000, guid: 5333f87fb774a744eba72b0427b60cbd, type: 3}
+  dieClip: {fileID: 8300000, guid: 86cad844e2e8e3647903bf3a49f479a7, type: 3}
 --- !u!50 &313942636189048208
 Rigidbody2D:
   serializedVersion: 4

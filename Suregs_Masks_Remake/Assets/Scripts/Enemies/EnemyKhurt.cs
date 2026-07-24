@@ -13,6 +13,9 @@ public class EnemyKhurt : Enemy
     public float stunDurationAfterJump = 3f;
     public Collider2D attackHitbox;
 
+    public AudioClip attackClip;
+    public AudioClip dieClip;
+
     private enum KhurtState
     {
         Idle, DiggingStart, DiggingMove, DiggingEmerge, Attacking, Stunned
@@ -164,6 +167,7 @@ public class EnemyKhurt : Enemy
         agent.isStopped = true;
         //agent.updatePosition = true;
         if (attackHitbox != null) attackHitbox.enabled = false;
+        AudioManager.Instance.PlaySFX(dieClip);
         animator.SetTrigger("Die");
         base.Die();
     }
@@ -173,6 +177,7 @@ public class EnemyKhurt : Enemy
 
     public void EnableAttackHitbox()
     {
+        AudioManager.Instance.PlaySFX(attackClip);
         if (attackHitbox != null)
             attackHitbox.enabled = true;
     }

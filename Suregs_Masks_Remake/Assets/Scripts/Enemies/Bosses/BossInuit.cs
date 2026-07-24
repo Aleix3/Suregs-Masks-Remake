@@ -43,6 +43,11 @@ public class BossInuit : Enemy
 
     private bool isPhase2 = false;
 
+    public AudioClip attack1Clip;
+    public AudioClip attack2Clip;
+    public AudioClip boomerangClip;
+    public AudioClip dieClip;
+
 
 
     protected override void Start()
@@ -67,6 +72,7 @@ public class BossInuit : Enemy
 
         if (health <= 0)
         {
+            AudioManager.Instance.PlaySFX(dieClip);
             desiredBossState = BossState.Dead;
             BossStateMachine();
             return;
@@ -142,6 +148,7 @@ public class BossInuit : Enemy
                 break;
 
             case BossState.Dead:
+                
                 Die();
                 break;
         }
@@ -163,9 +170,11 @@ public class BossInuit : Enemy
         rb.velocity = Vector2.zero;
 
         animator.SetTrigger("Attack1");
+        AudioManager.Instance.PlaySFX(attack1Clip);
         yield return new WaitForSeconds(0.35f);
 
         animator.SetTrigger("Attack2");
+        AudioManager.Instance.PlaySFX(attack2Clip);
         yield return new WaitForSeconds(0.35f);
 
         if (Vector2.Distance(transform.position, player.position) <= attackDistance)
@@ -173,7 +182,7 @@ public class BossInuit : Enemy
             player.GetComponent<Player>().TakeDamage(attackDamage);
         }
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
 
         comboCounter++;
 
@@ -196,7 +205,7 @@ public class BossInuit : Enemy
         GameObject b = Instantiate(boomerangPrefab, spawnPos, Quaternion.identity);
 
         b.GetComponent<Boomerang>().animator.SetTrigger("Boomerang");
-
+        AudioManager.Instance.PlaySFX(boomerangClip);
         Rigidbody2D rbB = b.GetComponent<Rigidbody2D>();
 
         Vector2 dir = (player.position - spawnPos).normalized;

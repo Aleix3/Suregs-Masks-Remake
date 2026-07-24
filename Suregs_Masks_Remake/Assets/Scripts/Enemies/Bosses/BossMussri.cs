@@ -60,6 +60,8 @@ public class BossMussri : Enemy
 
     private bool currentDashInvisible = false;
 
+    public AudioClip dashClip;
+
     protected override void Start()
     {
         base.Start();
@@ -341,6 +343,7 @@ public class BossMussri : Enemy
 
         currentBossState = MussriBossState.Dash;
 
+        AudioManager.Instance.PlaySFX(dashClip); ;
         animator.SetTrigger("Dash");
 
         currentDashInvisible = true;
@@ -362,7 +365,7 @@ public class BossMussri : Enemy
     private IEnumerator DashBack(Vector2 dir)
     {
         currentBossState = MussriBossState.Dash;
-
+        AudioManager.Instance.PlaySFX(dashClip);
         animator.SetTrigger("Dash");
 
         currentDashInvisible = phase2;

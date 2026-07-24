@@ -11,6 +11,9 @@ public class EnemyOls : Enemy
     private bool escaping = false;
     public GameObject olsProjectile;
     public float projectileSpeed;
+
+    public AudioClip attackClip;
+    public AudioClip dieClip;
     protected override void Start()
     {
         base.Start();
@@ -67,6 +70,8 @@ public class EnemyOls : Enemy
 
         yield return new WaitForSeconds(0.8f);
 
+        AudioManager.Instance.PlaySFX(attackClip);
+
         Vector2 direction = (player.position - transform.position).normalized;
 
         GameObject newProjectile = Instantiate(
@@ -95,6 +100,7 @@ public class EnemyOls : Enemy
     {
         rb.velocity = Vector2.zero;
         animator.Play("GetDamage");
+        AudioManager.Instance.PlaySFX(dieClip);
         base.Die();
 
     }

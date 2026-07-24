@@ -107,6 +107,11 @@ public class Player : MonoBehaviour
 
     public bool isDead = false;
 
+    private bool lowHealthSoundPlaying = false;
+    private const float LOW_HEALTH_THRESHOLD = 0.25f;
+    private float footstepTimer = 0f;
+    [SerializeField] private float footstepInterval = 0.15f;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -180,6 +185,7 @@ public class Player : MonoBehaviour
         UpdateKnockback();
         UpdatePlayerMovement();
         UpdateAttack();
+        UpdateLowHealthSound();
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null && !UIState.IsUIOpen)
         {
             currentInteractable.Interact(this);
@@ -226,13 +232,26 @@ public class Player : MonoBehaviour
         }
 
         // Movimiento normal
+        // Movimiento normal
         if (!isDashing)
         {
             rb.velocity = inputDir * Speed;
 
             if (inputDir != Vector2.zero)
             {
+                footstepTimer -= Time.deltaTime;
+
+                if (footstepTimer <= 0f)
+                {
+                    AudioManager.Instance.PlayRandomFootstep();
+                    footstepTimer = footstepInterval;
+                }
+
                 lastMovementDirection = inputDir;
+            }
+            else
+            {
+                footstepTimer = 0f;
             }
 
             if (inputDir.x > 0 && isFacingLeft) Flip();
@@ -242,6 +261,7 @@ public class Player : MonoBehaviour
         // Dash
         if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0f && inputDir != Vector2.zero)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.dash);
             if (lastMovementDirection == Vector2.zero)
                 lastMovementDirection = Vector2.right; // si no hay direcci�n, dash hacia la derecha
 
@@ -309,21 +329,33 @@ public class Player : MonoBehaviour
         if (attackNum > 3) attackNum = 1;
         comboTimer = comboResetTimer;
 
+        // Reproducir sonido según el combo
+        switch (attackNum)
+        {
+            case 1:
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.attackCombo1);
+                break;
+            case 2:
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.attackCombo2);
+                break;
+            case 3:
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.attackCombo3);
+                break;
+        }
+
         Vector2 attackPos = transform.position;
 
         if (lastMovementDirection == Vector2.zero)
             lastMovementDirection = Vector2.right;
 
-        if (lastMovementDirection.y > 0)       // arriba
+        if (lastMovementDirection.y > 0)
             attackPos += offsetUp;
-        else if (lastMovementDirection.y < 0)  // abajo
+        else if (lastMovementDirection.y < 0)
             attackPos += offsetDown;
-        else if (lastMovementDirection.x < 0)  // izquierda
+        else if (lastMovementDirection.x < 0)
             attackPos += offsetLeft;
-        else if (lastMovementDirection.x > 0)  // derecha
+        else if (lastMovementDirection.x > 0)
             attackPos += offsetRight;
-
-
 
         // Instanciar el hitbox temporal
         GameObject hitbox = Instantiate(attackHitboxPrefab, attackPos, Quaternion.identity);
@@ -331,17 +363,16 @@ public class Player : MonoBehaviour
 
         Destroy(hitbox, attackDuration);
 
-        // Empuje hacia la direcci�n del ataque
+        // Empuje hacia la dirección del ataque
         rb.AddForce(lastMovementDirection.normalized * attackForce, ForceMode2D.Impulse);
 
         animator.SetInteger("attackIndex", attackNum);
         animator.SetTrigger("attackTrigger");
 
-        // Duracion del "lock" de ataque = duracion real de la animacion de ESTE golpe
-        // del combo, no el valor fijo attackDuration (que solo controla la vida del hitbox).
         AnimationClip clip = (attackClips != null && attackClips.Length >= attackNum)
             ? attackClips[attackNum - 1]
             : null;
+
         float lockDuration = clip != null ? clip.length : attackDuration;
 
         CancelInvoke(nameof(ResetAttack));
@@ -396,6 +427,8 @@ public class Player : MonoBehaviour
     {
         if (godMode || isDead)
             return;
+
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.getDamage);
         health -= damage;
 
         if (health <= 0)
@@ -424,6 +457,7 @@ public class Player : MonoBehaviour
         //ITEMS
         if (collision.CompareTag("Item"))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.getItem);
             Item item = collision.GetComponent<Item>();
             InventoryManager.instance.CreateInventoryItem(item.type, item.itemType, item.itemName, item.description, item.sr.sprite);
             Destroy(collision.gameObject);
@@ -432,6 +466,7 @@ public class Player : MonoBehaviour
         //NOTES
         if (collision.CompareTag("Note"))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.getItem);
             Note note = collision.GetComponent<Note>();
             NotesManager.instance.CreateNoteItem(note.id, note.itemName, note.description);
             Destroy(collision.gameObject);
@@ -440,6 +475,7 @@ public class Player : MonoBehaviour
         //MASKS
         if (collision.CompareTag("Mask"))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.getItem);
             collision.GetComponent<MaskItem>().GetMask();
         }
     }
@@ -600,6 +636,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.death);
         isDead = true;
         QuestManager.Instance.CompleteMainStepById("2");
         animator.SetTrigger("die");
@@ -622,5 +659,28 @@ public class Player : MonoBehaviour
         isDead = false;
         SceneManager.LoadScene("Town");
 
+    }
+
+    void UpdateLowHealthSound()
+    {
+        bool lowHealth = health <= MaxHealth * LOW_HEALTH_THRESHOLD;
+
+        if (lowHealth && !lowHealthSoundPlaying && !isDead)
+        {
+            lowHealthSoundPlaying = true;
+            StartCoroutine(LowHealthSoundRoutine());
+        }
+    }
+
+    IEnumerator LowHealthSoundRoutine()
+    {
+        while (health <= MaxHealth * LOW_HEALTH_THRESHOLD && !isDead)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.lowHealth);
+
+            yield return new WaitForSeconds(AudioManager.Instance.lowHealth.length);
+        }
+
+        lowHealthSoundPlaying = false;
     }
 }

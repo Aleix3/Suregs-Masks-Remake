@@ -33,6 +33,7 @@ public class Chest : MonoBehaviour, IInteractable
 
     public void DropItems()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.chestOpen);
         // Suelta siempre 2 objetos
         DropPrimaryItem();
         DropSecondaryItem();
