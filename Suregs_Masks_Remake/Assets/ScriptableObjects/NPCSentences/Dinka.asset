@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Dinka
   portrait: {fileID: 21300000, guid: 2df2347d860a0594984e9097582ffc12, type: 3}
+  isPermanent: 1
+  isCommerceDialogue: 0
   sentences:
   - text: "\xBFH-hola? \xBFQu\xE9 es esto?"
     id: 0

@@ -9,7 +9,8 @@ public enum SentenceType
     QuestUpdate,
     CombatTutorial,
     Destroy,
-    Ending
+    Ending,
+    Heal
 }
 
 [System.Serializable]

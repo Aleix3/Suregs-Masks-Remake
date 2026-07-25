@@ -130,29 +130,23 @@ public class DialogueManager : MonoBehaviour
         {
             var sentence = dialogue.sentences[i];
 
-            // Solo frases desbloqueadas por estado
-            if (sentence.minState <= GameProgress.CurrentState)
+            // Si el diálogo no es permanente, solo mostramos las frases del estado actual.
+            if (!dialogue.isPermanent &&
+                sentence.minState != GameProgress.CurrentState)
             {
-                string key = DialogueMemory.MakeKey(dialogue, i);
-
-                RuntimeSentence runtime =
-                    new RuntimeSentence(sentence, i);
-
-                if (!DialogueMemory.HasSeen(key))
-                {
-                    newSentences.Add(runtime);
-                }
-                else
-                {
-                    if (sentence.minState == GameProgress.CurrentState)
-                    {
-                        fallbackSentences.Add(runtime);
-                    }
-                }
+                continue;
             }
+
+            string key = DialogueMemory.MakeKey(dialogue, i);
+            RuntimeSentence runtime = new RuntimeSentence(sentence, i);
+
+            if (!DialogueMemory.HasSeen(key))
+                newSentences.Add(runtime);
+            else
+                fallbackSentences.Add(runtime);
         }
 
-        // PRIORIDAD: nuevas primero
+        // Prioridad: frases nuevas
         if (newSentences.Count > 0)
         {
             foreach (var s in newSentences)
@@ -165,7 +159,6 @@ public class DialogueManager : MonoBehaviour
         }
         else if (dialogue.isCommerceDialogue && dialogue.sentences.Count > 0)
         {
-            // Los NPCs de comercio siempre deben poder hablarse, así que repetimos la primera frase.
             flow.Enqueue(new RuntimeSentence(dialogue.sentences[0], 0));
         }
 
@@ -272,7 +265,10 @@ public class DialogueManager : MonoBehaviour
                 }
                 break;
             }
-                
+            case SentenceType.Heal:
+                Player.Instance.HealPercentOfMax(100);
+                break;
+
         }
         lastSentenceType = sentence.type;
     }

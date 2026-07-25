@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fa2f5898f98a64e8761c1bbe373ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 0
+  enemyType: 10
   maxHealth: 3000
   health: 0
   speed: 2
@@ -160,7 +160,7 @@ MonoBehaviour:
   viewDistance: 8
   viewColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackColor: {r: 1, g: 0, b: 0, a: 1}
-  attackDamage: 4
+  attackDamage: 5
   rb: {fileID: 6017077128991380820}
   animator: {fileID: 3055101950449712070}
   player: {fileID: 0}
@@ -182,6 +182,8 @@ MonoBehaviour:
   attack2Clip: {fileID: 8300000, guid: d3ace50aa677b604baa6c9e4e0734a6a, type: 3}
   boomerangClip: {fileID: 8300000, guid: 949e4b02079e2a941bed8af8e9eb3f38, type: 3}
   dieClip: {fileID: 8300000, guid: 95cb8556de2e6404ca885bffffdc5083, type: 3}
+  maskSpawnpoint: {fileID: 0}
+  MaskPrefab: {fileID: 0}
 --- !u!95 &3055101950449712070
 Animator:
   serializedVersion: 5

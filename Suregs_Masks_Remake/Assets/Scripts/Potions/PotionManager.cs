@@ -55,6 +55,10 @@ public class PotionManager : MonoBehaviour
 
     private void HandlePotionInput()
     {
+        if (MenuManager.Instance.IsMenuOpen)
+        {
+            return;
+        }
         if (Input.GetKeyDown(prevPotionKey) || GetGamepadButtonDown(gamepadPrevButton))
             CyclePotion(-1);
 

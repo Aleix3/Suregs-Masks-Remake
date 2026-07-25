@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class RoomTrigger : MonoBehaviour
@@ -27,8 +28,16 @@ public class RoomTrigger : MonoBehaviour
             roomData,
             positionToSpawn
         );
-        this.transform.parent.GetComponent<Room>().isPlayerInRoom = true;
         Player.Instance.actualRoom = this.transform.parent.GetComponent<Room>();
         roomTriggerConnected.parent.GetComponent<Room>().isPlayerInRoom = false;
+        StartCoroutine(SetPlayerInRoomAfterDelay());
+
+    }
+
+    private IEnumerator SetPlayerInRoomAfterDelay()
+    {
+        yield return new WaitForSeconds(1f);
+
+        transform.parent.GetComponent<Room>().isPlayerInRoom = true;
     }
 }

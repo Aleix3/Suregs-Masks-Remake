@@ -143,7 +143,6 @@ MonoBehaviour:
   dashDuration: 0.33
   lastMovementDirection: {x: 0, y: 0}
   isFacingLeft: 0
-  canMove: 1
   actualRoom: {fileID: 0}
   attackHitboxPrefab: {fileID: 3803651259362562942, guid: 7485853c63d01714aa4d3fc5ef41f11d, type: 3}
   attackWidth: 1
@@ -168,6 +167,8 @@ MonoBehaviour:
   MaxHealthMultiplier: 1
   basicAttackBonusPercent: 0.15
   spawnPointChanged: 0
+  isDead: 0
+  footstepInterval: 0.15
 --- !u!61 &4382748051436559833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -403,36 +404,29 @@ MonoBehaviour:
   statDamage: 0
   statAtkSpeed: 0
   passiveInvisDuration: 1
-  dashExtraFactor: 0.33
-  distanceBonusPerLevel: 0.05
-  stunDurationByLevel:
+  firstHitBonusByLevel:
+  - 0.25
+  - 0.5
+  - 0.75
   - 1
-  - 1.5
-  - 2
-  - 3
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  dashHitRadius: 1.5
-  baseDamage: 40
-  damageByLevel:
-  - 50
-  - 70
-  - 100
-  - 150
-  baseInvisDuration: 5
-  invisDurationByLevel:
-  - 6
-  - 7.3
-  - 8.6
-  - 10
-  dashVFXPrefab: {fileID: 0}
   baseCooldown: 20
   cooldownByLevel:
   - 18
   - 16
   - 13
   - 10
+  dashBonusByLevel:
+  - 0.25
+  - 0.5
+  - 0.75
+  - 1
+  baseInvisDuration: 5
+  invisDurationByLevel:
+  - 6
+  - 7.3
+  - 8.6
+  - 10
+  invisVFXPrefab: {fileID: 0}
 --- !u!114 &3651245318472302311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,4 +491,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107d157cc0179f7469a80a956efbb4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 2116
+  gold: 200

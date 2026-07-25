@@ -62,6 +62,9 @@ public class BossMussri : Enemy
 
     public AudioClip dashClip;
 
+    public Transform maskSpawnpoint;
+    public GameObject MaskPrefab;
+
     protected override void Start()
     {
         base.Start();
@@ -89,6 +92,7 @@ public class BossMussri : Enemy
         if (health <= 0)
         {
             currentBossState = MussriBossState.Dead;
+            Instantiate(MaskPrefab, maskSpawnpoint.position, maskSpawnpoint.rotation);
             Die();
             return;
         }

@@ -89,6 +89,7 @@ public class MaskEquipUI : MonoBehaviour
         }
 
         _treeUI?.RefreshEquippedButtons();
+        FindAnyObjectByType<JourneyManager>()?.UpdateUI();
         Close();
     }
 

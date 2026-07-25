@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Vhea
   portrait: {fileID: 21300000, guid: 7ca1df1348f4b7e4397493b00c3b4a9b, type: 3}
+  isCommerceDialogue: 0
   sentences:
   - text: "Buenos d\xEDas cari\xF1o, \xBFotra vez la misma pesadilla?"
     id: 
@@ -28,7 +29,13 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
   - text: "Bueno... \xBFHoy tienes entrenamiento verdad?"
     id: 
     type: 1
@@ -42,6 +49,9 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     - optionText: "\xBFC\xF3mo qu\xE9 entrenamiento?"
       nextSentences:
       - text: "S\xED, tienes que ir al campamento que est\xE1 al norte del pueblo."
@@ -50,7 +60,13 @@ MonoBehaviour:
         minState: 0
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
   - text: "\xBFQue tal ha ido el entrenamiento?"
     id: 
     type: 1
@@ -65,7 +81,13 @@ MonoBehaviour:
         minState: 1
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
   - text: "Y t\xFA no tienes que parecerte a \xE9l, seguro que se te dan bien otros
       trabajos..."
     id: 
@@ -82,7 +104,13 @@ MonoBehaviour:
         minState: 1
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
   - text: "Que mal te ves Jakov, \xBFquieres comer y reponer fuerzas?"
     id: 
     type: 1
@@ -92,10 +120,13 @@ MonoBehaviour:
       nextSentences:
       - text: "C\xF3melo tranquilo, est\xE1 reci\xE9n hecho."
         id: 
-        type: 0
+        type: 7
         minState: 1
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     - optionText: No hace falta.
       nextSentences:
       - text: "Bueno... Estar\xE9 siempre aqu\xED si necesitas algo de comer."
@@ -104,4 +135,196 @@ MonoBehaviour:
         minState: 1
         options: []
         commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
     commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
+  - text: "Que mal te ves Jakov, \xBFquieres comer y reponer fuerzas?"
+    id: 
+    type: 1
+    minState: 3
+    options:
+    - optionText: Si, por favor.
+      nextSentences:
+      - text: "C\xF3melo tranquilo, est\xE1 reci\xE9n hecho."
+        id: 
+        type: 7
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    - optionText: No hace falta.
+      nextSentences:
+      - text: "Bueno... Estar\xE9 siempre aqu\xED si necesitas algo de comer."
+        id: 
+        type: 0
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
+  - text: "Que mal te ves Jakov, \xBFquieres comer y reponer fuerzas?"
+    id: 
+    type: 1
+    minState: 4
+    options:
+    - optionText: Si, por favor.
+      nextSentences:
+      - text: "C\xF3melo tranquilo, est\xE1 reci\xE9n hecho."
+        id: 
+        type: 7
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    - optionText: No hace falta.
+      nextSentences:
+      - text: "Bueno... Estar\xE9 siempre aqu\xED si necesitas algo de comer."
+        id: 
+        type: 0
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
+  - text: "Que mal te ves Jakov, \xBFquieres comer y reponer fuerzas?"
+    id: 
+    type: 1
+    minState: 5
+    options:
+    - optionText: Si, por favor.
+      nextSentences:
+      - text: "C\xF3melo tranquilo, est\xE1 reci\xE9n hecho."
+        id: 
+        type: 7
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    - optionText: No hace falta.
+      nextSentences:
+      - text: "Bueno... Estar\xE9 siempre aqu\xED si necesitas algo de comer."
+        id: 
+        type: 0
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
+  - text: "Que mal te ves Jakov, \xBFquieres comer y reponer fuerzas?"
+    id: 
+    type: 1
+    minState: 6
+    options:
+    - optionText: Si, por favor.
+      nextSentences:
+      - text: "C\xF3melo tranquilo, est\xE1 reci\xE9n hecho."
+        id: 
+        type: 7
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    - optionText: No hace falta.
+      nextSentences:
+      - text: "Bueno... Estar\xE9 siempre aqu\xED si necesitas algo de comer."
+        id: 
+        type: 0
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
+  - text: "Que mal te ves Jakov, \xBFquieres comer y reponer fuerzas?"
+    id: 
+    type: 1
+    minState: 7
+    options:
+    - optionText: Si, por favor.
+      nextSentences:
+      - text: "C\xF3melo tranquilo, est\xE1 reci\xE9n hecho."
+        id: 
+        type: 7
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    - optionText: No hace falta.
+      nextSentences:
+      - text: "Bueno... Estar\xE9 siempre aqu\xED si necesitas algo de comer."
+        id: 
+        type: 0
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}
+  - text: "Que mal te ves Jakov, \xBFquieres comer y reponer fuerzas?"
+    id: 
+    type: 1
+    minState: 8
+    options:
+    - optionText: Si, por favor.
+      nextSentences:
+      - text: "C\xF3melo tranquilo, est\xE1 reci\xE9n hecho."
+        id: 
+        type: 7
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    - optionText: No hace falta.
+      nextSentences:
+      - text: "Bueno... Estar\xE9 siempre aqu\xED si necesitas algo de comer."
+        id: 
+        type: 0
+        minState: 1
+        options: []
+        commerceID: 0
+        overrideSpeaker: 0
+        speakerName: 
+        speakerPortrait: {fileID: 0}
+    commerceID: 0
+    overrideSpeaker: 0
+    speakerName: 
+    speakerPortrait: {fileID: 0}

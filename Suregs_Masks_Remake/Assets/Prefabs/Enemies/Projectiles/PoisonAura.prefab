@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe09c4ff5db1d4eaf3d5feb90b1a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 5
   duration: 5
   tickRate: 2
 --- !u!95 &2546581301757817208

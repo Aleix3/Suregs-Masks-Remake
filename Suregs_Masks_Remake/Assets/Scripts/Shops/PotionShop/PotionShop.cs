@@ -42,10 +42,15 @@ public class PotionShop : MonoBehaviour, IShop
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            witchCanvas.SetActive(false);
-            DialogueManager.Instance.CloseCommerce();
+            CloseShop();
         }
 
+    }
+
+    public void CloseShop()
+    {
+        DialogueManager.Instance.CloseCommerce();
+        witchCanvas.SetActive(false);
     }
 
     private void OnEnable()
@@ -234,16 +239,24 @@ public class PotionShop : MonoBehaviour, IShop
     public void CancelTrade()
     {
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
+
+        int selectedTradesCounter = 0;
+
         for (int i = 0; i < shopUI.buttons.Count; i++)
         {
-            if (shopUI.buttons[i].isSelected)
+            if (shopUI.buttons[i].isSelectedPermanent)
             {
-                shopUI.buttons[i].DeSelect();
+                selectedTradesCounter++;
             }
-
+            shopUI.buttons[i].DeSelect();
         }
         pendingBuy.Clear();
         OnTradeUpdated?.Invoke();
+
+        if (selectedTradesCounter == 0)
+        {
+            CloseShop();
+        }
     }
 
     public int GetPending(ItemType type)

@@ -116,7 +116,7 @@ MonoBehaviour:
   viewDistance: 10.1
   viewColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackColor: {r: 1, g: 0, b: 0, a: 1}
-  attackDamage: 150
+  attackDamage: 80
   rb: {fileID: 6017077128991380820}
   animator: {fileID: 3055101950449712070}
   player: {fileID: 0}

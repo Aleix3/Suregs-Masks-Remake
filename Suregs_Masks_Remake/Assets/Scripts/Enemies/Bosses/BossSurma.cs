@@ -64,6 +64,9 @@ public class BossSurma : Enemy
     public AudioClip chargedAttackClip;
     public AudioClip dieClip;
 
+    public Transform maskSpawnpoint;
+    public GameObject MaskPrefab;
+
     protected override void Start()
     {
         base.Start();
@@ -78,6 +81,7 @@ public class BossSurma : Enemy
 
         if (health <= 0)
         {
+            Instantiate(MaskPrefab, maskSpawnpoint.position, maskSpawnpoint.rotation);
             AudioManager.Instance.PlaySFX(dieClip);
             Die();
             return;

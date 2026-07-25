@@ -9,6 +9,7 @@ public class ElevatorButton : MonoBehaviour
     public string sceneName;
     public int levelIndex;
     public ElevatorTrigger elevatorTriggerScript;
+    public ElevatorScript elevatorScript;
 
     [Header("Navigation")]
     public ElevatorButton up;
@@ -80,7 +81,7 @@ public class ElevatorButton : MonoBehaviour
     {
         yield return StartCoroutine(CameraManager.Instance.Fade(1));
 
-        elevatorTriggerScript.CloseCanvas();
+        elevatorScript.UnlockPlayer();
         SceneManager.LoadScene(sceneNamee);
     }
 }

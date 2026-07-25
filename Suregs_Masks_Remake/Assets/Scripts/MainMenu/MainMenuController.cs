@@ -107,6 +107,18 @@ public class MainMenuController : MonoBehaviour
         if (borrarProgreso)
         {
             BorrarProgresoConservandoAjustes();
+            if (QuestManager.Instance != null)
+            {
+                QuestManager.Instance.ResetProgress();
+            }
+            if (MaskTreeManager.Instance != null)
+            {
+                Destroy(MaskTreeManager.Instance.gameObject);
+            }
+            //if (MaskTreeManager.Instance != null)
+            //{
+            //    Destroy(MaskTreeManager.Instance.gameObject);
+            //}
         }
 
         SceneManager.LoadScene(sceneName);

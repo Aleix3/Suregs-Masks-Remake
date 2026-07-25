@@ -207,4 +207,36 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(footStepsSFX[randomIndex]);
         sfxSource.pitch = originalPitch;
     }
+
+    public void StopMusic(float fadeDuration = 1.5f)
+    {
+        if (currentSource.clip == null)
+            return;
+
+        musicPositions[currentSource.clip] = currentSource.time;
+
+        if (musicCoroutine != null)
+            StopCoroutine(musicCoroutine);
+
+        musicCoroutine = StartCoroutine(FadeOutMusic(fadeDuration));
+    }
+
+    private IEnumerator FadeOutMusic(float duration)
+    {
+        float startVolume = currentSource.volume;
+        float t = 0f;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            currentSource.volume = Mathf.Lerp(startVolume, 0f, t / duration);
+            yield return null;
+        }
+
+        currentSource.Stop();
+        currentSource.clip = null;
+        currentSource.volume = musicMaxVolume; // o el volumen por defecto que uses
+
+        musicCoroutine = null;
+    }
 }

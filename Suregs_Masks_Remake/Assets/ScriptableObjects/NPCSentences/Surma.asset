@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Surma
   portrait: {fileID: 21300000, guid: b7ef0029088cd0840a76fb49838bfb8f, type: 3}
+  isPermanent: 1
+  isCommerceDialogue: 0
   sentences:
   - text: "\xBFOtra m\xE1scara m\xE1s? Con esta van cuatro... \xBFCu\xE1ndo terminar\xE1?"
     id: 0

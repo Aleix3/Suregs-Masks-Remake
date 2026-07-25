@@ -29,10 +29,16 @@ public class BlackSmithTradeUI : MonoBehaviour
         //shop.OnTradeUpdated += Refresh;
 
         if (InventoryManager.instance != null)
-            InventoryManager.instance.OnInventoryChanged -= Refresh;
+        {
+            InventoryManager.instance.OnInventoryChanged -= Refresh; // evita doble suscripción
+            InventoryManager.instance.OnInventoryChanged += Refresh;
+        }
 
         if (PlayerEconomy.instance != null)
-            PlayerEconomy.instance.OnGoldChanged -= Refresh;
+        {
+            PlayerEconomy.instance.OnGoldChanged -= Refresh; // evita doble suscripción
+            PlayerEconomy.instance.OnGoldChanged += Refresh;
+        }
 
         Refresh();
     }
@@ -101,10 +107,10 @@ public class BlackSmithTradeUI : MonoBehaviour
                 itemRequiredImage.gameObject.SetActive(false);
                 requiredItemQtyText.text = "";
             }
-                
+
         }
 
-        if (mode == BlacksmithShop.BlacksmithMode.Weapon) 
+        if (mode == BlacksmithShop.BlacksmithMode.Weapon)
         {
             levelText.text = "Nivel " + (Player.Instance.weaponLevel + 1);
         }

@@ -22,7 +22,7 @@ public class JourneyManager : MonoBehaviour
     [Header("Masks — slot primaria")]
     public Image primaryMaskIcon;
     public TextMeshProUGUI primaryMaskName;
-    public TextMeshProUGUI primaryMaskAbility;   // "Rayo Devastador", "Esfera Expansiva"…
+    public TextMeshProUGUI primaryMaskAbility;
 
     [Header("Masks — slot secundaria")]
     public Image secondaryMaskIcon;
@@ -34,12 +34,10 @@ public class JourneyManager : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    private void Update()
+
+    private void OnMaskChanged(BaseMask p, BaseMask s)
     {
-        if(canvasGroup.alpha == 1)
-        {
-            UpdateUI();
-        }
+        UpdateUI();
     }
 
     public void UpdateUI()
@@ -63,17 +61,23 @@ public class JourneyManager : MonoBehaviour
         SetEquipIcon(armorIcon, armorSprite);
 
         // ── Máscaras ──────────────────────────────────────────────
-        MaskManager mm = Player.Instance.MaskManager;
+        MaskManager mm = MaskManager.Instance;
 
-        if (mm != null && mm.Primary != null && mm.Secondary != null)
+        if (mm != null && (mm.Primary != null || mm.Secondary != null))
         {
-
-            SetMaskSlot(mm.Primary, primaryMaskIcon, primaryMaskName, primaryMaskAbility,
+            if(mm.Primary != null)
+            {
+                SetMaskSlot(mm.Primary, primaryMaskIcon, primaryMaskName, primaryMaskAbility,
                         mm.Primary.data.abilityDescription);
+            }
 
-
-            SetMaskSlot(mm.Secondary, secondaryMaskIcon, secondaryMaskName, secondaryMaskAbility,
+            if (mm.Secondary != null)
+            {
+                SetMaskSlot(mm.Secondary, secondaryMaskIcon, secondaryMaskName, secondaryMaskAbility,
                         mm.Secondary.data.passiveDescription);
+            }
+
+                
         }
         else
         {

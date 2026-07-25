@@ -21,10 +21,15 @@ public class MenuManager : MonoBehaviour
 
     private EnabledSettings enabledSettings;
 
+    private InventoryManager inventoryManager;
+    private JourneyManager journeyManager;
+
     void Awake()
     {
         Instance = this;
         enabledSettings = FindFirstObjectByType<EnabledSettings>();
+        inventoryManager = FindFirstObjectByType<InventoryManager>();
+        journeyManager = FindFirstObjectByType<JourneyManager>();
     }
 
     void Start()
@@ -91,6 +96,15 @@ public class MenuManager : MonoBehaviour
         canvases[index].alpha = 1;
         canvases[index].interactable = true;
         canvases[index].blocksRaycasts = true;
+
+        if(index == 0)
+        {
+            inventoryManager.FirstHoverMove();
+        }
+        if (index == 1)
+        {
+            journeyManager.UpdateUI();
+        }
 
         if (index == 3)
         {

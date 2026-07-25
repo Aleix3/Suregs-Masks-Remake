@@ -112,7 +112,7 @@ MonoBehaviour:
   viewDistance: 5.81
   viewColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackColor: {r: 1, g: 0, b: 0, a: 1}
-  attackDamage: 20
+  attackDamage: 10
   rb: {fileID: 313942636189048208}
   animator: {fileID: 0}
   player: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   roomConected: {fileID: 0}
   attackHitbox: {fileID: 6607231279209429024}
   dashDistance: 3.98
-  dashForce: 8
+  dashForce: 5
   dashCooldown: 10
   viewSecondColor: {r: 0.9184408, g: 0, b: 1, a: 1}
   stunTime: 2
@@ -286,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 3866245383376042723}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.09, y: -0.27, z: 0}
+  m_LocalPosition: {x: -0.944, y: -0.27, z: 0}
   m_LocalScale: {x: 0.34054607, y: 0.6210102, z: 0.9013976}
   m_ConstrainProportionsScale: 0
   m_Children: []

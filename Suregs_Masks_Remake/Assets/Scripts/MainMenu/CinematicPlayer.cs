@@ -99,6 +99,7 @@ public class CinematicPlayer : MonoBehaviour
 
     IEnumerator PlayCinematic()
     {
+        AudioManager.Instance.StopMusic();
         AudioManager.Instance.PlaySFX(cinematicSFX);
         for (int i = 0; i < cinematicImages.Length; i++)
         {

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ElevatorScript : MonoBehaviour
@@ -11,11 +12,22 @@ public class ElevatorScript : MonoBehaviour
 
     private Vector2 lastMoveInput;
 
+    public List<ElevatorButton> buttons;
+
     
 
     void Start()
     {
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            buttons[i].elevatorScript = this;
+        }
         MoveHover();
+    }
+
+    private void OnEnable()
+    {
+        lockPlayer();
     }
 
     void Update()
@@ -30,6 +42,12 @@ public class ElevatorScript : MonoBehaviour
 
         HandleSelect();
         MoveHover();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnlockPlayer();
+            this.gameObject.SetActive(false);
+        }
     }
 
     void HandleMovement()
@@ -92,4 +110,12 @@ public class ElevatorScript : MonoBehaviour
         }
     }
 
+    public void lockPlayer()
+    {
+        Player.Instance.LockMovement(this);
+    }
+    public void UnlockPlayer()
+    {
+        Player.Instance.UnlockMovement(this);
+    }
 }

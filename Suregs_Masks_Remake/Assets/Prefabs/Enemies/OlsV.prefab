@@ -184,7 +184,7 @@ MonoBehaviour:
   viewDistance: 9
   viewColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackColor: {r: 1, g: 0, b: 0, a: 1}
-  attackDamage: 70
+  attackDamage: 50
   rb: {fileID: 6017077128991380820}
   animator: {fileID: 0}
   player: {fileID: 0}
@@ -200,7 +200,6 @@ MonoBehaviour:
   projectileSpeed: 5
   attackClip: {fileID: 8300000, guid: 188d4b50ccbd04c4587f6af2aee1aa1c, type: 3}
   dieClip: {fileID: 8300000, guid: 03f1f47a1740a1b49a490c2feb75c4d3, type: 3}
-  getDamageClip: {fileID: 0}
 --- !u!58 &8390762161720460421
 CircleCollider2D:
   m_ObjectHideFlags: 0

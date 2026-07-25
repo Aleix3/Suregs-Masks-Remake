@@ -167,6 +167,7 @@ MonoBehaviour:
   sceneName: Dungeon 0
   levelIndex: 1
   elevatorTriggerScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
   up: {fileID: 109576428331969307}
   down: {fileID: 1222058255232223374}
   left: {fileID: 6112919016233051383}
@@ -268,6 +269,7 @@ MonoBehaviour:
   sceneName: Dungeon 6
   levelIndex: 7
   elevatorTriggerScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
   up: {fileID: 4496234491416447114}
   down: {fileID: 5315524085048955360}
   left: {fileID: 1831061980863622121}
@@ -454,6 +456,7 @@ MonoBehaviour:
   sceneName: Dungeon 8
   levelIndex: 9
   elevatorTriggerScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
   up: {fileID: 1831061980863622121}
   down: {fileID: 109576428331969307}
   left: {fileID: 82242616205052847}
@@ -555,6 +558,7 @@ MonoBehaviour:
   sceneName: Dungeon 5
   levelIndex: 6
   elevatorTriggerScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
   up: {fileID: 6088921337891462818}
   down: {fileID: 1831061980863622121}
   left: {fileID: 4496234491416447114}
@@ -656,6 +660,7 @@ MonoBehaviour:
   sceneName: Dungeon 7
   levelIndex: 8
   elevatorTriggerScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
   up: {fileID: 4997777215137795262}
   down: {fileID: 5315524085048955360}
   left: {fileID: 82242616205052847}
@@ -757,6 +762,7 @@ MonoBehaviour:
   sceneName: Dungeon 3
   levelIndex: 4
   elevatorTriggerScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
   up: {fileID: 6112919016233051383}
   down: {fileID: 4997777215137795262}
   left: {fileID: 1222058255232223374}
@@ -858,6 +864,7 @@ MonoBehaviour:
   sceneName: Dungeon 1
   levelIndex: 2
   elevatorTriggerScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
   up: {fileID: 109576428331969307}
   down: {fileID: 6088921337891462818}
   left: {fileID: 8624650075572203736}
@@ -959,6 +966,7 @@ MonoBehaviour:
   sceneName: Dungeon 4
   levelIndex: 5
   elevatorTriggerScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
   up: {fileID: 1222058255232223374}
   down: {fileID: 82242616205052847}
   left: {fileID: 4997777215137795262}
@@ -1061,6 +1069,7 @@ MonoBehaviour:
   sceneName: Town
   levelIndex: 0
   elevatorTriggerScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
   up: {fileID: 5315524085048955360}
   down: {fileID: 8624650075572203736}
   left: {fileID: 8624650075572203736}
@@ -1162,6 +1171,7 @@ MonoBehaviour:
   sceneName: Dungeon 2
   levelIndex: 3
   elevatorTriggerScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
   up: {fileID: 8624650075572203736}
   down: {fileID: 4496234491416447114}
   left: {fileID: 6088921337891462818}
@@ -1289,3 +1299,14 @@ MonoBehaviour:
   current: {fileID: 109576428331969307}
   hover: {fileID: 500815299186128591}
   inputDelay: 0.1
+  buttons:
+  - {fileID: 109576428331969307}
+  - {fileID: 8624650075572203736}
+  - {fileID: 6112919016233051383}
+  - {fileID: 1222058255232223374}
+  - {fileID: 6088921337891462818}
+  - {fileID: 4496234491416447114}
+  - {fileID: 4997777215137795262}
+  - {fileID: 82242616205052847}
+  - {fileID: 1831061980863622121}
+  - {fileID: 5315524085048955360}

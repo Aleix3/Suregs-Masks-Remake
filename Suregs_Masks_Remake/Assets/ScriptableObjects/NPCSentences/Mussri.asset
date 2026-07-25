@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Mussri
   portrait: {fileID: 21300000, guid: 55d7edf8fd07b684a9a89d87dd0ec289, type: 3}
+  isPermanent: 1
+  isCommerceDialogue: 0
   sentences:
   - text: "\xBFOtra m\xE1scara m\xE1s? No s\xE9 si podr\xE9 cargar con todas..."
     id: 0

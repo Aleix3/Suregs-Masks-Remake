@@ -31,7 +31,7 @@ public class BlacksmithShop : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     public void Interact()
@@ -51,10 +51,15 @@ public class BlacksmithShop : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            canvas.SetActive(false);
-            DialogueManager.Instance.CloseCommerce();
+            CloseShop();
         }
-            
+
+    }
+
+    public void CloseShop()
+    {
+        DialogueManager.Instance.CloseCommerce();
+        canvas.SetActive(false);
     }
     public BlackSmithTrade GetCurrentTrade()
     {
@@ -147,19 +152,27 @@ public class BlacksmithShop : MonoBehaviour
     public void CancelTrade()
     {
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
+
+        int selectedTradesCounter = 0;
+
         for (int i = 0; i < shopUI.buttons.Count; i++)
         {
-            if (shopUI.buttons[i].isSelected)
+            if (shopUI.buttons[i].isSelectedPermanent)
             {
-                shopUI.buttons[i].DeSelect();
+                selectedTradesCounter++;
             }
-
+            shopUI.buttons[i].DeSelect();
         }
         pendingBuy.Clear();
         OnTradeUpdated?.Invoke();
+
+        if (selectedTradesCounter == 0)
+        {
+            CloseShop();
+        }
     }
 
-    // 🔹 Confirmar todas las compras
+    //  Confirmar todas las compras
     public void ConfirmBuy()
     {
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
@@ -253,14 +266,27 @@ public class BlacksmithShop : MonoBehaviour
     private bool IsArmor(ItemType type) => type.ToString().StartsWith("ARMADURA");
 
     // 🔹 Métodos auxiliares para ShopUI
-    public int GetPending(ItemType type) => 0;
+
+    // Cantidad que el jugador tiene AHORA MISMO en el inventario de ese tipo de item
+    public int GetPending(ItemType type)
+    {
+        if (InventoryManager.instance == null) return 0;
+        return InventoryManager.instance.GetQuantity(type);
+    }
+
     public int GetRequiredItemQty(ItemType type)
     {
         int index = trades.FindIndex(t => t.potionResult == type);
         if (index == -1) return 0;
         return trades[index].requiredItemQty;
     }
-    public int GetRequiredItemPending(ItemType type) => 0;
+
+    // Igual que GetPending: cantidad real en inventario del material requerido
+    public int GetRequiredItemPending(ItemType type)
+    {
+        if (InventoryManager.instance == null) return 0;
+        return InventoryManager.instance.GetQuantity(type);
+    }
     public bool TryGetGoldValue(ItemType type, out int value)
     {
         int index = trades.FindIndex(t => t.potionResult == type);
@@ -321,7 +347,7 @@ public class BlacksmithShop : MonoBehaviour
 
         for (int i = 0; i < tradeUIs.Count; i++)
         {
-            if(tradeUIs[i].mode == BlacksmithMode.Weapon)
+            if (tradeUIs[i].mode == BlacksmithMode.Weapon)
             {
                 tradeUIs[i].GetComponent<ShopButton>().itemType = swordType;
             }
@@ -329,7 +355,7 @@ public class BlacksmithShop : MonoBehaviour
             {
                 tradeUIs[i].GetComponent<ShopButton>().itemType = armorType;
             }
-            
+
         }
 
 

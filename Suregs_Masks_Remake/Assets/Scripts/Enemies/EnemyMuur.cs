@@ -32,6 +32,7 @@ public class EnemyMuur : Enemy
 
     protected override void ExtraUpdate()
     {
+        if (isDead) return;
         distance = Vector2.Distance(transform.position, player.position);
 
         if (dashCooldownTimer > 0f)
@@ -52,29 +53,12 @@ public class EnemyMuur : Enemy
             animator.SetBool("IsRunning", isRunning);
         }
 
-        
 
-        //if (isDashing)
-        //{
-        //    stunTimer -= Time.deltaTime;
-
-        //    if (stunTimer <= 0f)
-        //    {
-        //        isDashing = false;
-
-        //        animator.SetBool("isDashing", false);
-        //        animator.SetBool("isStunned", true);
-
-        //        StartCoroutine(StunCoroutine());
-        //    }
-        //}
-
-        //animator.SetFloat("Speed", rb.velocity.magnitude);
 
     }
     protected override void Attack()
     {
-        if (!isNotAttacking || isDashing) return;
+        if (!isNotAttacking || isDashing || isDead) return;
 
 
         if (distance < attackDistance)
@@ -196,6 +180,7 @@ public class EnemyMuur : Enemy
         animator.SetTrigger("Die");
 
         rb.velocity = Vector2.zero;
+        agent.isStopped = true;
 
         AudioManager.Instance.PlaySFX(dieClip);
         StartCoroutine(DieCoroutine());

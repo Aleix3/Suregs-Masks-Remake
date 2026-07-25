@@ -64,6 +64,8 @@ public class MaskInuit : BaseMask
     public GameObject explosionVFXPrefab;
     public GameObject waveVFXPrefab;
 
+    
+
 
 
     private bool _passiveActive;

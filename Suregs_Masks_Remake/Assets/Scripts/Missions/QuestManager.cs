@@ -46,7 +46,15 @@ public class QuestManager : MonoBehaviour
     /// </summary>
     public bool CurrentQuestAllowsDungeonEntry()
     {
-        return CurrentMainQuest != null && CurrentMainQuest.description == DungeonReturnQuestText;
+        if(CurrentMainQuest == null)
+        {
+            return true;
+        }
+        else
+        {
+            return CurrentMainQuest != null && CurrentMainQuest.description == DungeonReturnQuestText;
+        }
+        
     }
 
     private void Awake()

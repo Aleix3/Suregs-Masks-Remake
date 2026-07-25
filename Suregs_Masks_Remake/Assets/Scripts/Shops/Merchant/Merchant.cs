@@ -17,9 +17,14 @@ public class Merchant : MonoBehaviour, IShop
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            DialogueManager.Instance.CloseCommerce();
-            merchantCanvas.SetActive(false);
+            CloseShop();
         }
+    }
+
+    public void CloseShop()
+    {
+        DialogueManager.Instance.CloseCommerce();
+        merchantCanvas.SetActive(false);
     }
 
     public void Interact()
@@ -70,7 +75,6 @@ public class Merchant : MonoBehaviour, IShop
 
         }
 
-        Debug.Log("Seleccionado 1 " + type + " | Oro acumulado: " + pendingGold);
 
         OnTradeUpdated?.Invoke();
     }
@@ -152,13 +156,23 @@ public class Merchant : MonoBehaviour, IShop
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buttonClip);
         pendingSell.Clear();
         pendingGold = 0;
+        int selectedTradesCounter = 0;
 
         for (int i = 0; i < shopUI.buttons.Count; i++)
         {
+            if (shopUI.buttons[i].isSelectedPermanent)
+            {
+                selectedTradesCounter++;
+            }
             shopUI.buttons[i].DeSelect();
         }
 
         OnTradeUpdated?.Invoke();
+
+        if(selectedTradesCounter == 0)
+        {
+            CloseShop();
+        }
 
     }
 
@@ -169,12 +183,12 @@ public class Merchant : MonoBehaviour, IShop
 
         switch (num)
         {
-            case 1: type = ItemType.COLA; goldValue = 10; break;
-            case 2: type = ItemType.HUESO; goldValue = 15; break;
-            case 3: type = ItemType.SALIVA; goldValue = 20; break;
-            case 4: type = ItemType.GARRA; goldValue = 50; break;
-            case 5: type = ItemType.OJO; goldValue = 5; break;
-            case 6: type = ItemType.DIENTE; goldValue = 25; break;
+            case 1: type = ItemType.COLA; goldValue = 30; break;
+            case 2: type = ItemType.HUESO; goldValue = 40; break;
+            case 3: type = ItemType.SALIVA; goldValue = 50; break;
+            case 4: type = ItemType.GARRA; goldValue = 120; break;
+            case 5: type = ItemType.OJO; goldValue = 30; break;
+            case 6: type = ItemType.DIENTE; goldValue = 60; break;
             default: return false;
         }
 
@@ -187,12 +201,12 @@ public class Merchant : MonoBehaviour, IShop
 
         switch (type)
         {
-            case ItemType.COLA: value = 10; return true;
-            case ItemType.HUESO: value = 15; return true;
-            case ItemType.SALIVA: value = 20; return true;
-            case ItemType.GARRA: value = 50; return true;
-            case ItemType.OJO: value = 5; return true;
-            case ItemType.DIENTE: value = 25; return true;
+            case ItemType.COLA: value = 30; return true;
+            case ItemType.HUESO: value = 40; return true;
+            case ItemType.SALIVA: value = 50; return true;
+            case ItemType.GARRA: value = 120; return true;
+            case ItemType.OJO: value = 30; return true;
+            case ItemType.DIENTE: value = 60; return true;
         }
 
         return false;

@@ -175,7 +175,7 @@ MonoBehaviour:
   speed: 8
   returnSpeed: 10
   lifeTime: 3
-  damage: 10
+  damage: 5
   animator: {fileID: 8749709182792235825}
 --- !u!95 &8749709182792235825
 Animator:

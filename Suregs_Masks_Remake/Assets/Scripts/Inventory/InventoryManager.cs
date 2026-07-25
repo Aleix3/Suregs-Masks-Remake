@@ -1,9 +1,8 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Item;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 using TMPro;
 using static Enemy;
 public class InventoryManager : MonoBehaviour
@@ -64,12 +63,10 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        if (inventorySlots.transform.childCount > 0)
-            MoveHoverTo(currentIndex);
-        hover.transform.localScale = new Vector3(0.662f, 0.662f, 0.662f);
+        
 
-        
-        
+
+
     }
 
     private void Update()
@@ -157,7 +154,7 @@ public class InventoryManager : MonoBehaviour
             return found;
         }
 
-        // crear nuevo GameObject en el primer slot vacío
+        // crear nuevo GameObject en el primer slot vacï¿½o
         GameObject newItem = Instantiate(itemPrefab);
         InventoryItem itemComp = newItem.GetComponent<InventoryItem>();
         itemComp.type = type;
@@ -169,7 +166,7 @@ public class InventoryManager : MonoBehaviour
         if (itemComp.itemImage != null) itemComp.itemImage.sprite = itemSprite;
         if (itemComp.closeUpItem != null) itemComp.closeUpItem.sprite = itemSprite;
 
-        // buscar slot vacío
+        // buscar slot vacï¿½o
         for (int s = 0; s < inventorySlots.transform.childCount; s++)
         {
             Transform slot = inventorySlots.transform.GetChild(s);
@@ -181,7 +178,7 @@ public class InventoryManager : MonoBehaviour
                 break;
             }
         }
-        
+
         inventoryItems.Add(itemComp);
         SaveInventory();
         MoveHoverTo(currentIndex);
@@ -208,7 +205,7 @@ public class InventoryManager : MonoBehaviour
                 if (it.quantity > quantity)
                 {
                     it.SubtractQuantity(quantity);
-                    
+
                 }
                 else
                 {
@@ -223,13 +220,13 @@ public class InventoryManager : MonoBehaviour
                 return true;
             }
         }
-        
+
         return false;
     }
 
     public InventoryItem AddItem(Item.ItemType type, uint quantity = 1)
     {
-        
+
         Item.GetItemData(type, out string name, out string description, out string itemType, out Sprite sprite);
         OnInventoryChanged?.Invoke();
         return CreateInventoryItem(
@@ -265,8 +262,9 @@ public class InventoryManager : MonoBehaviour
 
             foreach (Transform child in slot)
             {
-                if (child == hover)
-                    return;
+                if (child.gameObject == hover)
+                    continue;
+
                 Destroy(child.gameObject);
             }
         }
@@ -352,13 +350,20 @@ public class InventoryManager : MonoBehaviour
         {
             foreach (Transform child in slot)
             {
-                if (child == hover)
-                    return;
+                if (child.gameObject == hover)
+                    continue;
+
                 Destroy(child.gameObject);
             }
-                
         }
 
         currentIndex = 0;
+    }
+
+    public void FirstHoverMove()
+    {
+        if (inventorySlots.transform.childCount > 0)
+            MoveHoverTo(currentIndex);
+        hover.transform.localScale = new Vector3(0.662f, 0.662f, 0.662f);
     }
 }

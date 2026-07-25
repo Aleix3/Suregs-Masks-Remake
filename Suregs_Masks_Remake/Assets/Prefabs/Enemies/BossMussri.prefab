@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd16beb08f897d94b9fdc2c4751ec221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 0
+  enemyType: 11
   maxHealth: 4000
   health: 4000
   speed: 0

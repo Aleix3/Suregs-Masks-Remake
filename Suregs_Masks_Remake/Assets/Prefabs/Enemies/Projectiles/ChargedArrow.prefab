@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027ab27a70a8be948bbcb4e8cbe39ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 250
+  damage: 50
   speed: 10
   lifeTime: 4
   poisonAreaPrefab: {fileID: 4535473329264882499, guid: e44262685af05894699e9a63473dad6d, type: 3}

@@ -48,7 +48,8 @@ public class BossInuit : Enemy
     public AudioClip boomerangClip;
     public AudioClip dieClip;
 
-
+    public Transform maskSpawnpoint;
+    public GameObject MaskPrefab;
 
     protected override void Start()
     {
@@ -73,6 +74,7 @@ public class BossInuit : Enemy
         if (health <= 0)
         {
             AudioManager.Instance.PlaySFX(dieClip);
+            Instantiate(MaskPrefab, maskSpawnpoint.position, maskSpawnpoint.rotation);
             desiredBossState = BossState.Dead;
             BossStateMachine();
             return;
@@ -148,7 +150,7 @@ public class BossInuit : Enemy
                 break;
 
             case BossState.Dead:
-                
+                Instantiate(MaskPrefab, maskSpawnpoint.position, maskSpawnpoint.rotation);
                 Die();
                 break;
         }

@@ -126,6 +126,32 @@ public class Player : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         MaskManager = GetComponent<MaskManager>();
+
+        LoadUpgrades();
+    }
+
+    private const string WEAPON_LEVEL_KEY = "Player_WeaponLevel";
+    private const string ARMOR_LEVEL_KEY = "Player_ArmorLevel";
+
+    // Carga el nivel de arma/armadura guardado (si no hay nada guardado, se queda en el valor por defecto del Inspector)
+    private void LoadUpgrades()
+    {
+        weaponLevel = PlayerPrefs.GetInt(WEAPON_LEVEL_KEY, weaponLevel);
+        armorLevel = PlayerPrefs.GetInt(ARMOR_LEVEL_KEY, armorLevel);
+
+        if (weaponLevel > 1)
+            baseSwordDamage = PlayerStatsTable.GetWeaponDamage(weaponLevel);
+
+        if (armorLevel > 1)
+            baseMaxHealth = PlayerStatsTable.GetArmorHealth(armorLevel);
+    }
+
+    // Guarda el nivel actual de arma/armadura para que persista al recargar escena o reiniciar el juego
+    private void SaveUpgrades()
+    {
+        PlayerPrefs.SetInt(WEAPON_LEVEL_KEY, weaponLevel);
+        PlayerPrefs.SetInt(ARMOR_LEVEL_KEY, armorLevel);
+        PlayerPrefs.Save();
     }
 
     void ResetPlayerState()
@@ -516,6 +542,8 @@ public class Player : MonoBehaviour
 
         baseSwordDamage = PlayerStatsTable.GetWeaponDamage(level);
 
+        SaveUpgrades();
+
         Debug.Log($"Weapon level: {level} | Damage: {SwordDamage}");
     }
 
@@ -528,6 +556,8 @@ public class Player : MonoBehaviour
         baseMaxHealth = PlayerStatsTable.GetArmorHealth(level);
 
         health = (health / previousMax) * MaxHealth;
+
+        SaveUpgrades();
 
         Debug.Log($"Armor level: {level} | MaxHealth: {MaxHealth}");
     }
