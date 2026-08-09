@@ -143,6 +143,9 @@ MonoBehaviour:
   dashDuration: 0.33
   lastMovementDirection: {x: 0, y: 0}
   isFacingLeft: 0
+  fallRotationSpeed: 900
+  fallDuration: 0.6
+  colliderPlayerNoTrigger: {fileID: 9152237918208041046}
   actualRoom: {fileID: 0}
   attackHitboxPrefab: {fileID: 3803651259362562942, guid: 7485853c63d01714aa4d3fc5ef41f11d, type: 3}
   attackWidth: 1

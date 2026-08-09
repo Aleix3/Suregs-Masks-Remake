@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
@@ -32,6 +33,19 @@ public class Player : MonoBehaviour
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
+
+    [Header("Vacios (huecos en el suelo)")]
+    public float fallRotationSpeed = 900f; 
+    public float fallDuration = 0.6f;      
+    private bool isFallingIntoVoid = false;
+    public bool IsFallingIntoVoid => isFallingIntoVoid;
+    private Vector3 scaleBeforeFalling;
+    private bool restoreScaleAfterFall;
+    private Vector3 baseScale;
+    public CircleCollider2D colliderPlayerNoTrigger;
+    private CinemachineConfiner2D cinemachineConfiner;
+    private PolygonCollider2D initialRoomCollider;
+
 
     private readonly HashSet<object> movementLocks = new HashSet<object>();
 
@@ -123,6 +137,10 @@ public class Player : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        // Guardamos la escala "normal" del jugador para poder restaurarla
+        // tras la animacion de caida en un vacio (o cualquier otra que la modifique)
+        baseScale = new Vector3(Mathf.Abs(transform.localScale.x), Mathf.Abs(transform.localScale.y), Mathf.Abs(transform.localScale.z));
+
         SceneManager.sceneLoaded += OnSceneLoaded;
 
         MaskManager = GetComponent<MaskManager>();
@@ -162,11 +180,28 @@ public class Player : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
+            rb.rotation = 0f;
         }
+
+        transform.rotation = Quaternion.identity;
+
+        if (restoreScaleAfterFall)
+        {
+            transform.localScale = scaleBeforeFalling;
+            restoreScaleAfterFall = false;
+        }
+
+        isFallingIntoVoid = false;
+
+        ClearAllMovementLocks();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        
+        cinemachineConfiner = FindFirstObjectByType<CinemachineConfiner2D>();
+
+        initialRoomCollider = (PolygonCollider2D)cinemachineConfiner.m_BoundingShape2D;
         StartCoroutine(SetSpawn());
     }
 
@@ -203,6 +238,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (isDead)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+
+        if (isFallingIntoVoid)
         {
             rb.velocity = Vector3.zero;
             return;
@@ -449,6 +490,11 @@ public class Player : MonoBehaviour
         health = Mathf.Min(MaxHealth, MaxHealth * percent);
     }
 
+    public void DamageToPercent(float percent)
+    {
+        int damage = Mathf.RoundToInt(MaxHealth * percent);
+        TakeDamage(damage);
+    }
     public void TakeDamage(int damage)
     {
         if (godMode || isDead)
@@ -504,6 +550,19 @@ public class Player : MonoBehaviour
             AudioManager.Instance.PlaySFX(AudioManager.Instance.getItem);
             collision.GetComponent<MaskItem>().GetMask();
         }
+
+        if (isDashing)
+            return;
+        if (!colliderPlayerNoTrigger.IsTouching(collision))
+            return;
+        //VACIOS (huecos en el suelo)
+        if (collision.gameObject.CompareTag("Void"))
+        {
+            FallIntoVoid();
+        }
+        
+
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -511,6 +570,11 @@ public class Player : MonoBehaviour
         var interactable = collision.GetComponent<IInteractable>();
         if (interactable != null && interactable == currentInteractable)
             currentInteractable = null;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 
     private void ToggleGodMode()
@@ -690,6 +754,80 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("Town");
 
     }
+
+    // Vacios / huecos en el suelo: gira y encoge al jugador y recarga la escena actual
+    public void FallIntoVoid()
+    {
+        if (isDead || isFallingIntoVoid) return;
+
+        scaleBeforeFalling = transform.localScale;
+        restoreScaleAfterFall = true;
+
+        StartCoroutine(FallIntoVoidRoutine());
+    }
+
+    private IEnumerator FallIntoVoidRoutine()
+    {
+        
+        isFallingIntoVoid = true;
+
+        LockMovement(this);
+        isDashing = false;
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isDashing", false);
+        rb.velocity = Vector2.zero;
+
+        Vector3 startScale = transform.localScale;
+        float elapsed = 0f;
+
+        while (elapsed < fallDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / fallDuration;
+
+            transform.Rotate(
+                0f,
+                0f,
+                fallRotationSpeed * Time.deltaTime
+            );
+
+            transform.localScale = Vector3.Lerp(
+                startScale,
+                Vector3.zero,
+                t
+            );
+
+            yield return null;
+        }
+
+        transform.localScale = Vector3.zero;
+
+        DamageToPercent(0.15f);
+
+        godMode = true;
+
+        yield return StartCoroutine(CameraManager.Instance.Fade(2, 1));
+
+        cinemachineConfiner = FindFirstObjectByType<CinemachineConfiner2D>();
+
+        cinemachineConfiner.m_BoundingShape2D = initialRoomCollider;
+
+        actualRoom.isPlayerInRoom = false;
+
+        actualRoom = initialRoomCollider.transform.parent.GetComponent<Room>();
+
+        StartCoroutine(SetSpawn());
+
+        yield return StartCoroutine(CameraManager.Instance.Fade(0, 1));
+
+        godMode = false;
+
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
+    }
+
+
 
     void UpdateLowHealthSound()
     {

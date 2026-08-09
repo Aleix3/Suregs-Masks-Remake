@@ -257,6 +257,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5091904372588516536, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
   m_PrefabInstance: {fileID: 12757712}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &12757714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5193733101120518821, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
+  m_PrefabInstance: {fileID: 12757712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93216c54318a2674997bd7e5e7cbbe62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &13054531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16636,6 +16647,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: actualRoom
+      value: 
+      objectReference: {fileID: 12757714}
     - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: dashDuration
       value: 0.33

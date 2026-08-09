@@ -1027,7 +1027,7 @@ GameObject:
   - component: {fileID: 49118620}
   m_Layer: 0
   m_Name: Obstacle (69)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1054,7 +1054,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49118618}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1076,7 +1076,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1090,7 +1090,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.33, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &49118621
 MonoBehaviour:
@@ -4914,7 +4914,7 @@ GameObject:
   - component: {fileID: 412548460}
   m_Layer: 0
   m_Name: Obstacle (67)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4941,7 +4941,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412548458}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -4963,7 +4963,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4977,7 +4977,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.24, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &412548461
 MonoBehaviour:
@@ -6757,7 +6757,7 @@ GameObject:
   - component: {fileID: 586182303}
   m_Layer: 0
   m_Name: Obstacle (68)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6784,7 +6784,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586182301}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -6806,7 +6806,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6820,7 +6820,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.24, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &586182304
 MonoBehaviour:
@@ -9468,7 +9468,7 @@ GameObject:
   - component: {fileID: 788387302}
   m_Layer: 0
   m_Name: Obstacle (71)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9495,7 +9495,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788387300}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -9517,7 +9517,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -9531,7 +9531,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.22, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &788387303
 MonoBehaviour:
@@ -10051,7 +10051,7 @@ GameObject:
   - component: {fileID: 914404797}
   m_Layer: 0
   m_Name: Obstacle (76)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10078,7 +10078,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914404795}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -10100,10 +10100,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.04194428, y: 0.04206565}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10114,7 +10114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.22309044, y: 0.9158687}
   m_EdgeRadius: 0
 --- !u!114 &914404798
 MonoBehaviour:
@@ -11452,7 +11452,7 @@ GameObject:
   - component: {fileID: 1081204818}
   m_Layer: 0
   m_Name: Obstacle (74)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11479,7 +11479,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081204816}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -11501,7 +11501,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -11515,7 +11515,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.29, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1081204819
 MonoBehaviour:
@@ -11599,7 +11599,7 @@ GameObject:
   - component: {fileID: 1098556357}
   m_Layer: 0
   m_Name: Obstacle (73)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11626,7 +11626,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098556355}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -11648,7 +11648,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -11662,7 +11662,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.24, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1098556358
 MonoBehaviour:
@@ -17889,7 +17889,7 @@ GameObject:
   - component: {fileID: 1761146428}
   m_Layer: 0
   m_Name: Obstacle (70)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17916,7 +17916,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761146426}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -17938,7 +17938,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -17952,7 +17952,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.32, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1761146429
 MonoBehaviour:
@@ -18483,6 +18483,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5091904372588516536, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
   m_PrefabInstance: {fileID: 1608015505}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1800475897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5193733101120518821, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
+  m_PrefabInstance: {fileID: 1608015505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93216c54318a2674997bd7e5e7cbbe62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1802636326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6525441108890427984, guid: 1345d13ea32128348a34477674d8be35, type: 3}
@@ -19561,7 +19572,7 @@ GameObject:
   - component: {fileID: 1904103284}
   m_Layer: 0
   m_Name: Obstacle (75)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19588,7 +19599,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904103282}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -19610,7 +19621,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -19624,7 +19635,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.2, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1904103285
 MonoBehaviour:
@@ -21463,7 +21474,7 @@ GameObject:
   - component: {fileID: 2115446238}
   m_Layer: 0
   m_Name: Obstacle (72)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21490,7 +21501,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115446236}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -21512,7 +21523,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -21526,7 +21537,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.35, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &2115446239
 MonoBehaviour:
@@ -22122,11 +22133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 169067372024181408, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.7
+      value: -61.7
       objectReference: {fileID: 0}
     - target: {fileID: 169067372024181408, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.1
+      value: -4.8
       objectReference: {fileID: 0}
     - target: {fileID: 169067372024181408, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22184,6 +22195,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
+      propertyPath: actualRoom
+      value: 
+      objectReference: {fileID: 1800475897}
     - target: {fileID: 9073451530551572438, guid: 4f0d22f01e902f042b5b7ab0aa52c990, type: 3}
       propertyPath: dashDuration
       value: 0.33
