@@ -551,15 +551,7 @@ public class Player : MonoBehaviour
             collision.GetComponent<MaskItem>().GetMask();
         }
 
-        if (isDashing)
-            return;
-        if (!colliderPlayerNoTrigger.IsTouching(collision))
-            return;
-        //VACIOS (huecos en el suelo)
-        if (collision.gameObject.CompareTag("Void"))
-        {
-            FallIntoVoid();
-        }
+        
         
 
 
@@ -572,10 +564,19 @@ public class Player : MonoBehaviour
             currentInteractable = null;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        
+        if (isDashing)
+            return;
+        if (!colliderPlayerNoTrigger.IsTouching(collision))
+            return;
+        //VACIOS (huecos en el suelo)
+        if (collision.gameObject.CompareTag("Void"))
+        {
+            FallIntoVoid();
+        }
     }
+
 
     private void ToggleGodMode()
     {
@@ -814,11 +815,24 @@ public class Player : MonoBehaviour
 
         actualRoom.isPlayerInRoom = false;
 
-        actualRoom = initialRoomCollider.transform.parent.GetComponent<Room>();
+        actualRoom = initialRoomCollider.transform.GetComponent<Room>();
 
         StartCoroutine(SetSpawn());
 
-        yield return StartCoroutine(CameraManager.Instance.Fade(0, 1));
+        GameObject spawn = GameObject.FindWithTag("SpawnPoint");
+
+        if (spawn != null)
+        {
+            ResetPlayerState();
+            transform.position = spawn.transform.position;
+        }
+
+        CameraManager.Instance.TransitionToRoom(
+           actualRoom.GetComponent<RoomCameraData>(),
+           spawn.transform.position
+       );
+
+        //yield return StartCoroutine(CameraManager.Instance.Fade(0, 1));
 
         godMode = false;
 

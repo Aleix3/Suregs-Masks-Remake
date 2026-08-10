@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 13994705}
   m_Layer: 0
   m_Name: Obstacle (132)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +335,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.08563414, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -346,7 +346,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8287317, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &13994706
 MonoBehaviour:
@@ -2342,7 +2342,7 @@ GameObject:
   - component: {fileID: 286231738}
   m_Layer: 0
   m_Name: Obstacle (129)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2356,8 +2356,8 @@ Transform:
   m_GameObject: {fileID: 286231736}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 30.77, y: -32.953003, z: 0.079649955}
-  m_LocalScale: {x: 0.23386303, y: 3.0799556, z: 1}
+  m_LocalPosition: {x: 30.7869, y: -32.939, z: 0.079649955}
+  m_LocalScale: {x: 0.565926, y: 3.4851468, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337984480}
@@ -2394,7 +2394,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.038954686, y: -0.008824587}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2405,7 +2405,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.29882532, y: 0.7802013}
   m_EdgeRadius: 0
 --- !u!114 &286231739
 MonoBehaviour:
@@ -4116,7 +4116,7 @@ GameObject:
   - component: {fileID: 471181172}
   m_Layer: 0
   m_Name: Obstacle (136)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4168,7 +4168,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.27613991, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4179,7 +4179,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.35755232, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &471181173
 MonoBehaviour:
@@ -5427,7 +5427,7 @@ GameObject:
   - component: {fileID: 651733547}
   m_Layer: 0
   m_Name: Obstacle (128)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5441,8 +5441,8 @@ Transform:
   m_GameObject: {fileID: 651733545}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.77, y: -32.953, z: 0.079649955}
-  m_LocalScale: {x: 0.23386303, y: 3.0799556, z: 1}
+  m_LocalPosition: {x: 30.7925, y: -32.9305, z: 0.079649955}
+  m_LocalScale: {x: 0.52652615, y: 3.4963715, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337984480}
@@ -5479,7 +5479,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.038954686, y: -0.008824587}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5490,7 +5490,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.29882532, y: 0.7802013}
   m_EdgeRadius: 0
 --- !u!114 &651733548
 MonoBehaviour:
@@ -6617,7 +6617,7 @@ GameObject:
   - component: {fileID: 816768376}
   m_Layer: 0
   m_Name: Obstacle (137)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6631,8 +6631,8 @@ Transform:
   m_GameObject: {fileID: 816768374}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.7914, y: -53.8677, z: 0.079649955}
-  m_LocalScale: {x: 1.511593, y: 7.8514724, z: 1}
+  m_LocalPosition: {x: -0.6013, y: -53.6847, z: 0.079649955}
+  m_LocalScale: {x: 1.8777008, y: 7.4714613, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337984480}
@@ -6669,7 +6669,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.15183854, y: -0.0146047175}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6680,7 +6680,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6963229, y: 1.0292091}
   m_EdgeRadius: 0
 --- !u!114 &816768377
 MonoBehaviour:
@@ -6826,7 +6826,7 @@ GameObject:
   - component: {fileID: 826971557}
   m_Layer: 0
   m_Name: Obstacle (133)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6878,7 +6878,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0288819, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6889,7 +6889,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.38109827, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &826971558
 MonoBehaviour:
@@ -7479,7 +7479,7 @@ GameObject:
   - component: {fileID: 902658772}
   m_Layer: 0
   m_Name: Obstacle (139)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7531,7 +7531,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.02917391, y: 0.08398554}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7542,7 +7542,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9416522, y: 0.8320289}
   m_EdgeRadius: 0
 --- !u!114 &902658773
 MonoBehaviour:
@@ -8735,7 +8735,7 @@ GameObject:
   - component: {fileID: 1024340791}
   m_Layer: 0
   m_Name: Obstacle (126)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8749,8 +8749,8 @@ Transform:
   m_GameObject: {fileID: 1024340789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.493, y: -32.9155, z: 0.079649955}
-  m_LocalScale: {x: 0.23386303, y: 3.0799556, z: 1}
+  m_LocalPosition: {x: 25.4958, y: -32.9267, z: 0.079649955}
+  m_LocalScale: {x: 0.49838346, y: 3.5526524, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337984480}
@@ -8787,7 +8787,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.038954686, y: -0.008824587}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8798,7 +8798,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.29882532, y: 0.7802013}
   m_EdgeRadius: 0
 --- !u!114 &1024340792
 MonoBehaviour:
@@ -8882,7 +8882,7 @@ GameObject:
   - component: {fileID: 1033957286}
   m_Layer: 0
   m_Name: Obstacle (127)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8896,8 +8896,8 @@ Transform:
   m_GameObject: {fileID: 1033957284}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 25.493, y: -32.9155, z: 0.079649955}
-  m_LocalScale: {x: 0.23386303, y: 3.0799556, z: 1}
+  m_LocalPosition: {x: 25.5043, y: -32.9296, z: 0.079649955}
+  m_LocalScale: {x: 0.58840525, y: 3.451413, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337984480}
@@ -8934,7 +8934,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.038954686, y: -0.008824587}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8945,7 +8945,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.29882532, y: 0.7802013}
   m_EdgeRadius: 0
 --- !u!114 &1033957287
 MonoBehaviour:
@@ -9159,7 +9159,7 @@ GameObject:
   - component: {fileID: 1089171722}
   m_Layer: 0
   m_Name: Obstacle (131)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9211,7 +9211,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.049824208, y: 0.0097569525}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9222,7 +9222,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9003516, y: 0.9804861}
   m_EdgeRadius: 0
 --- !u!114 &1089171723
 MonoBehaviour:
@@ -9380,7 +9380,7 @@ GameObject:
   - component: {fileID: 1112561098}
   m_Layer: 0
   m_Name: Obstacle (135)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9432,7 +9432,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00026074052, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9443,7 +9443,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.29389626, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1112561099
 MonoBehaviour:
@@ -9527,7 +9527,7 @@ GameObject:
   - component: {fileID: 1116590932}
   m_Layer: 0
   m_Name: Obstacle (140)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9579,7 +9579,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.015354693, y: -0.090868816}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9590,7 +9590,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9692906, y: 0.81826234}
   m_EdgeRadius: 0
 --- !u!114 &1116590933
 MonoBehaviour:
@@ -11883,7 +11883,7 @@ GameObject:
   - component: {fileID: 1351160418}
   m_Layer: 0
   m_Name: Obstacle (125)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11897,8 +11897,8 @@ Transform:
   m_GameObject: {fileID: 1351160416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0425, y: -32.856, z: 0.079649955}
-  m_LocalScale: {x: 0.47221804, y: 5.9125247, z: 1}
+  m_LocalPosition: {x: 4.0315, y: -32.9477, z: 0.079649955}
+  m_LocalScale: {x: 1.110381, y: 6.227967, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337984480}
@@ -11935,7 +11935,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010990471, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11946,7 +11946,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.2966525, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1351160419
 MonoBehaviour:
@@ -13274,7 +13274,7 @@ GameObject:
   - component: {fileID: 1509794347}
   m_Layer: 0
   m_Name: Obstacle (138)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13288,8 +13288,8 @@ Transform:
   m_GameObject: {fileID: 1509794345}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -7.0492, y: -51.6371, z: 0.079649955}
-  m_LocalScale: {x: 5.954089, y: 4.569161, z: 1}
+  m_LocalPosition: {x: -6.859, y: -51.5072, z: 0.079649955}
+  m_LocalScale: {x: 6.2136874, y: 4.949772, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337984480}
@@ -13326,7 +13326,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.08106735}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13337,7 +13337,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.8378653}
   m_EdgeRadius: 0
 --- !u!114 &1509794348
 MonoBehaviour:
@@ -14145,11 +14145,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3170982255583659131, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: 18.524405
+      value: 18.57522
       objectReference: {fileID: 0}
     - target: {fileID: 3170982255583659131, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: -10.683254
+      value: -10.55621
       objectReference: {fileID: 0}
     - target: {fileID: 3170982255583659131, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
@@ -14161,19 +14161,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3170982255583659131, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: 0.7859469
+      value: 0.67160517
       objectReference: {fileID: 0}
     - target: {fileID: 3170982255583659131, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: -20.99328
+      value: -21.069506
       objectReference: {fileID: 0}
     - target: {fileID: 3170982255583659131, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: 0.7794887
+      value: 0.6651546
       objectReference: {fileID: 0}
     - target: {fileID: 3170982255583659131, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: -10.694935
+      value: -10.606004
       objectReference: {fileID: 0}
     - target: {fileID: 3968988574492388350, guid: eb59a12b067e4814ab6beed7589b9078, type: 3}
       propertyPath: roomTriggerConnected
@@ -15824,7 +15824,7 @@ GameObject:
   - component: {fileID: 1793989148}
   m_Layer: 0
   m_Name: Obstacle (124)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15839,7 +15839,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -3.1473, y: -38.2986, z: 0.079649955}
-  m_LocalScale: {x: 0.4372389, y: 12.675331, z: 1}
+  m_LocalScale: {x: 1.0189623, y: 12.675331, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337984480}
@@ -15876,7 +15876,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0031332448, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15887,7 +15887,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.1540377, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1793989149
 MonoBehaviour:
@@ -17214,7 +17214,7 @@ GameObject:
   - component: {fileID: 1955461129}
   m_Layer: 0
   m_Name: Obstacle (130)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17266,7 +17266,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.044129893, y: 0.018118083}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17277,7 +17277,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9117402, y: 0.96376383}
   m_EdgeRadius: 0
 --- !u!114 &1955461130
 MonoBehaviour:
@@ -17565,7 +17565,7 @@ GameObject:
   - component: {fileID: 1980259139}
   m_Layer: 0
   m_Name: Obstacle (134)
-  m_TagString: Untagged
+  m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17617,7 +17617,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.033008065, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17628,7 +17628,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3068299, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1980259140
 MonoBehaviour:
