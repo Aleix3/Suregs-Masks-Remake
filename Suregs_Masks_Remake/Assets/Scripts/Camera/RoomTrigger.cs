@@ -27,7 +27,7 @@ public class RoomTrigger : MonoBehaviour
     {
         float distance = 1.5f;
 
-        Vector3 positionToSpawn = roomTriggerConnected.position + (roomTriggerConnected.position - transform.position).normalized * distance;
+        Vector3 positionToSpawn = Player.Instance.transform.position = roomTriggerConnected.position + (roomTriggerConnected.position - transform.position).normalized * distance;
 
 
 
