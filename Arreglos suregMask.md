@@ -5,9 +5,10 @@ Bugs:
 
 
 
-**-morir en bosses, respawnear en sala anterior**
 
 
+
+* E flotante en interactuables
 
 
 
@@ -21,7 +22,11 @@ Bugs:
 
 
 
+~~-poner trigger de arboles en mazmorras~~
 
+~~-botón controles en  hud~~
+
+<del>**-morir en bosses, respawnear en sala anterior**</del>
 
 ~~- Proyectiles Ols destruir con obstáculos~~
 

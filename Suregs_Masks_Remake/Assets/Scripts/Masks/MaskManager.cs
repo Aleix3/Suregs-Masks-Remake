@@ -12,7 +12,7 @@ public class MaskManager : MonoBehaviour
     [SerializeField] private BaseMask[] allMasks;
 
     [Header("Input")]
-    public KeyCode swapKey = KeyCode.R;
+    private KeyCode swapKey = KeyCode.L;
     public string swapButton = "Y";
 
     public BaseMask Primary { get; private set; }
@@ -148,7 +148,7 @@ public class MaskManager : MonoBehaviour
 
     private void HandleActivateInput()
     {
-        if (!Input.GetKeyDown(KeyCode.F)) return;
+        if (!Input.GetKeyDown(KeyCode.K)) return;
         if (Primary == null) return;
 
         if (!Primary.IsReady || Primary.IsLocked)

@@ -1,0 +1,2050 @@
+fileFormatVersion: 2
+guid: 47ab4a1525964aa40a32aae1bde11678
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40737548da7edee4cbe776d5617af80f
+      internalID: -1130105805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0515baf53b86743b625eac803b597c
+      internalID: 240950521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bedb071f2f5df642bee52b8ecb117ac
+      internalID: 1935657470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_3
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7addd47debbc76440a88e6e5ff4dc21e
+      internalID: -1269619630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc29134760966674db608d5000fbef8f
+      internalID: -1431176314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_5
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4861a0ef2509c34c9869cd703eea748
+      internalID: -382077808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_6
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b81140c2d1931e4d87ba62cc2952feb
+      internalID: 756942331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_7
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f83df0876812a144a88f8642dd0d120
+      internalID: -2121909196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_8
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab2aacf144e40e468746aa0a428bbfa
+      internalID: -944360633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_9
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 229
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195aade393c4aa74f8b59257856a2325
+      internalID: 2017747079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 208
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ec45a7dd636ed48aebfecfcfaa64dc
+      internalID: 526679989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_11
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 208
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d858bd7c8629e40a531e6dd6197023
+      internalID: 1341367824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_12
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 208
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e96615cd989104095c2268b16eb483
+      internalID: 1563293975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_13
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 208
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52049b53d03b0e04caa8fbf9cd76a0f8
+      internalID: 151694924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_14
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 208
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef50c2f30b3e77e44bc832ebaac4670e
+      internalID: 1590477896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_15
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 208
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba9f65b6f9ca6e468956d118c2c0402
+      internalID: 1400654422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_16
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 208
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e38e3f2ce76bca4b948985f3f3feec1
+      internalID: -1150812267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_17
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 208
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 851e36d33734119449bb1b33ed7a65c5
+      internalID: -1443662975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_18
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 208
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00198fdc692d2ec47b580c2f749235f6
+      internalID: -144491310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_19
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 208
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff50ec8ae5058684f86fc3486122cab9
+      internalID: -16996968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 187
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38107d5d57c132747bb673e0cf48c321
+      internalID: -1073205371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_21
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 187
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf37c90096484542a59220bbc8cbc7c
+      internalID: -193121174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_22
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 187
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67499597efa848848ae4231568664d74
+      internalID: 543214606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_23
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 187
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68cbd63ab3b10a46aef75ab15c91d37
+      internalID: -1602884221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_24
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 187
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b485d712bf3794a941219f70ed0e53
+      internalID: 119273611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_25
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 187
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5b553b247d2aa428d51c81a981000f
+      internalID: -319377289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_26
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 187
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba924f71230f50f4d85f2769c7b56952
+      internalID: 1579197848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_27
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 187
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e525b8b98875c1499cada8d09925dac
+      internalID: 2031498196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_28
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 187
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d9847889a448144bbd16117790ca12
+      internalID: 1239637687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_29
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 187
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64558837909321742bbc860a2d7edbfe
+      internalID: 1790720135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 166
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f49e28d76876bc41ae340795f9d79bc
+      internalID: 1256543713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_31
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 166
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5bc11e3981b484fae7f9428ddc5f25
+      internalID: -936649230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_32
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 166
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deece50ebd2665046811a9e21a06c6ec
+      internalID: -1768507107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_33
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 166
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9dc1ce4dee7d014088d8a5cdcb2057d
+      internalID: -759261468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_34
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 166
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8f0c3bc706a384ca264e9ca1e4505c
+      internalID: -1564781837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_35
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 166
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d76f7797ffc4fb849ba28068e357bdca
+      internalID: -1000214315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_36
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 166
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d82b418cfd3ada4dbdb0cbbb489298c
+      internalID: -507867414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_37
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 136
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada233b6fcca72e438e4f8ac213cef2c
+      internalID: 1016830688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_38
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 136
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74b36287fd40504e84db086f4a36f94
+      internalID: -700445379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_39
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 136
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 455e7c316b1a7c64da92970d3a8f459b
+      internalID: 1119504024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_40
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 136
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ff0a6230c861a4dbf0be58e79946a4
+      internalID: 1682806586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_41
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 136
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501b045ac84ddf3489b2826a6f6c4744
+      internalID: -77334709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_42
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 136
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf97548f0e7c7c4cb62c79e6abc9c28
+      internalID: 1043787766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_43
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 136
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5967f738f209648ae942c9fd1129f9
+      internalID: 1112253156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_44
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 136
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7cd3c8753fe6c4fa07c9d8311dcf86
+      internalID: -1657392660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_45
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 136
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a12493db97b87740b426a7dfcca06a7
+      internalID: 1957720396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_46
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 136
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91509569845c82c4ca2c3bda9f171cd9
+      internalID: -1875504072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_47
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 115
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b34d8be05075a408d180bfd578ecd1
+      internalID: -703338198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_48
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 115
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9229d6b5306a87e449a688787ade6de1
+      internalID: 476655909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_49
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 115
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b82373b50ab9604883567ca7437e19c
+      internalID: 1070606103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_50
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 115
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c324dddf1c837be45888c7f45d907dc5
+      internalID: 577078953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_51
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 115
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061cddedacebce84d8ae2e068a36a8f5
+      internalID: -1627187509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_52
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 115
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab2b821610689348b564c41b84d1f54
+      internalID: 1452297413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_53
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 115
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8325442d8069e5a4f807ff9268eb2626
+      internalID: -562905451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_54
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 115
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd23db424995bd4bbf7a495b1ce7f8c
+      internalID: -375676191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_55
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 115
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c7b5aeec9d7b447b11c6027e467861
+      internalID: 428909675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_56
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 115
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01abb25da8feead4c9de11c3c034cddc
+      internalID: 114696634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_57
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 94
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44caeec0d0bf19344ac644a55672de91
+      internalID: 1480535528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_58
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 94
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ebe13b015fc074b8f3ad468a96feea
+      internalID: -1144942395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_59
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 94
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05290b9f4d5ad5846bd87490a2c2c3f9
+      internalID: -1864111760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_60
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 94
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96408899f098f7747b8ad690f0b7c44a
+      internalID: 1741509614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_61
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 94
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4da930bdf99f845bc245666b8ea7bf
+      internalID: -735586466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_62
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 94
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a365b9b8071e91044bdb22dcef87915e
+      internalID: -497983064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_63
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 94
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f468cb7c54d0cd2468fa4b8187217798
+      internalID: -316791920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_64
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 94
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee6713e1b3fb4546b857921c7df2c2e
+      internalID: -458554220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_65
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 94
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38acb0f85df412d4a9926a7523621557
+      internalID: -1339556702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_66
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 94
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7df7e92a28e97542852d1d60f50235b
+      internalID: -1541638836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_67
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 73
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a117a7569566fb840b56479dc4b9d209
+      internalID: -1244628353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_68
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 73
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07462c8dab03ca7408ffd5c4508d93c0
+      internalID: -764165601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_69
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 73
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235a758207e1b4243941fb2646a8518a
+      internalID: -650124215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_70
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 73
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296262a8e157c9a48a45729608591905
+      internalID: -2108055460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_71
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 73
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7aa7a946b4a6074cbd9ab63581a68d8
+      internalID: 63376365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_72
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 73
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad23b250f235e924d834d040234f36e4
+      internalID: 1719921974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_73
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 73
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c73bf8109e941d41af4d7a96b21417a
+      internalID: -1049028234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_74
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 43
+        width: 66
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 923cd589a70d3a7429484eb41ac77aa3
+      internalID: -2138713252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_75
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 43
+        width: 55
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3216d50e7b47414db3ba9525e8cfb65
+      internalID: 45845320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_76
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 43
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c39b615bbf11d499fff0ef6c5044ff
+      internalID: 1535045147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_77
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 43
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333264725df92964ba91c10d9daa3d72
+      internalID: 239545828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_78
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 22
+        width: 66
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083238260bed80b4aa6a2090fa968ecb
+      internalID: 147891389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_79
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 22
+        width: 55
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5a8088e8a47464faf3d0f0f2b815f8
+      internalID: 694117975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_80
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 22
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25d42d7332f2f149bcef52770b18814
+      internalID: 850060178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_81
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 22
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0641a6405c207747b03da76a87ead8e
+      internalID: 1369608563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_82
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 22
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84f7341654623240b763eb77f075657
+      internalID: 258985959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_83
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 22
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a131aa10776e44bbf50b23db4f01e4
+      internalID: 988045133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_84
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1
+        width: 66
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124e0e05d57afe542aa8240e24fdb43c
+      internalID: -783013464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_85
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1
+        width: 55
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ffaeaf7f8e5a547b5e3a55818d351a
+      internalID: -437833215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_86
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39da15bfceedf34fa4decbe133f59ef
+      internalID: -657727690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard UI PixelArt - Brown_87
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40697dbf941e5074191f364d84e2cd80
+      internalID: 1982703840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Keyboard UI PixelArt - Brown_0: -1130105805
+      Keyboard UI PixelArt - Brown_1: 240950521
+      Keyboard UI PixelArt - Brown_10: 526679989
+      Keyboard UI PixelArt - Brown_11: 1341367824
+      Keyboard UI PixelArt - Brown_12: 1563293975
+      Keyboard UI PixelArt - Brown_13: 151694924
+      Keyboard UI PixelArt - Brown_14: 1590477896
+      Keyboard UI PixelArt - Brown_15: 1400654422
+      Keyboard UI PixelArt - Brown_16: -1150812267
+      Keyboard UI PixelArt - Brown_17: -1443662975
+      Keyboard UI PixelArt - Brown_18: -144491310
+      Keyboard UI PixelArt - Brown_19: -16996968
+      Keyboard UI PixelArt - Brown_2: 1935657470
+      Keyboard UI PixelArt - Brown_20: -1073205371
+      Keyboard UI PixelArt - Brown_21: -193121174
+      Keyboard UI PixelArt - Brown_22: 543214606
+      Keyboard UI PixelArt - Brown_23: -1602884221
+      Keyboard UI PixelArt - Brown_24: 119273611
+      Keyboard UI PixelArt - Brown_25: -319377289
+      Keyboard UI PixelArt - Brown_26: 1579197848
+      Keyboard UI PixelArt - Brown_27: 2031498196
+      Keyboard UI PixelArt - Brown_28: 1239637687
+      Keyboard UI PixelArt - Brown_29: 1790720135
+      Keyboard UI PixelArt - Brown_3: -1269619630
+      Keyboard UI PixelArt - Brown_30: 1256543713
+      Keyboard UI PixelArt - Brown_31: -936649230
+      Keyboard UI PixelArt - Brown_32: -1768507107
+      Keyboard UI PixelArt - Brown_33: -759261468
+      Keyboard UI PixelArt - Brown_34: -1564781837
+      Keyboard UI PixelArt - Brown_35: -1000214315
+      Keyboard UI PixelArt - Brown_36: -507867414
+      Keyboard UI PixelArt - Brown_37: 1016830688
+      Keyboard UI PixelArt - Brown_38: -700445379
+      Keyboard UI PixelArt - Brown_39: 1119504024
+      Keyboard UI PixelArt - Brown_4: -1431176314
+      Keyboard UI PixelArt - Brown_40: 1682806586
+      Keyboard UI PixelArt - Brown_41: -77334709
+      Keyboard UI PixelArt - Brown_42: 1043787766
+      Keyboard UI PixelArt - Brown_43: 1112253156
+      Keyboard UI PixelArt - Brown_44: -1657392660
+      Keyboard UI PixelArt - Brown_45: 1957720396
+      Keyboard UI PixelArt - Brown_46: -1875504072
+      Keyboard UI PixelArt - Brown_47: -703338198
+      Keyboard UI PixelArt - Brown_48: 476655909
+      Keyboard UI PixelArt - Brown_49: 1070606103
+      Keyboard UI PixelArt - Brown_5: -382077808
+      Keyboard UI PixelArt - Brown_50: 577078953
+      Keyboard UI PixelArt - Brown_51: -1627187509
+      Keyboard UI PixelArt - Brown_52: 1452297413
+      Keyboard UI PixelArt - Brown_53: -562905451
+      Keyboard UI PixelArt - Brown_54: -375676191
+      Keyboard UI PixelArt - Brown_55: 428909675
+      Keyboard UI PixelArt - Brown_56: 114696634
+      Keyboard UI PixelArt - Brown_57: 1480535528
+      Keyboard UI PixelArt - Brown_58: -1144942395
+      Keyboard UI PixelArt - Brown_59: -1864111760
+      Keyboard UI PixelArt - Brown_6: 756942331
+      Keyboard UI PixelArt - Brown_60: 1741509614
+      Keyboard UI PixelArt - Brown_61: -735586466
+      Keyboard UI PixelArt - Brown_62: -497983064
+      Keyboard UI PixelArt - Brown_63: -316791920
+      Keyboard UI PixelArt - Brown_64: -458554220
+      Keyboard UI PixelArt - Brown_65: -1339556702
+      Keyboard UI PixelArt - Brown_66: -1541638836
+      Keyboard UI PixelArt - Brown_67: -1244628353
+      Keyboard UI PixelArt - Brown_68: -764165601
+      Keyboard UI PixelArt - Brown_69: -650124215
+      Keyboard UI PixelArt - Brown_7: -2121909196
+      Keyboard UI PixelArt - Brown_70: -2108055460
+      Keyboard UI PixelArt - Brown_71: 63376365
+      Keyboard UI PixelArt - Brown_72: 1719921974
+      Keyboard UI PixelArt - Brown_73: -1049028234
+      Keyboard UI PixelArt - Brown_74: -2138713252
+      Keyboard UI PixelArt - Brown_75: 45845320
+      Keyboard UI PixelArt - Brown_76: 1535045147
+      Keyboard UI PixelArt - Brown_77: 239545828
+      Keyboard UI PixelArt - Brown_78: 147891389
+      Keyboard UI PixelArt - Brown_79: 694117975
+      Keyboard UI PixelArt - Brown_8: -944360633
+      Keyboard UI PixelArt - Brown_80: 850060178
+      Keyboard UI PixelArt - Brown_81: 1369608563
+      Keyboard UI PixelArt - Brown_82: 258985959
+      Keyboard UI PixelArt - Brown_83: 988045133
+      Keyboard UI PixelArt - Brown_84: -783013464
+      Keyboard UI PixelArt - Brown_85: -437833215
+      Keyboard UI PixelArt - Brown_86: -657727690
+      Keyboard UI PixelArt - Brown_87: 1982703840
+      Keyboard UI PixelArt - Brown_9: 2017747079
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
