@@ -18,9 +18,16 @@ public class RoomTrigger : MonoBehaviour
             }
         }
 
+        ChangeRoom();
+
+    }
+
+
+    public void ChangeRoom()
+    {
         float distance = 1.5f;
 
-        Vector3 positionToSpawn = other.transform.position = roomTriggerConnected.position + (roomTriggerConnected.position - transform.position).normalized * distance;
+        Vector3 positionToSpawn = roomTriggerConnected.position + (roomTriggerConnected.position - transform.position).normalized * distance;
 
 
 
@@ -31,7 +38,6 @@ public class RoomTrigger : MonoBehaviour
         Player.Instance.actualRoom = this.transform.parent.GetComponent<Room>();
         roomTriggerConnected.parent.GetComponent<Room>().isPlayerInRoom = false;
         StartCoroutine(SetPlayerInRoomAfterDelay());
-
     }
 
     private IEnumerator SetPlayerInRoomAfterDelay()

@@ -4,12 +4,12 @@ Bugs:
 
 
 
-**-caída al vacio
--morir en bosses, respawnear en sala anterior** 
+
+**-morir en bosses, respawnear en sala anterior**
 
 
 
-\- Proyectiles Ols destruir con obstáculos
+
 
 \-Poner tipografía correcta
 -Mensaje al recoger item y nota
@@ -20,6 +20,12 @@ Bugs:
 \-Rapho pinta que repite dialogo postTraning
 
 
+
+
+
+~~- Proyectiles Ols destruir con obstáculos~~
+
+<b>~~-caída al vacio~~</b>
 
 ~~-Cancelar compra sin compras que desactive la shop~~
 

@@ -732,10 +732,37 @@ public class Player : MonoBehaviour
     public void Die()
     {
         AudioManager.Instance.PlaySFX(AudioManager.Instance.death);
-        isDead = true;
         QuestManager.Instance.CompleteMainStepById("2");
         animator.SetTrigger("die");
+        isDead = true;
+        // si muere en un boss respawnea en la sala anterior
+        if (actualRoom.isBossRoom)
+        {
+            
+            rb.velocity = Vector2.zero;
+
+            RoomTrigger trigger = actualRoom.GetComponentInChildren<RoomTrigger>();
+
+            if (trigger != null)
+            {
+                trigger.roomTriggerConnected.GetComponent<RoomTrigger>().ChangeRoom();
+            }
+
+            StartCoroutine(HealAfterDelay(2f));
+            return;
+        }
+
+        
         StartCoroutine(DieRoutine());
+    }
+
+    private IEnumerator HealAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        HealToPercent(100);
+        isDead = false;
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isDashing", false);
     }
 
     public IEnumerator DieRoutine()

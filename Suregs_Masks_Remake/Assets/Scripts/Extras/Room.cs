@@ -5,7 +5,7 @@ public class Room : MonoBehaviour
 {
     public List<Enemy> enemiesInRoom = new List<Enemy>();
     public bool isPlayerInRoom = false;
-
+    public bool isBossRoom = false;
     private void Awake()
     {
         enemiesInRoom.Clear();
