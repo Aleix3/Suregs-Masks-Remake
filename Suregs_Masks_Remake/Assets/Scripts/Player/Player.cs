@@ -391,62 +391,20 @@ public class Player : MonoBehaviour
     void Attack()
     {
         isAttacking = true;
-
         attackNum++;
         if (attackNum > 3) attackNum = 1;
         comboTimer = comboResetTimer;
 
-        // Reproducir sonido según el combo
         switch (attackNum)
         {
-            case 1:
-                AudioManager.Instance.PlaySFX(AudioManager.Instance.attackCombo1);
-                break;
-            case 2:
-                AudioManager.Instance.PlaySFX(AudioManager.Instance.attackCombo2);
-                break;
-            case 3:
-                AudioManager.Instance.PlaySFX(AudioManager.Instance.attackCombo3);
-                break;
+            case 1: AudioManager.Instance.PlaySFX(AudioManager.Instance.attackCombo1); break;
+            case 2: AudioManager.Instance.PlaySFX(AudioManager.Instance.attackCombo2); break;
+            case 3: AudioManager.Instance.PlaySFX(AudioManager.Instance.attackCombo3); break;
         }
-
-        Vector2 attackPos = transform.position;
-
-        if (lastMovementDirection == Vector2.zero)
-            lastMovementDirection = Vector2.right;
-
-        if (lastMovementDirection.y > 0)
-            attackPos += offsetUp;
-        else if (lastMovementDirection.y < 0)
-            attackPos += offsetDown;
-        else if (lastMovementDirection.x < 0)
-            attackPos += offsetLeft;
-        else if (lastMovementDirection.x > 0)
-            attackPos += offsetRight;
-
-        // Instanciar el hitbox temporal
-        GameObject hitbox = Instantiate(attackHitboxPrefab, attackPos, Quaternion.identity);
-        hitbox.transform.localScale = new Vector3(attackWidth, attackHeight, 1f);
-
-        Destroy(hitbox, attackDuration);
-
-        // Empuje hacia la dirección del ataque
-        rb.AddForce(lastMovementDirection.normalized * attackForce, ForceMode2D.Impulse);
 
         animator.SetInteger("attackIndex", attackNum);
         animator.SetTrigger("attackTrigger");
 
-        AnimationClip clip = (attackClips != null && attackClips.Length >= attackNum)
-            ? attackClips[attackNum - 1]
-            : null;
-
-        float lockDuration = clip != null ? clip.length : attackDuration;
-
-        CancelInvoke(nameof(ResetAttack));
-        Invoke(nameof(ResetAttack), lockDuration);
-
-        StopCoroutine(nameof(ResetAttackIndex));
-        StartCoroutine(ResetAttackIndex(clip != null ? clip : attackClips[0]));
     }
 
     void ResetAttack()
@@ -455,8 +413,35 @@ public class Player : MonoBehaviour
 
     }
 
+    // Llamado por Animation Event en el frame de impacto
+    public void AE_SpawnHitbox()
+    {
+        Vector2 attackPos = transform.position;
+
+        if (lastMovementDirection == Vector2.zero)
+            lastMovementDirection = Vector2.right;
+
+        if (lastMovementDirection.y > 0) attackPos += offsetUp;
+        else if (lastMovementDirection.y < 0) attackPos += offsetDown;
+        else if (lastMovementDirection.x < 0) attackPos += offsetLeft;
+        else if (lastMovementDirection.x > 0) attackPos += offsetRight;
+
+        GameObject hitbox = Instantiate(attackHitboxPrefab, attackPos, Quaternion.identity);
+        hitbox.transform.localScale = new Vector3(attackWidth, attackHeight, 1f);
+        Destroy(hitbox, attackDuration);
+
+        rb.AddForce(lastMovementDirection.normalized * attackForce, ForceMode2D.Impulse);
+    }
+
+
+    // Llamado por Animation Event en el último frame
+    public void AE_AttackEnd()
+    {
+        isAttacking = false;
+        animator.ResetTrigger("attackTrigger");
+    }
+
     /// Musri: activa y desactiva invisibilidad visual e invulnerabilidad
-    /// Tambi�n para y reanuda los enemigos de la sala
 
     public void SetInvisible(bool invisible)
     {

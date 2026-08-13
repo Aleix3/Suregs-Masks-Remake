@@ -24,6 +24,7 @@ public class Chest : MonoBehaviour, IInteractable
         chestClosed.SetActive(false);
         trigger.enabled = false;
         DropItems();
+        this.GetComponent<InteractionPrompt>().enabled = false;
     }
 
     public void StopInteract(Player player)
