@@ -25,6 +25,7 @@ public class BeedRoomChest : MonoBehaviour, IInteractable
         currentPlayer = player;
         trigger.enabled = false;
         DropItems();
+        this.GetComponent<InteractionPrompt>().enabled = false;
         QuestManager.Instance.CompleteMainStepById("4");
     }
 

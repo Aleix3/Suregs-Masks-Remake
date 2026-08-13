@@ -365,11 +365,10 @@ public class Player : MonoBehaviour
 
     void UpdateAttack()
     {
-        // Reset combo si pasa demasiado tiempo (solo cuando expira, no cada frame)
         if (comboTimer > 0f)
         {
             comboTimer -= Time.deltaTime;
-            if (comboTimer <= 0f)
+            if (comboTimer <= 0f && !isAttacking) // <- clave
             {
                 attackNum = 0;
                 animator.SetInteger("attackIndex", 0);

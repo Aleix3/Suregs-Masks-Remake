@@ -83,7 +83,7 @@ public class QuestManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.Plus))
         {
             CompleteCurrentMainStep();
         }

@@ -5,28 +5,47 @@ Bugs:
 
 
 
+\-SIGUE PASANDO BUG ANIMACION ESTANCADA ATAQUE
 
+\-Poner vida de bosses al 100 después de morir en su lucha
 
+\-quitar controles mando
 
-* E flotante en interactuables
+\-movimiento por el inventario también WASD y salir del inventario con ESC
 
+\-poner misión leer notas en el menú entre cofre y mascara
 
+\-poner teclas en el menú in game
+
+\-agrandar hitbox de ataque hacia el player para que de a enemigos que esten encima
+
+\-Árbol de habilidades panel negro
+
+\-Mensaje al recoger item y nota
+
+\-mejorar gameMenu
+
+\-mejorar muurs
 
 \-Poner tipografía correcta
--Mensaje al recoger item y nota
+-Misiones secundarias
 
-\-Misiones secundarias
--Matchear ataque player con animación
 
 \-Rapho pinta que repite dialogo postTraning
 
 
 
+
+
+~~-Matchear ataque player con animación~~
+
+~~-E flotante en interactuables~~
+
 ~~-poner trigger de arboles en mazmorras~~
 
 ~~-botón controles en  hud~~
 
-<del>**-morir en bosses, respawnear en sala anterior**</del>
+<b>~~-morir en bosses, respawnear en sala anterior~~</b>
 
 ~~- Proyectiles Ols destruir con obstáculos~~
 
