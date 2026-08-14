@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 5
-  maxHealth: 160
+  maxHealth: 340
   health: 340
   speed: 4
   initialSpeed: 0

@@ -1987,7 +1987,7 @@ MonoBehaviour:
   moveEase: 6
   matchWidth: 1
   matchHeight: 0
-  offset: {x: -247.9, y: 20}
+  offset: {x: -100, y: 5}
 --- !u!1 &855743195
 GameObject:
   m_ObjectHideFlags: 0

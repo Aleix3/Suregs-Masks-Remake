@@ -86,6 +86,8 @@ public class BossIgory : Enemy
     public AudioClip generateSurgegsClip;
     public AudioClip dieClip;
 
+    public GameObject interactKey;
+
     protected override void Start()
     {
         base.Start();
@@ -449,6 +451,7 @@ public class BossIgory : Enemy
         this.GetComponent<NPCInteractable>().currentDialogue = dialogueData;
         gameObject.tag = "Untagged";
         this.enabled = false;
+        interactKey.SetActive(true);
     }
 
     private void FacePlayer()

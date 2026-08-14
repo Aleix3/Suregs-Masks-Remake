@@ -30,6 +30,7 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] private CanvasGroup inventoryGroup;
     private bool isInventoryOpen;
+    private bool isLoadingInventory;
 
     [System.Serializable]
     public class InventorySaveData
@@ -110,20 +111,42 @@ public class InventoryManager : MonoBehaviour
 
     private void MoveHoverTo(int index)
     {
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.changeInventoryWindowClip);
+        if (inventorySlots == null)
+            return;
+
+        if (hover == null)
+            return;
+
+        if (inventorySlots.transform.childCount == 0)
+            return;
+
+        if (index < 0 || index >= inventorySlots.transform.childCount)
+            return;
+
+        if (AudioManager.Instance != null &&
+            AudioManager.Instance.changeInventoryWindowClip != null)
+        {
+            AudioManager.Instance.PlaySFX(
+                AudioManager.Instance.changeInventoryWindowClip
+            );
+        }
+
         Transform slot = inventorySlots.transform.GetChild(index);
+
         hover.transform.SetParent(slot, false);
         hover.transform.localPosition = Vector3.zero;
 
-        // Buscar si hay un hermano del hover item en este slot
         InventoryItem item = slot.GetComponentInChildren<InventoryItem>();
+
         if (item != null)
         {
             inventoryCloseUpImage.enabled = true;
             inventoryName.text = item.name;
             inventoryDescription.text = item.description;
             inventoryQuantity.text = "X" + item.quantity;
-            inventoryCloseUpImage.sprite = item.closeUpItem.sprite;
+
+            if (item.closeUpItem != null)
+                inventoryCloseUpImage.sprite = item.closeUpItem.sprite;
         }
         else
         {
@@ -134,48 +157,77 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public InventoryItem CreateInventoryItem(ItemType type, string itemType, string name, string description, Sprite itemSprite, uint quantity = 1)
+    public InventoryItem CreateInventoryItem(
+    ItemType type,
+    string itemType,
+    string name,
+    string description,
+    Sprite itemSprite,
+    uint quantity = 1)
     {
-        // buscar si ya existe (comparando type + itemType)
-        InventoryItem found = inventoryItems.Find(i => i.type == type && i.itemType == itemType);
+        InventoryItem found = inventoryItems.Find(
+            i => i.type == type && i.itemType == itemType
+        );
+
         if (found != null)
         {
             found.AddQuantity(quantity);
-            SaveInventory();
+
+            if (!isLoadingInventory)
+            {
+                SaveInventory();
+                OnInventoryChanged?.Invoke();
+            }
+
             return found;
         }
 
-        // crear nuevo GameObject en el primer slot vac�o
-        GameObject newItem = Instantiate(itemPrefab);
-        InventoryItem itemComp = newItem.GetComponent<InventoryItem>();
-        itemComp.type = type;
-        itemComp.itemType = itemType;
-        itemComp.name = name;
-        itemComp.description = description;
-        itemComp.quantity = quantity;
+        Transform emptySlot = null;
 
-        if (itemComp.itemImage != null) itemComp.itemImage.sprite = itemSprite;
-        if (itemComp.closeUpItem != null) itemComp.closeUpItem.sprite = itemSprite;
-
-        // buscar slot vac�o
         for (int s = 0; s < inventorySlots.transform.childCount; s++)
         {
             Transform slot = inventorySlots.transform.GetChild(s);
 
             if (slot.GetComponentInChildren<InventoryItem>() == null)
             {
-                newItem.transform.SetParent(slot, false);
-                newItem.transform.localPosition = Vector3.zero;
+                emptySlot = slot;
                 break;
             }
         }
 
-        
+        if (emptySlot == null)
+        {
+            Debug.Log("Inventario lleno. No se puede añadir el item: " + name);
+            return null;
+        }
+
+        GameObject newItem = Instantiate(itemPrefab);
+        InventoryItem itemComp = newItem.GetComponent<InventoryItem>();
+
+        itemComp.type = type;
+        itemComp.itemType = itemType;
+        itemComp.name = name;
+        itemComp.description = description;
+        itemComp.quantity = quantity;
+
+        if (itemComp.itemImage != null)
+            itemComp.itemImage.sprite = itemSprite;
+
+        if (itemComp.closeUpItem != null)
+            itemComp.closeUpItem.sprite = itemSprite;
+
+        itemComp.transform.SetParent(emptySlot, false);
+        itemComp.transform.localPosition = Vector3.zero;
 
         inventoryItems.Add(itemComp);
-        SaveInventory();
-        MoveHoverTo(currentIndex);
-        OnInventoryChanged?.Invoke();
+
+        if (!isLoadingInventory)
+        {
+            SaveInventory();
+            MoveHoverTo(currentIndex);
+            OnInventoryChanged?.Invoke();
+        }
+
         return itemComp;
     }
 
@@ -219,9 +271,14 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryItem AddItem(Item.ItemType type, uint quantity = 1)
     {
+        Item.GetItemData(
+            type,
+            out string name,
+            out string description,
+            out string itemType,
+            out Sprite sprite
+        );
 
-        Item.GetItemData(type, out string name, out string description, out string itemType, out Sprite sprite);
-        OnInventoryChanged?.Invoke();
         return CreateInventoryItem(
             type,
             itemType,
@@ -230,17 +287,25 @@ public class InventoryManager : MonoBehaviour
             sprite,
             quantity
         );
-
     }
 
     private void ReorderInventory()
     {
-        // SOLO recolocar, NO destruir nada
         for (int i = 0; i < inventoryItems.Count; i++)
         {
             InventoryItem item = inventoryItems[i];
 
             if (item == null) continue;
+
+            if (i >= inventorySlots.transform.childCount)
+            {
+                Debug.LogError(
+                    $"No existe el slot {i}. " +
+                    $"Items: {inventoryItems.Count}, " +
+                    $"Slots: {inventorySlots.transform.childCount}"
+                );
+                break;
+            }
 
             Transform slot = inventorySlots.transform.GetChild(i);
 
@@ -312,21 +377,29 @@ public class InventoryManager : MonoBehaviour
         if (!PlayerPrefs.HasKey(INVENTORY_KEY))
             return;
 
+        isLoadingInventory = true;
+
         ClearInventory();
 
         string json = PlayerPrefs.GetString(INVENTORY_KEY);
-
         InventorySave save = JsonUtility.FromJson<InventorySave>(json);
 
         if (save == null)
+        {
+            isLoadingInventory = false;
             return;
+        }
 
         foreach (var item in save.items)
         {
             AddItem(item.type, item.quantity);
         }
 
+        isLoadingInventory = false;
+
         ReorderInventory();
+
+        OnInventoryChanged?.Invoke();
     }
 
     public void ClearInventory()
@@ -358,5 +431,30 @@ public class InventoryManager : MonoBehaviour
         if (inventorySlots.transform.childCount > 0)
             MoveHoverTo(currentIndex);
         hover.transform.localScale = new Vector3(0.662f, 0.662f, 0.662f);
+    }
+
+
+    public bool IsInventoryFull()
+    {
+        Transform emptySlot = null;
+
+        for (int s = 0; s < inventorySlots.transform.childCount; s++)
+        {
+            Transform slot = inventorySlots.transform.GetChild(s);
+
+            if (slot.GetComponentInChildren<InventoryItem>() == null)
+            {
+                emptySlot = slot;
+                break;
+            }
+        }
+
+        // 3. Inventario lleno.
+        if (emptySlot == null)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

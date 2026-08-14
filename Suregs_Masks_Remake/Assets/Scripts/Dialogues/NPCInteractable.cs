@@ -23,6 +23,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
                 DialogueManager.Instance.ShowSimpleMessage("Zhyuka", "Me das esta gema? muchas gracias!, ahora podré hacer pociones con muchos menos materiales!", currentDialogue.portrait, true);
                 QuestManager.Instance.CompleteMainStepById("15");
                 alreadyGivenAmatist = true;
+                InventoryManager.instance.RemoveQuantity(ItemType.AMATISTA, 1);
                 return;
             }
             

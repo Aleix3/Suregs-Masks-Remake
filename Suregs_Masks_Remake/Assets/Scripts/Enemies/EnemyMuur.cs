@@ -188,7 +188,7 @@ public class EnemyMuur : Enemy
 
     IEnumerator DieCoroutine()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
 
         base.Die();
     }

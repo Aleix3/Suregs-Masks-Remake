@@ -314,9 +314,9 @@ MonoBehaviour:
   baseDamage: 50
   damageByLevel:
   - 80
-  - 130
+  - 120
+  - 160
   - 200
-  - 300
   baseCooldown: 25
   cooldownByLevel:
   - 23

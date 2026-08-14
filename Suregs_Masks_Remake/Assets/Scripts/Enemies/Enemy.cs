@@ -215,12 +215,12 @@ public abstract class Enemy : MonoBehaviour
         switch (enemyType)
         {
             case EnemyType.Osiris:
-                if (roll <= 25f)
+                if (roll <= 60f)
                     drop = Item.ItemType.HUESO;
                 break;
 
             case EnemyType.OsirisVariation:
-                if (roll <= 40f)
+                if (roll <= 60f)
                     drop = Item.ItemType.HUESO;
                 break;
 
@@ -249,12 +249,12 @@ public abstract class Enemy : MonoBehaviour
                 break;
 
             case EnemyType.Khurt:
-                if (roll <= 30f)
+                if (roll <= 60f)
                     drop = Item.ItemType.GARRA;
                 break;
 
             case EnemyType.KhurtVariation:
-                if (roll <= 40f)
+                if (roll <= 60f)
                     drop = Item.ItemType.GARRA;
                 else if (roll <= 60f)
                     drop = Item.ItemType.DIENTE;

@@ -27,8 +27,20 @@ public class MaskPointNotification : MonoBehaviour
 
     public void Show(Sprite icon, string text)
     {
-        if (maskIcon != null) { maskIcon.sprite = icon; maskIcon.enabled = icon != null; maskIcon.preserveAspect = true; }
-        if (label    != null) label.text = text;
+        if (maskIcon != null)
+        {
+            maskIcon.enabled = icon != null;
+
+            if (icon != null)
+            {
+                maskIcon.sprite = icon;
+                maskIcon.preserveAspect = true;
+            }
+        }
+
+        if (label != null)
+            label.text = text;
+
         StartCoroutine(AnimRoutine());
     }
 

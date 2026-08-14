@@ -3,16 +3,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using DG.Tweening;
 
-/// <summary>
-/// Mueve una Image (hoverImage) hasta la posición del botón seleccionado
-/// actualmente en el EventSystem, con una animación suave de DOTween.
-/// Ponlo en un GameObject vacío dentro de tu Canvas del menú.
-///
-/// Se pausa automáticamente mientras el menú principal está bloqueado
-/// (mismo CanvasGroup que usas como "Block While Open" en los
-/// UIRevealAnimator), para que no reaccione a lo que se selecciona dentro
-/// de Ajustes/Controles/Créditos ni se líe durante la animación de cierre.
-/// </summary>
 public class MenuHoverIndicator : MonoBehaviour
 {
     [Header("Referencias")]
@@ -20,9 +10,7 @@ public class MenuHoverIndicator : MonoBehaviour
     [SerializeField] private GameObject firstSelected;
 
     [Header("Bloqueo mientras hay un panel abierto")]
-    [Tooltip("El mismo Transform que contiene los botones del menú principal (p.ej. 'Buttons'). Se ignora cualquier selección que no sea hija de este contenedor.")]
     [SerializeField] private Transform menuButtonsContainer;
-    [Tooltip("El mismo CanvasGroup que usas como 'Block While Open' en los UIRevealAnimator. Mientras esté no-interactable (panel abierto), este script no hace nada.")]
     [SerializeField] private CanvasGroup menuButtonsCanvasGroup;
 
     [Header("Animación")]
@@ -32,7 +20,6 @@ public class MenuHoverIndicator : MonoBehaviour
     [SerializeField] private bool matchHeight = false;
 
     [Header("Ajuste de posición")]
-    [Tooltip("Desplazamiento (en píxeles de UI) que se suma a la posición del botón seleccionado. Usa esto para descentrar el hover si no encaja perfecto con tu sprite.")]
     [SerializeField] private Vector2 offset = Vector2.zero;
 
     private GameObject lastSelected;
@@ -40,37 +27,53 @@ public class MenuHoverIndicator : MonoBehaviour
     private Tween sizeTween;
     private bool wasBlocked;
 
+    private Canvas rootCanvas;
+    private Vector2Int lastScreenSize;
+
+    private void Awake()
+    {
+        rootCanvas = hoverImage.GetComponentInParent<Canvas>().rootCanvas;
+    }
+
+    private Vector3 GetScaledOffset()
+    {
+        float scale = rootCanvas != null ? rootCanvas.scaleFactor : 1f;
+        return (Vector3)(offset * scale);
+    }
+
     private void Start()
     {
-        // Aseguramos que siempre haya algo seleccionado (necesario para mando/teclado)
         if (EventSystem.current.currentSelectedGameObject == null && firstSelected != null)
         {
             EventSystem.current.SetSelectedGameObject(firstSelected);
         }
 
+        lastScreenSize = new Vector2Int(Screen.width, Screen.height);
         SnapToSelected();
     }
 
-    // LateUpdate en vez de Update: así nos aseguramos de leer las posiciones
-    // ya después de que cualquier animador (DOTween, Layout Groups, etc.)
-    // haya aplicado sus cambios en este frame.
     private void LateUpdate()
     {
+        if (lastScreenSize.x != Screen.width || lastScreenSize.y != Screen.height)
+        {
+            lastScreenSize = new Vector2Int(Screen.width, Screen.height);
+            moveTween?.Kill();
+            sizeTween?.Kill();
+            Canvas.ForceUpdateCanvases();
+            SnapToSelected();
+            return;
+        }
+
         bool isBlocked = menuButtonsCanvasGroup != null && !menuButtonsCanvasGroup.interactable;
 
         if (isBlocked)
         {
-            // Mientras haya un panel abierto no tocamos nada: ni movemos el
-            // hover, ni forzamos selección. Solo recordamos que estábamos
-            // bloqueados para resincronizar en cuanto se desbloquee.
             wasBlocked = true;
             return;
         }
 
         if (wasBlocked)
         {
-            // Se acaba de cerrar el panel: nos colocamos al instante sobre el
-            // botón que quedó seleccionado, sin animar (evita el salto raro).
             wasBlocked = false;
             moveTween?.Kill();
             sizeTween?.Kill();
@@ -80,7 +83,6 @@ public class MenuHoverIndicator : MonoBehaviour
 
         GameObject current = EventSystem.current.currentSelectedGameObject;
 
-        // Si se pierde la selección (p.ej. click fuera), volvemos a la última
         if (current == null)
         {
             if (lastSelected != null)
@@ -88,7 +90,6 @@ public class MenuHoverIndicator : MonoBehaviour
             return;
         }
 
-        // Ignoramos selecciones que no pertenezcan a los botones del menú principal
         if (menuButtonsContainer != null && !current.transform.IsChildOf(menuButtonsContainer))
             return;
 
@@ -111,12 +112,10 @@ public class MenuHoverIndicator : MonoBehaviour
         RectTransform target = current.GetComponent<RectTransform>();
         if (target == null) return;
 
-        // Forzamos que el layout esté al día antes de leer la posición,
-        // para no quedarnos con una posición "a medio recalcular".
         Canvas.ForceUpdateCanvases();
         LayoutRebuilder.ForceRebuildLayoutImmediate(target);
 
-        hoverImage.position = target.position + (Vector3)offset;
+        hoverImage.position = target.position + GetScaledOffset();
 
         Vector2 size = hoverImage.sizeDelta;
         if (matchWidth) size.x = target.rect.width;
@@ -131,12 +130,10 @@ public class MenuHoverIndicator : MonoBehaviour
         moveTween?.Kill();
         sizeTween?.Kill();
 
-        // Mismo motivo que en SnapToSelected: nos aseguramos de que la
-        // posición/tamaño del target ya estén actualizados antes de animar.
         Canvas.ForceUpdateCanvases();
         LayoutRebuilder.ForceRebuildLayoutImmediate(target);
 
-        moveTween = hoverImage.DOMove(target.position + (Vector3)offset, moveDuration).SetEase(moveEase);
+        moveTween = hoverImage.DOMove(target.position + GetScaledOffset(), moveDuration).SetEase(moveEase);
 
         if (matchWidth || matchHeight)
         {

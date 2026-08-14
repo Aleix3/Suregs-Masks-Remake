@@ -202,6 +202,9 @@ public class Player : MonoBehaviour
         
         cinemachineConfiner = FindFirstObjectByType<CinemachineConfiner2D>();
 
+        if (cinemachineConfiner == null)
+            return;
+
         initialRoomCollider = (PolygonCollider2D)cinemachineConfiner.m_BoundingShape2D;
         StartCoroutine(SetSpawn());
     }
@@ -534,9 +537,20 @@ public class Player : MonoBehaviour
         {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.getItem);
             Item item = collision.GetComponent<Item>();
-            InventoryManager.instance.CreateInventoryItem(item.type, item.itemType, item.itemName, item.description, item.sr.sprite);
-
             HUDScript hud = FindAnyObjectByType<HUDScript>();
+
+
+            InventoryItem newInventoryItem = InventoryManager.instance.CreateInventoryItem(item.type, item.itemType, item.itemName, item.description, item.sr.sprite);
+
+            if (newInventoryItem == null && InventoryManager.instance.IsInventoryFull())
+            {
+                if (hud != null)
+                {
+                    hud.HandleInventoryItemAdded(null, "Inventario lleno");
+                }
+                return;
+            }
+
 
             if (hud != null)
             {

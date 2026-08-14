@@ -256,13 +256,14 @@ public class DialogueManager : MonoBehaviour
                 {
                         AudioManager.Instance.PlayMusic(AudioManager.Instance.badEndingMusic);
                         StartCoroutine(ChangeScene("BadEnding"));
+                        Player.Instance.transform.position = new Vector3(-10000, 0, 0);
                 }
                 else
                 {
                         AudioManager.Instance.PlayMusic(AudioManager.Instance.goodEndingMusic);
                         StartCoroutine(ChangeScene("GoodEnding"));
-
-                }
+                        Player.Instance.transform.position = new Vector3(-10000, 0, 0);
+                    }
                 break;
             }
             case SentenceType.Heal:

@@ -8,17 +8,17 @@ Bugs:
 
 
 
-\-bug al ir al mainmenu de sceneLoad del player
 
-\-nerfear mejora daño primera mascara
 
-\-quitar colision de topos
 
-\-mejorar muurs
 
-\-poner misión leer notas en el menú entre cofre y mascara
 
-\-quitar atajos de teclado 
+
+\-que el carbón sirva para algo
+
+~~-destruir amatista~~ después de dar a la bruja
+
+\-quitar atajos de teclado
 
 \-Poner tipografía correcta
 -Misiones secundarias
@@ -31,7 +31,29 @@ Bugs:
 
 
 
+~~-mensaje de inventario lleno y que no se destruyan los ítems~~
 
+~~-poner E en el padre final~~
+
+~~-player se ve en el final del juego~~
+
+~~-poner collider casa al lado de la estatua derecha~~
+
+~~-trigger puerta dungeon 6 arreglar~~
+
+~~-subir un poco de vida a variaciones~~
+
+~~-subir tassa de drop de osiris~~
+
+~~-error inventario al llegar al pueblo~~
+
+~~-mejorar muurs~~
+
+~~-bug al ir al mainmenu de sceneLoad del player~~
+
+~~-quitar colision de topos~~
+
+~~-nerfear mejora daño primera mascara~~
 
 ~~-Mensaje al recoger item y nota~~
 
