@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static Cinemachine.DocumentationSortingAttribute;
+using static UnityEditor.Progress;
 
 public class Player : MonoBehaviour
 {
@@ -534,6 +535,13 @@ public class Player : MonoBehaviour
             AudioManager.Instance.PlaySFX(AudioManager.Instance.getItem);
             Item item = collision.GetComponent<Item>();
             InventoryManager.instance.CreateInventoryItem(item.type, item.itemType, item.itemName, item.description, item.sr.sprite);
+
+            HUDScript hud = FindAnyObjectByType<HUDScript>();
+
+            if (hud != null)
+            {
+                hud.HandleInventoryItemAdded(item.sr.sprite, item.itemName + " — Pulsa Tab para ver");
+            }
             Destroy(collision.gameObject);
         }
 
@@ -543,6 +551,13 @@ public class Player : MonoBehaviour
             AudioManager.Instance.PlaySFX(AudioManager.Instance.getItem);
             Note note = collision.GetComponent<Note>();
             NotesManager.instance.CreateNoteItem(note.id, note.itemName, note.description);
+
+            HUDScript hud = FindAnyObjectByType<HUDScript>();
+
+            if (hud != null)
+            {
+                hud.HandleInventoryItemAdded(note.GetComponent<SpriteRenderer>().sprite, note.itemName + " — Pulsa Tab para ver");
+            }
             Destroy(collision.gameObject);
         }
 

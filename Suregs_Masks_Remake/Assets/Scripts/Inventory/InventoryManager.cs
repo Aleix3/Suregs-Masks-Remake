@@ -170,6 +170,8 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
+        
+
         inventoryItems.Add(itemComp);
         SaveInventory();
         MoveHoverTo(currentIndex);

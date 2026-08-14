@@ -238,6 +238,21 @@ public class HUDScript : MonoBehaviour
         notif?.Show(icon, text);
     }
 
+    public void HandleInventoryItemAdded(Sprite icon, string text)
+    {
+        if (maskPointNotificationPrefab == null || notificationContainer == null) return;
+        if (InventoryManager.instance == null) return;
+
+
+        var go = Instantiate(maskPointNotificationPrefab, notificationContainer);
+        go.transform.SetAsLastSibling();
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(
+            notificationContainer.GetComponent<RectTransform>());
+        var notif = go.GetComponent<MaskPointNotification>();
+        notif?.Show(icon, text);
+    }
+
 
     private void UpdateMaskIcons(BaseMask primary, BaseMask secondary)
     {

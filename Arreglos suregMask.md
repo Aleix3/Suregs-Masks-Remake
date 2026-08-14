@@ -5,37 +5,51 @@ Bugs:
 
 
 
-\-SIGUE PASANDO BUG ANIMACION ESTANCADA ATAQUE
 
-\-Poner vida de bosses al 100 después de morir en su lucha
 
-\-quitar controles mando
 
-\-movimiento por el inventario también WASD y salir del inventario con ESC
+\-bug al ir al mainmenu de sceneLoad del player
 
-\-poner misión leer notas en el menú entre cofre y mascara
+\-nerfear mejora daño primera mascara
 
-\-poner teclas en el menú in game
-
-\-agrandar hitbox de ataque hacia el player para que de a enemigos que esten encima
-
-\-Árbol de habilidades panel negro
-
-\-Mensaje al recoger item y nota
-
-\-mejorar gameMenu
+\-quitar colision de topos
 
 \-mejorar muurs
 
+\-poner misión leer notas en el menú entre cofre y mascara
+
+\-quitar atajos de teclado 
+
 \-Poner tipografía correcta
 -Misiones secundarias
-
 
 \-Rapho pinta que repite dialogo postTraning
 
 
 
 
+
+
+
+
+
+~~-Mensaje al recoger item y nota~~
+
+~~-mejorar gameMenu~~
+
+~~-Árbol de habilidades panel negro~~
+
+~~-agrandar hitbox de ataque hacia el player para que de a enemigos que esten encima~~
+
+~~-poner teclas en el menú in game~~
+
+~~-movimiento por el inventario también WASD y salir del inventario con ESC~~
+
+~~-quitar controles mando~~
+
+~~-Poner vida de bosses al 100 después de morir en su lucha~~
+
+~~-SIGUE PASANDO BUG ANIMACION ESTANCADA ATAQUE~~
 
 ~~-Matchear ataque player con animación~~
 
