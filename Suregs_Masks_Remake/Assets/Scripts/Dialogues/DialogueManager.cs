@@ -367,10 +367,10 @@ public class DialogueManager : MonoBehaviour
     {
         if (MenuManager.Instance != null && MenuManager.Instance.IsMenuOpen)
             return;
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            GameProgress.Advance();
-        }
+        //if (Input.GetKeyDown(KeyCode.H))
+        //{
+        //    GameProgress.Advance();
+        //}
 
         if (simpleMessageActive)
         {

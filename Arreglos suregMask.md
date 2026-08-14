@@ -14,11 +14,7 @@ Bugs:
 
 
 
-\-que el carbón sirva para algo
 
-~~-destruir amatista~~ después de dar a la bruja
-
-\-quitar atajos de teclado
 
 \-Poner tipografía correcta
 -Misiones secundarias
@@ -27,9 +23,21 @@ Bugs:
 
 
 
+~~vacíos en mazmorra1~~
 
+~~-mirar de hacer algo en vacio puerta mazm6~~
 
+~~-nerfear valor de las garras y subir un poco los otros~~
 
+~~-destruir amatista después de dar a la bruja~~
+
+~~-poner activa surma por detrás del player~~
+
+~~-creo que si repites mazmorras también se avanzan misiones~~
+
+~~-quitar atajos de teclado~~
+
+~~-que el carbón sirva para algo~~
 
 ~~-mensaje de inventario lleno y que no se destruyan los ítems~~
 

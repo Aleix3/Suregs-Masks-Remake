@@ -186,9 +186,9 @@ public class Merchant : MonoBehaviour, IShop
             case 1: type = ItemType.COLA; goldValue = 30; break;
             case 2: type = ItemType.HUESO; goldValue = 40; break;
             case 3: type = ItemType.SALIVA; goldValue = 50; break;
-            case 4: type = ItemType.GARRA; goldValue = 120; break;
-            case 5: type = ItemType.OJO; goldValue = 30; break;
-            case 6: type = ItemType.DIENTE; goldValue = 60; break;
+            case 4: type = ItemType.GARRA; goldValue = 80; break;
+            case 5: type = ItemType.OJO; goldValue = 70; break;
+            case 6: type = ItemType.DIENTE; goldValue = 160; break;
             default: return false;
         }
 
@@ -204,9 +204,9 @@ public class Merchant : MonoBehaviour, IShop
             case ItemType.COLA: value = 30; return true;
             case ItemType.HUESO: value = 40; return true;
             case ItemType.SALIVA: value = 50; return true;
-            case ItemType.GARRA: value = 120; return true;
-            case ItemType.OJO: value = 30; return true;
-            case ItemType.DIENTE: value = 60; return true;
+            case ItemType.GARRA: value = 80; return true;
+            case ItemType.OJO: value = 120; return true;
+            case ItemType.DIENTE: value = 160; return true;
         }
 
         return false;

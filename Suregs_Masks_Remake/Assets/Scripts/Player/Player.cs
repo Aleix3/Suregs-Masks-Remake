@@ -262,10 +262,10 @@ public class Player : MonoBehaviour
             currentInteractable.Interact(this);
         }
 
-        if (Input.GetKeyDown(KeyCode.F10))
-        {
-            ToggleGodMode();
-        }
+        //if (Input.GetKeyDown(KeyCode.F10))
+        //{
+        //    ToggleGodMode();
+        //}
 
         //healthBar.fillAmount = health / MaxHealth;
 

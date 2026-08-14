@@ -378,7 +378,7 @@ MonoBehaviour:
   resourcesFolderPath: Textures/Cinematic
   displayImage: {fileID: 457730374}
   skipProgressBar: {fileID: 1632750670}
-  timePerImage: 0.1
+  timePerImage: 0.05
   holdToSkipDuration: 1.5
   submitButtonName: Submit
   nextSceneName: Tutorial

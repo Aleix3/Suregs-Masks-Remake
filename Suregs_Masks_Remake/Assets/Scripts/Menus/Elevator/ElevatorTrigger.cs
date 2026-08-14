@@ -8,14 +8,18 @@ public class ElevatorTrigger : MonoBehaviour
 
     public bool isFinal = false;
 
-    bool alreadyUnlocked = false;
+    private bool alreadyUnlocked;
 
     public int dungeonId;
 
+    private string UnlockKey => "DungeonUnlocked_" + dungeonId;
 
     private void Start()
     {
-                AudioManager.Instance.PlayMusic(AudioManager.Instance.dungeonMusic);
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.dungeonMusic);
+
+        // Cargar el estado guardado
+        alreadyUnlocked = PlayerPrefs.GetInt(UnlockKey, 0) == 1;
     }
 
     private void Update()
@@ -29,6 +33,7 @@ public class ElevatorTrigger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Fire1"))
         {
             elevatorCanvas.SetActive(true);
+
             if (isFinal && !alreadyUnlocked)
             {
                 switch (dungeonId)
@@ -36,42 +41,53 @@ public class ElevatorTrigger : MonoBehaviour
                     case 0:
                         GameProgress.Advance();
                         break;
+
                     case 1:
                         GameProgress.Advance();
                         QuestManager.Instance.CompleteMainStepById("10");
                         break;
+
                     case 2:
                         GameProgress.Advance();
                         QuestManager.Instance.CompleteMainStepById("12");
                         break;
+
                     case 3:
                         GameProgress.Advance();
                         QuestManager.Instance.CompleteMainStepById("14");
                         break;
+
                     case 4:
                         GameProgress.Advance();
                         QuestManager.Instance.CompleteMainStepById("17");
                         break;
+
                     case 5:
                         GameProgress.Advance();
                         QuestManager.Instance.CompleteMainStepById("19");
                         break;
+
                     case 6:
                         GameProgress.Advance();
                         QuestManager.Instance.CompleteMainStepById("21");
                         break;
+
                     case 7:
                         QuestManager.Instance.CompleteMainStepById("25");
                         break;
+
                     default:
                         break;
                 }
-                ElevatorLevelProgress.UnlockNextLevel();
-                alreadyUnlocked = true;
-            }
 
+                ElevatorLevelProgress.UnlockNextLevel();
+
+                // Marcar este dungeon como desbloqueado
+                alreadyUnlocked = true;
+                PlayerPrefs.SetInt(UnlockKey, 1);
+                PlayerPrefs.Save();
+            }
         }
-        
     }
 
     public void CloseCanvas()
