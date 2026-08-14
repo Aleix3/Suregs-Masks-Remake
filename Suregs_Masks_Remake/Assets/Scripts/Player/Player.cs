@@ -404,6 +404,31 @@ public class Player : MonoBehaviour
         animator.SetInteger("attackIndex", attackNum);
         animator.SetTrigger("attackTrigger");
 
+        // Failsafe: si AE_AttackEnd no llega a dispararse por algún motivo,
+        // esto evita que isAttacking se quede pillado para siempre.
+        float safetyDuration = (attackClips != null && attackClips.Length >= attackNum)
+            ? attackClips[attackNum - 1].length + 0.1f
+            : attackDuration;
+        CancelInvoke(nameof(ForceResetAttack));
+        Invoke(nameof(ForceResetAttack), safetyDuration);
+    }
+
+    void ForceResetAttack()
+    {
+        if (isAttacking)
+        {
+            Debug.LogWarning("AE_AttackEnd no se disparó a tiempo, forzando reset.");
+            isAttacking = false;
+            animator.ResetTrigger("attackTrigger");
+        }
+    }
+
+    // El evento normal cancela el failsafe porque ya no hace falta
+    public void AE_AttackEnd()
+    {
+        CancelInvoke(nameof(ForceResetAttack));
+        isAttacking = false;
+        animator.ResetTrigger("attackTrigger");
     }
 
     void ResetAttack()
@@ -432,13 +457,6 @@ public class Player : MonoBehaviour
         rb.AddForce(lastMovementDirection.normalized * attackForce, ForceMode2D.Impulse);
     }
 
-
-    // Llamado por Animation Event en el último frame
-    public void AE_AttackEnd()
-    {
-        isAttacking = false;
-        animator.ResetTrigger("attackTrigger");
-    }
 
     /// Musri: activa y desactiva invisibilidad visual e invulnerabilidad
 
@@ -727,10 +745,14 @@ public class Player : MonoBehaviour
 
             RoomTrigger trigger = actualRoom.GetComponentInChildren<RoomTrigger>();
 
+            actualRoom.enemiesInRoom[0].GetComponent<Enemy>().ResetEnemy();
+
             if (trigger != null)
             {
                 trigger.roomTriggerConnected.GetComponent<RoomTrigger>().ChangeRoom();
             }
+
+            
 
             StartCoroutine(HealAfterDelay(2f));
             return;

@@ -438,4 +438,10 @@ public abstract class Enemy : MonoBehaviour
         SetFrozen(false);
     }
 
+    public virtual void ResetEnemy()
+    {
+        health = maxHealth;
+        Start();
+    }
+
 }

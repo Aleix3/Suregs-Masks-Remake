@@ -65,6 +65,16 @@ public class BossMussri : Enemy
     public Transform maskSpawnpoint;
     public GameObject MaskPrefab;
 
+    [Header("Cached original values")]
+    private float baseSpeed;
+    private int baseAttackDamage;
+
+    private void Awake()
+    {
+        baseSpeed = speed;
+        baseAttackDamage = attackDamage;
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -78,6 +88,50 @@ public class BossMussri : Enemy
         meleeTimer = 0f;
         chargedArrowTimer = 0f;
         invisibleDashTimer = 0f;
+    }
+
+    public override void ResetEnemy()
+    {
+        StopAllCoroutines();
+
+        speed = baseSpeed;
+        attackDamage = baseAttackDamage;
+
+        // Resetea flags de estado
+        phase2 = false;
+        isInvisible = false;
+        isBusy = false;
+        transitioningPhase = false;
+        currentDashInvisible = false;
+
+        // Resetea timers y contadores
+        rangedTimer = 0f;
+        meleeTimer = 0f;
+        chargedArrowTimer = 0f;
+        invisibleDashTimer = 0f;
+        attackCycle = 0;
+
+        currentBossState = MussriBossState.Idle;
+
+        canMove = true;
+        if (agent != null)
+            agent.isStopped = false;
+        if (rb != null)
+            rb.velocity = Vector2.zero;
+
+        if (sr != null)
+            sr.color = Color.white;
+
+        // Limpia el Animator (bools y triggers colgados)
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isDead", false);
+        animator.ResetTrigger("Attack");
+        animator.ResetTrigger("MeleeAttack");
+        animator.ResetTrigger("ChargedAttack");
+        animator.ResetTrigger("PhaseChange");
+        animator.ResetTrigger("Dash");
+
+        base.ResetEnemy();
     }
 
     protected override void Update()

@@ -74,6 +74,49 @@ public class BossSurma : Enemy
         RefreshMovementSpeed();
     }
 
+    public override void ResetEnemy()
+    {
+        StopAllCoroutines();
+
+        RestorePlayerSpeed();
+
+
+        if (originalScale != Vector3.zero)
+            transform.localScale = originalScale;
+
+        isFacingLeft = true;
+
+        phase = Phase.One;
+
+        meleeHitsRemaining = 0;
+        fastHitsAllowedThisAnimation = 0;
+        completedPhaseTwoCombos = 0;
+        activeAttack = AttackType.Fast;
+        currentComboIsExplosion = false;
+        chargedDamageApplied = false;
+        waitingForExplosion = false;
+        explosionHitPlayer = false;
+        isBusy = false;
+
+        if (agent != null)
+        {
+            agent.isStopped = false;
+            agent.ResetPath();
+        }
+        if (rb != null)
+            rb.velocity = Vector2.zero;
+
+        animator.SetBool(runningParameter, false);
+        animator.ResetTrigger(fastAttackTrigger);
+        animator.ResetTrigger(chargedAttackTrigger);
+        animator.ResetTrigger(tiredTrigger);
+        animator.ResetTrigger(phaseChangeTrigger);
+
+        base.ResetEnemy();
+
+        RefreshMovementSpeed();
+    }
+
     protected override void Update()
     {
         if (player == null || isDead)

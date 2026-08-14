@@ -51,6 +51,18 @@ public class BossInuit : Enemy
     public Transform maskSpawnpoint;
     public GameObject MaskPrefab;
 
+    [Header("Cached original values")]
+    private float baseSpeed;
+    private float baseComboInterval;
+    private float baseWaveInterval;
+
+    private void Awake()
+    {
+        baseSpeed = speed;
+        baseComboInterval = comboInterval;
+        baseWaveInterval = waveInterval;
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -59,7 +71,35 @@ public class BossInuit : Enemy
         life40 = maxHealth * 0.4f;
 
         player = Player.Instance.transform;
+    }
 
+    public override void ResetEnemy()
+    {
+        StopAllCoroutines();
+
+        speed = baseSpeed;
+        comboInterval = baseComboInterval;
+        waveInterval = baseWaveInterval;
+
+        isBusy = false;
+        isPhase2 = false;
+        comboCounter = 0;
+        attackTimer = 0f;
+        waveTimer = 0f;
+        currentPhase = Phase.Phase1;
+
+        bossState = BossState.Idle;
+        desiredBossState = BossState.Idle;
+
+        // Limpia el Animator (bools y triggers colgados)
+        animator.SetBool("Phase2", false);
+        animator.SetBool("IsMoving", false);
+        animator.ResetTrigger("Attack1");
+        animator.ResetTrigger("Attack2");
+        animator.ResetTrigger("Wave");
+        animator.ResetTrigger("PhaseChange");
+
+        base.ResetEnemy();
     }
 
     protected override void Update()
