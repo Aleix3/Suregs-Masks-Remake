@@ -89,10 +89,9 @@ public class NotesManager : MonoBehaviour
 
         int previousIndex = currentIndex;
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             currentIndex = (currentIndex + 1) % notes.Count;
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             currentIndex = (currentIndex - 1 + notes.Count) % notes.Count;
 
         if (previousIndex != currentIndex)

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using DG.Tweening;
 
 /// <summary>
@@ -50,7 +51,10 @@ public class MenuHoverIndicator : MonoBehaviour
         SnapToSelected();
     }
 
-    private void Update()
+    // LateUpdate en vez de Update: así nos aseguramos de leer las posiciones
+    // ya después de que cualquier animador (DOTween, Layout Groups, etc.)
+    // haya aplicado sus cambios en este frame.
+    private void LateUpdate()
     {
         bool isBlocked = menuButtonsCanvasGroup != null && !menuButtonsCanvasGroup.interactable;
 
@@ -107,6 +111,11 @@ public class MenuHoverIndicator : MonoBehaviour
         RectTransform target = current.GetComponent<RectTransform>();
         if (target == null) return;
 
+        // Forzamos que el layout esté al día antes de leer la posición,
+        // para no quedarnos con una posición "a medio recalcular".
+        Canvas.ForceUpdateCanvases();
+        LayoutRebuilder.ForceRebuildLayoutImmediate(target);
+
         hoverImage.position = target.position + (Vector3)offset;
 
         Vector2 size = hoverImage.sizeDelta;
@@ -121,6 +130,11 @@ public class MenuHoverIndicator : MonoBehaviour
     {
         moveTween?.Kill();
         sizeTween?.Kill();
+
+        // Mismo motivo que en SnapToSelected: nos aseguramos de que la
+        // posición/tamaño del target ya estén actualizados antes de animar.
+        Canvas.ForceUpdateCanvases();
+        LayoutRebuilder.ForceRebuildLayoutImmediate(target);
 
         moveTween = hoverImage.DOMove(target.position + (Vector3)offset, moveDuration).SetEase(moveEase);
 

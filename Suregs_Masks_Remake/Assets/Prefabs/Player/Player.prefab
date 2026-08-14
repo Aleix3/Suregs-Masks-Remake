@@ -292,7 +292,6 @@ MonoBehaviour:
   - {fileID: 8116843313300243663}
   - {fileID: 7442818282558098565}
   - {fileID: 3651245318472302311}
-  swapKey: 114
   swapButton: Y
 --- !u!114 &4280659145124894079
 MonoBehaviour:

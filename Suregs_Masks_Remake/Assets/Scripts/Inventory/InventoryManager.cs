@@ -75,46 +75,37 @@ public class InventoryManager : MonoBehaviour
         {
             return;
         }
-
-
         if (inventoryCanvas.gameObject.activeSelf == false) return;
         if (inventorySlots.transform.childCount == 0) return;
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             currentIndex++;
             if (currentIndex >= inventorySlots.transform.childCount)
                 currentIndex = 0;
             MoveHoverTo(currentIndex);
         }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             currentIndex--;
             if (currentIndex < 0)
                 currentIndex = inventorySlots.transform.childCount - 1;
             MoveHoverTo(currentIndex);
         }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             currentIndex += cols;
             if (currentIndex >= inventorySlots.transform.childCount)
                 currentIndex %= cols;
             MoveHoverTo(currentIndex);
         }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             currentIndex -= cols;
             if (currentIndex < 0)
                 currentIndex += inventorySlots.transform.childCount;
             MoveHoverTo(currentIndex);
         }
-
-
-
-
     }
 
     private void MoveHoverTo(int index)

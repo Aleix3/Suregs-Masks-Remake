@@ -24,6 +24,8 @@ public class MenuManager : MonoBehaviour
     private InventoryManager inventoryManager;
     private JourneyManager journeyManager;
 
+    public GameObject keysCanvas;
+
     void Awake()
     {
         Instance = this;
@@ -40,9 +42,12 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        bool togglePressed = Input.GetKeyDown(KeyCode.Tab);
+        bool closePressed = Input.GetKeyDown(KeyCode.Escape) && activeMenu;
+
+        if (togglePressed || closePressed)
         {
-            activeMenu = !activeMenu;
+            activeMenu = togglePressed ? !activeMenu : false;
 
             if (activeMenu)
             {
@@ -50,11 +55,13 @@ public class MenuManager : MonoBehaviour
                 Player.Instance.LockMovement(this);
                 currentIndex = 0;
                 MostrarCanvas(currentIndex);
+                keysCanvas.SetActive(true);
             }
             else
             {
                 Player.Instance.UnlockMovement(this);
                 OcultarTodos();
+                keysCanvas.SetActive(false);
             }
         }
 
@@ -129,9 +136,7 @@ public class MenuManager : MonoBehaviour
             canvas.interactable = false;
             canvas.blocksRaycasts = false;
         }
-
-        // Limpiamos la selecci�n para que no se quede "enganchada" a un
-        // elemento de un canvas que ya no es visible.
         EventSystem.current.SetSelectedGameObject(null);
+        
     }
 }
