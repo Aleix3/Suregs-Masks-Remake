@@ -1,11 +1,16 @@
-[README.md — Süreg's Mask Remake.md](https://github.com/user-attachments/files/31100659/README.md.Sureg.s.Mask.Remake.md)
+[README.md — Süreg's Mask Remake (1).md](https://github.com/user-attachments/files/31100696/README.md.Sureg.s.Mask.Remake.1.md)
+[README.md](https://github.com/user-attachments/files/31100704/README.md)
 # Süreg's Mask
 
 > **A remake of the original Süreg's Mask, developed individually by Aleix Botella as a Bachelor's Thesis (TFG).**
 
-Süreg's Mask is an RPG game originally developed as a team project for the subject “Project II” at CITM University, within the Videogames Design & Development and Design, Animation and Digital Art degrees.
+Süreg's Mask is a 2D isometric RPG originally developed as a team project for the subject “Project II” at CITM University, within the Videogames Design & Development and Design, Animation and Digital Art degrees.
 
-This project is a **remake of the original game**, developed entirely by **Aleix Botella** as his Bachelor's Thesis (TFG). The remake revisits the original game's mechanics, systems and content while introducing new features, improvements and technical changes.
+This project is a **remake of the original game**, developed entirely by **Aleix Botella** as his Bachelor's Thesis (TFG).
+
+The original game was developed during the second year of the degree as a collaborative project. This remake recreates the original game in **Unity**, keeping its core gameplay, content and overall design while rebuilding its systems to make the experience fully functional and stable.
+
+During development, the original game has also been improved in several areas, including accessibility, enemy and boss AI, player systems, progression, the Void and the overall visual presentation.
 
 <br>
 
@@ -17,13 +22,13 @@ This project is a **remake of the original game**, developed entirely by **Aleix
 
 The original Süreg's Mask was developed as a collaborative university project by a team of students.
 
-It is a 2D isometric RPG where you must descend through 8 dungeon floors to find the mysterious force that calls you, uncover the hidden history left in the footsteps of your dead father, and obtain 4 different masks with mysterious abilities.
+It is an RPG game in 2D isometric, where you must go into the dungeon down 8 floors to find the mysterious force that calls you, uncover the hidden history in the footsteps of your dead father and obtain 4 different masks with mysterious abilities.
 
-In Süreg's Mask you can fight in the dungeons, upgrade your weapons at the blacksmith, sell items obtained from beasts, use your money to buy potions, upgrade your mask abilities through the mystic skill tree, and go fishing.
+In Süreg's Mask you can fight in the dungeons, upgrade your weapons at the blacksmith, sell items obtained from beasts, use the money to buy potions, upgrade your mask abilities using the mystic skill tree and go fishing.
 
-The game also features an inventory to view your current items and their information, a diary containing notes left behind in the dungeons, and an enemy diary containing information about the different enemies.
+The game also features an inventory to view your current items and their information, a diary to read notes left behind in the dungeons and an enemy diary to view information about the different enemies.
 
-### Original Game Features
+### Original Game Content
 
 - 8 dungeons and the village.
 - 5 enemies and their stronger variations.
@@ -34,37 +39,58 @@ The game also features an inventory to view your current items and their informa
 
 ## The Remake
 
-This project is a complete remake of Süreg's Mask developed individually by **Aleix Botella** as a Bachelor's Thesis (TFG).
+The remake has been developed entirely by **Aleix Botella** in **Unity**.
 
-The goal of the remake is to revisit the original game and improve its systems, technical architecture and gameplay while preserving the core concept and identity of the original project.
+The main objective of the project is to recreate the original Süreg's Mask while solving the technical and gameplay problems present in the original version. The original game contained numerous bugs and stability issues that could cause systems to break or prevent the game from functioning correctly.
 
-### New Features
-
-- New enemy: Warrior
-- Tutorial
-- Enemy variations
-- Level Up and Experience System
-- Save and Load System
-- UI Animations
-- Adaptive Cameras
-- Particle System
-- Elevator
-- Void
-- Final Boss
-- End Game
-- Spawners
-- Mission System
-- Ability Animations
-- New Dungeons
-- Skill Tree
-- Equipment Menu
-- New Audio (masks, cinematics, etc.)
+Instead of simply fixing individual bugs, the remake rebuilds the game and its systems from the ground up, resulting in a more stable and fully functional version of the original experience.
 
 ### Improvements
 
-- Map loading by chunks
-- New system for loading large textures
-- Improved New Game and Load Game systems
+#### Stability & Systems
+
+- Complete reimplementation of the original game in Unity.
+- Rebuilt game systems to provide a stable and fully functional experience.
+- Fixes and improvements to systems that could break in the original game.
+- Improved overall game stability and reliability.
+
+#### Accessibility
+
+- Added accessibility features to make the game more approachable to different players.
+
+#### Enemy & Boss AI
+
+- Improved enemy AI.
+- Improved boss AI and behaviour.
+- More consistent and reliable enemy encounters.
+
+#### Player
+
+- Improvements to the player and its overall gameplay systems.
+- Improved player behaviour and interaction with the game.
+
+#### Progression
+
+- Improved the game's progression systems.
+- Adjustments to make the player's progression more consistent throughout the game.
+
+#### The Void
+
+- Improvements to the Void and its gameplay.
+
+#### Visual Improvements
+
+- Improved the overall visual presentation of the game.
+- General visual and presentation improvements throughout the experience.
+
+### Removed Content
+
+Some elements from the original game have intentionally been removed from the remake:
+
+- Fishing system.
+- Spawner system.
+
+These changes were made as part of the redesign and development process of the remake.
 
 <br>
 
@@ -135,7 +161,7 @@ This remake has been developed as a **Bachelor's Thesis (Trabajo de Fin de Grado
 - Role: Developer
 - Project: Individual Remake
 
-The project has been developed independently, including its programming, gameplay systems, technical improvements and new features.
+The project has been developed independently, including the programming, gameplay systems, technical improvements, accessibility features, AI improvements and visual improvements.
 
 <br>
 
@@ -146,7 +172,7 @@ The original Süreg's Mask project was developed collaboratively by the followin
 - Frances Xavier Romeu — UI/UX Design
 - Arnau Vilet — Environment Concept Artist — [ArtStation](https://www.artstation.com/arnauvilet)
 - Núria Puente — UI/UX & Environment Design
-- Ana Sánchez — Art Direction & Concept Artist — [Instagram](https://www.instagram.com/_kalmiakid_/)
+- Ana Sánchez — Art Direction & Concept Artist — [Instagram](https://www.instagram.com/_kalmiakid/)
 - Ivan Mejías — Audio
 - Jan Urrutia — Concept Artist & Character Design
 - Agustí Del Río — Audio
@@ -169,8 +195,12 @@ The original Süreg's Mask project was developed collaboratively by the followin
 
 ## About This Remake
 
-Süreg's Mask Remake is a personal continuation of a university project that was originally created collaboratively during the second year of the degree.
+Süreg's Mask Remake is an individual Bachelor's Thesis based on a game originally developed collaboratively during the second year of the degree.
 
-While the original game was developed by a team, **this remake is an individual project created by Aleix Botella for his Bachelor's Thesis (TFG)**.
+The remake recreates the original game in Unity, focusing on making the complete experience **stable, functional and faithful to the original**, while improving several aspects of the game.
 
-The remake builds upon the original concept while allowing the project to be redesigned, expanded and technically improved from an individual development perspective.
+The project includes improvements to **accessibility, enemy and boss AI, player systems, progression, the Void and the overall visual presentation**.
+
+Some original systems, such as **fishing and spawners**, have been removed as part of the remake's development.
+
+The original project and its team are credited above as the foundation on which this remake was built.
